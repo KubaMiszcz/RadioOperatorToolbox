@@ -1,0 +1,36 @@
+<div class="p-2 buttons d-flex justify-content-between">
+    <div>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block me-2" (click)="addNewStage()">
+            <i class="fa fa-plus-circle me-1" aria-hidden="true"></i>Nowy krok</button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="addNewDecider()">
+            <i class="fa fa-plus-circle me-1" aria-hidden="true"></i>Nowa decyzja</button>
+
+    </div>
+    <div class="d-flex flex-row  align-items-center">
+        <h4 class="me-1">Procedura:</h4>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" title="add" (click)="addProcedure()">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" title="edit" (click)="editProcedure()">
+            <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+        <button type="button" name="" id="" class="btn btn-danger btn-lg btn-block" title="delete" (click)="deleteProcedure()">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+
+<div class="content">
+
+    <div class="stages pb-4">
+        <div *ngFor="let item of (procedure$ |async)?.deciders">
+        </div>
+    </div>
+
+    <div class="stages pb-4">
+        <div *ngFor="let item of (procedure$ |async)?.stages">
+        </div>
+    </div>
+
+</div>
