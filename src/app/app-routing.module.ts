@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TimerTabComponent } from './components/timer-tab/timer-tab.component';
+import { SettingsTabComponent } from './core-components/settings-tab/settings-tab.component';
 
 const routes: Routes = [
-  { path: 'edit-procedure-tab', component: TimerTabComponent },
-  { path: 'timer-tab', component: TimerTabComponent },
-  { path: 'settings-tab', component: TimerTabComponent },
+  { path: 'edit-procedure-tab', component: SettingsTabComponent },
+  { path: 'timer-tab', component: SettingsTabComponent },
+  { path: 'settings-tab', component: SettingsTabComponent },
   { path: '', redirectTo: '/training-tab', pathMatch: 'full' },
-  { path: '**', component: TimerTabComponent },
+  { path: '**', component: SettingsTabComponent },
 ];
 
 @NgModule({
