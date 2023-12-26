@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "RadioOperatorToolbox"]
+	url = https://github.com/KubaMiszcz/RadioOperatorToolbox
+	fetch = +refs/heads/*:refs/remotes/RadioOperatorToolbox/*
+[branch "master"]
+	remote = RadioOperatorToolbox
+	merge = refs/heads/master
+[branch "develop"]
+	vscode-merge-base = master
+	remote = RadioOperatorToolbox
+	merge = refs/heads/develop
