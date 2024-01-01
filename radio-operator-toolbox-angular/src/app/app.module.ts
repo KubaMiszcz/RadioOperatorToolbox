@@ -1,4 +1,4 @@
-import { SettingsTabComponent } from './core-components/settings-tab/settings-tab.component';
+import { SettingsTabComponent } from './tabs/settings-tab/settings-tab.component';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.component';
 import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
-import { HomeTabComponent } from './core-components/home-tab/home-tab.component';
+import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
 
 @NgModule({
   declarations: [
