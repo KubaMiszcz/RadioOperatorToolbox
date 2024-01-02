@@ -24,16 +24,17 @@ export class SarnegPageComponent {
       CODEWORDS_PL,
       6
     );
+
     this.currentCodeWord = appService.getRandomElementsFromArray(
       this.codeWords
     )[0];
   }
 
   ngOnInit(): void {
-    this.encode();
+    this.encodeWord();
   }
 
-  encode() {
+  encodeWord() {
     this.isEncoding = true;
 
     if (!this.numbersDecoded) {
@@ -52,7 +53,7 @@ export class SarnegPageComponent {
     this.numbersDecoded = this.numbersDecoded?.toString().replace(/[^0-9]/g, '');
   }
 
-  decode() {
+  decodeWord() {
     this.isEncoding = false;
 
     this.validateWordEncoded(
@@ -80,6 +81,6 @@ export class SarnegPageComponent {
 
   changeCodeword(value: string) {
     this.currentCodeWord = value;
-    this.encode();
+    this.encodeWord();
   }
 }
