@@ -101,7 +101,7 @@ export class VigenerePageComponent {
         colNo = this.codeTable[rowNo].indexOf(letter.toUpperCase());
       } while (colNo < 0);
 
-      this.textEncoded += ` ${rowNo+1}${colNo+1} `;
+      this.textEncoded += ` ${rowNo}${colNo} `;
       // this.textEncoded += this.currentCodeWord[Number(letter)] ?? '';
     });
   }

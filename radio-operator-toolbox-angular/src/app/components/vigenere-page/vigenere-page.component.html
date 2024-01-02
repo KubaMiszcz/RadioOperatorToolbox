@@ -21,10 +21,10 @@
         <td style="border: solid;">
             <tr>
                 <td></td>
-                <td  style="border: 2px black solid" *ngFor="let i of codeTable; index as k">{{k+1}}</td>
+                <td  style="border: 2px black solid" *ngFor="let i of codeTable; index as k">{{k}}</td>
             </tr>
             <tr *ngFor="let row of codeTable; index as idx">
-                <td  style="border: 2px black solid" >{{idx+1}}</td>
+                <td  style="border: 2px black solid" >{{idx}}</td>
                 <td  style="border: 2px black solid" *ngFor="let letter of row">{{letter}}</td>
             </tr>
         </td>
