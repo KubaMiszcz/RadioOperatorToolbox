@@ -10,8 +10,10 @@ const routes: Routes = [
   { path: 'vigenere-page', component: VigenerePageComponent },
   { path: 'settings-tab', component: SettingsTabComponent },
   { path: 'home-tab', component: HomeTabComponent },
-  { path: '', redirectTo: '/home-tab', pathMatch: 'full' },
-  { path: '**', component: HomeTabComponent },
+  { path: '', redirectTo: '/vigenere-tab', pathMatch: 'full' },
+  { path: '**', component: VigenerePageComponent },
+  // { path: '', redirectTo: '/home-tab', pathMatch: 'full' },
+  // { path: '**', component: HomeTabComponent },
 ];
 
 @NgModule({

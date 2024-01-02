@@ -18,6 +18,10 @@ export class AppService {
   //====================================================================
   //GENERIC METHODS
   //move to coreservice
+  getRandomNumber(max: number) {
+    // getRandomNumber(10) => <0 to 10>
+    return Math.round(Math.random() * max);
+  }
 
   deepCopy<T>(obj: T): T {
     let cache: any = [];
@@ -52,20 +56,18 @@ export class AppService {
   getRandomElementsFromArray<T>(array: T[], count: number = 1): T[] {
     let result: any = [];
     while (count) {
-      let randIdx = Math.round(Math.random() * array.length - 1);
+      let randIdx = this.getRandomNumber(array.length - 1);
       randIdx = randIdx < 0 ? 0 : randIdx;
       let element = array[randIdx];
 
-      if (randIdx<0) {
+      if (randIdx < 0) {
         console.log(randIdx);
-        
       }
-      
+
       if (!!result.find((e: T) => e === element)) {
         continue;
       }
-            
-      
+
       result.push(array[randIdx]);
       count--;
     }

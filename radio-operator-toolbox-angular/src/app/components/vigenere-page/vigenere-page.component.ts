@@ -30,7 +30,7 @@ export class VigenerePageComponent {
       this.codeWords
     )[0];
 
-    this.makeCodeTable(this.currentCodeWord);
+    this.makeVigenereCodeTable(this.currentCodeWord);
   }
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class VigenerePageComponent {
         this.appService.getRandomElementsFromArray(CODEWORDS_PL)[0];
 
       if (
-        !result.find(c=>c===codeWord) &&
+        !result.find((c) => c === codeWord) &&
         this.checkIfCodewordCoversAlphabet(codeWord)
       ) {
         result.push(codeWord);
@@ -69,13 +69,13 @@ export class VigenerePageComponent {
     return isOKpart0_10 && isOKpart10_20 && isOKpart20_30;
   }
 
-  private makeCodeTable(currentCodeWord: string) {
-    [...currentCodeWord].forEach((l) => {
+  private makeVigenereCodeTable(codeWord: string) {
+    [...codeWord].forEach((l) => {
       let idx = this.alphabet.indexOf(l);
       let head = [...this.alphabet];
       let tail = head.splice(idx);
       tail.push(...head);
-      this.codeTable.push(tail);
+      this.codeTable.push(tail.slice(0, codeWord.length));
     });
   }
 
@@ -86,17 +86,28 @@ export class VigenerePageComponent {
       return;
     }
 
-    // this.validateWordDecoded();
+    this.validateWordDecoded();
 
     this.textEncoded = '';
 
-    Array.from(this.textDecoded?.toString()).forEach((digit) => {
-      this.textEncoded += this.currentCodeWord[Number(digit)] ?? '';
+    Array.from(this.textDecoded).forEach((letter) => {
+      let rowNo=-1
+      let colNo = -1;
+      do {
+        rowNo = this.appService.getRandomNumber(
+          this.currentCodeWord.length - 1
+        );
+
+        colNo = this.codeTable[rowNo].indexOf(letter.toUpperCase());
+      } while (colNo < 0);
+
+      this.textEncoded += ` ${rowNo+1}${colNo+1} `;
+      // this.textEncoded += this.currentCodeWord[Number(letter)] ?? '';
     });
   }
 
   validateWordDecoded() {
-    this.textDecoded = this.textDecoded?.toString().replace(/[^0-9]/g, '');
+    this.textDecoded = this.textDecoded?.toString().replace(/[^A-Za-z]/g, '');
   }
 
   decodeText() {
