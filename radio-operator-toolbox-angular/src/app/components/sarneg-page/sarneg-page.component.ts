@@ -16,9 +16,10 @@ export class SarnegPageComponent {
   wordDecoded = '1122334';
   wordEncoded = 'nn';
   currentCodeWord = 'BACKGROUND';
-  codeWords = this.appService.getRandomElementsFromArray(CODEWORDS_PL, 6);
-
+  codeWords: string[] = [];
+  
   constructor(private appService: AppService) {
+    this.codeWords = this.appService.getRandomElementsFromArray(CODEWORDS_PL, 6);
     this.currentCodeWord = appService.getRandomElementsFromArray(
       this.codeWords
     )[0];

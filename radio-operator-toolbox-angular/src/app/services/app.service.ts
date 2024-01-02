@@ -53,12 +53,19 @@ export class AppService {
     let result: any = [];
     while (count) {
       let randIdx = Math.round(Math.random() * array.length - 1);
+      randIdx = randIdx < 0 ? 0 : randIdx;
       let element = array[randIdx];
 
-      if (result?.find((e: string) => e === element)) {
+      if (randIdx<0) {
+        console.log(randIdx);
+        
+      }
+      
+      if (!!result.find((e: T) => e === element)) {
         continue;
       }
-
+            
+      
       result.push(array[randIdx]);
       count--;
     }

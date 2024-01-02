@@ -2,17 +2,19 @@
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
 
+input numeric i nie jak user/pass bo
+update sciezki do imgsgg
+aktywne coderowrd gubsze
+iconki w navbarze
 
+
+
+wersja numer
 viewport rozmir na dekstop
 ikony PWA
 jedno slowo si enie poajwai
 layout posrodku
 tlo ciemne
-input numeric i nie jak user/pass bo
-merge with devel
-update sciezki do imgsgg
-aktywne coderowrd gubsze
-wersja numer
 email w stopce new mail
 opi inputow
 hamburger menuitme do prawe
