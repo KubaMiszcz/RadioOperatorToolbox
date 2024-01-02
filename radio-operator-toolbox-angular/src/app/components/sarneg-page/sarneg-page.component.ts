@@ -13,13 +13,17 @@ import {
   styleUrls: ['./sarneg-page.component.scss'],
 })
 export class SarnegPageComponent {
-  wordDecoded = '1122334';
-  wordEncoded = 'nn';
+  numbersDecoded = '1122334';
+  numbersEncoded = '';
   currentCodeWord = 'BACKGROUND';
   codeWords: string[] = [];
+  isEncoding = true;
 
   constructor(private appService: AppService) {
-    this.codeWords = this.appService.getRandomElementsFromArray(CODEWORDS_PL, 6);
+    this.codeWords = this.appService.getRandomElementsFromArray(
+      CODEWORDS_PL,
+      6
+    );
     this.currentCodeWord = appService.getRandomElementsFromArray(
       this.codeWords
     )[0];
@@ -30,42 +34,46 @@ export class SarnegPageComponent {
   }
 
   encode() {
-    if (!this.wordDecoded) {
+    this.isEncoding = true;
+
+    if (!this.numbersDecoded) {
       return;
     }
-    
+
     this.validateWordDecoded();
 
-    this.wordEncoded = '';
-    Array.from(this.wordDecoded?.toString()).forEach((digit) => {
-      this.wordEncoded += this.currentCodeWord[Number(digit)] ?? '';
+    this.numbersEncoded = '';
+    Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
+      this.numbersEncoded += this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
   validateWordDecoded() {
-    this.wordDecoded = this.wordDecoded?.toString().replace(/[^0-9]/g, '');
+    this.numbersDecoded = this.numbersDecoded?.toString().replace(/[^0-9]/g, '');
   }
 
   decode() {
+    this.isEncoding = false;
+
     this.validateWordEncoded(
-      this.wordEncoded,
+      this.numbersEncoded,
       Array.from(this.currentCodeWord)
     );
 
-    this.wordDecoded = '';
+    this.numbersDecoded = '';
     let array = Array.from(this.currentCodeWord);
-    Array.from(this.wordEncoded.toString()).forEach((letter) => {
+    Array.from(this.numbersEncoded.toString()).forEach((letter) => {
       let idx = array.indexOf(
         array.find((l) => l === letter.toUpperCase()) ?? ''
       );
-      this.wordDecoded += idx > 0 ? idx : '';
+      this.numbersDecoded += idx > 0 ? idx : '';
     });
   }
 
   validateWordEncoded(string: string, allowedLetters: string[]) {
     const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
 
-    this.wordEncoded = this.wordEncoded
+    this.numbersEncoded = this.numbersEncoded
       .toUpperCase()
       .replaceAll(allowedCharacters, '');
   }
