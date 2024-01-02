@@ -3,10 +3,17 @@
 
 
 
-
-
-
-
+viewport rozmir na dekstop
+ikony PWA
+jedno slowo si enie poajwai
+layout posrodku
+tlo ciemne
+input numeric i nie jak user/pass bo
+merge with devel
+update sciezki do imgsgg
+aktywne coderowrd gubsze
+wersja numer
+email w stopce new mail
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
