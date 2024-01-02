@@ -14,6 +14,7 @@ update sciezki do imgsgg
 aktywne coderowrd gubsze
 wersja numer
 email w stopce new mail
+opi inputow
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
