@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1704214926163,
+  "timestamp": 1704222622730,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.b93850db8b73074f.js",
+        "/RadioOperatorToolbox/main.d3540e6d912ae283.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -47,7 +47,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/RadioOperatorToolbox/assets/application-default-data.ts": "0c8957b5335f97419aef9342fad4659d7e7bc906",
+    "/RadioOperatorToolbox/assets/application-default-data.ts": "e521dcf95dff51cec8ffa8069d124526f5be7515",
     "/RadioOperatorToolbox/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
     "/RadioOperatorToolbox/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
     "/RadioOperatorToolbox/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
@@ -60,8 +60,8 @@
     "/RadioOperatorToolbox/assets/imgs/sarneg-image.png": "aab9baf035531401eea0151f3fbc660a36839546",
     "/RadioOperatorToolbox/assets/imgs/vigenere-image.png": "afba73dd3fdd81ab012701e284ab8cc8d5d3eee4",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/RadioOperatorToolbox/index.html": "1a930d011b275fb52ca4e05654b451e374d45cc8",
-    "/RadioOperatorToolbox/main.b93850db8b73074f.js": "59a4c485d9ebb9cb1f600d7bbbf5a26907cd5af9",
+    "/RadioOperatorToolbox/index.html": "f337c7162e610cce7c16607df6d11e5582f76479",
+    "/RadioOperatorToolbox/main.d3540e6d912ae283.js": "8823d9daf2a3dd339b7211c7d9544c43b809867e",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
