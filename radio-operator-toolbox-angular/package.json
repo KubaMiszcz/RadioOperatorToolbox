@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --repo=https://github.com/kubamiszcz/RadioOperatorToolbox.git --name='kubamiszcz' --email=zielonyeufor@gmail.com --no-silent",
-    "gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
+    "deploy": "ng deploy --repo=https://github.com/kubamiszcz/RadioOperatorToolbox.git --name='kubamiszcz' --email=zielonyeufor@gmail.com --no-silent"
   },
   "private": true,
   "dependencies": {
