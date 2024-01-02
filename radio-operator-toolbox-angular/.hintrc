@@ -5,6 +5,7 @@
   "hints": {
     "manifest-app-name": "off",
     "apple-touch-icons": "off",
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/name-role-value": "off"
   }
 }
