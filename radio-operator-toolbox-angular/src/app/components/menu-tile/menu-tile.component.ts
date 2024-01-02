@@ -7,13 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuTileComponent {
   @Input() name = 'no-name';
-  @Input() icon = '';
+  @Input() iconName = '';
   
   constructor() {
     
   }
   
   ngOnInit(): void {
-    this.icon = this.icon?.length? this.icon : this.name;
+    this.iconName = (this.iconName?.length ? this.iconName : this.name) + '-image.png';
   }
 }
