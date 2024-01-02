@@ -1,5 +1,9 @@
+import { KeyValue } from '@angular/common';
 import { Component } from '@angular/core';
 import { indexOf } from 'lodash-es';
+import { CODEWORDS_EN, CODEWORDS_PL } from 'src/app/services/app-settings.service';
+
+
 
 @Component({
   selector: 'app-sarneg-page',
@@ -10,7 +14,7 @@ export class SarnegPageComponent {
   wordDecoded = '1122334';
   wordEncoded = 'nn';
   currentCodeWord = 'BACKGROUND';
-  codeWords = ['BACKGROUND', 'SUPERWOMAN', 'COMBATHELP'];
+  codeWords = CODEWORDS_PL;
 
   constructor() {
     this.currentCodeWord = this.codeWords[0];
@@ -34,7 +38,10 @@ export class SarnegPageComponent {
   }
 
   decode() {
-    this.validateWordEncoded(this.wordEncoded, Array.from(this.currentCodeWord));
+    this.validateWordEncoded(
+      this.wordEncoded,
+      Array.from(this.currentCodeWord)
+    );
 
     this.wordDecoded = '';
     let array = Array.from(this.currentCodeWord);
@@ -49,11 +56,14 @@ export class SarnegPageComponent {
   validateWordEncoded(string: string, allowedLetters: string[]) {
     const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
 
-    this.wordEncoded = this.wordEncoded.toUpperCase().replaceAll(allowedCharacters, '');
+    this.wordEncoded = this.wordEncoded
+      .toUpperCase()
+      .replaceAll(allowedCharacters, '');
   }
 
   changeCodeword(value: string) {
     this.currentCodeWord = value;
     this.encode();
   }
+
 }
