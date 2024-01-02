@@ -2,15 +2,10 @@
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
 
-input numeric i nie jak user/pass bo
-iconki w navbarze
 viewport rozmir na dekstop
 ikony PWA
 layout posrodku
 tlo ciemne
-hamburger menuitme do prawe
-faicons nei dzialaja
-tekst w inpytaxh an srodku
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.

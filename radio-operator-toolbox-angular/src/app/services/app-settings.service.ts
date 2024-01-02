@@ -14,9 +14,7 @@ export class AppSettingsService {
   constructor() {
     this.appData = APP_DATA_JSON;
 
-    console.log(this.appData.reportsNames);
-    
-
+    //DEBUG 
     // this.findUniqueWords();
   }
 
