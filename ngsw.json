@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1704191434581,
+  "timestamp": 1704195730574,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -38,7 +38,8 @@
         "/RadioOperatorToolbox/assets/icons/icon-512x512.png",
         "/RadioOperatorToolbox/assets/icons/icon-72x72.png",
         "/RadioOperatorToolbox/assets/icons/icon-96x96.png",
-        "/RadioOperatorToolbox/assets/imgs/sarneg.png"
+        "/RadioOperatorToolbox/assets/imgs/sarneg.png",
+        "/RadioOperatorToolbox/assets/temp/images.png"
       ],
       "patterns": []
     }
@@ -55,6 +56,7 @@
     "/RadioOperatorToolbox/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/RadioOperatorToolbox/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
     "/RadioOperatorToolbox/assets/imgs/sarneg.png": "aab9baf035531401eea0151f3fbc660a36839546",
+    "/RadioOperatorToolbox/assets/temp/images.png": "a18f6636a01e44e803b487095f73a9521d08d9cb",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/RadioOperatorToolbox/index.html": "eb7658c2e191d52083ea49c0b4a82ecc65049d15",
     "/RadioOperatorToolbox/main.4daf21a333b756f4.js": "3f525d4332dd0b91e87c9dff08071fc6dad86ebc",
