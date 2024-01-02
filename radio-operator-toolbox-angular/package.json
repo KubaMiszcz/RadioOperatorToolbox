@@ -1,7 +1,7 @@
 {
   "name": "RadioOperatorToolbox",
-  "version": "0.0.3",
-  "build": "202301021531",
+  "version": "0.0.4",
+  "build": "202301022009",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
