@@ -23,5 +23,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        cd nested_dir && npm run ng --gh-deploy
-        cd nested_dir && npm run ng -- deploy --base-href=/RadioOperatorToolbox/radio-operator-toolbox-angular/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        cd radio-operator-toolbox-angular && npm run ng --gh-deploy
+        cd radio-operator-toolbox-angular && npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
