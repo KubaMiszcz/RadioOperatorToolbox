@@ -8,7 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: radio-operator-toolbox-angular
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -23,5 +25,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        cd radio-operator-toolbox-angular && npm run ng --gh-deploy
-        cd radio-operator-toolbox-angular && npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        #cd radio-operator-toolbox-angular && npm run ng --gh-deploy
+        npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
