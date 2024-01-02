@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages via angular-cli-ghpages
 on:
   push:
     branches:
-    - develop
+    - cicd
 
 jobs:
   build-and-deploy:
@@ -23,4 +23,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        npm run gh-deploy
+        #npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
