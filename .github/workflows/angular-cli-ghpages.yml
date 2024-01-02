@@ -23,5 +23,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npm run ng --gh-deploy
-        npm run ng -- deploy --base-href=/RadioOperatorToolbox/radio-operator-toolbox-angular/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        ./radio-operator-toolbox-angular/npm run ng --gh-deploy
+        ./radio-operator-toolbox-angular/npm run ng -- deploy --base-href=/RadioOperatorToolbox/radio-operator-toolbox-angular/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
