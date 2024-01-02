@@ -7,14 +7,15 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class AppSettingsService {
-  iconPath = '';
   appData: IAppData;
-  public version: string = packageJson.version;
-  public build: string = packageJson.build;
-
+  version: string = packageJson.version;
+  build: string = packageJson.build;
 
   constructor() {
     this.appData = APP_DATA_JSON;
+
+    console.log(this.appData.reportsNames);
+    
 
     // this.findUniqueWords();
   }

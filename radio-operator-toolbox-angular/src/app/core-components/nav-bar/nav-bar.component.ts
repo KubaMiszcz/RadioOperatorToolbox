@@ -10,11 +10,10 @@ import {
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
+  reportsNames = this.appSettingsService.appData.reportsNames;
 
   constructor(
     private appSettingsService: AppSettingsService,
     private appService: AppService
-  ) {
-  }
-
+  ) {}
 }
