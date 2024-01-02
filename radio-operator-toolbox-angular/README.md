@@ -15,6 +15,8 @@ aktywne coderowrd gubsze
 wersja numer
 email w stopce new mail
 opi inputow
+hamburger menuitme do prawe
+faicons nei dzialaja
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
