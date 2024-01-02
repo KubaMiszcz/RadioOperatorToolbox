@@ -44,7 +44,6 @@ export const CODEWORDS_PL: string[] = [
   'GALERYSTOM',
   'GERMINACJO',
   'GILOTYNUJE',
-  'GOLCZEWSKA',
   'GRADKOLICE',
   'GRUBASKIEM',
   'GRYPSOWALI',

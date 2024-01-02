@@ -1,9 +1,11 @@
+import { AppService } from './../../services/app.service';
 import { KeyValue } from '@angular/common';
 import { Component } from '@angular/core';
 import { indexOf } from 'lodash-es';
-import { CODEWORDS_EN, CODEWORDS_PL } from 'src/app/services/app-settings.service';
-
-
+import {
+  CODEWORDS_EN,
+  CODEWORDS_PL,
+} from 'src/app/services/app-settings.service';
 
 @Component({
   selector: 'app-sarneg-page',
@@ -14,10 +16,12 @@ export class SarnegPageComponent {
   wordDecoded = '1122334';
   wordEncoded = 'nn';
   currentCodeWord = 'BACKGROUND';
-  codeWords = CODEWORDS_PL;
+  codeWords = this.appService.getRandomElementsFromArray(CODEWORDS_PL, 6);
 
-  constructor() {
-    this.currentCodeWord = this.codeWords[0];
+  constructor(private appService: AppService) {
+    this.currentCodeWord = appService.getRandomElementsFromArray(
+      this.codeWords
+    )[0];
   }
 
   ngOnInit(): void {
@@ -65,5 +69,4 @@ export class SarnegPageComponent {
     this.currentCodeWord = value;
     this.encode();
   }
-
 }

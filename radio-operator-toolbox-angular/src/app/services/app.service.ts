@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  AppSettingsService,
-} from './app-settings.service';
+import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
 import { ORDER_DIRECTION } from '../models/enums';
@@ -10,11 +8,7 @@ import { ORDER_DIRECTION } from '../models/enums';
   providedIn: 'root',
 })
 export class AppService {
-  constructor(
-    private appSettings: AppSettingsService,
-  ) {
-  }
-
+  constructor(private appSettings: AppSettingsService) {}
 
   //====================================================================
   //====================================================================
@@ -26,9 +20,9 @@ export class AppService {
   //move to coreservice
 
   deepCopy<T>(obj: T): T {
-    let cache:any = [];
-    let str = JSON.stringify(obj, function(key, value) {
-      if (typeof value === "object" && value !== null) {
+    let cache: any = [];
+    let str = JSON.stringify(obj, function (key, value) {
+      if (typeof value === 'object' && value !== null) {
         if (cache.indexOf(value) !== -1) {
           // Circular reference found, discard key
           return;
@@ -53,5 +47,22 @@ export class AppService {
 
   getArraySortedByName<T>(array: T[]): T[] {
     return _.orderBy(array, 'name', 'asc');
+  }
+
+  getRandomElementsFromArray<T>(array: T[], count: number = 1): T[] {
+    let result: any = [];
+    while (count) {
+      let randIdx = Math.round(Math.random() * array.length - 1);
+      let element = array[randIdx];
+
+      if (result?.find((e: string) => e === element)) {
+        continue;
+      }
+
+      result.push(array[randIdx]);
+      count--;
+    }
+
+    return result;
   }
 }
