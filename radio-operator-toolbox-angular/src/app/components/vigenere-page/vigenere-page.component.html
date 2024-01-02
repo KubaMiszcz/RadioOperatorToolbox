@@ -1,2 +1,38 @@
-<p>vigenere-page works!</p>
+<div>
+    VIIGENERE
+    <div class="p-2">
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zakodowania</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowany tekst</label>
+        <div class="input-group mb-3">
+            <input [(ngModel)]="textDecoded" type="text" class="form-control" placeholder="kodowany tekst" pattern="[0-9]"
+                aria-label="textDecoded" aria-describedby="basic-addon1" (change)="encodeText()" (keyup)="encodeText()">
+        </div>
 
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowany tekst</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zdekodowania</label>
+        <div class="input-group mb-3">
+            <input [(ngModel)]="textEncoded" type="text" class="form-control" placeholder="dekodowany tekst"
+                aria-label="textEncoded" aria-describedby="basic-addon1" (change)="decodeText()" (keyup)="decodeText()">
+        </div>
+    </div>
+
+
+
+
+    <div class="d-grid gap-1 p-2">
+        <div>Active Coderword:</div>
+        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary">
+            <b>{{currentCodeWord}}</b>
+        </button>
+    </div>
+
+    <div class="d-grid gap-1 p-2">
+        <div>Codewords:</div>
+        <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
+            class="btn btn-outline-secondary" (click)="changeCodeword(item)">
+            {{item}}
+        </button>
+    </div>
+
+
+</div>
