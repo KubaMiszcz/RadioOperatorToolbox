@@ -1,3 +1,4 @@
+import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  version=this.appSettingsService.version;
+  build=this.appSettingsService.build;
+
+  constructor(private appSettingsService:AppSettingsService) {
+  }
 
 }

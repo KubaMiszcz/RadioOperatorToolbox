@@ -3,19 +3,11 @@
 
 
 input numeric i nie jak user/pass bo
-update sciezki do imgsgg
 iconki w navbarze
-
-
-
-wersja numer
 viewport rozmir na dekstop
 ikony PWA
-jedno slowo si enie poajwai
 layout posrodku
 tlo ciemne
-email w stopce new mail
-opi inputow
 hamburger menuitme do prawe
 faicons nei dzialaja
 tekst w inpytaxh an srodku
