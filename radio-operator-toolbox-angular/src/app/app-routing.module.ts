@@ -1,8 +1,8 @@
-import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SettingsTabComponent } from './tabs/settings-tab/settings-tab.component';
 import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
+import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.component';
 import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.component';
 
 const routes: Routes = [
