@@ -4,7 +4,6 @@
 
 input numeric i nie jak user/pass bo
 update sciezki do imgsgg
-aktywne coderowrd gubsze
 iconki w navbarze
 
 

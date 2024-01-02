@@ -1,7 +1,7 @@
 import { AppService } from './../../services/app.service';
 import { KeyValue } from '@angular/common';
 import { Component } from '@angular/core';
-import { indexOf } from 'lodash-es';
+import { indexOf, values } from 'lodash-es';
 import {
   CODEWORDS_EN,
   CODEWORDS_PL,
@@ -17,7 +17,7 @@ export class SarnegPageComponent {
   wordEncoded = 'nn';
   currentCodeWord = 'BACKGROUND';
   codeWords: string[] = [];
-  
+
   constructor(private appService: AppService) {
     this.codeWords = this.appService.getRandomElementsFromArray(CODEWORDS_PL, 6);
     this.currentCodeWord = appService.getRandomElementsFromArray(
@@ -30,16 +30,20 @@ export class SarnegPageComponent {
   }
 
   encode() {
+    if (!this.wordDecoded) {
+      return;
+    }
+    
     this.validateWordDecoded();
 
     this.wordEncoded = '';
-    Array.from(this.wordDecoded.toString()).forEach((digit) => {
+    Array.from(this.wordDecoded?.toString()).forEach((digit) => {
       this.wordEncoded += this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
   validateWordDecoded() {
-    this.wordDecoded = this.wordDecoded.replace(/[^0-9]/g, '');
+    this.wordDecoded = this.wordDecoded?.toString().replace(/[^0-9]/g, '');
   }
 
   decode() {

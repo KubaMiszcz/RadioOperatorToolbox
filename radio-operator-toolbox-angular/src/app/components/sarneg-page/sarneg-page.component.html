@@ -1,12 +1,14 @@
 <div>
     <div class="p-2">
+        <label for="exampleFormControlInput1" class="form-label">Liczba do zakodowania</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="wordDecoded" type="number" class="form-control" placeholder="wordDecoded" pattern="[0-9]"
+            <input [(ngModel)]="wordDecoded" type="number" class="form-control" placeholder="Liczba do zakodowania" pattern="[0-9]"
                 aria-label="wordDecoded" aria-describedby="basic-addon1" (change)="encode()" (keyup)="encode()">
         </div>
 
+        <label for="exampleFormControlInput1" class="form-label">Liczba do zdekodowania</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="wordEncoded" type="text" class="form-control" placeholder="wordEncoded"
+            <input [(ngModel)]="wordEncoded" type="text" class="form-control" placeholder="Liczba do zdekodowania"
                 aria-label="wordEncoded" aria-describedby="basic-addon1" (change)="decode()" (keyup)="decode()">
         </div>
     </div>
@@ -17,7 +19,7 @@
     <div class="d-grid gap-1 p-2">
         <div>Active Coderword:</div>
         <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary">
-            {{currentCodeWord}}
+            <b>{{currentCodeWord}}</b>
         </button>
     </div>
 
