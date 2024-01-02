@@ -17,6 +17,7 @@ email w stopce new mail
 opi inputow
 hamburger menuitme do prawe
 faicons nei dzialaja
+tekst w inpytaxh an srodku
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
