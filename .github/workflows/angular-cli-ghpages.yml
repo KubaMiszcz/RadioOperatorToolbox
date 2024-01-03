@@ -24,6 +24,7 @@ jobs:
       run:
         jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp 
         && mv package.json.tmp package.json
+        && echo "buld:"
         && jq -r '.build' package.json
 
         
