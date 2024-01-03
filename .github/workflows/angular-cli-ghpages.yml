@@ -15,20 +15,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+    # - name: Setup Node.js
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: '16'
 
     - name: Update config.json
       run:
-        jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp && mv package.json.tmp package.json
+        jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp 
+        && mv package.json.tmp package.json
+        && jq -r '.build' package.json
 
         
     - name: read package.json
       run:
         # cat package.json
-        jq -r '.build' package.json
+        # jq -r '.build' package.json
            
     # - name: Prepare and deploy
     #   env:
