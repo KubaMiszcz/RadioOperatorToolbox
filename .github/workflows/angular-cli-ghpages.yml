@@ -26,4 +26,4 @@ jobs:
       run: |
         echo "today={$(date +'%Y-%m-%d')}" > data.json
         # npm install
-        # npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
