@@ -7,6 +7,7 @@ ikony PWA
 layout posrodku
 tlo ciemne
 footr: (c)2023 KubaMiszcz v.0.0.4.20240103.1201
+czcionka codewords - monospace
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
