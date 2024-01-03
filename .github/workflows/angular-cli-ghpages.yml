@@ -22,7 +22,7 @@ jobs:
 
     - name: Update config.json
       run:
-        echo "`jq '.build="555w5"' package.json`" > package.json
+        echo "`jq '.build="$(date +\'%Y%m%d%H%m\')"' package.json`" > package.json
 
     - name: read package.json
       run:
