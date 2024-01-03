@@ -1,6 +1,6 @@
 {
   "name": "RadioOperatorToolbox",
-  "version": "0.0.4",
+  "version": "$(date +%Y%m%d%H%m)",
   "build": "dev-date-autoupdate by GH actions",
   "scripts": {
     "ng": "ng",
