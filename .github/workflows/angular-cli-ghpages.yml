@@ -22,8 +22,9 @@ jobs:
 
     - name: Version and build UP
       run: 
-        jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp && mv package.json.tmp package.json
-        jq -r '.build' package.json
+        jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp 
+        && mv package.json.tmp package.json
+        && echo "build:" && jq -r '.build' package.json
 
     - name: Prepare and deploy
       env:
@@ -31,3 +32,4 @@ jobs:
       run: |
         npm install
         npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
+        echo "[SUCCESS] build:" && jq -r '.build' package.json
