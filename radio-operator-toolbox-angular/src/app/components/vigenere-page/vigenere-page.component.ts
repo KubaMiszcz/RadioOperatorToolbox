@@ -86,11 +86,20 @@ export class VigenerePageComponent {
 
     this.validateWordDecoded();
 
+    let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
     this.textEncoded = '';
 
     Array.from(this.textDecoded).forEach((letter) => {
       let rowNo=-1
       let colNo = -1;
+
+      if (!!allowedSigns.find(l=>l===letter)) {
+        // this.textEncoded+=` ${letter}`; 
+        this.textEncoded+='__'; 
+        colNo = 0;
+        return;
+      }
+
       do {
         rowNo = this.appService.getRandomNumber(
           this.currentCodeWord.length - 1
@@ -100,12 +109,13 @@ export class VigenerePageComponent {
       } while (colNo < 0);
 
       this.textEncoded += ` ${rowNo}${colNo} `;
-      // this.textEncoded += this.currentCodeWord[Number(letter)] ?? '';
     });
   }
 
   validateWordDecoded() {
-    this.textDecoded = this.textDecoded?.toString().replace(/[^A-Za-z]/g, '');
+    this.textDecoded = this.textDecoded?.toString()
+    .replace(/[^A-Za-z =]/g, '');
+    // .replace(/[^0-9 ,./<>?;':"\[\]\\\{\}\!@#$%*()_+-=]/g, '');
   }
 
   decodeText() {

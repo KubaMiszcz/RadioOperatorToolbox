@@ -4,35 +4,20 @@
             <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zakodowania</label>
             <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label ">Odkodowany tekst</label>
             <div class="input-group mb-3">
-                <input [(ngModel)]="textDecoded" type="number" class="form-control" placeholder="kodowany tekst"
-                    pattern="[0-9]" aria-label="textDecoded" aria-describedby="basic-addon1" (change)="encodeText()"
-                    (keyup)="encodeText()">
+                <textarea [(ngModel)]="textDecoded" aria-label="asads" class="form-control" name="asd" id="decoded"
+                    rows="3" placeholder="kodowany tekst" (change)="encodeText()"
+                    (keyup)="encodeText()"></textarea>
             </div>
         </div>
-
-        <div>
-            <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zakodowania</label>
-            <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label ">Odkodowany tekst</label>
-            <div class="input-group mb-3">
-                <textarea [(ngModel)]="textDecoded" aria-label="asads" class="form-control" name="asd" id="asdas2"
-                    rows="3" placeholder="kodowany tekst"></textarea>
-            </div>
-        </div>
-
 
         <div>
             <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowany tekst</label>
             <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zdekodowania</label>
             <div class="input-group mb-3">
-                <input [(ngModel)]="textEncoded" type="text" class="form-control" placeholder="dekodowany tekst"
-                    aria-label="textEncoded" aria-describedby="basic-addon1" (change)="decodeText()"
-                    (keyup)="decodeText()">
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label for="asdasd" class="form-label"></label>
-            <textarea aria-label="asads" class="form-control" name="asd" id="asdas" rows="3"></textarea>
+                <textarea [(ngModel)]="textEncoded" aria-label="asads" class="form-control" name="asd" id="encoded"
+                    rows="3" placeholder="dekodowany tekst" (change)="decodeText()"
+                    (keyup)="decodeText()"></textarea>
+            </div> 
         </div>
     </div>
 
