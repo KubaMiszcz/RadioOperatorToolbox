@@ -26,8 +26,8 @@ jobs:
 
     - name: read package.json
       run:
-        cat package.json
-        # jq -r '.build' package.json
+        # cat package.json
+        jq -r '.build' package.json
            
     # - name: Prepare and deploy
     #   env:
