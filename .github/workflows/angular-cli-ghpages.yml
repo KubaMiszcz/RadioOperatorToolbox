@@ -20,8 +20,8 @@ jobs:
     #   with:
     #     node-version: '16'
 
-    - name: Update config.json
-      run:
+    # - name: Update config.json
+    #   run:
         jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp 
         && mv package.json.tmp package.json
         && jq -r '.build' package.json
