@@ -20,10 +20,14 @@ jobs:
       with:
         node-version: '16'
 
+    - name: Version and build UP
+      run: 
+        echo "`jq '.version="$(date +'%Y%m%d%H%m')\"' package.json`" > package.json
+        jq -r '.build' package.json
+
     - name: Prepare and deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "`jq '.version="$(date +'%Y%m%d%H%m')\"' package.json`" > package.json
         npm install
         npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
