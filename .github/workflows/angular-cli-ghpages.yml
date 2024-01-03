@@ -22,8 +22,8 @@ jobs:
 
     - name: Update config.json
       run:
-        cat package.json | jq '.build=(now | strflocaltime("%Y%m%d%H%m"))' | sponge package.json
-        # jq '.build=(now | strflocaltime("%Y%m%d%H%m"))' package.json
+        jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp && mv package.json.tmp package.json
+
         
     - name: read package.json
       run:
