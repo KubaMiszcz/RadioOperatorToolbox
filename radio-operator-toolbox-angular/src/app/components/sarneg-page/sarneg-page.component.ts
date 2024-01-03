@@ -53,13 +53,15 @@ test(value:any){
       let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
       this.numbersEncoded +=
         !!allowedSigns.find(s=>s===digit) ? digit : this.currentCodeWord[Number(digit)] ?? '';
+        // this.numbersEncoded= this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
   validateNumbersDecoded() {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
-      .replace(/[^0-9 !@#$%*()_+-=[]{}|\\:";\'<>,.?\/]/g, '');
+      // .replace(/[^0-9 !@#$%*()_+-=[]{}|\\:";\'<>,.?\/]/g, '');
+      .replace(/[^0-9 ,./<>?;':"\[\]\\\{\}\!@#$%*()_+-=]/g, '');
   }
 
   decodeWord() {
