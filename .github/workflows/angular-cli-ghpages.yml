@@ -20,19 +20,20 @@ jobs:
       with:
         node-version: '16'
 
+    - name: Update config.json
+      run:
+        echo "`jq '.version="5555"' package.json`" > package.json
+
+    - name: read package.json
+      run:
+        cat package.json
+           
     # - name: Prepare and deploy
     #   env:
     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Update config.json
-      run: |
-        echo "`jq '.version="5555"' package.json`" > package.json
-    - name: read config.json
-      run: |
-        cat config.json
-           
+    #   run: |
+    #     echo "{ \"build\":\"$(date +'%Y%m%d%H%m')\"}" > build.json
+    #     npm install
+    #     npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
       
-      # run: |
-      #   echo "{ \"build\":\"$(date +'%Y%m%d%H%m')\"}" > build.json
-      #   npm install
-      #   npm run ng -- deploy --base-href=/RadioOperatorToolbox/ --name="KubaMiszcz" --email="zielonyeufor@gmail.com" --no-silent
 
