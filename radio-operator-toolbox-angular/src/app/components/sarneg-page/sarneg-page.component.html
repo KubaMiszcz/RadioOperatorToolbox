@@ -3,7 +3,7 @@
         <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko cyfry)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="numbersDecoded" type="number" class="form-control font-monospace" placeholder="kodowane numery" pattern="[0-9]"
+            <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace" placeholder="kodowane numery" pattern="[0-9]"
                 aria-label="wordDecoded" aria-describedby="basic-addon1" (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 

@@ -41,24 +41,25 @@ export class SarnegPageComponent {
       return;
     }
 
-    this.validateWordDecoded();
+    this.validateNumbersDecoded();
 
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
-      this.numbersEncoded += this.currentCodeWord[Number(digit)] ?? '';
+      this.numbersEncoded +=
+        digit === ' ' ? ' ' : this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
-  validateWordDecoded() {
+  validateNumbersDecoded() {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
-      .replace(/[^0-9]/g, '');
+      .replace(/[^0-9 ]/g, '');
   }
 
   decodeWord() {
     this.isEncoding = false;
 
-    this.validateWordEncoded(
+    this.validateNumbersEncoded(
       this.numbersEncoded,
       Array.from(this.currentCodeWord)
     );
@@ -73,7 +74,7 @@ export class SarnegPageComponent {
     });
   }
 
-  validateWordEncoded(string: string, allowedLetters: string[]) {
+  validateNumbersEncoded(string: string, allowedLetters: string[]) {
     const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
 
     this.numbersEncoded = this.numbersEncoded
