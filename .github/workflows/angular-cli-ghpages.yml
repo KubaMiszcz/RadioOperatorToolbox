@@ -22,8 +22,8 @@ jobs:
 
     - name: Update config.json
       run:
-        echo "`jq '.build=\"$(date +'%Y%m%d%H%m')\"' package.json`" > package.json
-
+        jq '.build=(now | strflocaltime("%Y%m%d%H%m"))' package.json
+        
     - name: read package.json
       run:
         # cat package.json
