@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1704287631840,
+  "timestamp": 1704287872493,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -40,7 +40,8 @@
         "/RadioOperatorToolbox/assets/icons/icon-96x96.png",
         "/RadioOperatorToolbox/assets/imgs/reports-image.png",
         "/RadioOperatorToolbox/assets/imgs/sarneg-image.png",
-        "/RadioOperatorToolbox/assets/imgs/vigenere-image.png"
+        "/RadioOperatorToolbox/assets/imgs/vigenere-image.png",
+        "/RadioOperatorToolbox/assets/wyrazy w których litery się nie powtarzają i nie ma w nich znaków diakrytycznych"
       ],
       "patterns": []
     }
@@ -59,6 +60,7 @@
     "/RadioOperatorToolbox/assets/imgs/reports-image.png": "19035c3077ca18d090ff7718766e0917597b401f",
     "/RadioOperatorToolbox/assets/imgs/sarneg-image.png": "aab9baf035531401eea0151f3fbc660a36839546",
     "/RadioOperatorToolbox/assets/imgs/vigenere-image.png": "afba73dd3fdd81ab012701e284ab8cc8d5d3eee4",
+    "/RadioOperatorToolbox/assets/wyrazy w których litery się nie powtarzają i nie ma w nich znaków diakrytycznych": "3800973a3f49f3e98ef18abafd10b1f15e0f79e6",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/RadioOperatorToolbox/index.html": "05a0bc95e35984c974fcb085f0373e3d513af161",
     "/RadioOperatorToolbox/main.d6187b2a6bed776d.js": "cece97558b83e6a1e1d6532c33db199fff7b5f32",
