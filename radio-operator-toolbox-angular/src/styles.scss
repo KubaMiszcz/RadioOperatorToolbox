@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 1920px) {
+    .content {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .content {
+        width: 100%;
+    }
+}
+
+
+html,
+body,
+form,
+fieldset,
+table,
+tr,
+td,
+img {
+    // font: 100%/150% calibri,helvetica,sans-serif;
+    font-family: 'Dosis-Medium', sans-serif;
+}
+
 
 .btn {
     margin: 2px;
@@ -40,9 +65,14 @@ select {
 
 @font-face {
     font-family: 'JetBrainsMono-Medium';
-    src: url('./assets/JetBrainsMono-Medium.ttf');
+    src: url('./assets/fonts/JetBrainsMono-Medium.ttf');
 }
 
-.font-monospace{
-    font-family: 'JetBrainsMono-Medium';
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('./assets/fonts/Dosis-Medium.ttf');
+}
+
+.font-monospace {
+    font-family: 'JetBrainsMono-Medium', monospace;
 }

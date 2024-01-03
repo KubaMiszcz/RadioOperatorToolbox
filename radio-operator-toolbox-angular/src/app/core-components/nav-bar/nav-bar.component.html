@@ -1,91 +1,89 @@
-<nav class="navbar sticky-top navbar-expand-xxl navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-xxl navbar-dark bg-dark justify-content-center">
+    <div class="content d-flex justify-content-around">
 
-
-    <div class="navbar-brand" [routerLink]="'home-tab'">
-        <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
-        <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/shoot-2801222-2321882.png?f=webp" 
-        width="30"
-            height="30" alt="">
-    </div>
-
-    <div class="d-flex align-items-center">
-        <div class="" [routerLink]="'sarneg-page'">
+        <div class="navbar-brand" [routerLink]="'home-tab'">
             <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
-            <img src="assets/imgs/sarneg-image.png" height="30" alt="">
-        </div>
-        <div class="mx-2" [routerLink]="'vigenere-page'">
-            <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
-            <img src="assets/imgs/vigenere-image.png" width="30"
-                height="30" alt="">
-        </div>
-        <div class="mx-2" [routerLink]="'reports-page'">
-            <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
-            <img src="assets/imgs/reports-image.png" 
+            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/shoot-2801222-2321882.png?f=webp" width="30"
                 height="30" alt="">
         </div>
 
-
-
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="'sarneg-page'">kodowanie SARNEG </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'vigenere-page'">kodowanie Vigenere</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="reportsNames[0]+'vigenere-page'">{{reportsNames[0]}}</a>
-            </li>
-
-
-
-
-            <!-- <li class="nav-item">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Wybrany Plan: 'brak'
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li *ngFor="let item of reportsNames"><button class="dropdown-item"
-                                type="button">{{item}}</button></li>
-                    </ul>
-                </div>
-            </li> -->
+        <div class="d-flex align-items-center">
+            <div class="" [routerLink]="'sarneg-page'">
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+                <img src="assets/imgs/sarneg-image.png" height="30" alt="">
+            </div>
+            <div class="mx-2" [routerLink]="'vigenere-page'">
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+                <img src="assets/imgs/vigenere-image.png" width="30" height="30" alt="">
+            </div>
+            <div class="mx-2" [routerLink]="'reports-page'">
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+                <img src="assets/imgs/reports-image.png" height="30" alt="">
+            </div>
 
 
 
 
 
-            <li class="nav-item dropdown d-flex justify-content-end ">
-                <div class="col-4 "> </div>
-                <div class="col-8 d-flex flex-column">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
-                    <button type="button" class="btn btn-secondary dropdown-toggle d-flex justify-content-end"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Wszystkie Raporty
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a *ngFor="let item of reportsNames" class="dropdown-item d-flex justify-content-end"
-                            href="#">{{item}}</a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="'sarneg-page'">kodowanie SARNEG </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'vigenere-page'">kodowanie Vigenere</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="reportsNames[0]+'vigenere-page'">{{reportsNames[0]}}</a>
+                </li>
+
+
+
+
+                <!-- <li class="nav-item">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Wybrany Plan: 'brak'
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li *ngFor="let item of reportsNames"><button class="dropdown-item"
+                                        type="button">{{item}}</button></li>
+                            </ul>
+                        </div>
+                    </li> -->
+
+
+
+
+
+                <li class="nav-item dropdown d-flex justify-content-end ">
+                    <div class="col-4 "> </div>
+                    <div class="col-8 d-flex flex-column">
+
+                        <button type="button" class="btn btn-secondary dropdown-toggle d-flex justify-content-end"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Wszystkie Raporty
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a *ngFor="let item of reportsNames" class="dropdown-item d-flex justify-content-end"
+                                href="#">{{item}}</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
 
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="'vigenere-page'">Help </a>
-            </li>
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'vigenere-page'">Help </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

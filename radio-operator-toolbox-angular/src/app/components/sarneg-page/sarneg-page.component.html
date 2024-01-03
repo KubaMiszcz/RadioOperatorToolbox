@@ -28,7 +28,7 @@
     <div class="d-grid gap-1 p-2">
         <div>Codewords:</div>
         <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
-            class="btn btn-outline-secondary font-monospace my" (click)="changeCodeword(item)">
+            class="btn btn-outline-secondary font-monospace" (click)="changeCodeword(item)">
             {{item}}
         </button>
     </div>
