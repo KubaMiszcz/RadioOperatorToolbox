@@ -3,14 +3,14 @@
         <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko cyfry)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="numbersDecoded" type="number" class="form-control" placeholder="kodowane numery" pattern="[0-9]"
+            <input [(ngModel)]="numbersDecoded" type="number" class="form-control font-monospace" placeholder="kodowane numery" pattern="[0-9]"
                 aria-label="wordDecoded" aria-describedby="basic-addon1" (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 
         <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowane numery (tylko litery)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="numbersEncoded" type="text" class="form-control" placeholder="dekodowane numery"
+            <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace" placeholder="dekodowane numery"
                 aria-label="wordEncoded" aria-describedby="basic-addon1" (change)="decodeWord()" (keyup)="decodeWord()">
         </div>
     </div>
@@ -19,8 +19,8 @@
 
 
     <div class="d-grid gap-1 p-2">
-        <div>Active Coderword:</div>
-        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary">
+        <div class="">Active Codeword:</div>
+        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary font-monospace">
             <b>{{currentCodeWord}}</b>
         </button>
     </div>
@@ -28,7 +28,7 @@
     <div class="d-grid gap-1 p-2">
         <div>Codewords:</div>
         <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
-            class="btn btn-outline-secondary" (click)="changeCodeword(item)">
+            class="btn btn-outline-secondary font-monospace my" (click)="changeCodeword(item)">
             {{item}}
         </button>
     </div>

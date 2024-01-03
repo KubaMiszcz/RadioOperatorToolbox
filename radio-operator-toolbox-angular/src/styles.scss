@@ -2,6 +2,7 @@
 
 .btn {
     margin: 2px;
+    padding: 2px;
 }
 
 .card {
@@ -17,6 +18,7 @@
 .input-group-text,
 .form-control {
     border-color: rgb(75, 75, 75);
+    padding: 2px;
 }
 
 .input-group-text {
@@ -33,4 +35,14 @@ select {
 
 .dropdown-toggle {
     color: black;
+}
+
+
+@font-face {
+    font-family: 'JetBrainsMono-Medium';
+    src: url('./assets/JetBrainsMono-Medium.ttf');
+}
+
+.font-monospace{
+    font-family: 'JetBrainsMono-Medium';
 }
