@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { IAppData } from '../models/appData';
 import { APP_DATA_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
-import buildJson from './../../../build.json';
 
 
 @Injectable({
@@ -11,7 +10,7 @@ import buildJson from './../../../build.json';
 export class AppSettingsService {
   appData: IAppData;
   version: string = packageJson.version;
-  build: string = buildJson.build;
+  build: string = packageJson.build;
 
   constructor() {
     this.appData = APP_DATA_JSON;
