@@ -24,9 +24,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Update config.json
-      run: echo "`jq '.version="5555"' package.json`" > package.json
+      run: 
+        echo "`jq '.version="5555"' package.json`" > package.json
     - name: read config.json
-      run: cat config.json  
+      run: 
+        cat config.json  
       
       
       #run: |
