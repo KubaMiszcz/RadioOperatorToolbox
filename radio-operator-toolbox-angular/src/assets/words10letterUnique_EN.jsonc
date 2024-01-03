@@ -216,7 +216,7 @@
         "ZASKRONIEC", //OK
         "ZBIERACTWO", //OK
         "ZIELARSTWO", //OK
-        "ZIELONKAWY", //OK
+        "ZIELONKAWY" //OK
     ],
 
     "words10unique_PL": [
@@ -1229,6 +1229,6 @@
         "ZIUDWESTKA",
         "ZLUMPOWANY",
         "ZNACHORSKI",
-        "ZYSKOWNIEJ",
+        "ZYSKOWNIEJ"
     ]
 }

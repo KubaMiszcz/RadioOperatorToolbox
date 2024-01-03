@@ -2,10 +2,7 @@ import { AppService } from './../../services/app.service';
 import { KeyValue } from '@angular/common';
 import { Component } from '@angular/core';
 import { indexOf, values } from 'lodash-es';
-import {
-  CODEWORDS_EN,
-  CODEWORDS_PL,
-} from 'src/app/services/app-settings.service';
+import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 @Component({
   selector: 'app-sarneg-page',
@@ -19,9 +16,12 @@ export class SarnegPageComponent {
   codeWords: string[] = [];
   isEncoding = true;
 
-  constructor(private appService: AppService) {
+  constructor(
+    private appService: AppService,
+    private appSettingsService: AppSettingsService
+  ) {
     this.codeWords = this.appService.getRandomElementsFromArray(
-      CODEWORDS_PL,
+      this.appSettingsService.codewords,
       6
     );
 
@@ -50,7 +50,9 @@ export class SarnegPageComponent {
   }
 
   validateWordDecoded() {
-    this.numbersDecoded = this.numbersDecoded?.toString().replace(/[^0-9]/g, '');
+    this.numbersDecoded = this.numbersDecoded
+      ?.toString()
+      .replace(/[^0-9]/g, '');
   }
 
   decodeWord() {

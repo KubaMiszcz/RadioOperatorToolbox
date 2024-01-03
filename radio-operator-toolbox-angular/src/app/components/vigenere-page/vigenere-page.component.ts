@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  CODEWORDS_PL,
-  AppSettingsService,
-} from 'src/app/services/app-settings.service';
+import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 import { ALPHABET_EN } from 'src/assets/application-default-data';
 
@@ -40,8 +37,9 @@ export class VigenerePageComponent {
   private getCodewordsTable(count: number) {
     let result: string[] = [];
     do {
+      let codewords = this.appSettingsService.codewords;
       let codeWord =
-        this.appService.getRandomElementsFromArray(CODEWORDS_PL)[0];
+        this.appService.getRandomElementsFromArray(codewords)[0];
 
       if (
         !result.find((c) => c === codeWord) &&
