@@ -20,15 +20,15 @@ jobs:
     #   with:
     #     node-version: '16'
 
-    # - name: Update config.json
-    #   run:
+    - name: Update config.json
+      run:
         jq '.build=(now | strflocaltime("%Y%m%d%H%m%S"))' package.json > package.json.tmp 
         && mv package.json.tmp package.json
         && jq -r '.build' package.json
 
         
-    - name: read package.json
-      run:
+    # - name: read package.json
+    #   run:
         # cat package.json
         # jq -r '.build' package.json
            
