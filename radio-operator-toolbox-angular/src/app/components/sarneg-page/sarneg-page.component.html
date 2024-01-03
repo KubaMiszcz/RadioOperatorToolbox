@@ -1,17 +1,21 @@
 <div>
     <div class="p-2">
-        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko cyfry)</label>
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko
+            cyfry)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace" placeholder="kodowane numery" pattern="[0-9]"
-                aria-label="wordDecoded" aria-describedby="basic-addon1" (change)="encodeWord()" (keyup)="encodeWord()">
+            <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace"
+                placeholder="kodowane numery" pattern="[0-9]" aria-label="wordDecoded" aria-describedby="basic-addon1"
+                (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 
-        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowane numery (tylko litery)</label>
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowane numery (tylko
+            litery)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
         <div class="input-group mb-3">
-            <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace" placeholder="dekodowane numery"
-                aria-label="wordEncoded" aria-describedby="basic-addon1" (change)="decodeWord()" (keyup)="decodeWord()">
+            <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
+                placeholder="dekodowane numery" aria-label="wordEncoded" aria-describedby="basic-addon1"
+                (change)="decodeWord()" (keyup)="decodeWord()">
         </div>
     </div>
 
@@ -20,7 +24,8 @@
 
     <div class="d-grid gap-1 p-2">
         <div class="">Active Codeword:</div>
-        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary font-monospace">
+        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}"
+            class="btn btn-primary font-monospace">
             <b>{{currentCodeWord}}</b>
         </button>
     </div>
@@ -32,9 +37,5 @@
             {{item}}
         </button>
     </div>
-
-
-
-    
 
 </div>

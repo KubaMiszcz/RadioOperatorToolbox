@@ -10,7 +10,7 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   styleUrls: ['./sarneg-page.component.scss'],
 })
 export class SarnegPageComponent {
-  numbersDecoded = '1122334';
+  numbersDecoded = '123';
   numbersEncoded = '';
   currentCodeWord = 'BACKGROUND';
   codeWords: string[] = [];
@@ -34,6 +34,11 @@ export class SarnegPageComponent {
     this.encodeWord();
   }
 
+test(value:any){
+  console.log(value);
+  
+}
+
   encodeWord() {
     this.isEncoding = true;
 
@@ -45,15 +50,16 @@ export class SarnegPageComponent {
 
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
+      let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
       this.numbersEncoded +=
-        digit === ' ' ? ' ' : this.currentCodeWord[Number(digit)] ?? '';
+        !!allowedSigns.find(s=>s===digit) ? digit : this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
   validateNumbersDecoded() {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
-      .replace(/[^0-9 ]/g, '');
+      .replace(/[^0-9 !@#$%*()_+-=[]{}|\\:";\'<>,.?\/]/g, '');
   }
 
   decodeWord() {
