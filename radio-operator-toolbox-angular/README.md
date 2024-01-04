@@ -7,6 +7,9 @@
 - tlo ciemne
 - toltip przy inputach czy dziala na mobile
 - active codeword na zielono
+- tabela vigenere ostyluj
+- hmepage kafelki grid bo ostatni sie robi na srodku
+- na ekranie 4k menu sie rozwija
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
