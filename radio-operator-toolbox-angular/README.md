@@ -6,6 +6,7 @@
 - ikony PWA
 - tlo ciemne
 - toltip przy inputach czy dziala na mobile
+- active codeword na zielono
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
