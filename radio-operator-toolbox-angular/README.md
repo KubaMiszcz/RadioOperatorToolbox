@@ -2,9 +2,10 @@
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
 
-viewport rozmir na dekstop
-ikony PWA
-tlo ciemne
+- viewport rozmir na dekstop
+- ikony PWA
+- tlo ciemne
+- toltip przy inputach czy dziala na mobile
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
