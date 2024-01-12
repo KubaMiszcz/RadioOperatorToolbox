@@ -93,7 +93,8 @@ export class SarnegPageComponent {
   }
 
   setCodeword(value: string) {
-    this.currentCodeWord = value;
+    this.newCurrentCodeWord = value;
+    this.currentCodeWord=this.newCurrentCodeWord;
     this.encodeWord();
   }
 
