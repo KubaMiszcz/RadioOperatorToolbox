@@ -1,28 +1,32 @@
-.line-code {
-    justify-content: center;
-    font-weight: bolder;
-}
+.report-lines {
 
-.line-desc {
-    border-bottom: 1px dashed black;
-}
+    .line-header {
+        justify-content: center;
+        font-weight: bolder;
+        color: red;
+    }
 
-.value {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    // width: 3em;
-}
+    .line-desc {
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px dashed black;
+    }
 
-.value-numeric {
-    width: 3em;
-}
+    .desc-header {
+        text-align: left;
+        font-weight: bolder;
+    }
 
-.header {
-    text-align: left;
-    font-weight: bolder;
-}
+    .line-value {
+            display: flex;
+            flex-direction: column;
+            // align-items: flex-start;
+            width: 100%;
+            align-items: stretch;
+            // flex-wrap: wrap;
 
-.desc {
-    text-align: left;
+        .line-value-short {
+            width: 3em;
+        }
+    }
 }

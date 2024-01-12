@@ -1,22 +1,26 @@
 <p>{{report.name}}</p>
 
 
-<div *ngFor="let line of report.lines" class="input-group mb-3">
-    <div class="input-group-text col-1 text-wrap line-code" id="inputGroup-sizing-default1">
+<div *ngFor="let line of report.lines" class="input-group mb-3 report-lines">
+    <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
         {{line.lineHeader}}</div>
 
 
-    <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0" id="inputGroup-sizing-default2">
+    <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+        id="inputGroup-sizing-default2">
         <div class="line-desc p-1">
-            <div class="header">{{line.descriptionHeader}}</div>
-            <div *ngFor="let linedesc of line.descriptionLines" class="desc">{{linedesc}}</div>
+            <div class="desc-header">{{line.descriptionHeader}}</div>
+            <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
         </div>
 
-
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap line-value" [ngClass]="{
+            'flex-column': line.lineValues.length<=2,
+            'flex-row': line.lineValues.length>2,
+            }">
             <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1">
-                <small class="" id="inputGroup-sizing-default2">{{lineValue.label}}</small>
-                <input [(ngModel)]="lineValue.value" type="number" class="form-control value-numeric" aria-label="Default"
+                <small class="line-value-label" id="inputGroup-sizing-default2">{{lineValue.label}}</small>
+                <input [(ngModel)]="lineValue.value" type="number" class="form-control "
+                    [ngClass]="{'line-value-short':lineValue.valueSize === lineValueSizes.short}" aria-label="Default"
                     aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
@@ -24,7 +28,3 @@
 
 
 </div>
-
-
-
-

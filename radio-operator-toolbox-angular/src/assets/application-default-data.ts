@@ -1,5 +1,5 @@
 import { IAppData } from 'src/app/models/appData';
-import { valueTypesEnum } from 'src/app/models/report.model';
+import { VALUE_SIZES_ENUM, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
 export const APP_DATA_JSON: IAppData = {
   iconsPath: '',
@@ -10,9 +10,25 @@ export const APP_DATA_JSON: IAppData = {
       lines: [
         {
           lineHeader: 'Line 1',
+          descriptionHeader: 'LOCATION AT PICKUP SITE',
+          descriptionLines: ['Miejsce podjęcia rannych (MGRS)'],
+          lineValues: [{ label: 'MGRS', }],
+        },
+        {
+          lineHeader: 'Line 2',
+          descriptionHeader: 'FREQENCY AND MY CALLSIGN AT PICKUP SITE',
+          descriptionLines: [
+            'częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji',
+          ],
+          lineValues: [
+            { label: 'FREQ:', },
+            { label: 'MY CALLSIGN:',},
+          ],
+        },
+        {
+          lineHeader: 'Line 3',
           descriptionHeader: 'number of patients by precedence',
           descriptionLines: [
-            'number of patients by precedence',
             'Liczba pacjentów ze względu na priorytet:',
             'A – Urgent pilny nieoperacyjny (ewakuacja do 2 godzin)',
             'B – Urgent-surgical – pilny operacyjny (ewakuacja do 2 godzin)',
@@ -20,16 +36,17 @@ export const APP_DATA_JSON: IAppData = {
             'D – Routine - rutynowy (ewakuacja do 24 godzin)',
             'E – Convenience - ewakuacja, gdy bedzie to możliwe',
           ],
-          lineValues:[
-            {label:'A=',valueType:valueTypesEnum.number},
-            {label:'B=',valueType:valueTypesEnum.number},
-            {label:'C=',valueType:valueTypesEnum.number},
-            {label:'D=',valueType:valueTypesEnum.number},
-            {label:'E=',valueType:valueTypesEnum.number},
-          ]
+          lineValues: [
+            { label: 'A=', valueSize: VALUE_SIZES_ENUM.short },
+            { label: 'B=', valueSize: VALUE_SIZES_ENUM.short },
+            { label: 'C=', valueSize: VALUE_SIZES_ENUM.short },
+            { label: 'D=', valueSize: VALUE_SIZES_ENUM.short },
+            { label: 'E=', valueSize: VALUE_SIZES_ENUM.short },
+          ],
         },
       ],
     },
+
     { name: 'SALUTE' },
     { name: 'SALTR/SALTUR?' },
   ],

@@ -19,11 +19,18 @@ export interface IReportLine {
 export interface IReportLineValue {
   label: string;
   value?: any;
-  valueType: valueTypesEnum;
+  valueType?: VALUE_TYPES_ENUM;
+  valueSize?: VALUE_SIZES_ENUM;
 }
 
-export enum valueTypesEnum {
+export enum VALUE_TYPES_ENUM {
   number,
   text,
   bool,
+}
+
+export enum VALUE_SIZES_ENUM {
+  short,
+  medium,
+  long,
 }

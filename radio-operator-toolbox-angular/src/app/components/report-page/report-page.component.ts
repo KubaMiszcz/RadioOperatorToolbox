@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IReport } from 'src/app/models/report.model';
+import { IReport, VALUE_SIZES_ENUM, VALUE_TYPES_ENUM,  } from 'src/app/models/report.model';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 
@@ -10,6 +10,8 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class ReportPageComponent {
   report: IReport = { name: '' };
+  lineValueTypes = VALUE_TYPES_ENUM;
+  lineValueSizes = VALUE_SIZES_ENUM;
 
   constructor(
     private appService: AppService,
