@@ -2,9 +2,18 @@
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
 
-viewport rozmir na dekstop
-ikony PWA
-tlo ciemne
+- viewport rozmir na dekstop
+- ikony PWA
+- tlo ciemne
+- toltip przy inputach czy dziala na mobile
+- active codeword na zielono
+- tabela vigenere ostyluj
+- hmepage kafelki grid bo ostatni sie robi na srodku
+- na ekranie 4k menu sie rozwija
+
+### MEDEVAC
+- nputy : radio input togglwe checkbox itp
+- pobieranie lokalizacji z przegladarki
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
