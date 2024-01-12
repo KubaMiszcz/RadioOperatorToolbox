@@ -74,4 +74,8 @@ export class AppService {
 
     return result;
   }
+
+  hasRepeatedLetters(str: string) {
+    return /(.).*\1/.test(str);
+  }
 }

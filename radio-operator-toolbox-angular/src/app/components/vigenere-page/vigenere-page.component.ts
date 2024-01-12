@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
-import { ALPHABET_EN } from 'src/assets/application-default-data';
+import { ALPHABET_EN, ALPHABET_PL } from 'src/assets/application-default-data';
 
 @Component({
   selector: 'app-vigenere-page',
@@ -15,7 +15,7 @@ export class VigenerePageComponent {
   codeWords: string[] = [];
   isEncoding = true;
   codeTable: string[][] = [];
-  alphabet = ALPHABET_EN;
+  alphabet = ALPHABET_PL;
 
   constructor(
     private appService: AppService,

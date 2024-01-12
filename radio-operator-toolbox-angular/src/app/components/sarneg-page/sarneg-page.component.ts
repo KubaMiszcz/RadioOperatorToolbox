@@ -1,6 +1,6 @@
 import { AppService } from './../../services/app.service';
 import { KeyValue } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { indexOf, values } from 'lodash-es';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
@@ -13,6 +13,8 @@ export class SarnegPageComponent {
   numbersDecoded = '123';
   numbersEncoded = '';
   currentCodeWord = 'BACKGROUND';
+  newCurrentCodeWord = 'BACKGROUND';
+  isCurrentCodeWordLocked = false;
   codeWords: string[] = [];
   isEncoding = true;
 
@@ -34,10 +36,9 @@ export class SarnegPageComponent {
     this.encodeWord();
   }
 
-test(value:any){
-  console.log(value);
-  
-}
+  test(value: any) {
+    console.log(value);
+  }
 
   encodeWord() {
     this.isEncoding = true;
@@ -51,9 +52,10 @@ test(value:any){
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
       let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
-      this.numbersEncoded +=
-        !!allowedSigns.find(s=>s===digit) ? digit : this.currentCodeWord[Number(digit)] ?? '';
-        // this.numbersEncoded= this.currentCodeWord[Number(digit)] ?? '';
+      this.numbersEncoded += !!allowedSigns.find((s) => s === digit)
+        ? digit
+        : this.currentCodeWord[Number(digit)] ?? '';
+      // this.numbersEncoded= this.currentCodeWord[Number(digit)] ?? '';
     });
   }
 
@@ -90,8 +92,28 @@ test(value:any){
       .replaceAll(allowedCharacters, '');
   }
 
-  changeCodeword(value: string) {
+  setCodeword(value: string) {
     this.currentCodeWord = value;
     this.encodeWord();
+  }
+
+  toggleCodewordLock() {
+    this.isCurrentCodeWordLocked = !this.isCurrentCodeWordLocked;
+  }
+
+  updateCodeword(){
+    this.newCurrentCodeWord=this.newCurrentCodeWord.toUpperCase()
+    // this.isValidCodeword();
+  }
+
+  isValidCodeword() {
+    if (
+      this.newCurrentCodeWord.length === 10 &&
+      !this.appService.hasRepeatedLetters(this.newCurrentCodeWord)
+    ) {
+      return true;
+    }
+
+    return false;
   }
 }

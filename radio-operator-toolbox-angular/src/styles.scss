@@ -66,6 +66,14 @@ select {
     margin-bottom: 0px;
 }
 
+.invalid-input{
+    color: red;
+}
+
+.valid-input{
+    color: green;
+}
+
 @font-face {
     font-family: 'JetBrainsMono-Medium';
     src: url('./assets/fonts/JetBrainsMono-Medium.ttf');
