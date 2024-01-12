@@ -14,7 +14,7 @@ export class SarnegPageComponent {
   numbersEncoded = '';
   currentCodeWord = 'BACKGROUND';
   newCurrentCodeWord = 'BACKGROUND';
-  isCurrentCodeWordLocked = false;
+  isCurrentCodeWordLocked = true;
   codeWords: string[] = [];
   isEncoding = true;
 
