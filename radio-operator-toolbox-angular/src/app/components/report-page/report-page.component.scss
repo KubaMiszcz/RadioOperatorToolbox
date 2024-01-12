@@ -1,5 +1,28 @@
-.value{
+.line-code {
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.line-desc {
+    border-bottom: 1px dashed black;
+}
+
+.value {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    // width: 3em;
+}
+
+.value-numeric {
+    width: 3em;
+}
+
+.header {
+    text-align: left;
+    font-weight: bolder;
+}
+
+.desc {
+    text-align: left;
 }
