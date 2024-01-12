@@ -103,7 +103,6 @@ export class SarnegPageComponent {
 
   updateCodeword(){
     this.newCurrentCodeWord=this.newCurrentCodeWord.toUpperCase()
-    // this.isValidCodeword();
   }
 
   isValidCodeword() {
