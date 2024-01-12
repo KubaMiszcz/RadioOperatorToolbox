@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'settings-tab', component: SettingsTabComponent },
   { path: 'home-tab', component: HomeTabComponent },
   { path: '', redirectTo: '/vigenere-tab', pathMatch: 'full' },
-  { path: '**', component: VigenerePageComponent },
+  { path: '**', component: ReportPageComponent },
   // { path: '', redirectTo: '/home-tab', pathMatch: 'full' },
   // { path: '**', component: HomeTabComponent },
 ];

@@ -4,3 +4,7 @@ export interface IReport {
   isPeaceTime?: boolean;
   elements?: [];
 }
+
+export class Report implements IReport {
+  name = 'no-name';
+}

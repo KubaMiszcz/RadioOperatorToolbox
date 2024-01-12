@@ -15,12 +15,12 @@ export class AppSettingsService {
   build: string = packageJson.build;
   codewords: string[] = [];
   alphabet: string[] = [];
-  currenReportBS = new BehaviorSubject<IReport>({name:''});
 
   constructor() {
     this.appData = APP_DATA_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     this.alphabet = ALPHABET_PL;
+
     //DEBUG
     // this.findUniqueWords();
   }

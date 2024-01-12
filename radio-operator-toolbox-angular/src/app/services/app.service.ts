@@ -3,12 +3,17 @@ import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
 import { ORDER_DIRECTION } from '../models/enums';
+import { IReport, Report } from '../models/report.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
-  constructor(private appSettings: AppSettingsService) {}
+  currenReportBS = new BehaviorSubject<IReport>(new Report());
+
+  constructor(private appSettings: AppSettingsService) {
+    this.currenReportBS.next(appSettings.appData.reports[0] ?? new Report());
+  }
 
   //====================================================================
   //====================================================================

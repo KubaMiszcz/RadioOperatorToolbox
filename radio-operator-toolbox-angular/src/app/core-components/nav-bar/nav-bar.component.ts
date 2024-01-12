@@ -19,7 +19,7 @@ export class NavBarComponent {
   }
 
   setCurrentReport(report: IReport) {
-    this.appSettingsService.currenReportBS.next(report);
+    this.appService.currenReportBS.next(report);
   }
 
   getFavouriteReports() {
