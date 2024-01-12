@@ -1,12 +1,12 @@
 import { IAppData } from "src/app/models/appData";
 
 export const APP_DATA_JSON: IAppData = {
-    iconsPath: '',
-    reportsNames: [
-        'MEDEVAC Report',
-        'SALUTE',
-        'SALTR/SALTUR?',
-    ]
+  iconsPath: '',
+  reports: [
+    { name: 'MEDEVAC Report', isFavourite: true },
+    { name: 'SALUTE' },
+    { name: 'SALTR/SALTUR?' },
+  ],
 };
 
 export const DIGITS = [

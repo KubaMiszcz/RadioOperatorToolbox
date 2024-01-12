@@ -3,6 +3,8 @@ import { IAppData } from '../models/appData';
 import { ALPHABET_PL, APP_DATA_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL, WORDS_10LETTERSUNIQUE_COOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
+import { BehaviorSubject } from 'rxjs';
+import { IReport } from '../models/report.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,7 @@ export class AppSettingsService {
   build: string = packageJson.build;
   codewords: string[] = [];
   alphabet: string[] = [];
+  currenReportBS = new BehaviorSubject<IReport>({name:''});
 
   constructor() {
     this.appData = APP_DATA_JSON;
@@ -24,14 +27,12 @@ export class AppSettingsService {
 
   private findUniqueWords() {
     // let words = //this.codewords;
-
     // let wordsunique: string[] = [];
     // words.forEach((w) => {
     //   if (!this.hasDuplicateLetters(w)) {
     //     wordsunique.push(w);
     //   }
     // });
-
     // console.log(wordsunique);
   }
 

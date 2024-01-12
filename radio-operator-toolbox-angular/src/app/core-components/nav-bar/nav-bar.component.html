@@ -38,8 +38,8 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="'vigenere-page'">kodowanie Vigenere</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="reportsNames[0]+'vigenere-page'">{{reportsNames[0]}}</a>
+                <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)">
+                    <a class="nav-link" [routerLink]="'report-page'">{{item.name}}</a>
                 </li>
 
 
@@ -71,8 +71,8 @@
                             Wszystkie Raporty
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a *ngFor="let item of reportsNames" class="dropdown-item d-flex justify-content-end"
-                                href="#">{{item}}</a>
+                            <a *ngFor="let item of reports" class="dropdown-item d-flex justify-content-end"
+                                [routerLink]="'report-page'">{{item.name}}</a>
                         </div>
                     </div>
                 </li>
