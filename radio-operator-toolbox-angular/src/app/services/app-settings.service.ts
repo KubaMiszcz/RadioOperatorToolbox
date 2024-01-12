@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { IAppData } from '../models/appData';
 import { ALPHABET_PL, APP_DATA_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
-import { WORDS_10LETTERSUNIQUE_2XCOOL_PL, WORDS_10LETTERSUNIQUE_COOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
-import { BehaviorSubject } from 'rxjs';
-import { IReport } from '../models/report.model';
+import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 
 @Injectable({
   providedIn: 'root',
