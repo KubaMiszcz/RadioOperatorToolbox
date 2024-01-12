@@ -5,27 +5,35 @@
     <div class="col-6 ">
         <app-menu-tile [name]="'vigenere'" [routerLink]="[ '/vigenere-page']"></app-menu-tile>
     </div>
-</div>
+<!-- </div> -->
 
 
-<div class="row justify-content-md-center">
+<!-- <div class="row justify-content-md-center"> -->
     <div class="col-6 ">
         <app-menu-tile [name]="'reports'"></app-menu-tile>
     </div>
 </div>
 
-<button
-    type="button"
-    class="btn btn-primary"
- (click)="savels()">
+
+<div class="mb-3">
+    <label for="myvar" class="form-label">myvar</label>
+    <input [(ngModel)]="myvar"
+        type="text"
+        class="form-control"
+        name=""
+        id="myvar"
+        aria-describedby="helpId"
+        placeholder=""
+    />
+    <small id="helpId" class="form-text text-muted">Help text</small>
+</div>
+
+
+<button type="button" class="btn btn-primary" (click)="savels()">
     savelocal
 </button>
-<button
-    type="button"
-    class="btn btn-primary"
- (click)="loadls()">
+<button type="button" class="btn btn-primary" (click)="loadls()">
     readlocal
 </button>
 
 <p>{{myvar}}</p>
-

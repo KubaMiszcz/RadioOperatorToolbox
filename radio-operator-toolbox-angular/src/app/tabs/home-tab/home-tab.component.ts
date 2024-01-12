@@ -9,10 +9,10 @@ export class HomeTabComponent {
   myvar = '';
 
   savels() {
-    localStorage.setItem('myvar', 'myvar123');
+    localStorage.setItem('myvar', this.myvar);
   }
 
   loadls() {
-    this.myvar = localStorage.getItem('myvar') ?? '';
+    this.myvar = localStorage.getItem('myvar') ?? 'no-data';
   }
 }
