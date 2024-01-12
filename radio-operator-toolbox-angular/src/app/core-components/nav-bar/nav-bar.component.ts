@@ -1,8 +1,7 @@
 import { AppService } from 'src/app/services/app.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
-import {
-  Component,
-} from '@angular/core';
+import { Component } from '@angular/core';
+import { IReport } from 'src/app/models/report.model';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,10 +9,20 @@ import {
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  reportsNames = this.appSettingsService.appData.reportsNames;
+  reports: IReport[] = [];
 
   constructor(
     private appSettingsService: AppSettingsService,
     private appService: AppService
-  ) {}
+  ) {
+    this.reports = this.appSettingsService.appData.reports;
+  }
+
+  setCurrentReport(report: IReport) {
+    this.appService.currenReportBS.next(report);
+  }
+
+  getFavouriteReports() {
+    return this.reports.filter((r) => !!r.isFavourite);
+  }
 }

@@ -12,6 +12,7 @@ import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.compon
 import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
 import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
+import { ReportPageComponent } from './components/report-page/report-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
     VigenerePageComponent,
     MenuTileComponent,
     HomeTabComponent,
+    ReportPageComponent,
   ],
   imports: [
     BrowserModule,
