@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705075391031,
+  "timestamp": 1705080279479,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.228eec2b6ed76d99.js",
+        "/RadioOperatorToolbox/main.0c4634757527234d.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
-        "/RadioOperatorToolbox/styles.3fbb1f4bd95d72d3.css"
+        "/RadioOperatorToolbox/styles.bcc666541e18a6f4.css"
       ],
       "patterns": []
     },
@@ -55,7 +55,7 @@
   "hashTable": {
     "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
-    "/RadioOperatorToolbox/assets/application-default-data.ts": "e521dcf95dff51cec8ffa8069d124526f5be7515",
+    "/RadioOperatorToolbox/assets/application-default-data.ts": "28082689e54149ae361d484b6416af39147502d8",
     "/RadioOperatorToolbox/assets/fonts/Dosis-Medium.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/assets/fonts/JetBrainsMono-Medium.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
     "/RadioOperatorToolbox/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
@@ -72,12 +72,12 @@
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/RadioOperatorToolbox/index.html": "c6090701bec6d4235a94978cc8c3fca6bfe983eb",
-    "/RadioOperatorToolbox/main.228eec2b6ed76d99.js": "2c61e37a8c43b666b90fbcffa0178f03d3505193",
+    "/RadioOperatorToolbox/index.html": "e89c0399634b5d93fd2e65694d3f748b100acf6f",
+    "/RadioOperatorToolbox/main.0c4634757527234d.js": "bbed8996f1411e0287081da6b3214fc31eae2082",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
-    "/RadioOperatorToolbox/styles.3fbb1f4bd95d72d3.css": "f1d586e355c918405c9ee67b83cdc1afecc703be"
+    "/RadioOperatorToolbox/styles.bcc666541e18a6f4.css": "99d1c9f6cb40d34bb0ed4178b2503878dd87fc56"
   },
   "navigationUrls": [
     {
