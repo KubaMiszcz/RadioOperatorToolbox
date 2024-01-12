@@ -2,6 +2,8 @@
     <div class="content d-flex justify-content-between flex-wrap">
 
         <div class="navbar-brand" [routerLink]="'home-tab'">
+            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/shoot-2801222-2321882.png?f=webp" height="30"
+                alt="">
             <img src="assets/imgs/app-icon.png" height="30" alt="">
         </div>
 
@@ -36,23 +38,6 @@
                 <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)">
                     <a class="nav-link" [routerLink]="'report-page'">{{item.name}}</a>
                 </li>
-
-
-
-
-                <!-- <li class="nav-item">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Wybrany Plan: 'brak'
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li *ngFor="let item of reportsNames"><button class="dropdown-item"
-                                        type="button">{{item}}</button></li>
-                            </ul>
-                        </div>
-                    </li> -->
-
 
 
 
