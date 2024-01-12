@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705085714063,
+  "timestamp": 1705087921883,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.cbddb54dd46ef338.js",
+        "/RadioOperatorToolbox/main.196a3623d88f415b.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -42,6 +42,7 @@
         "/RadioOperatorToolbox/assets/icons/icon-512x512.png",
         "/RadioOperatorToolbox/assets/icons/icon-72x72.png",
         "/RadioOperatorToolbox/assets/icons/icon-96x96.png",
+        "/RadioOperatorToolbox/assets/imgs/app-icon.png",
         "/RadioOperatorToolbox/assets/imgs/reports-image.png",
         "/RadioOperatorToolbox/assets/imgs/sarneg-image.png",
         "/RadioOperatorToolbox/assets/imgs/vigenere-image.png",
@@ -66,14 +67,15 @@
     "/RadioOperatorToolbox/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/RadioOperatorToolbox/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/RadioOperatorToolbox/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/RadioOperatorToolbox/assets/imgs/reports-image.png": "d407a1b0d73fb191027155330fb85bd7281969de",
+    "/RadioOperatorToolbox/assets/imgs/app-icon.png": "974a82287cc80f028f129a85877608348694350c",
+    "/RadioOperatorToolbox/assets/imgs/reports-image.png": "0c3b969805bafe9eaea5a7c5bd6bad9e0a26b272",
     "/RadioOperatorToolbox/assets/imgs/sarneg-image.png": "2dc17e7bcb2aa50fcc762fd037183129deb9c3bc",
     "/RadioOperatorToolbox/assets/imgs/vigenere-image.png": "5512e872b6887cfe804d383966d72a2b22fb5356",
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/RadioOperatorToolbox/index.html": "40a31ac414ff2746164f52e785892a51b250cca7",
-    "/RadioOperatorToolbox/main.cbddb54dd46ef338.js": "464174a9881052187d9a063f3f3389359e827f5d",
+    "/RadioOperatorToolbox/index.html": "45d052a3158bbb50dad86ce4526b8e020d959763",
+    "/RadioOperatorToolbox/main.196a3623d88f415b.js": "984988395d7d543c88b7646cd9febc4694a3077e",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
