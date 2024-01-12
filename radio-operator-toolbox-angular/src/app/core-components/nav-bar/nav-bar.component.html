@@ -8,16 +8,13 @@
         </div>
 
         <div class="d-flex align-items-center">
-            <div class="" [routerLink]="'sarneg-page'">
-                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+            <div class="mx-1" [routerLink]="'sarneg-page'">
                 <img src="assets/imgs/sarneg-image.png" height="30" alt="">
             </div>
-            <div class="mx-2" [routerLink]="'vigenere-page'">
-                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+            <div class="mx-1" [routerLink]="'vigenere-page'">
                 <img src="assets/imgs/vigenere-image.png" height="30" alt="">
             </div>
-            <div class="mx-2" [routerLink]="'reports-page'">
-                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+            <div class="mx-1" [routerLink]="'reports-page'">
                 <img src="assets/imgs/reports-image.png" height="30" alt="">
             </div>
 
@@ -41,23 +38,6 @@
                 <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)">
                     <a class="nav-link" [routerLink]="'report-page'">{{item.name}}</a>
                 </li>
-
-
-
-
-                <!-- <li class="nav-item">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Wybrany Plan: 'brak'
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li *ngFor="let item of reportsNames"><button class="dropdown-item"
-                                        type="button">{{item}}</button></li>
-                            </ul>
-                        </div>
-                    </li> -->
-
 
 
 

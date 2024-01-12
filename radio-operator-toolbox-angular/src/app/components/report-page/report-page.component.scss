@@ -1,5 +1,32 @@
-.value{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.report-lines {
+
+    .line-header {
+        justify-content: center;
+        font-weight: bolder;
+        color: red;
+    }
+
+    .line-desc {
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px dashed black;
+    }
+
+    .desc-header {
+        text-align: left;
+        font-weight: bolder;
+    }
+
+    .line-value {
+            display: flex;
+            flex-direction: column;
+            // align-items: flex-start;
+            width: 100%;
+            align-items: stretch;
+            // flex-wrap: wrap;
+
+        .line-value-short {
+            width: 3em;
+        }
+    }
 }
