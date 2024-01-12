@@ -14,6 +14,7 @@ export interface IReportLine {
   descriptionHeader: string;
   descriptionLines: string[];
   lineValues: IReportLineValue[];
+  isInPeacetime?: boolean;
 }
 
 export interface IReportLineValue {
