@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705088396841,
+  "timestamp": 1705099762783,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.80711edbdad5fc78.js",
+        "/RadioOperatorToolbox/main.ae555371afb38cbf.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -56,7 +56,7 @@
   "hashTable": {
     "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
-    "/RadioOperatorToolbox/assets/application-default-data.ts": "0f517f61824ff048b3dba135acfde4445fd42e64",
+    "/RadioOperatorToolbox/assets/application-default-data.ts": "f11de00ddf64ae40f43df068d2246a9c962bb2f3",
     "/RadioOperatorToolbox/assets/fonts/Dosis-Medium.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/assets/fonts/JetBrainsMono-Medium.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
     "/RadioOperatorToolbox/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
@@ -74,8 +74,8 @@
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/RadioOperatorToolbox/index.html": "ee3ba73f42e2918b449def33f901d6ad355f9c5c",
-    "/RadioOperatorToolbox/main.80711edbdad5fc78.js": "104d15933072f2b9f900d5ab032b57e1ba115c4b",
+    "/RadioOperatorToolbox/index.html": "9c71ea19163fc24d38f09caf4a99edc60a0cc438",
+    "/RadioOperatorToolbox/main.ae555371afb38cbf.js": "cac9413d4af7cfd3d96d8864e30ee1b67bcaacdf",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
