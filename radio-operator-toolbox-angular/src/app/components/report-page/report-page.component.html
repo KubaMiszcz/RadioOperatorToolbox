@@ -5,7 +5,17 @@
 
 
 
-<div *ngFor="let line of report.lines" class="input-group mb-3 report-lines">
+<div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">{{report.name | uppercase}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      b5
+    </div>
+  </div>
+  
+
+<div *ngFor="let line of report.lines" class="input-group mb-3 report-lines p-2">
     <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
         {{line.lineHeader | uppercase}}</div>
 
@@ -32,15 +42,5 @@
         </div>
     </div>
 
-</div>
-
-
-<div class="card m-1">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    b5
-  </div>
 </div>
 
