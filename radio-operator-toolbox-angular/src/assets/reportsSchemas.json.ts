@@ -11,13 +11,13 @@ export const REPORTS_SCHEMAS: IReport[] = [
     isFavourite: true,
     lines: [
       {
-        lineHeader: 'Line 1',
+        lineHeader: '1',
         descriptionHeader: 'LOCATION AT PICKUP SITE',
         descriptionLines: ['Miejsce podjęcia rannych (MGRS)'],
         lineValues: [{ label: 'MGRS:', valueSize: VALUE_SIZES_ENUM.long }],
       },
       {
-        lineHeader: 'Line 2',
+        lineHeader: '2',
         descriptionHeader: 'FREQENCY AND MY CALLSIGN AT PICKUP SITE',
         descriptionLines: [
           'częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji',
@@ -28,7 +28,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 3',
+        lineHeader: '3',
         descriptionHeader: 'number of patients by precedence',
         descriptionLines: [
           'Liczba pacjentów ze względu na priorytet',
@@ -47,7 +47,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 4',
+        lineHeader: '4',
         descriptionHeader: 'SPECIAL EQUIPMENT',
         descriptionLines: [
           'Wymagany sprzęt specjalistyczny',
@@ -66,7 +66,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 5',
+        lineHeader: '5',
         descriptionHeader: 'NUMBER OF PATIENTS BY TYPE',
         descriptionLines: [
           'Liczba pacjentów według mobilności',
@@ -85,7 +85,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 6',
+        lineHeader: '6',
         descriptionHeader: 'SECURITY IN PICKUP SITE (WARTIME)',
         descriptionLines: [
           'Bezpieczeństwo w strefie podjęcia',
@@ -102,14 +102,14 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 6',
+        lineHeader: '6',
         isInPeacetime: true,
-        descriptionHeader: 'LINE 6 IN PEACETIME',
+        descriptionHeader: '6 IN PEACETIME',
         descriptionLines: ['number and type of wound, injury, ilness'],
         lineValues: [{ label: 'Info:', valueSize: VALUE_SIZES_ENUM.long }],
       },
       {
-        lineHeader: 'Line 7',
+        lineHeader: '7',
         descriptionHeader: 'MARKING OF PICKUP SITE',
         descriptionLines: [
           'Metoda oznakowania strefy podjęcia',
@@ -128,7 +128,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 8',
+        lineHeader: '8',
         descriptionHeader: 'PATIENT NATIONALITY AND STATUS',
         descriptionLines: [
           'Liczba pacjentów wg narodowości/statusu.',
@@ -154,7 +154,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 9',
+        lineHeader: '9',
         descriptionHeader: 'NBC CONTAMINATION if exists (WARTIME)',
         descriptionLines: [
           'Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: ',
@@ -171,9 +171,9 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
       },
       {
-        lineHeader: 'Line 9',
+        lineHeader: '9',
         isInPeacetime: true,
-        descriptionHeader: 'LINE 9 IN PEACETIME',
+        descriptionHeader: '9 IN PEACETIME',
         descriptionLines: ['detailed terrain feature description'],
         lineValues: [{ label: 'Info:', valueSize: VALUE_SIZES_ENUM.long }],
       },
