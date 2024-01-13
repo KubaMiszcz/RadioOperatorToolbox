@@ -18,7 +18,7 @@
             'flex-row': line.lineValues.length>2,
             }">
             <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center">
-                <small class="line-value-label" id="inputGroup-sizing-default2">{{lineValue.label}}</small>
+                <small class="line-value-label me-1" id="inputGroup-sizing-default2">{{lineValue.label}}</small>
                 <input [(ngModel)]="lineValue.value" type="number" class="form-control "
                     [ngClass]="{
                         'line-value-short':lineValue.valueSize === lineValueSizes.short,
