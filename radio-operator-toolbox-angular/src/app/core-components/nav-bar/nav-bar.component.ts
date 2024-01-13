@@ -9,6 +9,7 @@ import { IReport } from 'src/app/models/report.model';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
+
   reports: IReport[] = [];
 
   constructor(
@@ -24,5 +25,9 @@ export class NavBarComponent {
 
   getFavouriteReports() {
     return this.reports.filter((r) => !!r.isFavourite);
+  }
+
+  ClearAllData() {
+    this.appService.clearAllData();
   }
 }

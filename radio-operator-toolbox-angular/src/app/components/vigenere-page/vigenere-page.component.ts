@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
+import { CoreService } from 'src/app/services/core.service';
 import { ALPHABET_EN, ALPHABET_PL } from 'src/assets/application-default-data';
 
 @Component({
@@ -19,11 +20,12 @@ export class VigenerePageComponent {
 
   constructor(
     private appService: AppService,
-    private appSettingsService: AppSettingsService
+    private appSettingsService: AppSettingsService,
+    private coreService: CoreService
   ) {
     this.codeWords = this.getCodewordsTable(6);
 
-    this.currentCodeWord = appService.getRandomElementsFromArray(
+    this.currentCodeWord = coreService.getRandomElementsFromArray(
       this.codeWords
     )[0];
 
@@ -38,8 +40,7 @@ export class VigenerePageComponent {
     let result: string[] = [];
     do {
       let codewords = this.appSettingsService.codewords;
-      let codeWord =
-        this.appService.getRandomElementsFromArray(codewords)[0];
+      let codeWord = this.coreService.getRandomElementsFromArray(codewords)[0];
 
       if (
         !result.find((c) => c === codeWord) &&
@@ -90,18 +91,18 @@ export class VigenerePageComponent {
     this.textEncoded = '';
 
     Array.from(this.textDecoded).forEach((letter) => {
-      let rowNo=-1
+      let rowNo = -1;
       let colNo = -1;
 
-      if (!!allowedSigns.find(l=>l===letter)) {
-        // this.textEncoded+=` ${letter}`; 
-        this.textEncoded+='__'; 
+      if (!!allowedSigns.find((l) => l === letter)) {
+        // this.textEncoded+=` ${letter}`;
+        this.textEncoded += '__';
         colNo = 0;
         return;
       }
 
       do {
-        rowNo = this.appService.getRandomNumber(
+        rowNo = this.coreService.getRandomNumber(
           this.currentCodeWord.length - 1
         );
 
@@ -113,8 +114,7 @@ export class VigenerePageComponent {
   }
 
   validateWordDecoded() {
-    this.textDecoded = this.textDecoded?.toString()
-    .replace(/[^A-Za-z =]/g, '');
+    this.textDecoded = this.textDecoded?.toString().replace(/[^A-Za-z =]/g, '');
     // .replace(/[^0-9 ,./<>?;':"\[\]\\\{\}\!@#$%*()_+-=]/g, '');
   }
 

@@ -1,24 +1,31 @@
-<nav class="navbar sticky-top aanavbar-expand-xxl navbar-dark bg-dark justify-content-center">
+<nav class="navbar sticky-top aanavbar-expand-xxl navbar-dark bg-dark justify-content-center py-0 px-1">
     <div class="content d-flex justify-content-between flex-wrap">
 
-        <div class="navbar-brand" [routerLink]="'home-tab'">
-            <img src="assets/imgs/app-icon.png" height="30" alt="">
+        <div class="d-flex align-items-center">
+            <div class="nsavbar-brand me-1" [routerLink]="'home-tab'">
+                <img src="assets/imgs/app-icon.png" height="30" alt="">
+            </div>
+            <div class="me-1" [routerLink]="'home-tab'">
+                <button type="button" name="" id="" class="btn btn-danger" (click)="ClearAllData()">
+                    CLEAR ALL
+                </button>        
+            </div>
         </div>
 
         <div class="d-flex align-items-center">
-            <div class="mx-1" [routerLink]="'sarneg-page'">
+            <div class="ms-1" [routerLink]="'sarneg-page'">
                 <img src="assets/imgs/sarneg-image.png" height="30" alt="">
             </div>
-            <div class="mx-1" [routerLink]="'vigenere-page'">
+            <div class="ms-1" [routerLink]="'vigenere-page'">
                 <img src="assets/imgs/vigenere-image.png" height="30" alt="">
             </div>
-            <div class="mx-1" [routerLink]="'reports-page'">
+            <div class="ms-1" [routerLink]="'reports-page'">
                 <img src="assets/imgs/reports-image.png" height="30" alt="">
             </div>
 
             <!--  -->
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="ms-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,3 +70,4 @@
         </div>
     </div>
 </nav>
+ 

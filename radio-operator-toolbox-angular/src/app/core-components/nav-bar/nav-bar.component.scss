@@ -1,4 +1,7 @@
-.nav-link {
+.navbar {
+height: 3em;
+
+    .nav-link {
     color: bisque;
     text-align: end;
 }
@@ -8,4 +11,4 @@
     border-top: .6em solid;
     border-right: .6em solid transparent;
     border-left: .6em solid transparent;
-}
+}}
