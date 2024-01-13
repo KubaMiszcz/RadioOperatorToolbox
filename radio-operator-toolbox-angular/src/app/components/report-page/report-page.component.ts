@@ -29,16 +29,4 @@ export class ReportPageComponent {
   getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
     return lineValues.filter((lv) => !!lv.value);
   }
-
-  getValueType(valueType: VALUE_TYPES_ENUM | undefined,label:any): any {
-    // switch (valueType) {
-    //   case VALUE_TYPES_ENUM.text:
-    //     ret
-    //     break;
-    
-    //   default:
-    //     break;
-    // }
-    // return !valueType || (valueType === VALUE_TYPES_ENUM.text);
-  }
 }

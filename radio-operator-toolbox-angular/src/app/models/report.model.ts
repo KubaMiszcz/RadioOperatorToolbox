@@ -3,6 +3,7 @@ export interface IReport {
   isFavourite?: boolean;
   isPeaceTime?: boolean;
   lines?: IReportLine[];
+  savedReports?: IReport;
 }
 
 export class Report implements IReport {
