@@ -1,146 +1,101 @@
-<button type="button" class="btn btn-primary active">
-    Button
-    <input type="checkbox" class="me-2" autocomplete="off" aria-label="Default" />
-</button>
+<div class="input-group mb-1">
 
-<!-- <div class="col-xs-4 col-sm-3 col-md-2 col-md-offset-2 everything-checkbox">  -->
-<div class="checkbox">
-    <label>
-        <span>Text goes here</span>
-        <input type="checkbox" class="checkbox style-2 " checked="checked">
-    </label>
-    <!-- </div>   -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="input-group mb-1">
-
-        <div class="d-flex w-100">
-            <button type="button" class="btn btn-success d-flex mx-2 w-100"
-                (click)="isCreatorCollapsed=!isCreatorCollapsed">
-                <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i>
-                </div>
-                <div *ngIf="!isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-down " aria-hidden="true"></i>
-                </div>
-                <div class="">{{report.name | uppercase}} Creator</div>
-            </button>
-        </div>
-
+    <div class="d-flex w-100">
+        <button type="button" class="btn btn-success d-flex mx-2 w-100"
+            (click)="isCreatorCollapsed=!isCreatorCollapsed">
+            <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i>
+            </div>
+            <div *ngIf="!isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-down " aria-hidden="true"></i>
+            </div>
+            <div class="">{{report.name | uppercase}} Creator</div>
+        </button>
     </div>
 
-    <div *ngIf="!isCreatorCollapsed">
-        <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines px-2">
-            <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
-                {{line.lineHeader | uppercase}}</div>
+</div>
+
+<div *ngIf="!isCreatorCollapsed">
+    <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines px-2">
+        <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
+            {{line.lineHeader | uppercase}}</div>
 
 
-            <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
-                id="inputGroup-sizing-default2">
-                <div class="line-desc p-1">
-                    <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
-                    <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
-                </div>
+        <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+            id="inputGroup-sizing-default2">
+            <div class="line-desc p-1">
+                <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
+                <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
+            </div>
 
-                <div class="d-flex flex-wrap line-value" [ngClass]="{
+            <div class="d-flex flex-wrap line-value" [ngClass]="{
                 'flex-column': line.lineValues.length<=2,
                 'flex-row': line.lineValues.length>2,
                 }">
-                    <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center">
-                        <small *ngIf="lineValue.valueType !== lineValueTypes.bool" class="line-value-label me-1"
-                            id="inputGroup-sizing-default2">
-                            {{lineValue.label}}:
-                        </small>
-                        <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
-                            [(ngModel)]="lineValue.value" type="text" class="form-control " [ngClass]="{
-                                                            'line-value-short':lineValue.valueSize === lineValueSizes.short,
-                                                            'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
-                                                            'line-value-long':lineValue.valueSize === lineValueSizes.long,
-                                                        }" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default">
+                <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center aa">
+                    <small *ngIf="lineValue.valueType !== lineValueTypes.bool" class="line-value-label me-1"
+                        id="inputGroup-sizing-default2">
+                        {{lineValue.label}}:
+                    </small>
 
-                        <!-- todo textarea -->
-                        <input *ngIf="lineValue.valueType === lineValueTypes.textArea" [(ngModel)]="lineValue.value"
-                            type="number" class="form-control " [ngClass]="{
-                                                                                'line-value-short':lineValue.valueSize === lineValueSizes.short,
-                                                                                'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
-                                                                                'line-value-long':lineValue.valueSize === lineValueSizes.long,
-                                                                            }" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default">
+                    <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
+                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
 
-                        <input *ngIf="lineValue.valueType === lineValueTypes.number" [(ngModel)]="lineValue.value"
-                            type="number" class="form-control " [ngClass]="{
-                                                                                'line-value-short':lineValue.valueSize === lineValueSizes.short,
-                                                                                'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
-                                                                                'line-value-long':lineValue.valueSize === lineValueSizes.long,
-                                                                            }" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default">
-                        <!-- 
-                    <input *ngIf="lineValue.valueType === lineValueTypes.bool" [(ngModel)]="lineValue.value"
-                        type="number" class="form-control " [ngClass]="{
-                                                                                'line-value-short':lineValue.valueSize === lineValueSizes.short,
-                                                                                'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
-                                                                                'line-value-long':lineValue.valueSize === lineValueSizes.long,
-                                                                            }" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default"> -->
-
-
-                        <button *ngIf="lineValue.valueType === lineValueTypes.bool" class="checkbox btn btn-default">
-                            <label>
-                                <span>{{lineValue.label}}:</span>
-                                <input type="checkbox" class="checkbox style-2 " checked="{{lineValue.value}}">
-                            </label>
-
-
-
-
-
-
-                        </button>
+                    <div *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
+                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="3" cols="1000"
+                            aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
                     </div>
+
+                    <input *ngIf="lineValue.valueType === lineValueTypes.shortNumber" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control line-value-short" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+
+                    <input *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control line-value-long" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+
+                    <button *ngIf="lineValue.valueType === lineValueTypes.bool" type="button"
+                        class="checkbox btn btn-default">
+                        <label>
+                            <span>{{lineValue.label}}: </span>
+                            <input type="checkbox" class="checkbox style-2 " checked="{{lineValue.value}}">
+                        </label>
+                    </button>
                 </div>
-
             </div>
+
         </div>
+    </div>
 
-        <!-- todo saved reports -->
+    <!-- todo saved reports -->
 
 
 
-        <div class="card m-2">
-            <div class="card-body p-1">
-                <h5 class="card-title">{{report.name | uppercase}}</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <div class="card m-2">
+        <div class="card-body p-1">
+            <h5 class="card-title">{{report.name | uppercase}}</h5>
+            <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 
-                <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
-                    <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
-                        id="inputGroup-sizing-default2">
-                        {{line.lineHeader}}
-                    </div>
-                    <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
-                        id="inputGroup-sizing-default2">
-                        <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
-                            <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
-                                {{lineValue.label}}:
-                                {{lineValue.value}}, </div>
-                            <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
-                                {{lineValue.label}}
-                            </div>
+            <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
+                <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
+                    id="inputGroup-sizing-default2">
+                    {{line.lineHeader}}
+                </div>
+                <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
+                    id="inputGroup-sizing-default2">
+                    <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
+                        <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
+                            {{lineValue.label}}:
+                            {{lineValue.value}}, </div>
+                        <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
+                            {{lineValue.label}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+</div>

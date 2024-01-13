@@ -1,7 +1,6 @@
 import { IAppData } from 'src/app/models/appData';
 import {
   IReport,
-  VALUE_SIZES_ENUM,
   VALUE_TYPES_ENUM,
 } from 'src/app/models/report.model';
 
@@ -18,7 +17,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
           {
             label: 'MGRS',
             value: '34UEA 12345 54321',
-            valueSize: VALUE_SIZES_ENUM.long,
+            valueType: VALUE_TYPES_ENUM.longNumber,
           },
         ],
       },
@@ -32,13 +31,12 @@ export const REPORTS_SCHEMAS: IReport[] = [
           {
             label: 'FREQ',
             value: 211.321223,
-            valueSize: VALUE_SIZES_ENUM.long,
-            valueType: VALUE_TYPES_ENUM.number,
+            valueType: VALUE_TYPES_ENUM.longNumber,
           },
           {
             label: 'MY CALLSIGN',
             value: 'trololotrololotrololotrololo',
-            valueSize: VALUE_SIZES_ENUM.long,
+            valueType: VALUE_TYPES_ENUM.longNumber,
           },
         ],
       },
@@ -57,29 +55,24 @@ export const REPORTS_SCHEMAS: IReport[] = [
           {
             label: 'A',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'B',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'C',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'D',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'E',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
         ],
       },
@@ -98,30 +91,26 @@ export const REPORTS_SCHEMAS: IReport[] = [
           {
             label: 'A',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'B',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'C',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'D',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'O',
             value:
               'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
-            valueSize: VALUE_SIZES_ENUM.long,
+            valueType: VALUE_TYPES_ENUM.textArea,
           },
         ],
       },
@@ -139,26 +128,25 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'A',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'L',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'W',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'E',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
-          { label: 'O', valueSize: VALUE_SIZES_ENUM.long },
+          {
+            label: 'O',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
         ],
       },
       {
@@ -183,7 +171,12 @@ export const REPORTS_SCHEMAS: IReport[] = [
         isInPeacetime: true,
         descriptionHeader: '6 IN PEACETIME',
         descriptionLines: ['number and type of wound, injury, ilness'],
-        lineValues: [{ label: 'Info', valueSize: VALUE_SIZES_ENUM.long }],
+        lineValues: [
+          {
+            label: 'Info',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
       },
       {
         lineHeader: '7',
@@ -201,7 +194,10 @@ export const REPORTS_SCHEMAS: IReport[] = [
           { label: 'B', value: true, valueType: VALUE_TYPES_ENUM.bool },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'D', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'E', valueSize: VALUE_SIZES_ENUM.long },
+          {
+            label: 'E',
+            valueType: VALUE_TYPES_ENUM.textLine,
+          },
         ],
       },
       {
@@ -221,45 +217,37 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'A',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'B',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'C',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'D',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'E',
             value: 2,
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'F',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'G',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
           {
             label: 'H',
-            valueType: VALUE_TYPES_ENUM.number,
-            valueSize: VALUE_SIZES_ENUM.short,
+            valueType: VALUE_TYPES_ENUM.shortNumber,
           },
         ],
       },
@@ -277,7 +265,10 @@ export const REPORTS_SCHEMAS: IReport[] = [
           { label: 'N', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'B', value: true, valueType: VALUE_TYPES_ENUM.bool },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'O', valueSize: VALUE_SIZES_ENUM.long },
+          {
+            label: 'O',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
         ],
       },
       {
@@ -289,7 +280,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
           {
             label: 'Info',
             value: 'safdsa adsf ads fa d',
-            valueSize: VALUE_SIZES_ENUM.long,
+            valueType: VALUE_TYPES_ENUM.textArea,
           },
         ],
       },
@@ -304,7 +295,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineHeader: '1',
         descriptionHeader: 'LOCATION AT PICKUP SITE',
         descriptionLines: ['Miejsce podjęcia rannych (MGRS)'],
-        lineValues: [{ label: 'MGRS', valueSize: VALUE_SIZES_ENUM.long }],
+        lineValues: [{ label: 'MGRS', valueType: VALUE_TYPES_ENUM.longNumber }],
       },
       {
         lineHeader: '2',
@@ -313,8 +304,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji',
         ],
         lineValues: [
-          { label: 'FREQ', valueSize: VALUE_SIZES_ENUM.long },
-          { label: 'MY CALLSIGN', valueSize: VALUE_SIZES_ENUM.long },
+          { label: 'FREQ', valueType: VALUE_TYPES_ENUM.longNumber },
+          { label: 'MY CALLSIGN', valueType: VALUE_TYPES_ENUM.longNumber },
         ],
       },
       {
@@ -329,11 +320,11 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'E – Convenience - ewakuacja, gdy bedzie to możliwe',
         ],
         lineValues: [
-          { label: 'A', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'B', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'C', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'D', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'E', valueSize: VALUE_SIZES_ENUM.short },
+          { label: 'A', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'B', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'C', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'D', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'E', valueType: VALUE_TYPES_ENUM.shortNumber },
         ],
       },
       {
@@ -348,11 +339,11 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'O: inne, podać szczegóły',
         ],
         lineValues: [
-          { label: 'A', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'B', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'C', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'D', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'O', valueSize: VALUE_SIZES_ENUM.long },
+          { label: 'A', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'B', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'C', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'D', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'O', valueType: VALUE_TYPES_ENUM.longNumber },
         ],
       },
       {
@@ -367,11 +358,11 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'O: inna sytuacja, podać szczegóły',
         ],
         lineValues: [
-          { label: 'A', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'L', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'W', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'E', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'O', valueSize: VALUE_SIZES_ENUM.long },
+          { label: 'A', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'L', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'W', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'E', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'O', valueType: VALUE_TYPES_ENUM.longNumber },
         ],
       },
       {
@@ -396,7 +387,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         isInPeacetime: true,
         descriptionHeader: '6 IN PEACETIME',
         descriptionLines: ['number and type of wound, injury, ilness'],
-        lineValues: [{ label: 'Info', valueSize: VALUE_SIZES_ENUM.long }],
+        lineValues: [{ label: 'Info', valueType: VALUE_TYPES_ENUM.longNumber }],
       },
       {
         lineHeader: '7',
@@ -414,7 +405,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
           { label: 'B', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'D', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'E', valueSize: VALUE_SIZES_ENUM.long },
+          { label: 'E', valueType: VALUE_TYPES_ENUM.longNumber },
         ],
       },
       {
@@ -432,15 +423,15 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'H — Dziecko',
         ],
         lineValues: [
-          { label: 'A', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'B', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'C', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'D', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'E', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'F', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'G', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'H', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'H', valueSize: VALUE_SIZES_ENUM.short },
+          { label: 'A', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'B', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'C', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'D', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'E', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'F', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'G', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'H', valueType: VALUE_TYPES_ENUM.shortNumber },
+          { label: 'H', valueType: VALUE_TYPES_ENUM.shortNumber },
         ],
       },
       {
@@ -457,7 +448,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
           { label: 'N', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'B', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'O', valueSize: VALUE_SIZES_ENUM.long },
+          { label: 'O', valueType: VALUE_TYPES_ENUM.longNumber },
         ],
       },
       {
@@ -465,7 +456,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         isInPeacetime: true,
         descriptionHeader: '9 IN PEACETIME',
         descriptionLines: ['detailed terrain feature description'],
-        lineValues: [{ label: 'Info', valueSize: VALUE_SIZES_ENUM.long }],
+        lineValues: [{ label: 'Info', valueType: VALUE_TYPES_ENUM.longNumber }],
       },
     ],
   },

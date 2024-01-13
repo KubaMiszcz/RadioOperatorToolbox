@@ -1,6 +1,5 @@
 import { IAppData } from 'src/app/models/appData';
 import {
-  VALUE_SIZES_ENUM,
   VALUE_TYPES_ENUM,
 } from 'src/app/models/report.model';
 import { REPORTS_SCHEMAS } from './reportsSchemas.json';

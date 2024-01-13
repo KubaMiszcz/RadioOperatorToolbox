@@ -22,19 +22,19 @@ export interface IReportLineValue {
   label: string;
   value?: any;
   valueType?: VALUE_TYPES_ENUM;
-  valueSize?: VALUE_SIZES_ENUM;
 }
 
 export enum VALUE_TYPES_ENUM {
   unused = 0,
-  number,
+  shortNumber,
+  longNumber,
   textLine,
   textArea,
   bool,
 }
 
-export enum VALUE_SIZES_ENUM {
-  short,
-  medium,
-  long,
-}
+// export enum VALUE_SIZES_ENUM {
+//   short,
+//   medium,
+//   long,
+// }
