@@ -3,6 +3,7 @@ export interface IReport {
   isFavourite?: boolean;
   isPeaceTime?: boolean;
   lines?: IReportLine[];
+  savedReports?: IReport;
 }
 
 export class Report implements IReport {
@@ -21,17 +22,19 @@ export interface IReportLineValue {
   label: string;
   value?: any;
   valueType?: VALUE_TYPES_ENUM;
-  valueSize?: VALUE_SIZES_ENUM;
 }
 
 export enum VALUE_TYPES_ENUM {
-  number,
-  text,
+  unused = 0,
+  shortNumber,
+  longNumber,
+  textLine,
+  textArea,
   bool,
 }
 
-export enum VALUE_SIZES_ENUM {
-  short,
-  medium,
-  long,
-}
+// export enum VALUE_SIZES_ENUM {
+//   short,
+//   medium,
+//   long,
+// }

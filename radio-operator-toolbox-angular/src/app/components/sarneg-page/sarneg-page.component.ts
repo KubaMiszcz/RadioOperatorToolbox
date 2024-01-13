@@ -3,6 +3,7 @@ import { KeyValue } from '@angular/common';
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { indexOf, values } from 'lodash-es';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
+import { CoreService } from 'src/app/services/core.service';
 
 @Component({
   selector: 'app-sarneg-page',
@@ -20,14 +21,15 @@ export class SarnegPageComponent {
 
   constructor(
     private appService: AppService,
-    private appSettingsService: AppSettingsService
+    private appSettingsService: AppSettingsService,
+    private coreService: CoreService,
   ) {
-    this.codeWords = this.appService.getRandomElementsFromArray(
+    this.codeWords = this.coreService.getRandomElementsFromArray(
       this.appSettingsService.codewords,
       6
     );
 
-    this.currentCodeWord = appService.getRandomElementsFromArray(
+    this.currentCodeWord = coreService.getRandomElementsFromArray(
       this.codeWords
     )[0];
   }
@@ -93,6 +95,10 @@ export class SarnegPageComponent {
   }
 
   setCodeword(value: string) {
+    if (this.isCurrentCodeWordLocked) {
+      return;
+    }
+    
     this.newCurrentCodeWord = value;
     this.currentCodeWord=this.newCurrentCodeWord;
     this.encodeWord();
@@ -102,14 +108,14 @@ export class SarnegPageComponent {
     this.isCurrentCodeWordLocked = !this.isCurrentCodeWordLocked;
   }
 
-  updateCodeword(){
+  validateCodeword(){
     this.newCurrentCodeWord=this.newCurrentCodeWord.toUpperCase()
   }
 
-  isValidCodeword() {
+  isCodewordValid() {
     if (
       this.newCurrentCodeWord.length === 10 &&
-      !this.appService.hasRepeatedLetters(this.newCurrentCodeWord)
+      !this.coreService.hasRepeatedLetters(this.newCurrentCodeWord)
     ) {
       return true;
     }
