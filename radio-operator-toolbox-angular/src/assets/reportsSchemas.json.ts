@@ -1,8 +1,5 @@
 import { IAppData } from 'src/app/models/appData';
-import {
-  IReport,
-  VALUE_TYPES_ENUM,
-} from 'src/app/models/report.model';
+import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
 export const REPORTS_SCHEMAS: IReport[] = [
   {
@@ -16,8 +13,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'MGRS',
+            valueType: VALUE_TYPES_ENUM.textLine,
             value: '34UEA 12345 54321',
-            valueType: VALUE_TYPES_ENUM.longNumber,
           },
         ],
       },
@@ -30,13 +27,13 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'FREQ',
-            value: 211.321223,
             valueType: VALUE_TYPES_ENUM.longNumber,
+            value: 211.321223,
           },
           {
             label: 'MY CALLSIGN',
+            valueType: VALUE_TYPES_ENUM.textLine,
             value: 'trololotrololotrololotrololo',
-            valueType: VALUE_TYPES_ENUM.longNumber,
           },
         ],
       },
@@ -54,13 +51,13 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'A',
-            value: 2,
             valueType: VALUE_TYPES_ENUM.shortNumber,
+            value: 2,
           },
           {
             label: 'B',
-            value: 2,
             valueType: VALUE_TYPES_ENUM.shortNumber,
+            value: 2,
           },
           {
             label: 'C',
@@ -132,8 +129,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
           },
           {
             label: 'L',
-            value: 2,
             valueType: VALUE_TYPES_ENUM.shortNumber,
+            value: 2,
           },
           {
             label: 'W',
@@ -160,10 +157,10 @@ export const REPORTS_SCHEMAS: IReport[] = [
           'X - przeciwnik obecny, wymagana uzbrojona eskorta',
         ],
         lineValues: [
-          { label: 'N', value: true, valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'P', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'E', value: true, valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'X', valueType: VALUE_TYPES_ENUM.bool },
+          { label: 'N', valueType: VALUE_TYPES_ENUM.bool, value: true },
+          { label: 'P', valueType: VALUE_TYPES_ENUM.bool, value: true },
+          { label: 'E', valueType: VALUE_TYPES_ENUM.bool, value: true },
+          { label: 'X', valueType: VALUE_TYPES_ENUM.bool, value: true },
         ],
       },
       {
@@ -191,7 +188,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
         lineValues: [
           { label: 'A', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'B', value: true, valueType: VALUE_TYPES_ENUM.bool },
+          { label: 'B', valueType: VALUE_TYPES_ENUM.bool, value: true },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
           { label: 'D', valueType: VALUE_TYPES_ENUM.bool },
           {
@@ -225,8 +222,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
           },
           {
             label: 'C',
-            value: 2,
             valueType: VALUE_TYPES_ENUM.shortNumber,
+            value: 2,
           },
           {
             label: 'D',
@@ -234,8 +231,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
           },
           {
             label: 'E',
-            value: 2,
             valueType: VALUE_TYPES_ENUM.shortNumber,
+            value: 2,
           },
           {
             label: 'F',
@@ -263,7 +260,7 @@ export const REPORTS_SCHEMAS: IReport[] = [
         ],
         lineValues: [
           { label: 'N', valueType: VALUE_TYPES_ENUM.bool },
-          { label: 'B', value: true, valueType: VALUE_TYPES_ENUM.bool },
+          { label: 'B', valueType: VALUE_TYPES_ENUM.bool, value: true },
           { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
           {
             label: 'O',
@@ -279,8 +276,8 @@ export const REPORTS_SCHEMAS: IReport[] = [
         lineValues: [
           {
             label: 'Info',
-            value: 'safdsa adsf ads fa d',
             valueType: VALUE_TYPES_ENUM.textArea,
+            value: 'safdsa adsf ads fa d',
           },
         ],
       },
