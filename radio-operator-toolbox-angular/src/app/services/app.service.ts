@@ -19,7 +19,7 @@ export class AppService {
   }
 
   clearAllData() {
-    //todo
+    //todo emergency clear data    
     throw new Error('Method not implemented.');
   }
 }

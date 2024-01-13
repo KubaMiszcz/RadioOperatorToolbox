@@ -3,9 +3,15 @@ input {
     font-size: 2.8em;
 }
 
+.form-control:disabled {
+    background-color: #198754;
+    opacity: 1;
+}
+
 .codeword {
     text-align: center;
     font-size: 2em;
+    background-color: #ffc107;
 }
 
 .btn-lock {

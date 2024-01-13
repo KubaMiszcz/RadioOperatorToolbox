@@ -8,7 +8,6 @@
 - toltip przy inputach czy dziala na mobile
 - active codeword na zielono
 - tabela vigenere ostyluj
-- hmepage kafelki grid bo ostatni sie robi na srodku
 - na ekranie 4k menu sie rozwija
 
 ### MEDEVAC

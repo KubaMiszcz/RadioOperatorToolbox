@@ -17,6 +17,7 @@ export class ReportPageComponent {
   lineValueTypes = VALUE_TYPES_ENUM;
   isCreatorCollapsed = false;
 
+  //todo refactor layout of reports
   constructor(
     private appService: AppService,
     private appSettingsService: AppSettingsService
