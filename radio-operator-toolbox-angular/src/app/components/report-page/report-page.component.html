@@ -2,18 +2,33 @@
     <div class="input-group-text col-12 text-wrap report-header" id="inputGroup-sizing-default1">
         {{report.name | uppercase}} Creator</div>
 </div>
-
+<div class="input-group mb-3">
+    <div class="input-group-text col-12 text-wrap report-header" id="inputGroup-sizing-default1">
+        Creator Collapsible</div>
+</div>
 
 
 <div class="card m-2">
-    <div class="card-body">
-      <h5 class="card-title">{{report.name | uppercase}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      b5
+    <div class="card-body p-1">
+        <h5 class="card-title">{{report.name | uppercase}}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+        <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
+            <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
+                id="inputGroup-sizing-default2">
+                {{line.lineHeader}}
+            </div>
+            <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)"
+                class="input-group-text text-wrap align-content-start d-flex flex-column justify-content-center p-0"
+                id="inputGroup-sizing-default2">
+                <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}}: {{lineValue.value}}</div>
+                <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}} </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
+</div>
+
 
 <div *ngFor="let line of report.lines" class="input-group mb-3 report-lines p-2">
     <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
@@ -32,7 +47,7 @@
             'flex-row': line.lineValues.length>2,
             }">
             <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center">
-                <small class="line-value-label me-1" id="inputGroup-sizing-default2">{{lineValue.label}}</small>
+                <small class="line-value-label me-1" id="inputGroup-sizing-default2">{{lineValue.label}}:</small>
                 <input [(ngModel)]="lineValue.value" type="number" class="form-control " [ngClass]="{
                         'line-value-short':lineValue.valueSize === lineValueSizes.short,
                         'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
@@ -43,4 +58,3 @@
     </div>
 
 </div>
-

@@ -1,9 +1,10 @@
-.report-header{
+.report-header {
     justify-content: center;
     font-weight: bolder;
     font-size: 2em;
     background-color: rgb(0, 212, 0);
 }
+
 .report-lines {
 
     .line-header {
@@ -34,5 +35,9 @@
         .line-value-short {
             width: 3em;
         }
+    }
+
+    .value-cell {
+        min-width: 2em;
     }
 }

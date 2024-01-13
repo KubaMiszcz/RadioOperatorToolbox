@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { IReport, VALUE_SIZES_ENUM, VALUE_TYPES_ENUM,  } from 'src/app/models/report.model';
+import {
+  IReport,
+  IReportLineValue,
+  VALUE_SIZES_ENUM,
+  VALUE_TYPES_ENUM,
+} from 'src/app/models/report.model';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 
@@ -18,5 +23,9 @@ export class ReportPageComponent {
     private appSettingsService: AppSettingsService
   ) {
     this.appService.currenReportBS.subscribe((r) => (this.report = r));
+  }
+
+  getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
+    return lineValues.filter(lv=>!!lv.value)
   }
 }
