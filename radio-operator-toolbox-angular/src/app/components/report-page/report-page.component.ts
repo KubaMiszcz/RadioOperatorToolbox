@@ -17,6 +17,7 @@ export class ReportPageComponent {
   report: IReport = { name: '' };
   lineValueTypes = VALUE_TYPES_ENUM;
   lineValueSizes = VALUE_SIZES_ENUM;
+  isCreatorCollapsed = false;
 
   constructor(
     private appService: AppService,
@@ -26,6 +27,18 @@ export class ReportPageComponent {
   }
 
   getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
-    return lineValues.filter(lv=>!!lv.value)
+    return lineValues.filter((lv) => !!lv.value);
+  }
+
+  getValueType(valueType: VALUE_TYPES_ENUM | undefined,label:any): any {
+    // switch (valueType) {
+    //   case VALUE_TYPES_ENUM.text:
+    //     ret
+    //     break;
+    
+    //   default:
+    //     break;
+    // }
+    // return !valueType || (valueType === VALUE_TYPES_ENUM.text);
   }
 }

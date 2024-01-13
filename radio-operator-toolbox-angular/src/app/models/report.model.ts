@@ -25,6 +25,7 @@ export interface IReportLineValue {
 }
 
 export enum VALUE_TYPES_ENUM {
+  unused = 0,
   number,
   text,
   bool,

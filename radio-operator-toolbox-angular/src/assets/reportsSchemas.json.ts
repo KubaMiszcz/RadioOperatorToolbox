@@ -33,10 +33,11 @@ export const REPORTS_SCHEMAS: IReport[] = [
             label: 'FREQ',
             value: 211.321223,
             valueSize: VALUE_SIZES_ENUM.long,
+            valueType:VALUE_TYPES_ENUM.number
           },
           {
             label: 'MY CALLSIGN',
-            value: 'trololo',
+            value: 'trololotrololotrololotrololo',
             valueSize: VALUE_SIZES_ENUM.long,
           },
         ],
@@ -76,7 +77,12 @@ export const REPORTS_SCHEMAS: IReport[] = [
           { label: 'B', valueSize: VALUE_SIZES_ENUM.short },
           { label: 'C', value: 2, valueSize: VALUE_SIZES_ENUM.short },
           { label: 'D', valueSize: VALUE_SIZES_ENUM.short },
-          { label: 'O', value: 'sdfsdf', valueSize: VALUE_SIZES_ENUM.long },
+          {
+            label: 'O',
+            value:
+              'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
+            valueSize: VALUE_SIZES_ENUM.long,
+          },
         ],
       },
       {

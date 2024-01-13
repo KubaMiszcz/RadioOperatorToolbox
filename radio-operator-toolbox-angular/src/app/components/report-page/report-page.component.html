@@ -1,11 +1,78 @@
-<div class="input-group mb-3">
-    <div class="input-group-text col-12 text-wrap report-header" id="inputGroup-sizing-default1">
-        {{report.name | uppercase}} Creator</div>
+<div class="input-group mb-1">
+
+    <div class="d-flex w-100">
+        <button type="button" class="btn btn-success d-flex mx-2 w-100"
+            (click)="isCreatorCollapsed=!isCreatorCollapsed">
+            <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i></div>
+            <div *ngIf="!isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-down " aria-hidden="true"></i></div>
+            <div class="">{{report.name | uppercase}} Creator</div>
+        </button>
+    </div>
+
 </div>
-<div class="input-group mb-3">
-    <div class="input-group-text col-12 text-wrap report-header" id="inputGroup-sizing-default1">
-        Creator Collapsible</div>
+
+<div *ngIf="!isCreatorCollapsed">
+    <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines px-2">
+        <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
+            {{line.lineHeader | uppercase}}</div>
+
+
+        <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+            id="inputGroup-sizing-default2">
+            <div class="line-desc p-1">
+                <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
+                <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
+            </div>
+
+            <div class="d-flex flex-wrap line-value" [ngClass]="{
+                'flex-column': line.lineValues.length<=2,
+                'flex-row': line.lineValues.length>2,
+                }">
+                <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center">
+                    <small class="line-value-label me-1" id="inputGroup-sizing-default2">{{lineValue.label}}x:</small>
+                    <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.text)"
+                        [(ngModel)]="lineValue.value" type="text" class="form-control " [ngClass]="{
+                                                            'line-value-short':lineValue.valueSize === lineValueSizes.short,
+                                                            'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
+                                                            'line-value-long':lineValue.valueSize === lineValueSizes.long,
+                                                        }" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                    <input *ngIf="lineValue.valueType === lineValueTypes.number" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control " [ngClass]="{
+                                                                                'line-value-short':lineValue.valueSize === lineValueSizes.short,
+                                                                                'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
+                                                                                'line-value-long':lineValue.valueSize === lineValueSizes.long,
+                                                                            }" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                    <input *ngIf="lineValue.valueType === lineValueTypes.bool" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control " [ngClass]="{
+                                                                                'line-value-short':lineValue.valueSize === lineValueSizes.short,
+                                                                                'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
+                                                                                'line-value-long':lineValue.valueSize === lineValueSizes.long,
+                                                                            }" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!-- <span [ngSwitch]="line">
+                <p *ngSwitchCase="true">
+                
+                </p>
+                <p *ngSwitchCase="false">
+                
+                </p>
+                <p *ngSwitchDefault>
+                
+                </p>
+                </span> -->
+            </div>
+        </div>
+
+    </div>
 </div>
+
+
+
+
 
 
 <div class="card m-2">
@@ -19,42 +86,15 @@
                 id="inputGroup-sizing-default2">
                 {{line.lineHeader}}
             </div>
-            <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)"
-                class="input-group-text text-wrap align-content-start d-flex flex-column justify-content-center p-0"
+            <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
                 id="inputGroup-sizing-default2">
-                <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}}: {{lineValue.value}}</div>
-                <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}} </div>
+                <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
+                    <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}}:
+                        {{lineValue.value}}, </div>
+                    <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">{{lineValue.label}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
-<div *ngFor="let line of report.lines" class="input-group mb-3 report-lines p-2">
-    <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
-        {{line.lineHeader | uppercase}}</div>
-
-
-    <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
-        id="inputGroup-sizing-default2">
-        <div class="line-desc p-1">
-            <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
-            <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
-        </div>
-
-        <div class="d-flex flex-wrap line-value" [ngClass]="{
-            'flex-column': line.lineValues.length<=2,
-            'flex-row': line.lineValues.length>2,
-            }">
-            <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center">
-                <small class="line-value-label me-1" id="inputGroup-sizing-default2">{{lineValue.label}}:</small>
-                <input [(ngModel)]="lineValue.value" type="number" class="form-control " [ngClass]="{
-                        'line-value-short':lineValue.valueSize === lineValueSizes.short,
-                        'line-value-medium':lineValue.valueSize === lineValueSizes.medium,
-                        'line-value-long':lineValue.valueSize === lineValueSizes.long,
-                        }" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-    </div>
-
 </div>
