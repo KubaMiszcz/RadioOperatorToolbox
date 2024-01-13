@@ -29,10 +29,10 @@
                 <input [(ngModel)]="newCurrentCodeWord" type="text"
                     class="form-control codeword font-monospace has-validation" id="validationCustom01"
                     placeholder="aktywne słowo kodowe" aria-label="currentCodeWord" aria-describedby="basic-addon1"
-                    disabled="{{isCurrentCodeWordLocked}}" (change)="updateCodeword()" (keyup)="updateCodeword()">
+                    disabled="{{isCurrentCodeWordLocked}}" (change)="validateCodeword()" (keyup)="validateCodeword()">
             </div>
 
-            <button *ngIf="!isValidCodeword()" type="button" name="btn-lock" id="btn1"
+            <button *ngIf="!isCodewordValid()" type="button" name="btn-lock" id="btn1"
                 class="btn btn-danger font-monospace btn-lock">
                 <i class="fas fa-exclamation-triangle    "></i>
             </button>
@@ -46,7 +46,7 @@
                 <i class="fas fa-lock"></i>
             </button>
         </div>
-        <small class="invalid-input" *ngIf="!isValidCodeword()">
+        <small class="invalid-input" *ngIf="!isCodewordValid()">
             10 niepowtarzajacych sie liter.
         </small>
     </div>
@@ -54,7 +54,7 @@
     <!--  -->
 
     <div class="d-grid gap-1 p-2">
-        <div>Codewords:</div>
+        <div>Codewords:<small> (open lock and click)</small></div>
         <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
             class="btn btn-outline-secondary font-monospace" (click)="setCodeword(item)">
             {{item}}

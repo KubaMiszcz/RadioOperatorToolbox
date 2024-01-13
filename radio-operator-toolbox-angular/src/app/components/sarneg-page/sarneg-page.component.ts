@@ -93,6 +93,10 @@ export class SarnegPageComponent {
   }
 
   setCodeword(value: string) {
+    if (this.isCurrentCodeWordLocked) {
+      return;
+    }
+    
     this.newCurrentCodeWord = value;
     this.currentCodeWord=this.newCurrentCodeWord;
     this.encodeWord();
@@ -102,11 +106,11 @@ export class SarnegPageComponent {
     this.isCurrentCodeWordLocked = !this.isCurrentCodeWordLocked;
   }
 
-  updateCodeword(){
+  validateCodeword(){
     this.newCurrentCodeWord=this.newCurrentCodeWord.toUpperCase()
   }
 
-  isValidCodeword() {
+  isCodewordValid() {
     if (
       this.newCurrentCodeWord.length === 10 &&
       !this.appService.hasRepeatedLetters(this.newCurrentCodeWord)
