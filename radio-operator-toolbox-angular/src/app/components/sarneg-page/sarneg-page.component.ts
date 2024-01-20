@@ -49,7 +49,7 @@ export class SarnegPageComponent {
       return;
     }
 
-    this.validateNumbersDecoded();
+    this.validateNumbersForEncoding();
 
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
@@ -61,7 +61,7 @@ export class SarnegPageComponent {
     });
   }
 
-  validateNumbersDecoded() {
+  validateNumbersForEncoding() {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
       // .replace(/[^0-9 !@#$%*()_+-=[]{}|\\:";\'<>,.?\/]/g, '');
@@ -71,7 +71,7 @@ export class SarnegPageComponent {
   decodeWord() {
     this.isEncoding = false;
 
-    this.validateNumbersEncoded(
+    this.validateNumbersForDecoding(
       this.numbersEncoded,
       Array.from(this.currentCodeWord)
     );
@@ -86,7 +86,7 @@ export class SarnegPageComponent {
     });
   }
 
-  validateNumbersEncoded(string: string, allowedLetters: string[]) {
+  validateNumbersForDecoding(string: string, allowedLetters: string[]) {
     const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
 
     this.numbersEncoded = this.numbersEncoded
