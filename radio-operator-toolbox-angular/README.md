@@ -2,13 +2,19 @@
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
 
-- viewport rozmir na dekstop
 - ikony PWA
 - tlo ciemne
-- toltip przy inputach czy dziala na mobile
-- active codeword na zielono
-- tabela vigenere ostyluj
+- toltip przy inputach czy dziala na mobile albo jakos to ogarnij
+- PL/EN version
+- tabela vigenere/polibiusz? ostyluj
 - na ekranie 4k menu sie rozwija
+- import export TDR
+- generate TDR
+  - codewords
+  - my nickname, my leader, my subteams, favourite niknames
+- ten medevac przestyluj
+- alfabety edytowalne z kropkami itp?
+- add and handle spaces in encodedword (don change it)
 
 ### MEDEVAC
 - nputy : radio input togglwe checkbox itp

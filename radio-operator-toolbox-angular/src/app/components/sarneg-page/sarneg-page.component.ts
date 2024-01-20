@@ -14,7 +14,7 @@ export class SarnegPageComponent {
   numbersDecoded = '123';
   numbersEncoded = '';
   currentCodeWord = 'BACKGROUND';
-  newCurrentCodeWord = 'BACKGROUND';
+  coderwordInputValue = 'BACKGROUND';
   isCurrentCodeWordLocked = true;
   codeWords: string[] = [];
   isEncoding = true;
@@ -32,6 +32,7 @@ export class SarnegPageComponent {
     this.currentCodeWord = coreService.getRandomElementsFromArray(
       this.codeWords
     )[0];
+    this.coderwordInputValue = this.currentCodeWord;
   }
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class SarnegPageComponent {
       return;
     }
 
-    this.validateNumbersDecoded();
+    this.validateNumbersForEncoding();
 
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
@@ -61,7 +62,7 @@ export class SarnegPageComponent {
     });
   }
 
-  validateNumbersDecoded() {
+  validateNumbersForEncoding() {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
       // .replace(/[^0-9 !@#$%*()_+-=[]{}|\\:";\'<>,.?\/]/g, '');
@@ -71,7 +72,7 @@ export class SarnegPageComponent {
   decodeWord() {
     this.isEncoding = false;
 
-    this.validateNumbersEncoded(
+    this.validateNumbersForDecoding(
       this.numbersEncoded,
       Array.from(this.currentCodeWord)
     );
@@ -86,7 +87,7 @@ export class SarnegPageComponent {
     });
   }
 
-  validateNumbersEncoded(string: string, allowedLetters: string[]) {
+  validateNumbersForDecoding(string: string, allowedLetters: string[]) {
     const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
 
     this.numbersEncoded = this.numbersEncoded
@@ -99,23 +100,28 @@ export class SarnegPageComponent {
       return;
     }
     
-    this.newCurrentCodeWord = value;
-    this.currentCodeWord=this.newCurrentCodeWord;
+    this.coderwordInputValue = value;
+    this.currentCodeWord=this.coderwordInputValue;
     this.encodeWord();
   }
 
   toggleCodewordLock() {
     this.isCurrentCodeWordLocked = !this.isCurrentCodeWordLocked;
+
+    if (this.isCurrentCodeWordLocked) {
+      this.currentCodeWord = this.coderwordInputValue;
+      this.encodeWord();
+    }
   }
 
   validateCodeword(){
-    this.newCurrentCodeWord=this.newCurrentCodeWord.toUpperCase()
+    this.coderwordInputValue=this.coderwordInputValue.toUpperCase()
   }
 
   isCodewordValid() {
     if (
-      this.newCurrentCodeWord.length === 10 &&
-      !this.coreService.hasRepeatedLetters(this.newCurrentCodeWord)
+      this.coderwordInputValue.length === 10 &&
+      !this.coreService.hasRepeatedLetters(this.coderwordInputValue)
     ) {
       return true;
     }

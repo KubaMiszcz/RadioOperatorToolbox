@@ -5,7 +5,7 @@
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace"
-                placeholder="kodowane numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
+                placeholder="numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
                 (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 
@@ -14,7 +14,7 @@
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
-                placeholder="dekodowane numery" aria-label="wordEncoded" aria-describedby="basic-addon1"
+                placeholder="litery" aria-label="wordEncoded" aria-describedby="basic-addon2"
                 (change)="decodeWord()" (keyup)="decodeWord()">
         </div>
     </div>
@@ -26,7 +26,7 @@
 
         <div class="d-flex">
             <div class="input-group">
-                <input [(ngModel)]="newCurrentCodeWord" type="text"
+                <input [(ngModel)]="coderwordInputValue" type="text"
                     class="form-control codeword font-monospace has-validation" id="validationCustom01"
                     placeholder="aktywne słowo kodowe" aria-label="currentCodeWord" aria-describedby="basic-addon1"
                     disabled="{{isCurrentCodeWordLocked}}" (change)="validateCodeword()" (keyup)="validateCodeword()">
@@ -37,7 +37,7 @@
                 <i class="fas fa-exclamation-triangle    "></i>
             </button>
 
-            <button *ngIf="!isCurrentCodeWordLocked" type="button" name="btn-lock" id="btn-lock"
+            <button *ngIf="!isCurrentCodeWordLocked" [disabled]="!isCodewordValid()" type="button" name="btn-lock" id="btn-lock"
                 class="btn btn-warning font-monospace btn-lock" (click)="toggleCodewordLock()">
                 <i class="fas fa-lock-open"></i>
             </button>
