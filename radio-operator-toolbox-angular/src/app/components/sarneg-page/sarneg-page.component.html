@@ -5,7 +5,7 @@
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace"
-                placeholder="kodowane numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
+                placeholder="numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
                 (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 
@@ -14,7 +14,7 @@
         <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
-                placeholder="dekodowane numery" aria-label="wordEncoded" aria-describedby="basic-addon1"
+                placeholder="litery" aria-label="wordEncoded" aria-describedby="basic-addon2"
                 (change)="decodeWord()" (keyup)="decodeWord()">
         </div>
     </div>

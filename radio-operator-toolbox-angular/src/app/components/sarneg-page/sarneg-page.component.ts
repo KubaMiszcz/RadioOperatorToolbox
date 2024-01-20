@@ -32,6 +32,7 @@ export class SarnegPageComponent {
     this.currentCodeWord = coreService.getRandomElementsFromArray(
       this.codeWords
     )[0];
+    this.coderwordInputValue = this.currentCodeWord;
   }
 
   ngOnInit(): void {
