@@ -14,7 +14,7 @@
   - my nickname, my leader, my subteams, favourite niknames
 - ten medevac przestyluj
 - alfabety edytowalne z kropkami itp?
-- 
+- add and handle spaces in encodedword (don change it)
 
 ### MEDEVAC
 - nputy : radio input togglwe checkbox itp
