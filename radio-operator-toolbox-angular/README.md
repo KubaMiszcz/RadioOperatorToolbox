@@ -15,6 +15,8 @@
 - ten medevac przestyluj
 - alfabety edytowalne z kropkami itp?
 - add and handle spaces in encodedword (don change it)
+- rejestr korespondencji
+  - model
 
 ### MEDEVAC
 - nputy : radio input togglwe checkbox itp
