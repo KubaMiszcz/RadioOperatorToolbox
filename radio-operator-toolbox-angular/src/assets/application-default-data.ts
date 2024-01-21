@@ -1,4 +1,4 @@
-import { IAppData } from 'src/app/models/appData';
+import { IAppData } from 'src/app/models/appData.model';
 import {
   VALUE_TYPES_ENUM,
 } from 'src/app/models/report.model';

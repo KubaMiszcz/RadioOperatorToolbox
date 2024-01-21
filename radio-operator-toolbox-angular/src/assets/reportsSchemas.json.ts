@@ -1,4 +1,4 @@
-import { IAppData } from 'src/app/models/appData';
+import { IAppData } from 'src/app/models/appData.model';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
 export const REPORTS_SCHEMAS: IReport[] = [

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAppData } from '../models/appData';
+import { IAppData } from '../models/appData.model';
 import { ALPHABET_PL, APP_DATA_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
