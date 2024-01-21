@@ -19,6 +19,9 @@ export class SarnegPageComponent {
   codeWords: string[] = [];
   isEncoding = true;
 
+  // allowedCharacgets = ',./<>?;\':"[]\\{}!@#$%*()_+-=';
+  allowedCharacters = ` ,./<>?;':"[]\\{}!@#$%*()_+-=`;
+
   constructor(
     private appService: AppService,
     private appSettingsService: AppSettingsService,
@@ -88,7 +91,7 @@ export class SarnegPageComponent {
   }
 
   validateNumbersForDecoding(string: string, allowedLetters: string[]) {
-    const allowedCharacters = new RegExp(`[^${this.currentCodeWord}]`, 'g');
+    const allowedCharacters = new RegExp(`[^${this.currentCodeWord} ,./<>?;':"\[\]\\\{\}\!@#$%*()_+-=]`, 'g');
 
     this.numbersEncoded = this.numbersEncoded
       .toUpperCase()
