@@ -58,7 +58,7 @@ export class SarnegPageComponent {
     this.numbersEncoded = '';
     Array.from(this.numbersDecoded?.toString()).forEach((digit) => {
       // let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
-      let allowedSigns = [...' '];
+      let allowedSigns = [...' .!#'];
       this.numbersEncoded += !!allowedSigns.find((s) => s === digit)
         ? digit
         : this.currentCodeWord[Number(digit)] ?? '';
@@ -69,7 +69,7 @@ export class SarnegPageComponent {
     this.numbersDecoded = this.numbersDecoded
       ?.toString()
       // .replace(/[^0-9 ,./<>?;':"\[\]\\\{\}\!@#$%*()_+-=]/g, '');
-      .replace(/[^0-9 ]/g, '');
+      .replace(/[^0-9 \.\!\#]/g, '');
   }
 
   decodeWord() {
@@ -83,7 +83,7 @@ export class SarnegPageComponent {
     this.numbersDecoded = '';
     let array = Array.from(this.currentCodeWord);
     Array.from(this.numbersEncoded.toString()).forEach((letter) => {
-      let allowedSigns = [...' '];
+      let allowedSigns = [...' .!#'];
       this.numbersDecoded += !!allowedSigns.find((s) => s === letter)
         ? letter
         : [...this.currentCodeWord].indexOf(letter) ?? '';
@@ -91,7 +91,7 @@ export class SarnegPageComponent {
   }
 
   validateNumbersForDecoding(string: string, allowedLetters: string[]) {
-    const allowedCharacters = new RegExp(`[^${this.currentCodeWord} ]`, 'g');
+    const allowedCharacters = new RegExp(`[^${this.currentCodeWord} \.\!\#]`, 'g');
 
     this.numbersEncoded = this.numbersEncoded
       .toUpperCase()
