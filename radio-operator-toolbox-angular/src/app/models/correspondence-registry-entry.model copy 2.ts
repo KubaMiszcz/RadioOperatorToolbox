@@ -1,3 +1,5 @@
+import { DIRECTION } from "./constants/enums";
+
 export interface ICorrespondenceRegistryEntry {
   timestamp: Date;
   direction: DIRECTION;
@@ -5,8 +7,5 @@ export interface ICorrespondenceRegistryEntry {
   content: string;
 }
 
-export enum DIRECTION{
-  INCOMING,
-  OUTGOING
-}
+
 

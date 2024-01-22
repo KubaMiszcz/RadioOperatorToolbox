@@ -1,7 +1,7 @@
 export interface IReport {
   name: string;
   isFavourite?: boolean;
-  isPeaceTime?: boolean;
+  isInPeaceTime?: boolean;
   lines?: IReportLine[];
   savedReports?: IReport;
 }
@@ -25,7 +25,7 @@ export interface IReportLineValue {
 }
 
 export enum VALUE_TYPES_ENUM {
-  unused = 0,
+  unused = 0, //it is for bool operationss, dont use, remove or change this
   shortNumber,
   longNumber,
   textLine,
