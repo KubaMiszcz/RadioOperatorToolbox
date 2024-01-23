@@ -13,7 +13,7 @@ import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.com
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
 import { HomeTabComponent } from './pages/home-page/home-tab.component';
 import { ReportPageComponent } from './pages/report-page/report-page.component';
-import { TDRSettingsPageComponent } from './pages/tdr-settings-page/tdr-settings-page.component';
+import { TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { HelpPageComponent } from './pages/help-page/help-page.component';
@@ -29,7 +29,7 @@ import { HelpPageComponent } from './pages/help-page/help-page.component';
     MenuTileComponent,
     HomeTabComponent,
     ReportPageComponent,
-    TDRSettingsPageComponent,
+    TDRDataPageComponent,
     CorrespondenceBookPageComponent,
     AppSettingsPageComponent,
     HelpPageComponent,
