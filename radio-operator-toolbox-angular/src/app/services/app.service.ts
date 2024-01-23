@@ -4,22 +4,26 @@ import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
 import { IReport, Report } from '../models/report.model';
 import { CoreService } from './core.service';
+import { AppData, IAppData } from '../models/app-settings.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
+  appData: IAppData = new AppData();
   currenReportBS = new BehaviorSubject<IReport>(new Report());
 
   constructor(
     private appSettings: AppSettingsService,
     private coreServiceService: CoreService
   ) {
-    this.currenReportBS.next(appSettings.appSettings.reportsTemplates[0] ?? new Report());
+    this.currenReportBS.next(
+      appSettings.appSettings.reportsTemplates[0] ?? new Report()
+    );
   }
 
   clearAllData() {
-    //todo emergency clear data    
+    //todo emergency clear data
     throw new Error('Method not implemented.');
   }
 }

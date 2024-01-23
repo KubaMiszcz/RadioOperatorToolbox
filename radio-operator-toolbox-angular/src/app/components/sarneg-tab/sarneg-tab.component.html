@@ -1,0 +1,64 @@
+<div>
+    <div class="p-2">
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko
+            cyfry .#! i spacje)</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
+        <div class="input-group mb-3">
+            <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace"
+                placeholder="numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
+                (change)="encodeWord()" (keyup)="encodeWord()">
+        </div>
+
+        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowane numery (tylko
+            litery  .#! spacje)</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
+        <div class="input-group mb-3">
+            <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
+                placeholder="litery" aria-label="wordEncoded" aria-describedby="basic-addon2"
+                (change)="decodeWord()" (keyup)="decodeWord()">
+        </div>
+    </div>
+
+    <!--  -->
+
+    <div class="p-2 mb-3">
+        <label for="validationCustom01" class="form-label">Active Codeword:</label>
+
+        <div class="d-flex">
+            <div class="input-group">
+                <input [(ngModel)]="coderwordInputValue" type="text"
+                    class="form-control codeword font-monospace has-validation" id="validationCustom01"
+                    placeholder="aktywne słowo kodowe" aria-label="currentCodeWord" aria-describedby="basic-addon1"
+                    disabled="{{isCurrentCodeWordLocked}}" (change)="validateCodeword()" (keyup)="validateCodeword()">
+            </div>
+
+            <button *ngIf="!isCodewordValid()" type="button" name="btn-lock" id="btn1"
+                class="btn btn-danger font-monospace btn-lock">
+                <i class="fas fa-exclamation-triangle    "></i>
+            </button>
+
+            <button *ngIf="!isCurrentCodeWordLocked" [disabled]="!isCodewordValid()" type="button" name="btn-lock" id="btn-lock"
+                class="btn btn-warning font-monospace btn-lock" (click)="toggleCodewordLock()">
+                <i class="fas fa-lock-open"></i>
+            </button>
+            <button *ngIf="isCurrentCodeWordLocked" type="button" name="btn-lock-open" id="btn-lock-open"
+                class="btn btn-success font-monospace btn-lock" (click)="toggleCodewordLock()">
+                <i class="fas fa-lock"></i>
+            </button>
+        </div>
+        <small class="invalid-input" *ngIf="!isCodewordValid()">
+            10 niepowtarzajacych sie liter.
+        </small>
+    </div>
+
+    <!--  -->
+
+    <div class="d-grid gap-1 p-2">
+        <div>Codewords:<small> (open lock and click)</small></div>
+        <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
+            class="btn btn-outline-secondary font-monospace" (click)="setCodeword(item)">
+            {{item}}
+        </button>
+    </div>
+
+</div>

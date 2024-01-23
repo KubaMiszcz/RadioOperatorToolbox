@@ -1,4 +1,4 @@
-import { SettingsTabComponent } from './tabs/settings-tab/settings-tab.component';
+import { SettingsTabComponent } from './pages/settings-page-old/settings-tab.component';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,15 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './core-components/nav-bar/nav-bar.component';
 import { FooterComponent } from './core-components/footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.component';
-import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.component';
+import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
+import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
-import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
-import { ReportPageComponent } from './components/report-page/report-page.component';
-import { TDRSettingsPageComponent } from './components/tdrsettings-page/tdrsettings-page.component';
-import { CorrespondenceBookPageComponent } from './components/correspondence-book-page/correspondence-book-page.component';
-import { AppSettingsPageComponent } from './components/app-settings-page/app-settings-page.component';
-import { HelpPageComponent } from './components/help-page/help-page.component';
+import { HomeTabComponent } from './pages/home-page/home-tab.component';
+import { ReportPageComponent } from './pages/report-page/report-page.component';
+import { TDRSettingsPageComponent } from './pages/tdr-settings-page/tdr-settings-page.component';
+import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
+import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
+import { HelpPageComponent } from './pages/help-page/help-page.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { HelpPageComponent } from './components/help-page/help-page.component';
     NavBarComponent,
     SettingsTabComponent,
     FooterComponent,
-    SarnegPageComponent,
-    VigenerePageComponent,
+    SarnegTabComponent,
+    VigenereTabComponent,
     MenuTileComponent,
     HomeTabComponent,
     ReportPageComponent,
