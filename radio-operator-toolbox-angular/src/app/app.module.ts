@@ -13,6 +13,10 @@ import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
 import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
 import { ReportPageComponent } from './components/report-page/report-page.component';
+import { TDRSettingsPageComponent } from './components/tdrsettings-page/tdrsettings-page.component';
+import { CorrespondenceBookPageComponent } from './components/correspondence-book-page/correspondence-book-page.component';
+import { AppSettingsPageComponent } from './components/app-settings-page/app-settings-page.component';
+import { HelpPageComponent } from './components/help-page/help-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { ReportPageComponent } from './components/report-page/report-page.compon
     MenuTileComponent,
     HomeTabComponent,
     ReportPageComponent,
+    TDRSettingsPageComponent,
+    CorrespondenceBookPageComponent,
+    AppSettingsPageComponent,
+    HelpPageComponent,
   ],
   imports: [
     BrowserModule,
