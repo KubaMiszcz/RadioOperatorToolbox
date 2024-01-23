@@ -17,6 +17,13 @@
 - add and handle spaces in encodedword (don change it)
 - rejestr korespondencji
   - model
+- szyfry
+  - https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a
+  - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
+  - https://pl.wikipedia.org/wiki/Szyfr_VIC
+-ulibione shortcuts menu
+
+
 
 ### MEDEVAC
 - nputy : radio input togglwe checkbox itp
