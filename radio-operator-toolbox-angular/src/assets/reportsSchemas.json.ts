@@ -1,7 +1,7 @@
-import { IAppData } from 'src/app/models/appData.model';
+import { IAppSettings } from 'src/app/models/appData.model';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
-export const REPORTS_SCHEMAS: IReport[] = [
+export const REPORTS_TEMPLATES: IReport[] = [
   {
     name: 'MEDEVAC Report EXAMPLE',
     isFavourite: true,

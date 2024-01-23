@@ -1,12 +1,9 @@
-import { IAppData } from 'src/app/models/appData.model';
-import {
-  VALUE_TYPES_ENUM,
-} from 'src/app/models/report.model';
-import { REPORTS_SCHEMAS } from './reportsSchemas.json';
+import { IAppSettings } from 'src/app/models/appData.model';
+import { REPORTS_TEMPLATES } from './reportsSchemas.json';
 
-export const APP_DATA_JSON: IAppData = {
+export const APP_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
-  reports: REPORTS_SCHEMAS
+  reportsTemplates: REPORTS_TEMPLATES
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];

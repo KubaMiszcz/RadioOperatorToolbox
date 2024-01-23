@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IAppData } from '../models/appData.model';
-import { ALPHABET_PL, APP_DATA_JSON } from 'src/assets/application-default-data';
+import { IAppSettings } from '../models/appData.model';
+import { ALPHABET_PL, APP_SETTINGS_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 
@@ -8,14 +8,14 @@ import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_
   providedIn: 'root',
 })
 export class AppSettingsService {
-  appData: IAppData;
+  appSettings: IAppSettings;
   version: string = packageJson.version;
   build: string = packageJson.build;
   codewords: string[] = [];
   alphabet: string[] = [];
 
   constructor() {
-    this.appData = APP_DATA_JSON;
+    this.appSettings = APP_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     this.alphabet = ALPHABET_PL;
 

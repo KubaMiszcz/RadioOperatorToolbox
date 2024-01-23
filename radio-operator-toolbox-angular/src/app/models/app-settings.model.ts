@@ -1,8 +1,8 @@
 import { IReport } from "./report.model";
 
-export interface IAppSettings {
+export interface IAppData {
     iconsPath:string;
-    reportsTemplates: IReport[];
+    reports: IReport[];
 }
 
 

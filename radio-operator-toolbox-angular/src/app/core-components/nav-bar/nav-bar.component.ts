@@ -16,7 +16,7 @@ export class NavBarComponent {
     private appSettingsService: AppSettingsService,
     private appService: AppService
   ) {
-    this.reports = this.appSettingsService.appData.reports;
+    this.reports = this.appSettingsService.appSettings.reportsTemplates;
   }
 
   setCurrentReport(report: IReport) {

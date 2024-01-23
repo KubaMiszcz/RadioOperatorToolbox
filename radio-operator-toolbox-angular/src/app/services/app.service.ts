@@ -15,7 +15,7 @@ export class AppService {
     private appSettings: AppSettingsService,
     private coreServiceService: CoreService
   ) {
-    this.currenReportBS.next(appSettings.appData.reports[0] ?? new Report());
+    this.currenReportBS.next(appSettings.appSettings.reportsTemplates[0] ?? new Report());
   }
 
   clearAllData() {
