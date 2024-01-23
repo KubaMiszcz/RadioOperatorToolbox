@@ -10,7 +10,6 @@ import { AppData, IAppData } from '../models/app-settings.model';
   providedIn: 'root',
 })
 export class AppService {
-  appData: IAppData = new AppData();
   currenReportBS = new BehaviorSubject<IReport>(new Report());
 
   constructor(
