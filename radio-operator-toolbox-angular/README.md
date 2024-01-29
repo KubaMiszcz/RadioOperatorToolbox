@@ -22,6 +22,10 @@
   - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
   - https://pl.wikipedia.org/wiki/Szyfr_VIC
 -ulibione shortcuts menu
+- w navbarze buttons
+  - pobierz lokalizacje
+  - pobierz czas DTG
+- notepad
 
 
 

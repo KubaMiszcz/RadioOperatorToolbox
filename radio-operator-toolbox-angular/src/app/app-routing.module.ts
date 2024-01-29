@@ -8,12 +8,14 @@ import { ReportPageComponent as ReportsPageComponent } from './pages/reports-pag
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
+import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 
 const routes: Routes = [
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
 
   { path: 'reports-page', component: ReportsPageComponent },
+  { path: 'notepad-page', component: NotepadPageComponent },
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
   { path: 'tdr-data-page', component: TDRDataPageComponent },

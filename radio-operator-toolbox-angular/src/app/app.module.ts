@@ -17,6 +17,7 @@ import { CorrespondenceBookPageComponent } from './pages/correspondence-book-pag
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { HelpPageComponent } from './pages/help-page/help-page.component';
 import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-page.component';
+import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-pa
     CorrespondenceBookPageComponent,
     AppSettingsPageComponent,
     HelpPageComponent,
+    NotepadPageComponent,
   ],
   imports: [
     BrowserModule,
