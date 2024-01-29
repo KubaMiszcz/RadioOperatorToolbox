@@ -41,7 +41,7 @@
                     <a class="nav-link" [routerLink]="'vigenere-tab'">kodowanie Vigenere</a>
                 </li>
                 <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)">
-                    <a class="nav-link" [routerLink]="'report-page'">{{item.name}}</a>
+                    <a class="nav-link" [routerLink]="'reports-page'">{{item.name}}</a>
                 </li>
 
 
@@ -57,7 +57,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a *ngFor="let item of reports" class="dropdown-item d-flex justify-content-end"
-                                [routerLink]="'report-page'">{{item.name}}</a>
+                                [routerLink]="'reports-page'">{{item.name}}</a>
                         </div>
                     </div>
                 </li>

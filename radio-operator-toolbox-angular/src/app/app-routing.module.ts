@@ -4,7 +4,7 @@ import { SettingsTabComponent as SettingsTabComponentXXXXXXXXXOLD } from './page
 import { HomeTabComponent } from './pages/home-page/home-page.component';
 import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
-import { ReportPageComponent } from './pages/report-page/report-page.component';
+import { ReportPageComponent as ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
 
-  { path: 'report-page', component: ReportPageComponent },
+  { path: 'reports-page', component: ReportsPageComponent },
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
   { path: 'tdr-data-page', component: TDRDataPageComponent },
@@ -21,10 +21,10 @@ const routes: Routes = [
 
   { path: 'settings-tab', component: SettingsTabComponentXXXXXXXXXOLD },
   { path: 'home-tab', component: HomeTabComponent },
-  { path: '', redirectTo: '/vigenere-tab', pathMatch: 'full' },
-  { path: '**', component: CorrespondenceBookPageComponent },
-  // { path: '', redirectTo: '/home-tab', pathMatch: 'full' },
-  // { path: '**', component: HomeTabComponent },
+  { path: '', redirectTo: '/reports-tab', pathMatch: 'full' },
+  { path: '**', component: ReportsPageComponent },
+  // { path: '', redirectTo: '/home-page', pathMatch: 'full' },
+  // { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({

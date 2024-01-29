@@ -11,12 +11,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
-import { HomeTabComponent } from './pages/home-page/home-page.component';
-import { ReportPageComponent } from './pages/report-page/report-page.component';
+import { ReportPageComponent as ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { HelpPageComponent } from './pages/help-page/help-page.component';
+import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,8 @@ import { HelpPageComponent } from './pages/help-page/help-page.component';
     SarnegTabComponent,
     VigenereTabComponent,
     MenuTileComponent,
-    HomeTabComponent,
-    ReportPageComponent,
+    HomePageComponent,
+    ReportsPageComponent,
     TDRDataPageComponent,
     CorrespondenceBookPageComponent,
     AppSettingsPageComponent,

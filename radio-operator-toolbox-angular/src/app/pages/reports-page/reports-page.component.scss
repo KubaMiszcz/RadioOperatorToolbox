@@ -1,0 +1,46 @@
+.report-header {
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 2em;
+    background-color: rgb(0, 212, 0);
+}
+
+.report-lines {
+
+    .line-header {
+        justify-content: center;
+        font-weight: bolder;
+        font-size: 2em;
+    }
+
+    .line-desc {
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px dashed black;
+    }
+
+    .desc-header {
+        text-align: left;
+        font-weight: bolder;
+    }
+
+    .line-value {
+        display: flex;
+        flex-direction: column;
+        // align-items: flex-start;
+        width: 100%;
+        align-items: stretch;
+        // flex-wrap: wrap;
+
+        .line-value-short {
+            width: 3em;
+            text-align: center;
+        }
+    }
+
+
+    .value-cell {
+        min-width: 2em;
+        text-align: left;
+    }
+}
