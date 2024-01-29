@@ -67,37 +67,23 @@
 
 
             <div class="d-flex flex-wrap line-values flsex-row">
-                <div *ngFor="let lineValue of line.lineValues" class="d-flex flex-row m-1 align-items-center">
-                    <div class="d-flex">
+                <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center" [ngClass]="{
+                        'flex-column justify-content-start': lineValue.valueType === lineValueTypes.textArea,
+                        'flex-row justify-content-between': lineValue.valueType !== lineValueTypes.textArea,
+                 }">
+                    <div class="d-flex"
+                        [ngClass]="{                        'w-100': lineValue.valueType === lineValueTypes.textArea                }">
                         <!-- <div *ngIf="lineValue.valueType !== lineValueTypes.bool" class=" line-value-label me-1" -->
-                        <div class=" line-value-label me-1"
-                            id="inputGroup-sizing-default2">
+                        <div class=" line-value-label me-1" id="inputGroup-sizing-default2">
                             <span>{{lineValue.label}}</span>
                             <span *ngIf="lineValue.description"> - {{lineValue.description}}</span>
                         </div>
                     </div>
 
-
-
-
                     <!-- TEXT LINE -->
                     <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
-                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex line-value" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex line-value"
+                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
                     <!-- SHORT NUMBER -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.shortNumber" class="d-flex flex-row">
@@ -105,16 +91,26 @@
                             <i class="fas fa-minus    "></i>
                         </button>
 
-                        <input [(ngModel)]="lineValue.value" ype="number" class="form-control line-value line-value-short"
-                            aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input [(ngModel)]="lineValue.value" ype="number"
+                            class="form-control line-value line-value-short" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
 
                         <button type="button" class="btn btn-primary mx-1 " (click)="increaseValue(lineValue)">
                             <i class="fas fa-plus    "></i>
                         </button>
                     </div>
 
+                    <!-- LONG NUMBER -->
+                    <input *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control line-value line-value-long" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
 
 
+                    <!-- TEXT AREA -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
+                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="3" cols="1000"
+                            aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
+                    </div>
 
 
 
@@ -131,17 +127,17 @@
 
 
                     
-                    <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
+                    <xxxxxxxxxxxinput *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
                         [(ngModel)]="lineValue.value" type="text" class="form-control d-flex" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
 
-                    <div *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
+                    <xxxxxxxxxxxdiv *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
                         <textarea [(ngModel)]="lineValue.value" class="form-control" rows="3" cols="1000"
                             aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
                     </div>
 
 
-                    <input *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
+                    <xxxxxxxxinput *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
                         type="number" class="form-control line-value-long" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
 

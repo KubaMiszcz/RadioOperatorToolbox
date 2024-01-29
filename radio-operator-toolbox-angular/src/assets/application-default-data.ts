@@ -1,9 +1,10 @@
 import { IAppSettings } from 'src/app/models/app-data.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 
-export const APP_SETTINGS_JSON: IAppSettings = {
+export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
-  reportsTemplates: REPORTS_TEMPLATES
+  isPeaceTime: false,
+  reportsTemplates: REPORTS_TEMPLATES,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];

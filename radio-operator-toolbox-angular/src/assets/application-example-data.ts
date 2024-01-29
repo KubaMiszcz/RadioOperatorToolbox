@@ -37,7 +37,7 @@ export const exampleMEDEVAC_PL: IReport = {
     },
     {
       lineHeader: '3',
-      descriptionHeader:'number of patients by precedence',
+      descriptionHeader: 'number of patients by precedence',
       descriptionLines: ['Liczba pacjentów ze względu na priorytet'],
       lineValues: [
         {
@@ -72,35 +72,33 @@ export const exampleMEDEVAC_PL: IReport = {
     {
       lineHeader: '4',
       descriptionHeader: 'SPECIAL EQUIPMENT',
-      descriptionLines: [
-        'Wymagany sprzęt specjalistyczny',
-        'A – brak (None)',
-        'B – podwieszenie (Hoist)',
-        'C – wyciqgarka (Extraction Equipment)',
-        'D — respirator (Ventilator)',
-        'O: inne, podać szczegóły',
-      ],
+      descriptionLines: ['Wymagany sprzęt specjalistyczny'],
       lineValues: [
         {
           label: 'A',
+          description: 'brak (None)',
           value: 2,
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'B',
+          description: 'podwieszenie (Hoist)',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'C',
+          description: 'wyciągarka (Extraction Equipment)',
           value: 2,
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'D',
+          description: 'respirator (Ventilator)',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'O',
+          description: 'inne, podać szczegóły',
           value:
             'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
           valueType: VALUE_TYPES_ENUM.textArea,
@@ -110,34 +108,32 @@ export const exampleMEDEVAC_PL: IReport = {
     {
       lineHeader: '5',
       descriptionHeader: 'NUMBER OF PATIENTS BY TYPE',
-      descriptionLines: [
-        'Liczba pacjentów według mobilności',
-        'A — siedzący (Ambulatory)',
-        'L — na noszach (Litter)',
-        'W — chodzący',
-        'E — żołnierz będący eskortą dla poszkodowanego',
-        'O: inna sytuacja, podać szczegóły',
-      ],
+      descriptionLines: ['Liczba pacjentów według mobilności'],
       lineValues: [
         {
           label: 'A',
+          description: 'siedzący (Ambulatory)',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'L',
+          description: 'na noszach (Litter)',
           valueType: VALUE_TYPES_ENUM.shortNumber,
           value: 2,
         },
         {
           label: 'W',
+          description: 'chodzący',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'E',
+          description: 'żołnierz będący eskortą dla poszkodowanego',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'O',
+          description: 'inna sytuacja, podać szczegóły',
           valueType: VALUE_TYPES_ENUM.textArea,
         },
       ],
@@ -159,18 +155,18 @@ export const exampleMEDEVAC_PL: IReport = {
         { label: 'X', valueType: VALUE_TYPES_ENUM.bool, value: true },
       ],
     },
-    {
-      lineHeader: '6',
-      isInPeacetime: true,
-      descriptionHeader: '6 IN PEACETIME',
-      descriptionLines: ['number and type of wound, injury, ilness'],
-      lineValues: [
-        {
-          label: 'Info',
-          valueType: VALUE_TYPES_ENUM.textArea,
-        },
-      ],
-    },
+    // {
+    //   lineHeader: '6',
+    //   isInPeacetime: true,
+    //   descriptionHeader: '6 IN PEACETIME',
+    //   descriptionLines: ['number and type of wound, injury, ilness'],
+    //   lineValues: [
+    //     {
+    //       label: 'Info',
+    //       valueType: VALUE_TYPES_ENUM.textArea,
+    //     },
+    //   ],
+    // },
     {
       lineHeader: '7',
       descriptionHeader: 'MARKING OF PICKUP SITE',
@@ -264,19 +260,19 @@ export const exampleMEDEVAC_PL: IReport = {
         },
       ],
     },
-    {
-      lineHeader: '9',
-      isInPeacetime: true,
-      descriptionHeader: '9 IN PEACETIME',
-      descriptionLines: ['detailed terrain feature description'],
-      lineValues: [
-        {
-          label: 'Info',
-          valueType: VALUE_TYPES_ENUM.textArea,
-          value: 'safdsa adsf ads fa d',
-        },
-      ],
-    },
+    // {
+    //   lineHeader: '9',
+    //   isInPeacetime: true,
+    //   descriptionHeader: '9 IN PEACETIME',
+    //   descriptionLines: ['detailed terrain feature description'],
+    //   lineValues: [
+    //     {
+    //       label: 'Info',
+    //       valueType: VALUE_TYPES_ENUM.textArea,
+    //       value: 'safdsa adsf ads fa d',
+    //     },
+    //   ],
+    // },
   ],
 };
 
@@ -442,18 +438,18 @@ export const exampleMEDEVAC_EN: IReport = {
         { label: 'X', valueType: VALUE_TYPES_ENUM.bool, value: true },
       ],
     },
-    {
-      lineHeader: '6',
-      isInPeacetime: true,
-      descriptionHeader: '6 IN PEACETIME',
-      descriptionLines: ['number and type of wound, injury, ilness'],
-      lineValues: [
-        {
-          label: 'Info',
-          valueType: VALUE_TYPES_ENUM.textArea,
-        },
-      ],
-    },
+    // {
+    //   lineHeader: '6',
+    //   isInPeacetime: true,
+    //   descriptionHeader: '6 IN PEACETIME',
+    //   descriptionLines: ['number and type of wound, injury, ilness'],
+    //   lineValues: [
+    //     {
+    //       label: 'Info',
+    //       valueType: VALUE_TYPES_ENUM.textArea,
+    //     },
+    //   ],
+    // },
     {
       lineHeader: '7',
       descriptionHeader: 'MARKING OF PICKUP SITE',
@@ -547,18 +543,18 @@ export const exampleMEDEVAC_EN: IReport = {
         },
       ],
     },
-    {
-      lineHeader: '9',
-      isInPeacetime: true,
-      descriptionHeader: '9 IN PEACETIME',
-      descriptionLines: ['detailed terrain feature description'],
-      lineValues: [
-        {
-          label: 'Info',
-          valueType: VALUE_TYPES_ENUM.textArea,
-          value: 'safdsa adsf ads fa d',
-        },
-      ],
-    },
+    // {
+    //   lineHeader: '9',
+    //   isInPeacetime: true,
+    //   descriptionHeader: '9 IN PEACETIME',
+    //   descriptionLines: ['detailed terrain feature description'],
+    //   lineValues: [
+    //     {
+    //       label: 'Info',
+    //       valueType: VALUE_TYPES_ENUM.textArea,
+    //       value: 'safdsa adsf ads fa d',
+    //     },
+    //   ],
+    // },
   ],
 };

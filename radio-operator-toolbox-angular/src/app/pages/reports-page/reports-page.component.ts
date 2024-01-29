@@ -17,6 +17,7 @@ export class ReportPageComponent {
   report: IReport = { name: '' };
   lineValueTypes = VALUE_TYPES_ENUM;
   isCreatorCollapsed = false;
+  isPeaceTime = this.appSettingsService.appSettings.isPeaceTime;
 
   //todo refactor layout of reports
   constructor(
