@@ -25,8 +25,6 @@
                 <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
                 <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
             </div>
-            
-            
 
 
 
@@ -59,23 +57,56 @@
 
 
 
-            
+
+
+
+
+
+
+
+
+
             <div class="d-flex flex-wrap line-values flsex-row">
                 <div *ngFor="let lineValue of line.lineValues" class="d-flex flex-row m-1 align-items-center">
                     <div class="d-flex">
-                        <div *ngIf="lineValue.valueType !== lineValueTypes.bool" class=" line-value-label me-1"
-                            id="inputGroup-sizing-default2"> {{lineValue.label}} - {{lineValue.description}}
+                        <!-- <div *ngIf="lineValue.valueType !== lineValueTypes.bool" class=" line-value-label me-1" -->
+                        <div class=" line-value-label me-1"
+                            id="inputGroup-sizing-default2">
+                            <span>{{lineValue.label}}</span>
+                            <span *ngIf="lineValue.description"> - {{lineValue.description}}</span>
                         </div>
                     </div>
 
+
+
+
+                    <!-- TEXT LINE -->
+                    <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
+                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex line-value" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- SHORT NUMBER -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.shortNumber" class="d-flex flex-row">
                         <button type="button" class="btn btn-primary mx-1" (click)="decreaseValue(lineValue)">
                             <i class="fas fa-minus    "></i>
                         </button>
 
-                        <input  [(ngModel)]="lineValue.value"
-                            ype="number" class="form-control line-value-short" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default">
+                        <input [(ngModel)]="lineValue.value" ype="number" class="form-control line-value line-value-short"
+                            aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
                         <button type="button" class="btn btn-primary mx-1 " (click)="increaseValue(lineValue)">
                             <i class="fas fa-plus    "></i>
@@ -149,7 +180,8 @@
                 <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
                     <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
                         {{lineValue.label}}:
-                        <b>{{lineValue.value}}</b>, </div>
+                        <b>{{lineValue.value}}</b>,
+                    </div>
                     <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
                         {{lineValue.label}}
                     </div>

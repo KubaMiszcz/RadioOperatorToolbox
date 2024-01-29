@@ -37,7 +37,8 @@ export const exampleMEDEVAC_PL: IReport = {
     },
     {
       lineHeader: '3',
-      descriptionHeader: 'Liczba pacjentów ze względu na priorytet',
+      descriptionHeader:'number of patients by precedence',
+      descriptionLines: ['Liczba pacjentów ze względu na priorytet'],
       lineValues: [
         {
           label: 'A',

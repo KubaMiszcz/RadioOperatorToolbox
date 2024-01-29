@@ -26,11 +26,16 @@
 
     .line-values {
         display: flex;
-        // flex-direction: column;
+        width: 100%;
+        flex-direction: column;
+        
         // align-items: flex-start;
-        // width: 100%;
         // align-items: stretch;
         // flex-wrap: wrap;
+
+        .line-value{
+            text-align: center;
+        }
 
         .line-value-short {
             width: 2em;
