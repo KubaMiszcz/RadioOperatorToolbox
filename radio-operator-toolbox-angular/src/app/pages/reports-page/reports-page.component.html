@@ -28,51 +28,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="d-flex flex-wrap line-values flsex-row">
                 <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center" [ngClass]="{
                         'flex-column justify-content-start': lineValue.valueType === lineValueTypes.textArea,
                         'flex-row justify-content-between': lineValue.valueType !== lineValueTypes.textArea,
                  }">
-                    <div class="d-flex"
-                        [ngClass]="{                        'w-100': lineValue.valueType === lineValueTypes.textArea                }">
+                    <div class="d-flex" [ngClass]="{'w-100': lineValue.valueType === lineValueTypes.textArea}">
                         <!-- <div *ngIf="lineValue.valueType !== lineValueTypes.bool" class=" line-value-label me-1" -->
                         <div class=" line-value-label me-1" id="inputGroup-sizing-default2">
                             <span>{{lineValue.label}}</span>
@@ -113,42 +74,20 @@
                     </div>
 
 
+                    <!-- CHECKBOX -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.bool">
 
+                        <button *ngIf="!lineValue.value" type="button" class="checkbox btn btn-secondary"
+                            (click)="toggleValue(lineValue)">
+                            <i class="fas fa-square    "></i>
+                        </button>
+                        <button *ngIf="lineValue.value" type="button" class="checkbox btn btn-success"
+                            (click)="toggleValue(lineValue)">
+                            <i class="fas fa-check-square    "></i>
+                        </button>
 
-
-
-
-
-
-
-
-
-                    <!-- 
-
-
-                    
-                    <xxxxxxxxxxxinput *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
-                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
-
-                    <xxxxxxxxxxxdiv *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
-                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="3" cols="1000"
-                            aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
                     </div>
 
-
-                    <xxxxxxxxinput *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
-                        type="number" class="form-control line-value-long" aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default">
-
-
-                    <button *ngIf="lineValue.valueType === lineValueTypes.bool" type="button"
-                        class="checkbox btn btn-default">
-                        <label>
-                            <span>{{lineValue.label}}: </span>
-                            <input type="checkbox" class="checkbox style-2 " checked="{{lineValue.value}}">
-                        </label>
-                    </button> -->
                 </div>
             </div>
 
@@ -179,7 +118,7 @@
                         <b>{{lineValue.value}}</b>,
                     </div>
                     <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
-                        {{lineValue.label}}
+                        <b>{{lineValue.label}}</b>
                     </div>
                 </div>
             </div>

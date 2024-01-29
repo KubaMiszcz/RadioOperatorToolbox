@@ -42,4 +42,8 @@ export class ReportPageComponent {
     line.value++;
     line.value = line.value > 99 ? 99 : line.value;
   }
+
+  toggleValue(line: IReportLineValue) {
+    line.value = !line.value;
+  }
 }

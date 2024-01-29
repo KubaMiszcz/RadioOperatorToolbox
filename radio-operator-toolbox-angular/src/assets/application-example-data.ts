@@ -31,7 +31,7 @@ export const exampleMEDEVAC_PL: IReport = {
         {
           label: 'MY CALLSIGN',
           valueType: VALUE_TYPES_ENUM.textLine,
-          value: 'trololotrololotrololotrololo',
+          value: 'DUSIGROSZ-01',
         },
       ],
     },
@@ -141,18 +141,32 @@ export const exampleMEDEVAC_PL: IReport = {
     {
       lineHeader: '6',
       descriptionHeader: 'SECURITY IN PICKUP SITE (WARTIME)',
-      descriptionLines: [
-        'Bezpieczeństwo w strefie podjęcia',
-        'N - brak przeciwnika',
-        'P - możliwa obecność przeciwnika',
-        'E - przeciwnik w rejonie podjęcia',
-        'X - przeciwnik obecny, wymagana uzbrojona eskorta',
-      ],
+      descriptionLines: ['Bezpieczeństwo w strefie podjęcia'],
       lineValues: [
-        { label: 'N', valueType: VALUE_TYPES_ENUM.bool, value: true },
-        { label: 'P', valueType: VALUE_TYPES_ENUM.bool, value: true },
-        { label: 'E', valueType: VALUE_TYPES_ENUM.bool, value: true },
-        { label: 'X', valueType: VALUE_TYPES_ENUM.bool, value: true },
+        {
+          label: 'N',
+          description: 'brak przeciwnika',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: false,
+        },
+        {
+          label: 'P',
+          description: 'możliwa obecność przeciwnika',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: true,
+        },
+        {
+          label: 'E',
+          description: 'przeciwnik w rejonie podjęcia',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: true,
+        },
+        {
+          label: 'X',
+          description: 'przeciwnik obecny, wymagana uzbrojona eskorta',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: true,
+        },
       ],
     },
     // {
@@ -170,21 +184,32 @@ export const exampleMEDEVAC_PL: IReport = {
     {
       lineHeader: '7',
       descriptionHeader: 'MARKING OF PICKUP SITE',
-      descriptionLines: [
-        'Metoda oznakowania strefy podjęcia',
-        'A - panel',
-        'B - petardy',
-        'C - dym',
-        'D - brak',
-        'E: inne, np. lightstic',
-      ],
+      descriptionLines: ['Metoda oznakowania strefy podjęcia'],
       lineValues: [
-        { label: 'A', valueType: VALUE_TYPES_ENUM.bool },
-        { label: 'B', valueType: VALUE_TYPES_ENUM.bool, value: true },
-        { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
-        { label: 'D', valueType: VALUE_TYPES_ENUM.bool },
+        {
+          label: 'A',
+          description: 'panel',
+          valueType: VALUE_TYPES_ENUM.bool,
+        },
+        {
+          label: 'B',
+          description: 'petardy',
+          valueType: VALUE_TYPES_ENUM.bool,
+        },
+        {
+          label: 'C',
+          description: 'dym',
+          valueType: VALUE_TYPES_ENUM.bool,
+        },
+        {
+          label: 'D',
+          description: 'brak',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: true,
+        },
         {
           label: 'E',
+          description: 'inne, np. lightstic',
           valueType: VALUE_TYPES_ENUM.textLine,
         },
       ],
@@ -192,50 +217,49 @@ export const exampleMEDEVAC_PL: IReport = {
     {
       lineHeader: '8',
       descriptionHeader: 'PATIENT NATIONALITY AND STATUS',
-      descriptionLines: [
-        'Liczba pacjentów wg narodowości/statusu.',
-        'A — żołnierz NATO (swój) ',
-        'B — cywil NATO (swój) ',
-        'C — żołnierz spoza NATO ',
-        'D — cywile inni niż z NATO ',
-        'E — zatrzymani, jeńcy wojenni (POW) ',
-        'F — wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ',
-        'G — cywile ranni na skutek działań sił własnych ',
-        'H — Dziecko',
-      ],
+      descriptionLines: ['Liczba pacjentów wg narodowości/statusu.'],
       lineValues: [
         {
           label: 'A',
+          description: 'żołnierz NATO (swój) ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'B',
+          description: 'cywil NATO (swój) ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'C',
+          description: 'żołnierz spoza NATO ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
           value: 2,
         },
         {
           label: 'D',
+          description: 'cywile inni niż z NATO ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'E',
+          description: 'zatrzymani, jeńcy wojenni (POW) ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
           value: 2,
         },
         {
           label: 'F',
+          description:
+            'wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'G',
+          description: 'cywile ranni na skutek działań sił własnych ',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
         {
           label: 'H',
+          description: 'Dziecko',
           valueType: VALUE_TYPES_ENUM.shortNumber,
         },
       ],
@@ -245,17 +269,28 @@ export const exampleMEDEVAC_PL: IReport = {
       descriptionHeader: 'NBC CONTAMINATION if exists (WARTIME)',
       descriptionLines: [
         'Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: ',
-        'N - jądrowe',
-        'B - biologiczne ',
-        'C - chemiczne ',
-        'O: inne informacje (np. czas dotarcia do miejsca podjęcia)',
       ],
       lineValues: [
-        { label: 'N', valueType: VALUE_TYPES_ENUM.bool },
-        { label: 'B', valueType: VALUE_TYPES_ENUM.bool, value: true },
-        { label: 'C', valueType: VALUE_TYPES_ENUM.bool },
+        {
+          label: 'N',
+          description: 'jądrowe',
+          valueType: VALUE_TYPES_ENUM.bool,
+        },
+        {
+          label: 'B',
+          description: 'biologiczne ',
+          valueType: VALUE_TYPES_ENUM.bool,
+          value: true,
+        },
+        {
+          label: 'C',
+          description: 'chemiczne ',
+          valueType: VALUE_TYPES_ENUM.bool,
+        },
         {
           label: 'O',
+          description:
+            'inne informacje (np. czas dotarcia do miejsca podjęcia)',
           valueType: VALUE_TYPES_ENUM.textArea,
         },
       ],
