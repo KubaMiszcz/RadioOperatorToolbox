@@ -7,7 +7,7 @@ import { CoreService } from './core.service';
 import { AppData, IAppData } from '../models/app-settings.model';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
-import { exampleMEDEVAC } from 'src/assets/application-example-data';
+import { exampleMEDEVAC_PL } from 'src/assets/application-example-data';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,7 @@ export class AppService {
 
     
     //laod example medevac
-    this.currenReportBS.next(exampleMEDEVAC);
+    this.currenReportBS.next(exampleMEDEVAC_PL);
   }
 
   clearAllData() {

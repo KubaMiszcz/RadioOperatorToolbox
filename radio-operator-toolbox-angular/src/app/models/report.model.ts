@@ -13,13 +13,14 @@ export class Report implements IReport {
 export interface IReportLine {
   lineHeader: string;
   descriptionHeader: string;
-  descriptionLines: string[];
+  descriptionLines?: string[];
   lineValues: IReportLineValue[];
   isInPeacetime?: boolean;
 }
 
 export interface IReportLineValue {
   label: string;
+  description?: string;
   value?: any;
   valueType?: VALUE_TYPES_ENUM;
 }

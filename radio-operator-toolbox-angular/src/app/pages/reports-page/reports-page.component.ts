@@ -29,4 +29,16 @@ export class ReportPageComponent {
   getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
     return lineValues.filter((lv) => !!lv.value);
   }
+
+  decreaseValue(line: IReportLineValue) {
+    line.value = line.value ?? 0;
+    line.value--;
+    line.value = line.value <= 0 ? null : line.value;
+  }
+
+  increaseValue(line: IReportLineValue) {
+    line.value = line.value ?? 0;
+    line.value++;
+    line.value = line.value > 99 ? 99 : line.value;
+  }
 }

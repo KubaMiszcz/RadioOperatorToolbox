@@ -24,17 +24,25 @@
         font-weight: bolder;
     }
 
-    .line-value {
+    .line-values {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         // align-items: flex-start;
-        width: 100%;
-        align-items: stretch;
+        // width: 100%;
+        // align-items: stretch;
         // flex-wrap: wrap;
 
         .line-value-short {
-            width: 3em;
+            width: 2em;
             text-align: center;
+        }
+
+        .line-value-label {
+            text-align: left;
+        }
+
+        .btn {
+            width: 1.5em;
         }
     }
 
