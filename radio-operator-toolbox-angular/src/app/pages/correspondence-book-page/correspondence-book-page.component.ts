@@ -1,6 +1,7 @@
 import { AppDataService } from './../../services/app-data.service';
 import { Component } from '@angular/core';
-import { ICorrespondenceRegistryEntry } from 'src/app/models/correspondence-registry-entry.model';
+import { TRANSMIT_DIRECTION } from 'src/app/models/constants/enums';
+import { CorrespondenceRegistryEntry, ICorrespondenceRegistryEntry } from 'src/app/models/correspondence-registry-entry.model';
 import { AppService } from 'src/app/services/app.service';
 
 @Component({
@@ -10,11 +11,29 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class CorrespondenceBookPageComponent {
   correspondenceBook: ICorrespondenceRegistryEntry[] = [];
+  currentCorrespondenceBookEntry = new CorrespondenceRegistryEntry();
+  transmitDirections = TRANSMIT_DIRECTION;
 
   constructor(
     private appService: AppService,
     private appDataService: AppDataService
   ) {
-    this.correspondenceBook=appDataService.appData.correspondenceBook;
+    this.correspondenceBook = appDataService.appData.correspondenceBook;
+    this.correspondenceBook.push({
+      transmitDirection: TRANSMIT_DIRECTION.INCOMING,
+      codename: 'fawerola',
+      content: 'casMEDAVEC c as c as c as',
+      timestamp: new Date(),
+    });
+    this.correspondenceBook.push({
+      transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
+      codename: 'zawodnik',
+      content: 'caDALTUR as c as c as c as',
+      timestamp: new Date(),
+    });
+  }
+
+  getTime(timestamp: Date) {
+    return `${timestamp.getHours()}:${timestamp.getMinutes()}`;
   }
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeTabComponent } from './home-tab.component';
+import { HomeTabComponent } from './home-page.component';
 
 describe('HomeTabComponent', () => {
   let component: HomeTabComponent;

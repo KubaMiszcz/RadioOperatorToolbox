@@ -2,16 +2,16 @@
     <div class="p-2">
         <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko
             cyfry .#! i spacje)</label>
-        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Odkodowane numery</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput2" class="form-label">Odkodowane numery</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersDecoded" type="text" class="form-control font-monospace"
                 placeholder="numery" aria-label="wordDecoded" aria-describedby="basic-addon1"
                 (change)="encodeWord()" (keyup)="encodeWord()">
         </div>
 
-        <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowane numery (tylko
+        <label *ngIf="isEncoding" for="exampleFormControlInput3" class="form-label">Zakodowane numery (tylko
             litery  .#! spacje)</label>
-        <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zdekodowania</label>
+        <label *ngIf="!isEncoding" for="exampleFormControlInput4" class="form-label">Numery do zdekodowania</label>
         <div class="input-group mb-3">
             <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
                 placeholder="litery" aria-label="wordEncoded" aria-describedby="basic-addon2"

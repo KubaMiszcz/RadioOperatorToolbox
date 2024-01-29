@@ -11,7 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
-import { HomeTabComponent } from './pages/home-page/home-tab.component';
+import { HomeTabComponent } from './pages/home-page/home-page.component';
 import { ReportPageComponent } from './pages/report-page/report-page.component';
 import { TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
