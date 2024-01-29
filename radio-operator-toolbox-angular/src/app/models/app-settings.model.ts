@@ -1,4 +1,4 @@
-import { ICorrespondenceRegistryEntry } from "./correspondence-registry-entry.model";
+import { ICorrespondenceBookEntry } from "./correspondence-book-entry.model";
 import { IReport } from "./report.model";
 import { ITeam } from "./team.model";
 
@@ -6,7 +6,7 @@ export interface IAppData {
   myNickname:string;
   teamsNicknames: ITeam[];
   reports: IReport[];
-  correspondenceBook: ICorrespondenceRegistryEntry[];
+  correspondenceBook: ICorrespondenceBookEntry[];
 }
 
 export class AppData {

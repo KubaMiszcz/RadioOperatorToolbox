@@ -1,14 +1,14 @@
 import { TRANSMIT_DIRECTION } from './constants/enums';
 
-export interface ICorrespondenceRegistryEntry {
+export interface ICorrespondenceBookEntry {
   timestamp: Date;
   transmitDirection?: TRANSMIT_DIRECTION;
   codename: string;
   content: string;
 }
 
-export class CorrespondenceRegistryEntry
-  implements ICorrespondenceRegistryEntry
+export class CorrespondenceBookEntry
+  implements ICorrespondenceBookEntry
 {
   timestamp = new Date();
   codename = '';

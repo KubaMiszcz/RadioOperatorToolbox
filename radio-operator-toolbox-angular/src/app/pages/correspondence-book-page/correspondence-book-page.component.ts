@@ -1,7 +1,7 @@
 import { AppDataService } from './../../services/app-data.service';
 import { Component } from '@angular/core';
 import { TRANSMIT_DIRECTION } from 'src/app/models/constants/enums';
-import { CorrespondenceRegistryEntry, ICorrespondenceRegistryEntry } from 'src/app/models/correspondence-registry-entry.model';
+import { CorrespondenceBookEntry, ICorrespondenceBookEntry } from 'src/app/models/correspondence-book-entry.model';
 import { AppService } from 'src/app/services/app.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { AppService } from 'src/app/services/app.service';
   styleUrls: ['./correspondence-book-page.component.scss'],
 })
 export class CorrespondenceBookPageComponent {
-  correspondenceBook: ICorrespondenceRegistryEntry[] = [];
-  currentCorrespondenceBookEntry = new CorrespondenceRegistryEntry();
+  correspondenceBook: ICorrespondenceBookEntry[] = [];
+  currentCorrespondenceBookEntry = new CorrespondenceBookEntry();
   transmitDirections = TRANSMIT_DIRECTION;
 
   constructor(
