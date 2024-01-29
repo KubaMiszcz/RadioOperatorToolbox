@@ -19,7 +19,7 @@ export interface IReportLine {
 }
 
 export interface IReportLineValue {
-  label: string;
+  label?: string;
   description?: string;
   value?: any;
   valueType?: VALUE_TYPES_ENUM;

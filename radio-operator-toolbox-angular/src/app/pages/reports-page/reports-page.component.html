@@ -69,7 +69,7 @@
 
                     <!-- TEXT AREA -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
-                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="3" cols="1000"
+                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="2" cols="1000"
                             aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
                     </div>
 
@@ -114,7 +114,7 @@
                 id="inputGroup-sizing-default2">
                 <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
                     <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
-                        {{lineValue.label}}:
+                        <span *ngIf="lineValue.label">{{lineValue.label}}: </span>
                         <b>{{lineValue.value}}</b>,
                     </div>
                     <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">

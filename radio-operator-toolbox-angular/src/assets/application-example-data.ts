@@ -311,6 +311,104 @@ export const exampleMEDEVAC_PL: IReport = {
   ],
 };
 
+export const exampleSALUTE_PL: IReport = {
+  name: 'SALUTE Report EXAMPLE',
+  isFavourite: true,
+  lines: [
+    {
+      lineHeader: 'S',
+      descriptionHeader: 'Size',
+      descriptionLines: ['wielkość sił przeciwnika, ilosc ludzi, pojazdów itp'],
+      lineValues: [
+        {
+          valueType: VALUE_TYPES_ENUM.textArea,
+          value: 'ok 10 osob, 2 ciezarowki',
+        },
+      ],
+    },
+    {
+      lineHeader: 'A',
+      descriptionHeader: 'Activity',
+      descriptionLines: ['co robią, co sie dzieje'],
+      lineValues: [
+        {
+          valueType: VALUE_TYPES_ENUM.textArea,
+          value: 'siedza, na cos czekaja',
+        },
+      ],
+    },
+    {
+      lineHeader: 'L',
+      descriptionHeader: 'Location',
+      descriptionLines: ['lokalizacja MGRS, azymut itp'],
+      lineValues: [
+        {
+          label: 'E',
+          description: 'ich',
+          valueType: VALUE_TYPES_ENUM.textLine,
+          value: 'azymut ok 35st, ok 1km od nas',
+        },
+        {
+          label: 'F',
+          description: 'nasza',
+          valueType: VALUE_TYPES_ENUM.textLine,
+          value: '34 UEA 123 456',
+        },
+      ],
+    },
+    {
+      lineHeader: 'U',
+      descriptionHeader: 'Uniforms',
+      descriptionLines: [
+        'charakterystyczne cechy wygladu, ubiory, maskowanie, flagi, barwy',
+      ],
+      lineValues: [
+        {
+          valueType: VALUE_TYPES_ENUM.textArea,
+          value: 'mundury w maskowaniu, brak oznaczen',
+        },
+      ],
+    },
+    {
+      lineHeader: 'T',
+      descriptionHeader: 'Time',
+      descriptionLines: ['czas obserwacji DTG DDHHMMTmmmYY'],
+      lineValues: [
+        {
+          label: 'Czas',
+          valueType: VALUE_TYPES_ENUM.textLine,
+          value:'292312ASTY24'
+        },
+      ],
+    },
+    {
+      lineHeader: 'E',
+      descriptionHeader: 'Equipment',
+      descriptionLines: ['bron, sprzet, wyposazenie'],
+      lineValues: [
+        {
+          valueType: VALUE_TYPES_ENUM.textArea,
+          value: 'karabinki, kilka RPG, skrzynie na pojazdach',
+        },
+      ],
+    },
+  ],
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const exampleMEDEVAC_EN: IReport = {
   name: 'MEDEVAC Report EXAMPLE',
   isFavourite: true,
