@@ -32,9 +32,3 @@ export enum VALUE_TYPES_ENUM {
   textArea,
   bool,
 }
-
-// export enum VALUE_SIZES_ENUM {
-//   short,
-//   medium,
-//   long,
-// }

@@ -1,5 +1,5 @@
-import { IAppSettings } from 'src/app/models/appData.model';
-import { REPORTS_TEMPLATES } from './reportsSchemas.json';
+import { IAppSettings } from 'src/app/models/app-data.model';
+import { REPORTS_TEMPLATES } from './reports-templates.json';
 
 export const APP_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',

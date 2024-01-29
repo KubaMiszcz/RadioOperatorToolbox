@@ -7,6 +7,7 @@ import { CoreService } from './core.service';
 import { AppData, IAppData } from '../models/app-settings.model';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
+import { exampleMEDEVAC } from 'src/assets/application-example-data';
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +17,16 @@ export class AppService {
 
   constructor(
     private AppDataService: AppDataService,
-    private appSettings: AppSettingsService,
+    private appSettingsService: AppSettingsService,
     private coreServiceService: CoreService
   ) {
     this.currenReportBS.next(
-      appSettings.appSettings.reportsTemplates[0] ?? new Report()
+      appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
     );
+
+    
+    //laod example medevac
+    this.currenReportBS.next(exampleMEDEVAC);
   }
 
   clearAllData() {
