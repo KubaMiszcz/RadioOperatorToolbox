@@ -43,7 +43,10 @@
 
                     <!-- TEXT LINE -->
                     <input
-                        *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)  || (lineValue.valueType === lineValueTypes.MGRS)"
+                        *ngIf="!lineValue.valueType 
+                        || (lineValue.valueType === lineValueTypes.textLine)  
+                        || (lineValue.valueType === lineValueTypes.MGRS)
+                        || (lineValue.valueType === lineValueTypes.DTG)"
                         [(ngModel)]="lineValue.value" type="text" class="form-control d-flsex line-value"
                         aria-label="Default" aria-describedby="inputGroup-sizing-default">
 

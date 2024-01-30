@@ -47,10 +47,10 @@ export class ReportPageComponent {
   }
 
   getMGRS(line: IReportLineValue) {
-    this.appService.getMyPositionMGRS().then((pos) => (line.value = pos));
+    this.appService.getMyPositionMGRS(3).then((pos) => (line.value = pos));
   }
 
   getDTG(line: IReportLineValue) {
-    // line.value = !line.value;
+    line.value = this.appService.getTimeDTG(new Date());
   }
 }

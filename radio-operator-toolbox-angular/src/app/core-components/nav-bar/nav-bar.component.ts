@@ -14,6 +14,7 @@ export class NavBarComponent {
   reports: IReport[] = [];
   private modalRef!: NgbModalRef;
   @ViewChild('infoModal') infoModal: any;
+  isMenuHidden = true;
 
   constructor(
     private appService: AppService,

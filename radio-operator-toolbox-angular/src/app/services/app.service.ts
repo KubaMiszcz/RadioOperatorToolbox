@@ -1,17 +1,11 @@
-import { Injectable, TemplateRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
 import { IReport, Report } from '../models/report.model';
 import { CoreService } from './core.service';
-import { AppData, IAppData } from '../models/app-settings.model';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
-import {
-  exampleMEDEVAC_PL,
-  exampleSALUTE_PL,
-} from 'src/assets/application-example-data';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { formatDate } from '@angular/common';
 import { DTG_TIMEZONES } from 'src/assets/application-default-data';
 
@@ -29,9 +23,6 @@ export class AppService {
     this.currenReportBS.next(
       appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
     );
-
-    //laod example medevac
-    // this.currenReportBS.next(exampleMEDEVAC_PL);
   }
 
   getPositionLatiLong(): Promise<any> {
@@ -50,9 +41,9 @@ export class AppService {
   LatiLong2MGRS(lati: number, long: number, precision: number = 5): string {
     let mgrs = forward([long, lati], precision);
     let str =
-      mgrs.substring(0, 2) +
+      mgrs.substring(0, 3) +
       ' ' +
-      mgrs.substring(2, 5) +
+      mgrs.substring(3, 5) +
       ' ' +
       mgrs.substring(5, 5 + precision) +
       ' ' +

@@ -7,14 +7,13 @@
 - toltip przy inputach czy dziala na mobile albo jakos to ogarnij
 - PL/EN version
 - tabela vigenere/polibiusz? ostyluj
+- szyfr VIC
 - na ekranie 4k menu sie rozwija
 - import export TDR
 - generate TDR
   - codewords
   - my nickname, my leader, my subteams, favourite niknames
-- ten medevac przestyluj
 - alfabety edytowalne z kropkami itp?
-- add and handle spaces in encodedword (don change it)
 - rejestr korespondencji
   - model
 - szyfry
@@ -22,16 +21,11 @@
   - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
   - https://pl.wikipedia.org/wiki/Szyfr_VIC
 -ulibione shortcuts menu
-- w navbarze buttons
-  - pobierz lokalizacje
-  - pobierz czas DTG
-- notepad
 
 
 
-### MEDEVAC
-- nputy : radio input togglwe checkbox itp
-- pobieranie lokalizacji z przegladarki
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 

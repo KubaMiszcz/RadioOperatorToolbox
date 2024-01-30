@@ -12,7 +12,7 @@ export const exampleMEDEVAC_PL: IReport = {
         {
           label: 'MGRS',
           valueType: VALUE_TYPES_ENUM.MGRS,
-          value: '34UEA 12345 54321',
+          value: '34U FA 711 428',
         },
       ],
     },
@@ -345,13 +345,13 @@ export const exampleSALUTE_PL: IReport = {
         {
           label: 'E',
           description: 'ich',
-          valueType: VALUE_TYPES_ENUM.textLine,
+          valueType: VALUE_TYPES_ENUM.MGRS,
           value: 'azymut ok 35st, ok 1km od nas',
         },
         {
           label: 'F',
           description: 'nasza',
-          valueType: VALUE_TYPES_ENUM.textLine,
+          valueType: VALUE_TYPES_ENUM.MGRS,
           value: '34 UEA 123 456',
         },
       ],
@@ -376,7 +376,7 @@ export const exampleSALUTE_PL: IReport = {
       lineValues: [
         {
           label: 'Czas',
-          valueType: VALUE_TYPES_ENUM.textLine,
+          valueType: VALUE_TYPES_ENUM.DTG,
           value:'292312ASTY24'
         },
       ],
