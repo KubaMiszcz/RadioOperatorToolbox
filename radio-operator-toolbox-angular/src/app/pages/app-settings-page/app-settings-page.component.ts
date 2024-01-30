@@ -22,8 +22,12 @@ export class AppSettingsPageComponent {
     this.appDataJSON = JSON.stringify(appDataService.appData);
   }
 
-  applySettings() {
-    this.appSettingsService.appSettings = JSON.parse(this.appSettingsJSON);
+  saveAppSettings() {
+    this.appSettingsService.saveAppSettings(this.appSettingsJSON);
+  }
+
+  saveAppData(){
+    this.appDataService.saveAppData(this.appDataJSON)
   }
 
   alert(message: string) {

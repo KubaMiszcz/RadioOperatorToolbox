@@ -20,6 +20,8 @@ export class AppService {
     private appSettingsService: AppSettingsService,
     private coreService: CoreService
   ) {
+    appSettingsService.loadAppSettings();
+    
     this.currenReportBS.next(
       appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
     );

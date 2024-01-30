@@ -21,12 +21,13 @@ export class AppDataService {
     this.saveAppData();
   }
 
-  saveAppData() {
-    localStorage.setItem('appData', JSON.stringify(this.appData));
+  saveAppData(json = '') {
+    localStorage.setItem('appData', json);
+    this.appData = JSON.parse(json);
   }
 
   loadAppData() {
     this.appData =
-      JSON.parse(localStorage.getItem('appData') ?? '') ?? new AppData();
+      JSON.parse(localStorage.getItem('appData') ?? '')
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAppSettings } from '../models/app-settings.model';
+import { AppSettings, IAppSettings } from '../models/app-settings.model';
 import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
@@ -20,20 +20,21 @@ export class AppSettingsService {
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     this.alphabet = ALPHABET_PL;
 
-    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL)
-    this.appSettings.reportsTemplates.push(exampleSALUTE_PL)
+    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
+    this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
 
     //DEBUG
     // this.findUniqueWords();
   }
 
-  saveAppSettings() {
-    localStorage.setItem('appSettings', JSON.stringify(this.appSettings));
+  saveAppSettings(json = '') {
+    localStorage.setItem('appSettings', json);
+    this.appSettings = JSON.parse(json);
   }
 
   loadAppSettings() {
-    // this.appSettings =
-      // JSON.parse(localStorage.getItem('appSettings') ?? '') ?? new AppSettings();
+    this.appSettings =
+      JSON.parse(localStorage.getItem('appSettings') ?? '')
   }
 
 
@@ -51,6 +52,11 @@ export class AppSettingsService {
 
 
 
+
+
+
+
+  
   private findUniqueWords() {
     // let words = //this.codewords;
     // let wordsunique: string[] = [];
