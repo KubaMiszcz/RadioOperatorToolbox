@@ -2,6 +2,7 @@ import { AppService } from 'src/app/services/app.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { Component } from '@angular/core';
 import { IReport } from 'src/app/models/report.model';
+import { AppDataService } from 'src/app/services/app-data.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,8 +14,9 @@ export class NavBarComponent {
   reports: IReport[] = [];
 
   constructor(
+    private appService: AppService,
+    private appDataService: AppDataService,
     private appSettingsService: AppSettingsService,
-    private appService: AppService
   ) {
     this.reports = this.appSettingsService.appSettings.reportsTemplates;
   }
@@ -27,7 +29,7 @@ export class NavBarComponent {
     return this.reports.filter((r) => !!r.isFavourite);
   }
 
-  ClearAllData() {
-    this.appService.clearAllData();
+  clearAllData() {
+    this.appDataService.clearAllData();
   }
 }

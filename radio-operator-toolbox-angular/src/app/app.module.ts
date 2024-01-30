@@ -18,6 +18,7 @@ import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings
 import { HelpPageComponent } from './pages/help-page/help-page.component';
 import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
+import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
     AppSettingsPageComponent,
     HelpPageComponent,
     NotepadPageComponent,
+    NotepadNavbarComponent,
   ],
   imports: [
     BrowserModule,

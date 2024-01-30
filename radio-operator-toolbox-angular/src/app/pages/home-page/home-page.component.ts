@@ -1,3 +1,4 @@
+import { AppDataService } from 'src/app/services/app-data.service';
 import { AppService } from '../../services/app.service';
 import { Component } from '@angular/core';
 
@@ -8,16 +9,31 @@ import { Component } from '@angular/core';
 })
 export class HomeTabComponent {
   myvar = '';
+  appdatasize = 0;
 
-  constructor(private appService: AppService) {}
+  constructor(
+    private appService: AppService,
+    private appDataService: AppDataService,
+    ) {
+      this.appdatasize = JSON.stringify(this.appDataService.appData).length;
+    }
 
   savels() {
     localStorage.setItem('myvar', this.myvar);
-    this.appService.saveAppData();
   }
-  
+
   loadls() {
     this.myvar = localStorage.getItem('myvar') ?? 'no-data';
-    this.appService.loadAppData();
+    this.appDataService.loadAppData();
+  }
+
+  saveAppData() {
+    this.appDataService.saveAppData();
+    this.appdatasize = JSON.stringify(this.appDataService.appData).length;
+  }
+
+  loadAppData() {
+    this.appDataService.loadAppData();
+    this.appdatasize = JSON.stringify(this.appDataService.appData).length;
   }
 }

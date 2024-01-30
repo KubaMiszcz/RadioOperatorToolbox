@@ -29,22 +29,7 @@ export class AppService {
     this.currenReportBS.next(exampleSALUTE_PL);
   }
 
-  clearAllData() {
-    //todo emergency clear data
-    throw new Error('Method not implemented.');
-  }
 
-  saveAppData() {
-    localStorage.setItem(
-      'appData',
-      JSON.stringify(this.AppDataService.appData)
-    );
-  }
-
-  loadAppData() {
-    this.AppDataService.appData =
-      JSON.parse(localStorage.getItem('appData') ?? '') ?? new AppData();
-  }
 
   getPositionLatiLong(): Promise<any> {
     return new Promise((resolve, reject) => {

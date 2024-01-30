@@ -1,7 +1,20 @@
 export interface INotepad {
-  pages: string[];
+  pages: INotepadPage[];
 }
 
-export class Notepad implements INotepad {
-  pages = [];
+export interface INotepadPage {
+  pageNo: number;
+  pageContent: string;
 }
+
+
+export class Notepad implements INotepad {
+  pages = [new NotepadPage()];
+}
+
+export class NotepadPage implements INotepadPage {
+  pageNo = 1;
+  pageContent = '';
+}
+
+

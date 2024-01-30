@@ -41,8 +41,9 @@
 <div class="mb-3">
     <label for="myvar" class="form-label">myvar</label>
     <input [(ngModel)]="myvar" type="text" class="form-control" name="" id="myvar" aria-describedby="helpId"
-        placeholder="" />
+    placeholder="" />
     <small id="helpId" class="form-text text-muted">Help text</small>
+    <div >appData size: {{appdatasize}}</div>
 </div>
 
 
@@ -51,6 +52,13 @@
 </button>
 <button type="button" class="btn btn-primary" (click)="loadls()">
     readlocal
+</button>
+
+<button type="button" class="btn btn-primary" (click)="saveAppData()">
+    Save App Data
+</button>
+<button type="button" class="btn btn-primary" (click)="loadAppData()">
+    Load App Data
 </button>
 
 <p>{{myvar}}</p>
