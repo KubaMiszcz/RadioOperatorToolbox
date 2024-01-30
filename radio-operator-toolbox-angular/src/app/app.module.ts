@@ -19,6 +19,7 @@ import { HelpPageComponent } from './pages/help-page/help-page.component';
 import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
+import { QuickDataComponent } from './components/quick-data/quick-data.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/note
     HelpPageComponent,
     NotepadPageComponent,
     NotepadNavbarComponent,
+    QuickDataComponent,
   ],
   imports: [
     BrowserModule,

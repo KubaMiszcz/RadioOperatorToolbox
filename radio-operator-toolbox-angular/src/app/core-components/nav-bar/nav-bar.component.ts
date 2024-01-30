@@ -1,8 +1,9 @@
 import { AppService } from 'src/app/services/app.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IReport } from 'src/app/models/report.model';
 import { AppDataService } from 'src/app/services/app-data.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,13 +11,15 @@ import { AppDataService } from 'src/app/services/app-data.service';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-
   reports: IReport[] = [];
+  private modalRef!: NgbModalRef;
+  @ViewChild('infoModal') infoModal: any;
 
   constructor(
     private appService: AppService,
     private appDataService: AppDataService,
     private appSettingsService: AppSettingsService,
+    private modalService: NgbModal
   ) {
     this.reports = this.appSettingsService.appSettings.reportsTemplates;
   }
@@ -31,5 +34,17 @@ export class NavBarComponent {
 
   clearAllData() {
     this.appDataService.clearAllData();
+  }
+
+  showQuickSheet() {
+    this.showModal();
+  }
+
+  showModal() {
+    this.modalRef = this.modalService.open(this.infoModal, { size: 'sm' });
+  }
+
+  closeModal(value: any) {
+    this.modalRef.close();
   }
 }

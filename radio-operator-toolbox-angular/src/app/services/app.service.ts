@@ -79,32 +79,30 @@ export class AppService {
     });
   }
 
-  getCurrentTimeDTG(): string {
-    let date = new Date();
-    let timezoneCode = DTG_TIMEZONES.find(c=>c.key===(-1*date.getTimezoneOffset()/60))?.value;
+  getTimeDTG(date: Date, isZulu = false): string {
+    if (isZulu) {
+      date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+    }
 
-    let dtg = `${date.getDate()}${date.getHours()}${date.getMinutes()}${timezoneCode}${this.getMonthMMM(
-      date
-    )}${date.getFullYear().toString().slice(2, 4)}`;
-    
+    let timezoneCode = isZulu
+      ? 'Z'
+      : DTG_TIMEZONES.find(
+          (c) => c.key === (-1 * date.getTimezoneOffset()) / 60
+        )?.value ?? '_';
+
+    let dtg = formatDate(date, 'ddHHmm_MMMyy', 'en')
+      .replace('_', timezoneCode)
+      .toUpperCase();
+
     return dtg;
   }
 
-  private getMonthMMM(date: Date) {
-    return date
-      .toLocaleString('default', { month: 'long' })
-      .slice(0, 3)
-      .toUpperCase();
-  }
+  getDateDTG(date: Date, isZulu = false): string {
+    if (isZulu) {
+      date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+    }
 
-  getCurrentDateDTG(): string {
-    let date = new Date();
-
-    let dtg = `${date.getDate()}${this.getMonthMMM(date)}${date
-      .getFullYear()
-      .toString()
-      .slice(2, 4)}`;
-
+    let dtg = formatDate(date, 'ddMMMyy', 'en').toUpperCase();
     return dtg;
   }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { forward } from 'mgrs';
 import {
   IReport,
   IReportLineValue,
