@@ -1,28 +1,62 @@
 import { Injectable } from '@angular/core';
-import { IAppData } from '../models/appData';
-import { ALPHABET_PL, APP_DATA_JSON } from 'src/assets/application-default-data';
+import { AppSettings, IAppSettings } from '../models/app-settings.model';
+import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
+import { exampleMEDEVAC_PL, exampleSALUTE_PL } from 'src/assets/application-example-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppSettingsService {
-  appData: IAppData;
+  appSettings: IAppSettings;
   version: string = packageJson.version;
   build: string = packageJson.build;
   codewords: string[] = [];
   alphabet: string[] = [];
 
   constructor() {
-    this.appData = APP_DATA_JSON;
+    this.appSettings = APP_DEFAULT_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     this.alphabet = ALPHABET_PL;
+
+    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
+    this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
 
     //DEBUG
     // this.findUniqueWords();
   }
 
+  saveAppSettings(json = '') {
+    localStorage.setItem('appSettings', json);
+    this.appSettings = JSON.parse(json);
+  }
+
+  loadAppSettings() {
+    this.appSettings =
+      JSON.parse(localStorage.getItem('appSettings') ?? '')
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   private findUniqueWords() {
     // let words = //this.codewords;
     // let wordsunique: string[] = [];

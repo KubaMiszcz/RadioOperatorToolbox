@@ -1,0 +1,4 @@
+export enum TRANSMIT_DIRECTION {
+  INCOMING = 'ODBIÓR',
+  OUTGOING = 'NADAWANIE',
+}

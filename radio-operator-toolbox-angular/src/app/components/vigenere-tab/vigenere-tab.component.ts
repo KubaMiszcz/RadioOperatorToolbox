@@ -5,11 +5,11 @@ import { CoreService } from 'src/app/services/core.service';
 import { ALPHABET_EN, ALPHABET_PL } from 'src/assets/application-default-data';
 
 @Component({
-  selector: 'app-vigenere-page',
-  templateUrl: './vigenere-page.component.html',
-  styleUrls: ['./vigenere-page.component.scss'],
+  selector: 'app-vigenere-tab',
+  templateUrl: './vigenere-tab.component.html',
+  styleUrls: ['./vigenere-tab.component.scss'],
 })
-export class VigenerePageComponent {
+export class VigenereTabComponent {
   textDecoded = 'abc';
   textEncoded = '';
   currentCodeWord = 'BACKGROUND';
@@ -54,21 +54,32 @@ export class VigenerePageComponent {
   }
 
   private checkIfCodewordCoversAlphabet(codeWord: string) {
-    //is all letters present in table after roll rows
-    let isOKpart0_10 = false;
-    let isOKpart10_20 = false;
-    let isOKpart20_30 = false;
-    [...codeWord].forEach((letter) => {
-      let idx = this.alphabet.indexOf(letter);
-      isOKpart0_10 = isOKpart0_10 || (idx >= 0 && idx <= 9);
-      isOKpart10_20 = isOKpart10_20 || (idx >= 10 && idx <= 19);
-      isOKpart20_30 = isOKpart20_30 || (idx >= 20 && idx <= 29);
-    });
+    // //is all letters present in table after roll rows
+    // let isOKpart0_10 = false;
+    // let isOKpart10_20 = false;
+    // let isOKpart20_30 = false;
+    // [...codeWord].forEach((letter) => {
+    //   let idx = this.alphabet.indexOf(letter);
+    //   isOKpart0_10 = isOKpart0_10 || (idx >= 0 && idx <= 9);
+    //   isOKpart10_20 = isOKpart10_20 || (idx >= 10 && idx <= 19);
+    //   isOKpart20_30 = isOKpart20_30 || (idx >= 20 && idx <= 29);
+    // });
 
-    return isOKpart0_10 && isOKpart10_20 && isOKpart20_30;
+    // return isOKpart0_10 && isOKpart10_20 && isOKpart20_30;
+    return true;
   }
 
   private makeVigenereCodeTable(codeWord: string) {
+    [...codeWord].forEach((l) => {
+      let idx = this.alphabet.indexOf(l);
+      let head = [...this.alphabet];
+      let tail = head.splice(idx);
+      tail.push(...head);
+      this.codeTable.push(tail.slice(0, codeWord.length));
+    });
+  }
+
+  private makePolibiusCodeTable(codeWord: string) {
     [...codeWord].forEach((l) => {
       let idx = this.alphabet.indexOf(l);
       let head = [...this.alphabet];
@@ -87,7 +98,7 @@ export class VigenerePageComponent {
 
     this.validateWordDecoded();
 
-    let allowedSigns = [...' !@#$%*()_+-=[]{}|\\:";\'<>,.?/'];
+    let allowedSigns = [...' \.\!\#'];
     this.textEncoded = '';
 
     Array.from(this.textDecoded).forEach((letter) => {

@@ -1,0 +1,23 @@
+<div>
+    <app-notepad-navbar
+    (prevPage)="prevPage()"
+    (addPage)="addPage()"
+    (removePage)="removePage()"
+    (nextPage)="nextPage()"
+    ></app-notepad-navbar>
+</div>
+
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1"> Quick notepad, page: {{currentPage.pageNo}} / {{pages.length}}</label>
+    <textarea [(ngModel)]="currentPage.pageContent" class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea> 
+</div>
+
+<div>
+    <app-notepad-navbar
+    (prevPage)="prevPage()"
+    (addPage)="addPage()"
+    (removePage)="removePage()"
+    (nextPage)="nextPage()"
+    ></app-notepad-navbar>
+</div>

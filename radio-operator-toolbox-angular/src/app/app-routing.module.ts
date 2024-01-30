@@ -1,21 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SettingsTabComponent } from './tabs/settings-tab/settings-tab.component';
-import { HomeTabComponent } from './tabs/home-tab/home-tab.component';
-import { SarnegPageComponent } from './components/sarneg-page/sarneg-page.component';
-import { VigenerePageComponent } from './components/vigenere-page/vigenere-page.component';
-import { ReportPageComponent } from './components/report-page/report-page.component';
+import { SettingsTabComponent as SettingsTabComponentXXXXXXXXXOLD } from './pages/settings-page-old/settings-tab.component';
+import { HomeTabComponent } from './pages/home-page/home-page.component';
+import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
+import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
+import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
+import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
+import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
+import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
+import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
+import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 
 const routes: Routes = [
-  { path: 'sarneg-page', component: SarnegPageComponent },
-  { path: 'vigenere-page', component: VigenerePageComponent },
-  { path: 'report-page', component: ReportPageComponent },
-  { path: 'settings-tab', component: SettingsTabComponent },
+  { path: 'sarneg-tab', component: SarnegTabComponent },
+  { path: 'vigenere-tab', component: VigenereTabComponent },
+
+  { path: 'reports-page', component: ReportsPageComponent },
+  { path: 'notepad-page', component: NotepadPageComponent },
+  { path: 'cheatsheet-page', component: CheatsheetComponent },
+  { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
+  
+  { path: 'tdr-data-page', component: TDRDataPageComponent },
+  { path: 'settings-page', component: AppSettingsPageComponent },
+
+  { path: 'settings-tab', component: SettingsTabComponentXXXXXXXXXOLD },
   { path: 'home-tab', component: HomeTabComponent },
-  { path: '', redirectTo: '/vigenere-tab', pathMatch: 'full' },
-  { path: '**', component: ReportPageComponent },
-  // { path: '', redirectTo: '/home-tab', pathMatch: 'full' },
-  // { path: '**', component: HomeTabComponent },
+  { path: '', redirectTo: '/reports-tab', pathMatch: 'full' },
+  { path: '**', component: ReportsPageComponent },
+  // { path: '', redirectTo: '/home-page', pathMatch: 'full' },
+  // { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({

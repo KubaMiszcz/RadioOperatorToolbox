@@ -1,0 +1,7 @@
+<div>
+    <div *ngFor="let item of quickData" class="mb-1">{{item.key}}:<br><code>{{item.value}}</code>
+        <button type="button" class="btn btn-primary btn-sm ms-2" [cdkCopyToClipboard]="item.value">
+            <i class="fas fa-copy "></i>
+        </button>
+    </div>
+</div>

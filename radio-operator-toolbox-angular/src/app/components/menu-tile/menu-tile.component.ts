@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class MenuTileComponent {
   @Input() name = 'no-name';
   @Input() iconName = '';
+  @Input() isLabelShowed = false;
   
   constructor() {
     

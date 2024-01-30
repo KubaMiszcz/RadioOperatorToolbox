@@ -1,7 +1,9 @@
 import { AppService } from 'src/app/services/app.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IReport } from 'src/app/models/report.model';
+import { AppDataService } from 'src/app/services/app-data.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,14 +11,18 @@ import { IReport } from 'src/app/models/report.model';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-
   reports: IReport[] = [];
+  private modalRef!: NgbModalRef;
+  @ViewChild('infoModal') infoModal: any;
+  isMenuHidden = true;
 
   constructor(
+    private appService: AppService,
+    private appDataService: AppDataService,
     private appSettingsService: AppSettingsService,
-    private appService: AppService
+    private modalService: NgbModal
   ) {
-    this.reports = this.appSettingsService.appData.reports;
+    this.reports = this.appSettingsService.appSettings.reportsTemplates;
   }
 
   setCurrentReport(report: IReport) {
@@ -27,7 +33,19 @@ export class NavBarComponent {
     return this.reports.filter((r) => !!r.isFavourite);
   }
 
-  ClearAllData() {
-    this.appService.clearAllData();
+  clearAllData() {
+    this.appDataService.clearAllData();
+  }
+
+  showQuickSheetModal() {
+    this.showModal();
+  }
+
+  showModal() {
+    this.modalRef = this.modalService.open(this.infoModal, { size: 'sm' });
+  }
+
+  closeModal(value: any) {
+    this.modalRef.close();
   }
 }

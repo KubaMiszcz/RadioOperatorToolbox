@@ -6,42 +6,66 @@
                 <img src="assets/imgs/app-icon.png" height="30" alt="">
             </div>
             <div class="me-1" [routerLink]="'home-tab'">
-                <button type="button" name="" id="" class="btn btn-danger" (click)="ClearAllData()" data-bs-toggle="modal" data-bs-target="#mymodal">
+                <button type="button" name="" id="" class="btn btn-danger" (click)="clearAllData()"
+                    data-bs-toggle="modal" data-bs-target="#mymodal">
                     CLEAR ALL
-                </button>        
+                </button>
             </div>
         </div>
 
+
+
+
+
+
+
+
+
+
         <div class="d-flex align-items-center">
-            <div class="ms-1" [routerLink]="'sarneg-page'">
+            <div class="ms-1" (click)="showQuickSheetModal()">
+                <img src="https://cdn.vectorstock.com/i/1000x1000/60/58/lamp-light-bulb-idea-icon-vector-20716058.webp"
+                    height="30" alt="">
+            </div>
+            <div class="ms-1" [routerLink]="'sarneg-tab'">
                 <img src="assets/imgs/sarneg-image.png" height="30" alt="">
             </div>
-            <div class="ms-1" [routerLink]="'vigenere-page'">
+            <div class="ms-1" [routerLink]="'vigenere-tab'">
                 <img src="assets/imgs/vigenere-image.png" height="30" alt="">
             </div>
             <div class="ms-1" [routerLink]="'reports-page'">
                 <img src="assets/imgs/reports-image.png" height="30" alt="">
             </div>
 
-            <!--  -->
-
-            <button class="ms-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <!-- HAMBURGER MENU ICON -->
+            <button class="ms-2 navbar-toggler" type="button" data-bs-toggle="collsapse" data-bs-target="#navbasrNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="isMenuHidden=!isMenuHidden">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
 
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+
+
+
+
+        <!-- HAMBURGER MENU -->
+        <div class="collsspse navbar-collapse" [ngClass]="{'hidden':isMenuHidden}" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" [routerLink]="'sarneg-page'">kodowanie SARNEG </a>
+                    <a class="nav-link" [routerLink]="'sarneg-tab'" (click)="isMenuHidden=!isMenuHidden">kodowanie SARNEG </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'vigenere-page'">kodowanie Vigenere</a>
+                    <a class="nav-link" [routerLink]="'vigenere-tab'" (click)="isMenuHidden=!isMenuHidden">kodowanie Vigenere</a>
                 </li>
-                <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)">
-                    <a class="nav-link" [routerLink]="'report-page'">{{item.name}}</a>
+                <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)" (click)="isMenuHidden=!isMenuHidden">
+                    <a class="nav-link" [routerLink]="'reports-page'">{{item.name}}
+                        <i class="fas fa-thumbtack"></i>
+                    </a>
                 </li>
 
 
@@ -57,14 +81,14 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a *ngFor="let item of reports" class="dropdown-item d-flex justify-content-end"
-                                [routerLink]="'report-page'">{{item.name}}</a>
+                                [routerLink]="'reports-page'" (click)="setCurrentReport(item)" (click)="isMenuHidden=!isMenuHidden">{{item.name}}</a>
                         </div>
                     </div>
                 </li>
 
 
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'vigenere-page'">Help </a>
+                    <a class="nav-link" [routerLink]="'vigenere-tab'">Help </a>
                 </li>
             </ul>
         </div>
@@ -91,4 +115,27 @@
         </div>
     </div>
 </div>
- 
+
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #infoModal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Quick Data:</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+        <app-quick-data></app-quick-data>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
