@@ -11,7 +11,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
 import { MenuTileComponent } from './components/menu-tile/menu-tile.component';
-import { ReportPageComponent as ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
@@ -22,6 +21,10 @@ import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/note
 import { QuickDataComponent } from './components/quick-data/quick-data.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
+import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
+import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
+
+
 
 
 @NgModule({
@@ -34,7 +37,6 @@ import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
     VigenereTabComponent,
     MenuTileComponent,
     HomePageComponent,
-    ReportsPageComponent,
     TDRDataPageComponent,
     CorrespondenceBookPageComponent,
     AppSettingsPageComponent,
@@ -43,6 +45,8 @@ import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
     NotepadNavbarComponent,
     QuickDataComponent,
     CheatsheetComponent,
+    ReportsPageComponent,
+    ReportTabComponent,
   ],
   imports: [
     BrowserModule,

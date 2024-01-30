@@ -1,0 +1,147 @@
+<div class="input-group mb-1">
+
+    <div class="d-flex w-100">
+        <button type="button" class="btn btn-success d-flex mx-2 w-100"
+            (click)="isCreatorCollapsed=!isCreatorCollapsed">
+            <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i>
+            </div>
+            <div *ngIf="!isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-down " aria-hidden="true"></i>
+            </div>
+            <div class="">{{report.name | uppercase}} Creator</div>
+        </button>
+    </div>
+
+</div>
+
+<div *ngIf="!isCreatorCollapsed">
+    <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines px-2">
+        <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
+            {{line.lineHeader | uppercase}}</div>
+
+
+        <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+            id="inputGroup-sizing-default2">
+            <div class="line-desc p-1">
+                <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
+                <div *ngFor="let linedesc of line.descriptionLines" class="desc-content-line">{{linedesc}}</div>
+            </div>
+
+
+
+            <div class="d-flex flex-wrap line-values flsex-row">
+                <div *ngFor="let lineValue of line.lineValues" class="d-flex m-1 align-items-center" [ngClass]="{
+                        'flex-column justify-content-start': lineValue.valueType === lineValueTypes.textArea,
+                        'flex-row justify-content-between': lineValue.valueType !== lineValueTypes.textArea,
+                 }">
+                    <div class="d-flex" [ngClass]="{'w-100': lineValue.valueType === lineValueTypes.textArea}">
+                        <!-- <div *ngIf="lineValue.valueType !== lineValueTypes.bool" class=" line-value-label me-1" -->
+                        <div class=" line-value-label me-1" id="inputGroup-sizing-default2">
+                            <span>{{lineValue.label}}</span>
+                            <span *ngIf="lineValue.description"> - {{lineValue.description}}</span>
+                        </div>
+                    </div>
+
+                    <!-- TEXT LINE -->
+                    <input *ngIf="!lineValue.valueType 
+                        || (lineValue.valueType === lineValueTypes.textLine)  
+                        || (lineValue.valueType === lineValueTypes.MGRS)
+                        || (lineValue.valueType === lineValueTypes.DTG)" [(ngModel)]="lineValue.value" type="text"
+                        class="form-control d-flsex line-value" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+
+                    <!-- SHORT NUMBER -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.shortNumber" class="d-flex flex-row">
+                        <button type="button" class="btn btn-primary mx-1" (click)="decreaseValue(lineValue)">
+                            <i class="fas fa-minus    "></i>
+                        </button>
+
+                        <input [(ngModel)]="lineValue.value" ype="number"
+                            class="form-control line-value line-value-short" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
+
+                        <button type="button" class="btn btn-primary mx-1 " (click)="increaseValue(lineValue)">
+                            <i class="fas fa-plus    "></i>
+                        </button>
+                    </div>
+
+                    <!-- LONG NUMBER -->
+                    <input *ngIf="lineValue.valueType === lineValueTypes.longNumber" [(ngModel)]="lineValue.value"
+                        type="number" class="form-control line-value line-value-long" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+
+
+                    <!-- TEXT AREA -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.textArea" class="d-flex">
+                        <textarea [(ngModel)]="lineValue.value" class="form-control" rows="2" cols="1000"
+                            aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
+                    </div>
+
+
+                    <!-- CHECKBOX -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.bool">
+                        <button *ngIf="!lineValue.value" type="button" class="checkbox btn btn-secondary"
+                            (click)="toggleValue(lineValue)">
+                            <i class="fas fa-square    "></i>
+                        </button>
+                        <button *ngIf="lineValue.value" type="button" class="checkbox btn btn-success"
+                            (click)="toggleValue(lineValue)">
+                            <i class="fas fa-check-square    "></i>
+                        </button>
+                    </div>
+
+                    <!-- MGRS -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue)">
+                            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- DTG -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.DTG">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getDTG(lineValue)">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- todo saved reports -->
+
+<div class="my-4">
+    <br>
+    <!-- <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block my-4 d-flex" >Save report</button> -->
+</div>
+
+
+
+<div class="card m-2">
+    <div class="card-body p-1">
+        <h5 class="card-title">{{report.name | uppercase}}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+        <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
+            <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
+                id="inputGroup-sizing-default2">
+                {{line.lineHeader}}
+            </div>
+            <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
+                id="inputGroup-sizing-default2">
+                <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
+                    <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
+                        <span *ngIf="lineValue.label">{{lineValue.label}}: </span>
+                        <b>{{lineValue.value}}</b>,
+                    </div>
+                    <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
+                        <b>{{lineValue.label}}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
