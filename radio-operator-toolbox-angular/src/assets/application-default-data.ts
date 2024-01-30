@@ -1,5 +1,6 @@
 import { IAppSettings } from 'src/app/models/app-data.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
+import { KeyValue } from '@angular/common';
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
@@ -73,4 +74,33 @@ export const ALPHABET_PL = [
   'Z',
   'Ź',
   'Ż',
+];
+
+
+export const DTG_TIMEZONES: KeyValue<number, string>[] = [
+  { key: -12, value: 'Y' },
+  { key: -11, value: 'X' },
+  { key: -10, value: 'W' },
+  { key: -9, value: 'V' },
+  { key: -8, value: 'U' },
+  { key: -7, value: 'T' },
+  { key: -6, value: 'S' },
+  { key: -5, value: 'R' },
+  { key: -4, value: 'Q' },
+  { key: -3, value: 'P' },
+  { key: -2, value: 'O' },
+  { key: -1, value: 'N' },
+  { key: +-0, value: 'Z' },
+  { key: +1, value: 'A' },
+  { key: +2, value: 'B' },
+  { key: +3, value: 'C' },
+  { key: +4, value: 'D' },
+  { key: +5, value: 'E' },
+  { key: +6, value: 'F' },
+  { key: +7, value: 'G' },
+  { key: +8, value: 'H' },
+  { key: +9, value: 'I' },
+  { key: +10, value: 'K' },
+  { key: +11, value: 'L' },
+  { key: +12, value: 'M' },
 ];

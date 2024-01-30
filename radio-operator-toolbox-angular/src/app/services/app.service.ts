@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
 import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
@@ -7,7 +7,13 @@ import { CoreService } from './core.service';
 import { AppData, IAppData } from '../models/app-settings.model';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
-import { exampleMEDEVAC_PL, exampleSALUTE_PL } from 'src/assets/application-example-data';
+import {
+  exampleMEDEVAC_PL,
+  exampleSALUTE_PL,
+} from 'src/assets/application-example-data';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { formatDate } from '@angular/common';
+import { DTG_TIMEZONES } from 'src/assets/application-default-data';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +24,7 @@ export class AppService {
   constructor(
     private AppDataService: AppDataService,
     private appSettingsService: AppSettingsService,
-    private coreServiceService: CoreService
+    private coreService: CoreService
   ) {
     this.currenReportBS.next(
       appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
@@ -41,7 +47,7 @@ export class AppService {
     });
   }
 
-  LatiLong2MGRS(lati: number, long: number, precision: number = 5) {
+  LatiLong2MGRS(lati: number, long: number, precision: number = 5): string {
     let mgrs = forward([long, lati], precision);
     let str =
       mgrs.substring(0, 2) +
@@ -55,7 +61,7 @@ export class AppService {
   }
 
   getMyPositionMGRS(precision = 5) {
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         (resp) => {
           resolve(
@@ -71,5 +77,34 @@ export class AppService {
         }
       );
     });
+  }
+
+  getCurrentTimeDTG(): string {
+    let date = new Date();
+    let timezoneCode = DTG_TIMEZONES.find(c=>c.key===(-1*date.getTimezoneOffset()/60))?.value;
+
+    let dtg = `${date.getDate()}${date.getHours()}${date.getMinutes()}${timezoneCode}${this.getMonthMMM(
+      date
+    )}${date.getFullYear().toString().slice(2, 4)}`;
+    
+    return dtg;
+  }
+
+  private getMonthMMM(date: Date) {
+    return date
+      .toLocaleString('default', { month: 'long' })
+      .slice(0, 3)
+      .toUpperCase();
+  }
+
+  getCurrentDateDTG(): string {
+    let date = new Date();
+
+    let dtg = `${date.getDate()}${this.getMonthMMM(date)}${date
+      .getFullYear()
+      .toString()
+      .slice(2, 4)}`;
+
+    return dtg;
   }
 }
