@@ -36,7 +36,7 @@ export class NavBarComponent {
     this.appDataService.clearAllData();
   }
 
-  showQuickSheet() {
+  showQuickSheetModal() {
     this.showModal();
   }
 

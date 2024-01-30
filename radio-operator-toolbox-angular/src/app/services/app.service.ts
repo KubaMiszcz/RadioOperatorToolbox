@@ -31,7 +31,7 @@ export class AppService {
     );
 
     //laod example medevac
-    this.currenReportBS.next(exampleMEDEVAC_PL);
+    // this.currenReportBS.next(exampleMEDEVAC_PL);
   }
 
   getPositionLatiLong(): Promise<any> {

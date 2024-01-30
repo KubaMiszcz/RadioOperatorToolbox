@@ -1,7 +1,7 @@
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
 export const exampleMEDEVAC_PL: IReport = {
-  name: 'MEDEVAC Report EXAMPLE',
+  name: 'EXAMPLE MEDEVAC Report',
   isFavourite: true,
   lines: [
     {
@@ -312,7 +312,7 @@ export const exampleMEDEVAC_PL: IReport = {
 };
 
 export const exampleSALUTE_PL: IReport = {
-  name: 'SALUTE Report EXAMPLE',
+  name: 'EXAMPLE SALUTE Report',
   isFavourite: true,
   lines: [
     {

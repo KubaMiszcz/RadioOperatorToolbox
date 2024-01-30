@@ -17,7 +17,10 @@
             [isLabelShowed]="true"></app-menu-tile>
     </div>
     <div class="tile">
-        <app-menu-tile [name]="'dane z TDR'" [routerLink]="[ '/tdr-data-page']" [isLabelShowed]="true"></app-menu-tile>
+        <app-menu-tile [name]="'import export z TDR'" [routerLink]="[ '/tdr-data-page']" [isLabelShowed]="true"></app-menu-tile>
+    </div>
+    <div class="tile">
+        <app-menu-tile [name]="'Sciągawka'" [routerLink]="[ '/cheatsheet-page']" [isLabelShowed]="true"></app-menu-tile>
     </div>
 </div>
 
@@ -46,13 +49,6 @@
     <div >appData size: {{appdatasize}}</div>
 </div>
 
-
-<button type="button" class="btn btn-primary" (click)="savels()">
-    savelocal
-</button>
-<button type="button" class="btn btn-primary" (click)="loadls()">
-    readlocal
-</button>
 
 <button type="button" class="btn btn-primary" (click)="saveAppData()">
     Save App Data

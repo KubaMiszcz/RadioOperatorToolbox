@@ -20,6 +20,9 @@ import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-pa
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 import { QuickDataComponent } from './components/quick-data/quick-data.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
+
 
 @NgModule({
   declarations: [
@@ -39,12 +42,14 @@ import { QuickDataComponent } from './components/quick-data/quick-data.component
     NotepadPageComponent,
     NotepadNavbarComponent,
     QuickDataComponent,
+    CheatsheetComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ClipboardModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

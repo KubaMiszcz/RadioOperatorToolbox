@@ -3,6 +3,7 @@ import { IAppSettings } from '../models/app-data.model';
 import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/application-default-data';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
+import { exampleMEDEVAC_PL, exampleSALUTE_PL } from 'src/assets/application-example-data';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,9 @@ export class AppSettingsService {
     this.appSettings = APP_DEFAULT_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     this.alphabet = ALPHABET_PL;
+
+    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL)
+    this.appSettings.reportsTemplates.push(exampleSALUTE_PL)
 
     //DEBUG
     // this.findUniqueWords();

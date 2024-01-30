@@ -8,24 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./quick-data.component.scss'],
 })
 export class QuickDataComponent {
-  currentPosition1m = '';
-  currentPosition1km = '';
-  currentTimeDTG = '';
-  currentDateDTG = '';
-
   quickData: KeyValue<string, string>[] = [];
 
   constructor(private appService: AppService) {
     this.appService.getMyPositionMGRS().then((pos) =>
       this.quickData.push({
-        key: 'current Position MGRS 1m',
+        key: 'your Position MGRS 1m',
         value: pos,
       })
     );
 
     this.appService.getMyPositionMGRS(3).then((pos) =>
       this.quickData.push({
-        key: 'current Position MGRS 1km',
+        key: 'your Position MGRS 1km',
         value: pos,
       })
     );
@@ -45,6 +40,4 @@ export class QuickDataComponent {
       value: this.appService.getDateDTG(new Date()),
     });
   }
-
-  copyToClipboard() {}
 }

@@ -9,6 +9,7 @@ import { CorrespondenceBookPageComponent } from './pages/correspondence-book-pag
 import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
+import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 
 const routes: Routes = [
   { path: 'sarneg-tab', component: SarnegTabComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
 
   { path: 'reports-page', component: ReportsPageComponent },
   { path: 'notepad-page', component: NotepadPageComponent },
+  { path: 'cheatsheet-page', component: CheatsheetComponent },
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
   { path: 'tdr-data-page', component: TDRDataPageComponent },
