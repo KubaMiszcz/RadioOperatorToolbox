@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1705787270125,
+  "timestamp": 1706654054195,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.fa29ea197e2e07d3.js",
+        "/RadioOperatorToolbox/main.c05b34519637c342.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -32,6 +32,7 @@
         "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf",
         "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf",
         "/RadioOperatorToolbox/assets/application-default-data.ts",
+        "/RadioOperatorToolbox/assets/application-example-data.ts",
         "/RadioOperatorToolbox/assets/fonts/Dosis-Medium.ttf",
         "/RadioOperatorToolbox/assets/fonts/JetBrainsMono-Medium.ttf",
         "/RadioOperatorToolbox/assets/icons/icon-128x128.png",
@@ -46,7 +47,7 @@
         "/RadioOperatorToolbox/assets/imgs/reports-image.png",
         "/RadioOperatorToolbox/assets/imgs/sarneg-image.png",
         "/RadioOperatorToolbox/assets/imgs/vigenere-image.png",
-        "/RadioOperatorToolbox/assets/reportsSchemas.json.ts",
+        "/RadioOperatorToolbox/assets/reports-templates.json.ts",
         "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts",
         "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts"
       ],
@@ -57,7 +58,8 @@
   "hashTable": {
     "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
-    "/RadioOperatorToolbox/assets/application-default-data.ts": "54671f8d34bfb761e4a9e860888883ce66771224",
+    "/RadioOperatorToolbox/assets/application-default-data.ts": "230c100fd8f1c3977bfc621e0878cf72462c36d1",
+    "/RadioOperatorToolbox/assets/application-example-data.ts": "c44f58a0fc555a875cbb0dcbb438c8b8c7d8bed6",
     "/RadioOperatorToolbox/assets/fonts/Dosis-Medium.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/assets/fonts/JetBrainsMono-Medium.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
     "/RadioOperatorToolbox/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
@@ -72,12 +74,12 @@
     "/RadioOperatorToolbox/assets/imgs/reports-image.png": "0c3b969805bafe9eaea5a7c5bd6bad9e0a26b272",
     "/RadioOperatorToolbox/assets/imgs/sarneg-image.png": "2dc17e7bcb2aa50fcc762fd037183129deb9c3bc",
     "/RadioOperatorToolbox/assets/imgs/vigenere-image.png": "5512e872b6887cfe804d383966d72a2b22fb5356",
-    "/RadioOperatorToolbox/assets/reportsSchemas.json.ts": "2eb040f4b1418c7cb40b9f409e99b1489b181090",
+    "/RadioOperatorToolbox/assets/reports-templates.json.ts": "77c36d77dafa24022c484b6b70ed3fda25ada64c",
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/RadioOperatorToolbox/index.html": "41d371c5c2a5704b450f102a67b2e3aad1d46721",
-    "/RadioOperatorToolbox/main.fa29ea197e2e07d3.js": "0fe92a437326d3e3d998a8fcbd5489d35b661469",
+    "/RadioOperatorToolbox/index.html": "eeb17f9eb9d1f2adcd1a2cc81fd1c14937e8bdef",
+    "/RadioOperatorToolbox/main.c05b34519637c342.js": "37acabef7d0608fa46753809346288e0f6c61878",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
