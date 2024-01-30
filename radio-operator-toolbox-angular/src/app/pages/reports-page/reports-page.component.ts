@@ -46,4 +46,12 @@ export class ReportPageComponent {
   toggleValue(line: IReportLineValue) {
     line.value = !line.value;
   }
+
+  getMGRS(line: IReportLineValue) {
+    this.appService.getMyPositionMGRS().then((pos) => (line.value = pos));
+  }
+
+  getDTG(line: IReportLineValue) {
+    // line.value = !line.value;
+  }
 }

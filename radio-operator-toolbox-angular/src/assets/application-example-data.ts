@@ -11,7 +11,7 @@ export const exampleMEDEVAC_PL: IReport = {
       lineValues: [
         {
           label: 'MGRS',
-          valueType: VALUE_TYPES_ENUM.textLine,
+          valueType: VALUE_TYPES_ENUM.MGRS,
           value: '34UEA 12345 54321',
         },
       ],

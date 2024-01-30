@@ -42,8 +42,9 @@
                     </div>
 
                     <!-- TEXT LINE -->
-                    <input *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)"
-                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flex line-value"
+                    <input
+                        *ngIf="!lineValue.valueType || (lineValue.valueType === lineValueTypes.textLine)  || (lineValue.valueType === lineValueTypes.MGRS)"
+                        [(ngModel)]="lineValue.value" type="text" class="form-control d-flsex line-value"
                         aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
                     <!-- SHORT NUMBER -->
@@ -76,7 +77,6 @@
 
                     <!-- CHECKBOX -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.bool">
-
                         <button *ngIf="!lineValue.value" type="button" class="checkbox btn btn-secondary"
                             (click)="toggleValue(lineValue)">
                             <i class="fas fa-square    "></i>
@@ -85,7 +85,20 @@
                             (click)="toggleValue(lineValue)">
                             <i class="fas fa-check-square    "></i>
                         </button>
+                    </div>
 
+                    <!-- MGRS -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue)">
+                            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- DTG -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.DTG">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getDTG(lineValue)">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </button>
                     </div>
 
                 </div>

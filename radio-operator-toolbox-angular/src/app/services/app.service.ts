@@ -24,12 +24,9 @@ export class AppService {
       appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
     );
 
-    
     //laod example medevac
-    this.currenReportBS.next(exampleSALUTE_PL);
+    this.currenReportBS.next(exampleMEDEVAC_PL);
   }
-
-
 
   getPositionLatiLong(): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -53,7 +50,26 @@ export class AppService {
       ' ' +
       mgrs.substring(5, 5 + precision) +
       ' ' +
-      mgrs.substring(5 + precision, 5+precision+precision);
+      mgrs.substring(5 + precision, 5 + precision + precision);
     return str;
+  }
+
+  getMyPositionMGRS(precision = 5) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (resp) => {
+          resolve(
+            this.LatiLong2MGRS(
+              resp.coords.latitude,
+              resp.coords.longitude,
+              precision
+            )
+          );
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
   }
 }
