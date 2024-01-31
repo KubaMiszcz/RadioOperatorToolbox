@@ -11,8 +11,8 @@ export class AppDataService {
 
   clearAllData() {
     let emptyAppData: IAppData = {
-      myNickname: '',
-      teamsNicknames: [],
+      myCodename: '',
+      teamsCodenames: [],
       reports: [],
       correspondenceBook: [],
       notepad: { pages: [] },
