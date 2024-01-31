@@ -4,12 +4,15 @@ import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/application-d
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 import { exampleMEDEVAC_PL, exampleSALUTE_PL } from 'src/assets/application-example-data';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppSettingsService {
   appSettings: IAppSettings;
+  // appSettingsBS = new BehaviorSubject<IAppSettings>(null);
+
   version: string = packageJson.version;
   build: string = packageJson.build;
   codewords: string[] = [];
@@ -32,31 +35,13 @@ export class AppSettingsService {
     this.appSettings = JSON.parse(json);
   }
 
-  loadAppSettings() {
-    this.appSettings =
-      JSON.parse(localStorage.getItem('appSettings') ?? '')
+  loadAppSettingsOrDefault() {
+    this.appSettings = JSON.parse(
+      localStorage.getItem('appSettings') ??
+        JSON.stringify(APP_DEFAULT_SETTINGS_JSON)
+    );
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   private findUniqueWords() {
     // let words = //this.codewords;
     // let wordsunique: string[] = [];
