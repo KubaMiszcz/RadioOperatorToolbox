@@ -10,12 +10,14 @@ import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
+import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
 
 const routes: Routes = [
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
 
   { path: 'reports-page', component: ReportsPageComponent },
+  { path: 'report-tab', component: ReportTabComponent },
   { path: 'notepad-page', component: NotepadPageComponent },
   { path: 'cheatsheet-page', component: CheatsheetComponent },
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
