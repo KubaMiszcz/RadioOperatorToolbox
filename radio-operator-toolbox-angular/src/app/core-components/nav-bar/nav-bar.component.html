@@ -63,7 +63,7 @@
                     <a class="nav-link" [routerLink]="'vigenere-tab'" (click)="isMenuHidden=!isMenuHidden">kodowanie Vigenere</a>
                 </li>
                 <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)" (click)="isMenuHidden=!isMenuHidden">
-                    <a class="nav-link" [routerLink]="'reports-page'">{{item.name}}
+                    <a class="nav-link" [routerLink]="'report-tab'">{{item.name}}
                         <i class="fas fa-thumbtack"></i>
                     </a>
                 </li>
@@ -81,7 +81,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a *ngFor="let item of reports" class="dropdown-item d-flex justify-content-end"
-                                [routerLink]="'reports-page'" (click)="setCurrentReport(item)" (click)="isMenuHidden=!isMenuHidden">{{item.name}}</a>
+                                [routerLink]="'report-tab'" (click)="setCurrentReport(item)" (click)="isMenuHidden=!isMenuHidden">{{item.name}}</a>
                         </div>
                     </div>
                 </li>

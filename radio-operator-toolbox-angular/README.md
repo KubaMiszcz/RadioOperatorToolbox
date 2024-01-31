@@ -12,7 +12,7 @@
 - import export TDR
 - generate TDR
   - codewords
-  - my nickname, my leader, my subteams, favourite niknames
+  - my codename, my leader, my subteams, favourite codenames
 - alfabety edytowalne z kropkami itp?
 - rejestr korespondencji
   - model

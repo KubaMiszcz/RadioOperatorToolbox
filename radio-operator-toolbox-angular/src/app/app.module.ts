@@ -1,4 +1,3 @@
-import { SettingsTabComponent } from './pages/settings-page-old/settings-tab.component';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -23,6 +22,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
+import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.component';
 
 
 
@@ -31,7 +31,6 @@ import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.c
   declarations: [
     AppComponent,
     NavBarComponent,
-    SettingsTabComponent,
     FooterComponent,
     SarnegTabComponent,
     VigenereTabComponent,
@@ -47,6 +46,7 @@ import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.c
     CheatsheetComponent,
     ReportsPageComponent,
     ReportTabComponent,
+    EncodingsTabComponent,
   ],
   imports: [
     BrowserModule,

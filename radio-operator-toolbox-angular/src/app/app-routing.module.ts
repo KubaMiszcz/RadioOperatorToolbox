@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SettingsTabComponent as SettingsTabComponentXXXXXXXXXOLD } from './pages/settings-page-old/settings-tab.component';
 import { HomeTabComponent } from './pages/home-page/home-page.component';
 import { SarnegTabComponent } from './components/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './components/vigenere-tab/vigenere-tab.component';
@@ -11,8 +10,10 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
 import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
+import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.component';
 
 const routes: Routes = [
+  { path: 'encodings-tab', component: EncodingsTabComponent },
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
 
@@ -25,7 +26,6 @@ const routes: Routes = [
   { path: 'tdr-data-page', component: TDRDataPageComponent },
   { path: 'settings-page', component: AppSettingsPageComponent },
 
-  { path: 'settings-tab', component: SettingsTabComponentXXXXXXXXXOLD },
   { path: 'home-tab', component: HomeTabComponent },
   { path: '', redirectTo: '/reports-tab', pathMatch: 'full' },
   { path: '**', component: ReportsPageComponent },

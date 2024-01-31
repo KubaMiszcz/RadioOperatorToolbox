@@ -4,16 +4,16 @@ import { IReport } from "./report.model";
 import { ITeam } from "./team.model";
 
 export interface IAppData {
-  myNickname: string;
-  teamsNicknames: ITeam[];
+  myCodename: string;
+  teamsCodenames: ITeam[];
   reports: IReport[];
   correspondenceBook: ICorrespondenceBookEntry[];
   notepad: INotepad;
 }
 
 export class AppData implements IAppData {
-  myNickname = 'myNickname';
-  teamsNicknames = [];
+  myCodename = 'myCodename';
+  teamsCodenames = [];
   reports = [];
   correspondenceBook = [];
   notepad = new Notepad();
