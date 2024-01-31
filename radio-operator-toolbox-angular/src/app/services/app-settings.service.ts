@@ -42,6 +42,25 @@ export class AppSettingsService {
     );
   }
 
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   private findUniqueWords() {
     // let words = //this.codewords;
     // let wordsunique: string[] = [];
