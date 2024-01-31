@@ -10,8 +10,10 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
 import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
+import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.component';
 
 const routes: Routes = [
+  { path: 'encodings-tab', component: EncodingsTabComponent },
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
 
