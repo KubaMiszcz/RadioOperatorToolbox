@@ -6,7 +6,7 @@
 
 
     <div class="form-group text-center my-2">
-        <label for="exampleFormControlTextarea1"> Notatnik, strona: {{currentPage.pageNo}} / {{pages.length}}</label>
+        <label for="exampleFormControlTextarea1"> Notatnik, strona: {{getPageIdx(currentPage)+1}} / {{pages.length}}</label>
         <textarea [(ngModel)]="currentPage.pageContent" class="form-control" id="exampleFormControlTextarea1" rows="15"
             maxlength="4000" placeholder="podreczna notatka, max 4000 znakow"></textarea>
     </div>
