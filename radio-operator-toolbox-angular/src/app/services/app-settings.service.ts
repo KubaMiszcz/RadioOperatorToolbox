@@ -21,13 +21,13 @@ export class AppSettingsService {
   constructor() {
     this.appSettings = APP_DEFAULT_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
-    this.alphabet = ALPHABET_PL;
-
+    
     this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
     this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
-
+    
     //DEBUG
     // this.findUniqueWords();
+    // this.alphabet = ALPHABET_PL;
   }
 
   saveAppSettings(json = '') {

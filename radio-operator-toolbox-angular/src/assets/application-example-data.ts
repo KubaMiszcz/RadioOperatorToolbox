@@ -1,4 +1,7 @@
+import { IAppData } from 'src/app/models/app-data.model';
+import { TRANSMIT_DIRECTION } from 'src/app/models/constants/enums';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
+import { Team } from 'src/app/models/team.model';
 
 export const exampleMEDEVAC_PL: IReport = {
   name: 'EXAMPLE MEDEVAC Report',
@@ -31,7 +34,7 @@ export const exampleMEDEVAC_PL: IReport = {
         {
           label: 'MY CALLSIGN',
           valueType: VALUE_TYPES_ENUM.textLine,
-          value: 'DUSIGROSZ-01',
+          value: 'BURSZTYNEK-01',
         },
       ],
     },
@@ -377,7 +380,7 @@ export const exampleSALUTE_PL: IReport = {
         {
           label: 'Czas',
           valueType: VALUE_TYPES_ENUM.DTG,
-          value:'292312ASTY24'
+          value: '292312ASTY24',
         },
       ],
     },
@@ -394,20 +397,6 @@ export const exampleSALUTE_PL: IReport = {
     },
   ],
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const exampleMEDEVAC_EN: IReport = {
   name: 'MEDEVAC Report EXAMPLE',
@@ -690,4 +679,35 @@ export const exampleMEDEVAC_EN: IReport = {
     //   ],
     // },
   ],
+};
+
+export const APP_EXAMPLE_SETTINGS_JSON: IAppData = {
+  reports: [exampleMEDEVAC_PL, exampleSALUTE_PL],
+  correspondenceBook: [
+    {
+      timestamp: new Date(),
+      transmitDirection: TRANSMIT_DIRECTION.INCOMING,
+      codename: 'team1',
+      content: 'meldune1',
+    },
+  ],
+  notepad: {
+    pages: [{ pageContent: 'notatka 1' }, { pageContent: 'notatka 2b' }],
+  },
+  tdrData:{
+    myTeam: { name: '312klp', codename: 'PASIBRZUCH21' },
+    teams: [
+      { name: '312klp', codename: 'PASIBRZUCH21' },
+      { name: '3121plp', codename: 'ROZPUSTNIK22' },
+      {
+        name: '3122plp',
+        codename: 'BURSZTYNEK23',
+        isFavourite: true,
+      },
+      { name: '3123plp', codename: 'SUPERGLINA25' },
+      { name: '', codename: '' },
+      { name: '', codename: '' },
+      { name: '3124plp', codename: 'GWIAZDOREK24' },
+    ],
+  }
 };

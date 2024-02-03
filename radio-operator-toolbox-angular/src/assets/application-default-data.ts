@@ -1,41 +1,56 @@
-import { IMenuItem } from './../app/models/menu-item.model';
+import { IMenuItem_DEPR } from './../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
 
-const menuItems: IMenuItem[] = [
+const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
   {
     title: 'Kodowanie',
-    link: '/encodings-tab',
+    link: 'encodings-tab',
     isTitleShowed: true,
     subItems: [
       {
         title: 'Sarneg',
-        link: '/sarneg-tab',
+        link: 'sarneg-tab',
       },
       {
         title: 'Vigenere',
-        link: '/vigenere-tab',
+        link: 'vigenere-tab',
       },
     ],
   },
+  { title: '' }, //dummy
+  { title: '' }, //dummy
   {
-    title:'Reports'
+    title: 'Reports',
+    iconName: 'reports',
+    link: 'reports-page',
+    subItems: [],
   },
   {
-    title:'Książka korespondencji'
+    title: 'Książka korespondencji',
+    isTitleShowed: true,
+    link: 'correspondence-book-page',
   },
   {
-    title:'TDR'
+    title: 'TDR',
+    isTitleShowed: true,
+    link: 'tdr-data-page',
   },
   {
-    title:'Ściągawka'
+    title: 'Ściągawka',
+    isTitleShowed: true,
+    link: 'cheatsheet-page',
   },
   {
-    title:'Notatnik'
+    title: 'Notatnik',
+    isTitleShowed: true,
+    link: 'notepad-page',
   },
   {
-    title:'Ustawienia wszelakie'
+    title: 'Ustawienia wszelakie',
+    isTitleShowed: true,
+    link: 'settings-page',
   },
 ];
 
@@ -43,7 +58,7 @@ export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
   reportsTemplates: REPORTS_TEMPLATES,
-  menuItems: menuItems,
+  // menuItems: MENU_ITEMS_DEPR,
 };
 
 

@@ -1,5 +1,54 @@
-<p>tdrsettings-page works!</p>
-gwiazdka ze ulubione
+
+
+<div class="input-group mt-2 mb-4 w-100">
+    <span class="input-group-text px-1 w-25">my Team:</span>
+    <button class="btn btn-secondary-outline dropdown-toggle m-0 w-75" type="button" id="dropdownMenuButton2"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{myTeam.name}} - {{myTeam.codename}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <div *ngFor="let team of teams" class="dropdown-item" (click)="setMyTeam(team)">{{team.name}} -
+            {{team.codename}}</div>
+    </div>
+</div>
+
+
+
+<div *ngFor="let team of teams; index  as idx" class="input-group mb-1">
+    <span class="input-group-text px-1 w-3em"><small>Team {{idx+1}}:</small></span>
+    <input type="text" class="form-control" placeholder="nazwa" value="{{team.name}}">
+    <input type="text" class="form-control" placeholder="kryptonim" value="{{team.codename}}">
+    <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
+        (click)="toggleFavourite(team)">
+        <i class="fas fa-star active"></i></button>
+    <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
+        (click)="toggleFavourite(team)">
+        <i class="fas fa-star inactive"></i></button>
+    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
+        <i class="fas fa-trash    "></i>
+    </button>
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary w-100 mt-2" (click)="addNewTeam()">dodaj Team
+        <i class="fas fa-plus-circle    "></i>
+    </button>
+</div>
+
+
+<br>
+<hr>
+<p>sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp</p>
+<p> SARNEG PARZYSTE</p>
+<p> SARNEG NIEPARZYSTE</p>
+<p> import TDR from json/txt</p>
+<p> export TDR to json/txt</p>
+
+<br>
+<hr>
+
+
+
 <i class="fas fa-star    "></i>
 <i class="fas fa-star    "></i>
 <i class="fas fa-star-and-crescent    "></i>
@@ -13,28 +62,29 @@ gwiazdka ze ulubione
 <i class="fab fa-star-o" aria-hidden="true"></i>
 
 
-<p>my name/codename</p>
-<p>312klp/DUSIGROSZ-02</p>
+<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+</div>
 
 
-
-<p>my leader name/codename</p>
-<p>3121plp/PASIBRZUCH-01</p>
-
-
-<p>other teams names/codenames</p>
-<p>3121plp/ROZPUSTNIK-03</p>
-<p>3121plp/GWIAZDOREK-04</p>
-<p>3121plp/PODBIERACZ-05</p>
-<p>3121plp/SUPERGLINA-06</p>
-
-
-
-<p>sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp</p>
-
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+</div>
 
 
 
 
 
-
+<div class="input-group mb-3">
+    <button class="input-group-text btn btn-outline-secondary p-0 m-0" type="button">Button1</button>
+    <button class="input-group-text btn btn-outline-secondary p-0 m-0" type="button">Button2</button>
+    <input type="text" class="input-group-text form-control" placeholder=""
+        aria-label="Example text with two button addons">
+</div>

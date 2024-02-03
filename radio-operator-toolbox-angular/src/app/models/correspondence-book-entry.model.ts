@@ -7,9 +7,7 @@ export interface ICorrespondenceBookEntry {
   content: string;
 }
 
-export class CorrespondenceBookEntry
-  implements ICorrespondenceBookEntry
-{
+export class CorrespondenceBookEntry implements ICorrespondenceBookEntry {
   timestamp = new Date();
   codename = '';
   content = '';
