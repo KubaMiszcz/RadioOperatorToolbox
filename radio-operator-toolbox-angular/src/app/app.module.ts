@@ -19,10 +19,10 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 import { QuickDataComponent } from './components/quick-data/quick-data.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
+import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
-import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.component';
+import { EncodingsTabComponent } from './pages/encodings-page/encodings-page.component';
 import { ModalGenericComponent } from './core-components/modal-generic/modal-generic.component';
 
 
