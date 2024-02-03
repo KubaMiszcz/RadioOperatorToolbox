@@ -6,7 +6,7 @@ import { KeyValue } from '@angular/common';
 const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
   {
     title: 'Kodowanie',
-    link: 'encodings-tab',
+    link: 'encodings-page',
     isTitleShowed: true,
     subItems: [
       {

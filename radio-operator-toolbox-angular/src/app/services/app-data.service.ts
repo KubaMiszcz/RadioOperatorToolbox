@@ -24,7 +24,7 @@ export class AppDataService {
     // };
     let emptyAppData = new AppData();
     this.appData = emptyAppData;
-    this.saveAppData();
+    this.saveAppData(JSON.stringify(emptyAppData));
   }
 
   saveAppData(json = '') {

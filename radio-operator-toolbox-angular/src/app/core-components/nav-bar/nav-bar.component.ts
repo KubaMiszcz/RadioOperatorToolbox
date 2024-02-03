@@ -5,6 +5,7 @@ import { IReport } from 'src/app/models/report.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { MODAL_RESULT } from 'src/app/models/constants/enums';
+import { ModalGenericComponent } from '../modal-generic/modal-generic.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,7 +13,6 @@ import { MODAL_RESULT } from 'src/app/models/constants/enums';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-
   reports: IReport[] = [];
   private modalRef!: NgbModalRef;
   @ViewChild('infoModal') infoModal: any;
@@ -37,19 +37,36 @@ export class NavBarComponent {
   }
 
   showClearAllModal() {
-    this.modalRef = this.modalService.open(this.clearAllModal, { size: 'sm' });
-  }
+    const modalRef = this.modalService.open(ModalGenericComponent);
+    modalRef.componentInstance.title = '';
+    modalRef.componentInstance.content = 'Wyczyścic wszystkie dane?';
+    modalRef.componentInstance.modalResult.subscribe((result:MODAL_RESULT) => {
+      if (result === MODAL_RESULT.YES) {
+        this.appDataService.clearAllData();
+      }
+      modalRef.close();
+    })
+    }
+  
+  // showClearAllModal2() {
+  //   this.modalRef = this.modalService.open(this.clearAllModal, {
+  //     size: 'sm',
+  //     backdrop: true,
+  //   });
+  // }
 
-  closeClearAllModal(value: MODAL_RESULT) {
-    this.modalRef.close();
-  }
-
-  clearAllData() {
-    this.appDataService.clearAllData();
-  }
+  // closeClearAllModal(value: MODAL_RESULT) {
+  //   if (value === MODAL_RESULT.YES) {
+  //     this.appDataService.clearAllData();
+  //   }
+  //   this.modalRef.close();
+  // }
 
   showQuickSheetModal() {
-    this.modalRef = this.modalService.open(this.infoModal, { size: 'sm' });
+    this.modalRef = this.modalService.open(this.infoModal, {
+      size: 'sm',
+      backdrop: true,
+    });
   }
 
   closeModal(value: any) {

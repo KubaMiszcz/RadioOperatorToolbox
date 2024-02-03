@@ -10,12 +10,16 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
 import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
-import { EncodingsTabComponent } from './pages/encodings-page/encodings-page.component';
+import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
+import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
+import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 
 const routes: Routes = [
-  { path: 'encodings-tab', component: EncodingsTabComponent },
+  { path: 'encodings-page', component: EncodingsPageComponent },
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
+  { path: 'vic-tab', component: VICTabComponent },
+  { path: 'polybius-tab', component: PolybiusSquareTabComponent },
 
   { path: 'reports-page', component: ReportsPageComponent },
   { path: 'report-tab', component: ReportTabComponent },

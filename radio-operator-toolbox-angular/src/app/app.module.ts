@@ -21,9 +21,11 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
-import { EncodingsTabComponent } from './pages/encodings-page/encodings-page.component';
+import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
 import { ModalGenericComponent } from './core-components/modal-generic/modal-generic.component';
 import { QuickDataComponent } from './core-components/nav-bar/quick-data-modal/quick-data.component';
+import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
+import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 
 
 
@@ -47,8 +49,10 @@ import { QuickDataComponent } from './core-components/nav-bar/quick-data-modal/q
     CheatsheetComponent,
     ReportsPageComponent,
     ReportTabComponent,
-    EncodingsTabComponent,
+    EncodingsPageComponent,
     ModalGenericComponent,
+    VICTabComponent,
+    PolybiusSquareTabComponent,
   ],
   imports: [
     BrowserModule,

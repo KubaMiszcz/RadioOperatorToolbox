@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MODAL_RESULT } from 'src/app/models/constants/enums';
 
 @Component({
@@ -8,6 +8,9 @@ import { MODAL_RESULT } from 'src/app/models/constants/enums';
 })
 export class ModalGenericComponent {
   @Output() modalResult = new EventEmitter<MODAL_RESULT>();
+  @Input() title = '';
+  @Input() content = '';
+
   MODAL_RESULTS = MODAL_RESULT;
 
   constructor() {}

@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './encodings-page.component.html',
   styleUrls: ['./encodings-page.component.scss']
 })
-export class EncodingsTabComponent {
+export class EncodingsPageComponent {
 
 }
