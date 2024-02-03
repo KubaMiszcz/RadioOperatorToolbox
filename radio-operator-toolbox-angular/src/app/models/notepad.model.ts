@@ -3,7 +3,7 @@ export interface INotepad {
 }
 
 export interface INotepadPage {
-  pageNo: number;
+  // pageNo: number;
   pageContent: string;
 }
 
@@ -13,7 +13,7 @@ export class Notepad implements INotepad {
 }
 
 export class NotepadPage implements INotepadPage {
-  pageNo = 1;
+  // pageNo = 1;
   pageContent = '';
 }
 

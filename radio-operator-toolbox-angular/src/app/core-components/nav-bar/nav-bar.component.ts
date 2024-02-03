@@ -38,10 +38,6 @@ export class NavBarComponent {
   }
 
   showQuickSheetModal() {
-    this.showModal();
-  }
-
-  showModal() {
     this.modalRef = this.modalService.open(this.infoModal, { size: 'sm' });
   }
 

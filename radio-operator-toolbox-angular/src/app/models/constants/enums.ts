@@ -2,3 +2,10 @@ export enum TRANSMIT_DIRECTION {
   INCOMING = 'ODBIÓR',
   OUTGOING = 'NADAWANIE',
 }
+
+export enum CRUD {
+  CREATE,
+  READ,
+  UPDATE,
+  DELETE,
+}

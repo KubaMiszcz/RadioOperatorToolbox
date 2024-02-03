@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AppData, IAppData } from '../models/app-data.model';
+import { BehaviorSubject } from 'rxjs';
+import { INotepadPage } from '../models/notepad.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppDataService {
   appData: IAppData = new AppData();
+  notepadPagesBS = new BehaviorSubject<INotepadPage[]>(
+    this.appData.notepad.pages
+  );
 
   constructor() {}
 
@@ -27,7 +32,6 @@ export class AppDataService {
   }
 
   loadAppData() {
-    this.appData =
-      JSON.parse(localStorage.getItem('appData') ?? '')
+    this.appData = JSON.parse(localStorage.getItem('appData') ?? '');
   }
 }

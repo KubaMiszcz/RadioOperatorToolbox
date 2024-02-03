@@ -1,26 +1,37 @@
 <div class="m-2">
     <div>
-        <app-notepad-navbar
-        (prevPage)="prevPage()"
-        (addPage)="addPage()"
-        (removePage)="removePage()"
-        (nextPage)="nextPage()"
-        ></app-notepad-navbar>
+        <app-notepad-navbar (prevPage)="prevPage()" (addPage)="addPage()" (removePage)="showDeletePageModal()"
+            (nextPage)="nextPage()"></app-notepad-navbar>
     </div>
-    
-    
+
+
     <div class="form-group text-center my-2">
-        <label for="exampleFormControlTextarea1"> Quick notepad, page: {{currentPage.pageNo}} / {{pages.length}}</label>
-        <textarea [(ngModel)]="currentPage.pageContent" class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea> 
+        <label for="exampleFormControlTextarea1"> Notatnik, strona: {{currentPage.pageNo}} / {{pages.length}}</label>
+        <textarea [(ngModel)]="currentPage.pageContent" class="form-control" id="exampleFormControlTextarea1" rows="15"
+            maxlength="4000" placeholder="podreczna notatka, max 4000 znakow"></textarea>
     </div>
-    
+
     <div>
-        <app-notepad-navbar
-        (prevPage)="prevPage()"
-        (addPage)="addPage()"
-        (removePage)="removePage()"
-        (nextPage)="nextPage()"
-        ></app-notepad-navbar>
+        <app-notepad-navbar (prevPage)="prevPage()" (addPage)="addPage()" (removePage)="showDeletePageModal()"
+            (nextPage)="nextPage()"></app-notepad-navbar>
     </div>
-    
+
 </div>
+
+
+
+
+
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Kasuj stronę:</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div>Na pewno wykasować stronę?</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger w-25" (click)="closeModal(CRUD_METHODS.DELETE)">Tak</button>
+        <button type="button" class="btn btn-secondary w-25" (click)="closeModal('Close click')">Anuluj</button>
+    </div>
+</ng-template>
