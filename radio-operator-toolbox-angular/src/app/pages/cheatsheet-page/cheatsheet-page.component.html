@@ -1,3 +1,19 @@
+<div class="my-2">
+    <div *ngFor="let wave of waves, index as idx" class="input-group mb-1">
+        <span class="input-group-text px-1  text-center">f{{idx}} [MHz]</span>
+        <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]" (change)="udpateLength(wave)"
+            value="{{wave.freq}}">
+        <span class="input-group-text ps-2 px-2  text-center">½ λ{{idx}} [m]</span>
+        <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]" (change)="updateFreq(wave)"
+            value="{{wave.length}}">
+            <button type="button" class="btn btn-primary m-0" (click)="update(wave)">
+                <i class="fa faslid fa-arrows-rotate"></i>
+                <i class="fa-solid fa-rotate"></i>
+            </button>
+    </div>
+</div>
+
+
 <p>cheatsheet works!</p>
 <p></p>
 <p>paramtery RRC</p>
@@ -7,4 +23,3 @@
 <p>dlugosc antenty lambda=c/f</p>
 <p></p>
 <p>alfapbet NATO</p>
-
