@@ -3,9 +3,17 @@ export enum TRANSMIT_DIRECTION {
   OUTGOING = 'NADAWANIE',
 }
 
-export enum CRUD {
+export enum CRUD_METHODS {
   CREATE,
   READ,
   UPDATE,
   DELETE,
 }
+
+export enum MODAL_RESULT {
+  YES,
+  NO,
+  CANCEL,
+  CLOSE,
+}
+

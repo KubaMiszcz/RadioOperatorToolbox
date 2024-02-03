@@ -23,6 +23,7 @@ import { CheatsheetComponent } from './pages/cheatsheet/cheatsheet.component';
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
 import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.component';
+import { ModalGenericComponent } from './core-components/modal-generic/modal-generic.component';
 
 
 
@@ -47,6 +48,7 @@ import { EncodingsTabComponent } from './pages/encodings-tab/encodings-tab.compo
     ReportsPageComponent,
     ReportTabComponent,
     EncodingsTabComponent,
+    ModalGenericComponent,
   ],
   imports: [
     BrowserModule,

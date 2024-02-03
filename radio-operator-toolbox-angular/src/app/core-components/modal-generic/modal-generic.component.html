@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title">Quick Data:</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalResult.emit(MODAL_RESULTS.CLOSE)"></button>
+</div>
+<div class="modal-body">
+    <div>
+    <p>modal-generic works!</p>
+    <p>modal-generic works!</p>
+    <p>modal-generic works!</p>
+    <p>modal-generic works!</p>
+        <!-- <div *ngFor="let item of quickData" class="mb-1">{{item.key}}:<br><code>{{item.value}}</code>
+            <button type="button" class="btn btn-primary btn-sm ms-2" [cdkCopyToClipboard]="item.value">
+                <i class="fas fa-copy "></i>
+            </button>
+        </div> -->
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalResult.emit(MODAL_RESULTS.CLOSE)">Close</button>
+    <button type="button" class="btn btn-secondary" (click)="modalResult.emit(MODAL_RESULTS.YES)">Tak</button>
+    <button type="button" class="btn btn-secondary" (click)="modalResult.emit(MODAL_RESULTS.NO)">Nie</button>
+</div>

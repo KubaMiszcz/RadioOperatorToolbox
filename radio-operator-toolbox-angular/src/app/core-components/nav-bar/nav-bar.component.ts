@@ -4,6 +4,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IReport } from 'src/app/models/report.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { MODAL_RESULT } from 'src/app/models/constants/enums';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,9 +12,11 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
+
   reports: IReport[] = [];
   private modalRef!: NgbModalRef;
   @ViewChild('infoModal') infoModal: any;
+  @ViewChild('clearAllModal') clearAllModal: any;
   isMenuHidden = true;
 
   constructor(
@@ -31,6 +34,14 @@ export class NavBarComponent {
 
   getFavouriteReports() {
     return this.reports.filter((r) => !!r.isFavourite);
+  }
+
+  showClearAllModal() {
+    this.modalRef = this.modalService.open(this.clearAllModal, { size: 'sm' });
+  }
+
+  closeClearAllModal(value: MODAL_RESULT) {
+    this.modalRef.close();
   }
 
   clearAllData() {

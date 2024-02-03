@@ -2,7 +2,7 @@ import { INotepadPage, NotepadPage } from './../../models/notepad.model';
 import { AppDataService } from './../../services/app-data.service';
 import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { CRUD as CRUD_METHODS } from 'src/app/models/constants/enums';
+import { CRUD_METHODS } from 'src/app/models/constants/enums';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 

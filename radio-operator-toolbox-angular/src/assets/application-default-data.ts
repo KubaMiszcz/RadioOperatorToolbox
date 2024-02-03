@@ -1,12 +1,51 @@
+import { IMenuItem } from './../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
+
+const menuItems: IMenuItem[] = [
+  {
+    title: 'Kodowanie',
+    link: '/encodings-tab',
+    isTitleShowed: true,
+    subItems: [
+      {
+        title: 'Sarneg',
+        link: '/sarneg-tab',
+      },
+      {
+        title: 'Vigenere',
+        link: '/vigenere-tab',
+      },
+    ],
+  },
+  {
+    title:'Reports'
+  },
+  {
+    title:'Książka korespondencji'
+  },
+  {
+    title:'TDR'
+  },
+  {
+    title:'Ściągawka'
+  },
+  {
+    title:'Notatnik'
+  },
+  {
+    title:'Ustawienia wszelakie'
+  },
+];
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
   reportsTemplates: REPORTS_TEMPLATES,
+  menuItems: menuItems,
 };
+
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
