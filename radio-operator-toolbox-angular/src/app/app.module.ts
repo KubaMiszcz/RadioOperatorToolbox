@@ -23,7 +23,7 @@ import { ReportsPageComponent } from './pages/reports-page/reports-page.componen
 import { ReportTabComponent } from './pages/reports-page/report-tab/report-tab.component';
 import { EncodingsTabComponent } from './pages/encodings-page/encodings-page.component';
 import { ModalGenericComponent } from './core-components/modal-generic/modal-generic.component';
-import { QuickDataComponent } from './components/quick-data/quick-data.component';
+import { QuickDataComponent } from './core-components/nav-bar/quick-data-modal/quick-data.component';
 
 
 
