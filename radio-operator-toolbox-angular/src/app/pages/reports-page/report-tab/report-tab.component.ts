@@ -17,6 +17,7 @@ export class ReportTabComponent {
   lineValueTypes = VALUE_TYPES_ENUM;
   isCreatorCollapsed = false;
   isPeaceTime = this.appSettingsService.appSettings.isPeaceTime;
+  reportContentTXT = '';
 
   //todo refactor layout of reports
   constructor(
@@ -52,5 +53,27 @@ export class ReportTabComponent {
 
   getDTG(line: IReportLineValue) {
     line.value = this.appService.getTimeDTG(new Date());
+  }
+
+  convertReportToTXT() {
+    let result = '';
+    result += this.report.name + '\n';
+    this.report.lines?.forEach((line) => {
+      result += `${line.lineHeader}: `;
+      line.lineValues.forEach((lineValue) => {
+        if (lineValue.value) {
+          if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
+            result += `${lineValue.label}:${lineValue.value}, `;
+          } else {
+            result += `${lineValue.label}, `;
+          }
+        }
+      });
+
+      result += `\n`;
+    });
+
+    alert(`Skopiowano raport do schowka:\n\n${result}`);
+    this.reportContentTXT = result;
   }
 }

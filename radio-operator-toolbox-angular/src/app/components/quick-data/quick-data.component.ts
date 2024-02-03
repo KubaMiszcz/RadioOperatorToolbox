@@ -11,18 +11,36 @@ export class QuickDataComponent {
   quickData: KeyValue<string, string>[] = [];
 
   constructor(private appService: AppService) {
-    this.appService.getMyPositionMGRS().then((pos) =>
-      this.quickData.push({
-        key: 'your Position MGRS 1m',
-        value: pos,
-      })
+    this.appService.getMyPositionMGRS().then(
+      (pos) => {
+        this.quickData.push({
+          key: 'your Position MGRS 1m',
+          value: pos,
+        });
+      },
+      (err) => {
+        console.error(err);
+        this.quickData.push({
+          key: 'your Position MGRS 1m',
+          value: err?.message,
+        });
+      }
     );
 
-    this.appService.getMyPositionMGRS(3).then((pos) =>
-      this.quickData.push({
-        key: 'your Position MGRS 1km',
-        value: pos,
-      })
+    this.appService.getMyPositionMGRS(3).then(
+      (pos) => {
+        this.quickData.push({
+          key: 'your Position MGRS 1km',
+          value: pos,
+        });
+      },
+      (err) => {
+        console.error(err);
+        this.quickData.push({
+          key: 'your Position MGRS 1m',
+          value: err?.message,
+        });
+      }
     );
 
     this.quickData.push({

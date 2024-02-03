@@ -60,8 +60,9 @@ export class NotepadPageComponent {
   }
 
   removePage() {
-    _.remove(this.pages, this.currentPage);
+    let idx=this.getPageIdx(this.currentPage);
     this.nextPage();
+    this.pages.splice(idx,1);
   }
 
   showDeletePageModal() {

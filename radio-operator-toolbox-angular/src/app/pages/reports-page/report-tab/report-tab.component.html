@@ -146,6 +146,9 @@
     </div>
 </div>
 
-<div>
-    <button type="button" class="btn btn-primary">kopiuj do txt</button>
+<div class="m-2">
+    <button type="button" class="btn btn-primary w-100"
+    (click)="convertReportToTXT()"
+    [cdkCopyToClipboard]="reportContentTXT"
+    >kopiuj do txt</button>
 </div>
