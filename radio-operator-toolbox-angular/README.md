@@ -20,7 +20,14 @@
   - https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a
   - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
   - https://pl.wikipedia.org/wiki/Szyfr_VIC
--ulibione shortcuts menu
+- ulibione shortcuts menu
+
+- Szukajka w książce korespondencji
+- [ ] radiooperator toolbox
+  - [ ] rozroznia dni parzyste i nieparzyste do sarnega i vigernera??
+  - [ ] plikki sa w kat docu ze szkolenia 
+  - [ ] wzory na dlug anteny i jka roadzc z duzym swr kiedy skraca a kiedy wydluzac
+  - [ ] notataki pytania na petle
 
 
 
