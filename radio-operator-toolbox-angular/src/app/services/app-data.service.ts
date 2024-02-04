@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AppData, IAppData } from '../models/app-data.model';
 import { BehaviorSubject } from 'rxjs';
 import { INotepadPage } from '../models/notepad.model';
-import { APP_EXAMPLE_SETTINGS_JSON } from 'src/assets/application-example-data';
+import { APP_EXAMPLE_DATA_JSON } from 'src/assets/app-example-data';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class AppDataService {
   appData: IAppData = new AppData();
 
   constructor() {
-    this.appData = APP_EXAMPLE_SETTINGS_JSON;
+    this.appData = APP_EXAMPLE_DATA_JSON;
   }
 
   clearAllData() {

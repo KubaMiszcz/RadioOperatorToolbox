@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 import { CoreService } from 'src/app/services/core.service';
-import { ALPHABET_EN, ALPHABET_PL } from 'src/assets/application-default-data';
+import { ALPHABET_EN, ALPHABET_PL } from 'src/assets/app-default-settings';
 
 @Component({
   selector: 'app-vigenere-tab',

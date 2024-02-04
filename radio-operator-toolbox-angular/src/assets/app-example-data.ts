@@ -681,7 +681,7 @@ export const exampleMEDEVAC_EN: IReport = {
   ],
 };
 
-export const APP_EXAMPLE_SETTINGS_JSON: IAppData = {
+export const APP_EXAMPLE_DATA_JSON: IAppData = {
   reports: [exampleMEDEVAC_PL, exampleSALUTE_PL],
   correspondenceBook: [
     {
@@ -694,7 +694,7 @@ export const APP_EXAMPLE_SETTINGS_JSON: IAppData = {
   notepad: {
     pages: [{ pageContent: 'notatka 1' }, { pageContent: 'notatka 2b' }],
   },
-  tdrData:{
+  tdrData: {
     myTeam: { name: '312klp', codename: 'PASIBRZUCH21' },
     teams: [
       { name: '312klp', codename: 'PASIBRZUCH21' },
@@ -709,5 +709,12 @@ export const APP_EXAMPLE_SETTINGS_JSON: IAppData = {
       { name: '', codename: '' },
       { name: '3124plp', codename: 'GWIAZDOREK24' },
     ],
-  }
+  },
+  cheatsheetData: {
+    wavesFreqsLengthPairs: [
+      { freq: 4, length: 0 },
+      { freq: 6, length: 0 },
+      { freq: 8, length: 0 },
+    ],
+  },
 };

@@ -1,4 +1,4 @@
-import { IMenuItem_DEPR } from './../app/models/menu-item.model';
+import { IMenuItem_DEPR } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';

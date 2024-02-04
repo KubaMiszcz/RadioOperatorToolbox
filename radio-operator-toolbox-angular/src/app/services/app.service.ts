@@ -7,7 +7,7 @@ import { CoreService } from './core.service';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
 import { formatDate } from '@angular/common';
-import { DTG_TIMEZONES } from 'src/assets/application-default-data';
+import { DTG_TIMEZONES } from 'src/assets/app-default-settings';
 
 @Injectable({
   providedIn: 'root',

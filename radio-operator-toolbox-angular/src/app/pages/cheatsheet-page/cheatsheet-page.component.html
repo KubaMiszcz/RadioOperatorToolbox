@@ -1,5 +1,5 @@
 <div class="my-2">
-    <div *ngFor="let wave of waves, index as idx" class="input-group mb-1">
+    <div *ngFor="let wave of wavesFreqsLengthsPairs, index as idx" class="input-group mb-1">
         <span class="input-group-text px-1  text-center">f{{idx}} [MHz]</span>
         <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]" (change)="udpateLength(wave)"
             value="{{wave.freq}}">
