@@ -2,7 +2,7 @@ import { Guid } from 'guid-typescript';
 import { TRANSMIT_DIRECTION } from './constants/enums';
 
 export interface ICorrespondenceBookEntry {
-  guid: Guid;
+  guid: string;
   timestamp: Date;
   transmitDirection?: TRANSMIT_DIRECTION;
   recipientCodename: string;
@@ -11,8 +11,9 @@ export interface ICorrespondenceBookEntry {
 }
 
 export class CorrespondenceBookEntry implements ICorrespondenceBookEntry {
-  guid = Guid.create();
+  guid = Guid.create().toString();
   timestamp = new Date();
+  transmitDirection?: TRANSMIT_DIRECTION | undefined;
   recipientCodename = '';
   senderCodename = '';
   content = '';

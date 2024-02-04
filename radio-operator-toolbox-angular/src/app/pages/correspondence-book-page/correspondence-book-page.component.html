@@ -17,19 +17,98 @@
                     <span class="mx-1">{{line.recipientCodename}}</span>
                 </small>
             </h6>
-            <p class="card-text incoming p-1" [ngClass]="{
+            <div class="card-text p-1 " style="white-space: pre-line" [ngClass]="{
                 'outgoing': line.transmitDirection===transmitDirections.OUTGOING,
                 'incoming': line.transmitDirection===transmitDirections.INCOMING,
+                'bypassing': line.transmitDirection===transmitDirections.BYPASSING,
             
             }">
                 {{line.content}}
-            </p>
+            </div>
         </div>
     </div>
 
-    <div *ngIf="line.transmitDirection===transmitDirections.OUTGOING" class="col-1"></div>
+    <div *ngIf="
+        line.transmitDirection===transmitDirections.OUTGOING
+     || line.transmitDirection===transmitDirections.BYPASSING 
+    " class="col-1"></div>
 
 </div>
+
+
+
+
+
+<div class="d-flex flex-row mb-2">
+    <div class="card w-100">
+        <div class="card-body p-0">
+            <h6 class="card-title p-1 m-0 text-muted header d-flex flex-column justify-content-between">
+
+                <div class="input-group input-group-sm mb-1">
+                    <!-- <div class="input-group-text"> -->
+                    <input [(ngModel)]="newEntryDTG" type="text" class="form-control" placeholder="Recipient's username"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <button class="btn btn-primary m-0 w-2em" type="button" (click)="getTimeDTG()">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle m-0" type="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{newEntry.senderCodename}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <small *ngFor="let team of teams" class="dropdown-item"
+                            (click)="setNewEntrySender(team)">{{team.codename}}</small>
+                    </div>
+
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </span>
+
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle m-0" type="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{newEntry.recipientCodename}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <small *ngFor="let team of teams" class="dropdown-item"
+                            (click)="setNewEntryRecipient(team)">{{team.codename}}</small>
+                    </div>
+
+                </div>
+            </h6>
+
+
+
+
+
+
+            <div class="d-flex">
+                <textarea [(ngModel)]="newEntry.content" class="form-control m-1" rows="4" cols="1000"
+                    aria-label="Default" aria-describedby="inputGroup-sizing-default"></textarea>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="card-footer">
+                <button type="button" class="btn btn-primary m-0" (click)="addNewEntry()">dodaj Wpis
+                    <i class="fas fa-plus-circle    "></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
 
 
 
@@ -47,3 +126,10 @@ mozan mergowac kilka ksiazek i export do czytelnej posatci
 '">
     </app-help-tile>
 
+
+
+    edit delete
+    bypassing color? width?
+    validations kiedy nie wybrano odiorcy
+    sender recipien jako obikety a nie nicknamy
+    export import merge

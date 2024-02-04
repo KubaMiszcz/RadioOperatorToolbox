@@ -3,6 +3,7 @@ import { IAppData } from 'src/app/models/app-data.model';
 import { TRANSMIT_DIRECTION } from 'src/app/models/constants/enums';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 import { Team } from 'src/app/models/team.model';
+import { AppService } from 'src/app/services/app.service';
 
 export const exampleMEDEVAC_PL: IReport = {
   name: 'EXAMPLE MEDEVAC Report',
@@ -686,7 +687,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
   reports: [exampleMEDEVAC_PL, exampleSALUTE_PL],
   correspondenceBook: [
     {
-      guid: Guid.create(),
+      guid: Guid.create().toString(),
       timestamp: new Date(),
       transmitDirection: TRANSMIT_DIRECTION.INCOMING,
       recipientCodename: 'team2',
@@ -694,7 +695,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       content: 'meldune1',
     },
     {
-      guid: Guid.create(),
+      guid: Guid.create().toString(),
       timestamp: new Date(),
       transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
       recipientCodename: 'team1',
@@ -702,7 +703,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       content: 'meldune1',
     },
     {
-      guid: Guid.create(),
+      guid: Guid.create().toString(),
       timestamp: new Date(),
       transmitDirection: TRANSMIT_DIRECTION.INCOMING,
       recipientCodename: 'team1',
@@ -710,7 +711,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       content: 'casMEDAVEC c as c as c as',
     },
     {
-      guid: Guid.create(),
+      guid: Guid.create().toString(),
       timestamp: new Date(),
       transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
       recipientCodename: 'team1',

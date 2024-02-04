@@ -1,3 +1,4 @@
+import { Guid } from 'guid-typescript';
 import { Injectable } from '@angular/core';
 import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
@@ -75,7 +76,7 @@ export class AppService {
     });
   }
 
-  getTimeDTG(date: Date, isZulu = false): string {
+  getTimeDTG(date: Date = new Date(), isZulu = false): string {
     if (isZulu) {
       date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     }
@@ -107,5 +108,9 @@ export class AppService {
       .toUpperCase();
 
     return dtg;
+  }
+
+  getGUID() {
+    return Guid.create().toString();
   }
 }

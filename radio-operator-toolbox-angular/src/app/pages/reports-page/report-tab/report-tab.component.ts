@@ -51,7 +51,7 @@ export class ReportTabComponent {
     this.appService.getMyPositionMGRS(3).then((pos) => (line.value = pos));
   }
 
-  getDTG(line: IReportLineValue) {
+  getTimeDTG(line: IReportLineValue) {
     line.value = this.appService.getTimeDTG(new Date());
   }
 
