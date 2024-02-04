@@ -1,7 +1,7 @@
 import { ITeam, Team } from './team.model';
 
 export interface ICheatsheetData {
-  wavesFreqsLengthPairs?: IWaveFreqLengthPair[];
+  wavesFreqsLengthPairs: IWaveFreqLengthPair[];
 }
 
 export interface IWaveFreqLengthPair {

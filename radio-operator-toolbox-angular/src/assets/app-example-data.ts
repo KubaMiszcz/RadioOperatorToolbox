@@ -709,6 +709,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       { name: '', codename: '' },
       { name: '3124plp', codename: 'GWIAZDOREK24' },
     ],
+    alerts: [],
   },
   cheatsheetData: {
     wavesFreqsLengthPairs: [
