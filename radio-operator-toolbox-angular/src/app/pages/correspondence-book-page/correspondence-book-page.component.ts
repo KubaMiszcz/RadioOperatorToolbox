@@ -36,9 +36,9 @@ export class CorrespondenceBookPageComponent {
     this.newEntry = this.getReInitNewEntry();
   }
 
-  getTime(timestamp: Date) {
-    return `${timestamp.getHours()}:${timestamp.getMinutes()}`;
-  }
+  // getTime(timestamp: Date) {
+  //   return `${timestamp.getHours()}:${timestamp.getMinutes()}`;
+  // } //km
 
   getTimeDTG(timestamp: Date = new Date()) {
     this.newEntryDTG = this.appService.getTimeDTG(timestamp);
@@ -73,7 +73,8 @@ export class CorrespondenceBookPageComponent {
   private getReInitNewEntry(): CorrespondenceBookEntry {
     return {
       guid: this.appService.getGUID(),
-      timestamp: new Date(),
+      timestamp_DEPR: new Date(),
+      timeDTG: '000000ZMMM00',
       senderCodename: this.myTeam?.codename ?? '',
       recipientCodename: 'Odbiorca',
       content: '',

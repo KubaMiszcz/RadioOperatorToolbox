@@ -8,7 +8,7 @@
     <div class="card w-100">
         <div class="card-body p-0">
             <h6 class="card-title p-1 m-0 text-muted header d-flex flex-row justify-content-between">
-                <small class="">{{getTimeDTG(line.timestamp)}}</small>
+                <small class="">{{getTimeDTG(line.timestamp_DEPR)}}</small>
                 <small class="">
                     <span class="mx-1">{{line.senderCodename}}</span>
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -133,3 +133,4 @@ mozan mergowac kilka ksiazek i export do czytelnej posatci
     validations kiedy nie wybrano odiorcy
     sender recipien jako obikety a nie nicknamy
     export import merge
+    get rid of timestamp use DTG instead

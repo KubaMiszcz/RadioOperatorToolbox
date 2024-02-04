@@ -688,7 +688,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
   correspondenceBook: [
     {
       guid: Guid.create().toString(),
-      timestamp: new Date(),
+      timestamp_DEPR: new Date(),
+      timeDTG:'031530ASTY24',
       transmitDirection: TRANSMIT_DIRECTION.INCOMING,
       recipientCodename: 'team2',
       senderCodename: 'team1',
@@ -696,7 +697,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     },
     {
       guid: Guid.create().toString(),
-      timestamp: new Date(),
+      timestamp_DEPR: new Date(),
+      timeDTG:'031655ZSTY24',
       transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
       recipientCodename: 'team1',
       senderCodename: 'team2',
@@ -704,7 +706,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     },
     {
       guid: Guid.create().toString(),
-      timestamp: new Date(),
+      timestamp_DEPR: new Date(),
+      timeDTG:'031530ASTY24',
       transmitDirection: TRANSMIT_DIRECTION.INCOMING,
       recipientCodename: 'team1',
       senderCodename: 'farewell02',
@@ -712,7 +715,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     },
     {
       guid: Guid.create().toString(),
-      timestamp: new Date(),
+      timestamp_DEPR: new Date(),
+      timeDTG:'031530ASTY24',
       transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
       recipientCodename: 'team1',
       senderCodename: 'bukszpan08',

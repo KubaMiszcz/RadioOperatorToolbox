@@ -3,7 +3,8 @@ import { TRANSMIT_DIRECTION } from './constants/enums';
 
 export interface ICorrespondenceBookEntry {
   guid: string;
-  timestamp: Date;
+  timestamp_DEPR: Date;
+  timeDTG: string;
   transmitDirection?: TRANSMIT_DIRECTION;
   recipientCodename: string;
   senderCodename: string;
@@ -12,7 +13,8 @@ export interface ICorrespondenceBookEntry {
 
 export class CorrespondenceBookEntry implements ICorrespondenceBookEntry {
   guid = Guid.create().toString();
-  timestamp = new Date();
+  timestamp_DEPR = new Date();
+  timeDTG = '010000ZSTY79';
   transmitDirection?: TRANSMIT_DIRECTION | undefined;
   recipientCodename = '';
   senderCodename = '';
