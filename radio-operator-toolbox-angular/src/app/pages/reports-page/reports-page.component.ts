@@ -12,6 +12,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class ReportsPageComponent {
   reports: IReport[] = [];
+  savedReports: IReport[] = [];
 
   constructor(
     private appService: AppService,
@@ -19,6 +20,7 @@ export class ReportsPageComponent {
     private appSettingsService: AppSettingsService
   ) {
     this.reports = this.appSettingsService.appSettings.reportsTemplates;
+    this.savedReports = appDataService.appData.reports;
   }
 
   setCurrentReport(report: IReport) {

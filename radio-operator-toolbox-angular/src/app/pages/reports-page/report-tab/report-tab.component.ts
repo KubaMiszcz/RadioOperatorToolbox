@@ -47,8 +47,10 @@ export class ReportTabComponent {
     line.value = !line.value;
   }
 
-  getMGRS(line: IReportLineValue) {
-    this.appService.getMyPositionMGRS(3).then((pos) => (line.value = pos));
+  getMGRS(line: IReportLineValue, precision:number) {
+    this.appService
+      .getMyPositionMGRS(precision)
+      .then((pos) => (line.value = pos));
   }
 
   getTimeDTG(line: IReportLineValue) {

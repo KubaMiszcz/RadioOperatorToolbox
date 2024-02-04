@@ -44,7 +44,8 @@
                     <!-- TEXT LINE -->
                     <input *ngIf="!lineValue.valueType 
                         || (lineValue.valueType === lineValueTypes.textLine)  
-                        || (lineValue.valueType === lineValueTypes.MGRS)
+                        || (lineValue.valueType === lineValueTypes.MGRS1m)
+                        || (lineValue.valueType === lineValueTypes.MGRS1km)
                         || (lineValue.valueType === lineValueTypes.DTG)" [(ngModel)]="lineValue.value" type="text"
                         class="form-control d-flsex line-value" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
@@ -89,9 +90,16 @@
                         </button>
                     </div>
 
-                    <!-- MGRS -->
-                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue)">
+                    <!-- MGRS1m -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1m">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,5)">
+                            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- MGRS1km -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1km">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,3)">
                             <i class="fa fa-crosshairs" aria-hidden="true"></i>
                         </button>
                     </div>

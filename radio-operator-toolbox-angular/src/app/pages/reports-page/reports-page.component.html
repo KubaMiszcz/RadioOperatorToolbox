@@ -7,4 +7,12 @@
 
 
 zapisane raporty lista
+<hr>
+<div class="d-flex">
+    <div *ngFor="let item of savedReports" class="tile">
+        <app-menu-tile [name]="item.name" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
+            (click)="setCurrentReport(item)"></app-menu-tile>
+    </div>
+</div>
+
 
