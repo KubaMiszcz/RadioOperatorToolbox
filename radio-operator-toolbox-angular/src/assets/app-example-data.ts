@@ -1,3 +1,4 @@
+import { Guid } from 'guid-typescript';
 import { IAppData } from 'src/app/models/app-data.model';
 import { TRANSMIT_DIRECTION } from 'src/app/models/constants/enums';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
@@ -685,10 +686,36 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
   reports: [exampleMEDEVAC_PL, exampleSALUTE_PL],
   correspondenceBook: [
     {
+      guid: Guid.create(),
       timestamp: new Date(),
       transmitDirection: TRANSMIT_DIRECTION.INCOMING,
-      codename: 'team1',
+      recipientCodename: 'team2',
+      senderCodename: 'team1',
       content: 'meldune1',
+    },
+    {
+      guid: Guid.create(),
+      timestamp: new Date(),
+      transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
+      recipientCodename: 'team1',
+      senderCodename: 'team2',
+      content: 'meldune1',
+    },
+    {
+      guid: Guid.create(),
+      timestamp: new Date(),
+      transmitDirection: TRANSMIT_DIRECTION.INCOMING,
+      recipientCodename: 'team1',
+      senderCodename: 'farewell02',
+      content: 'casMEDAVEC c as c as c as',
+    },
+    {
+      guid: Guid.create(),
+      timestamp: new Date(),
+      transmitDirection: TRANSMIT_DIRECTION.OUTGOING,
+      recipientCodename: 'team1',
+      senderCodename: 'bukszpan08',
+      content: 'caDALTUR as c as c as c as',
     },
   ],
   notepad: {

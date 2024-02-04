@@ -1,7 +1,58 @@
+<div><b>IN PROGRESS</b></div>
 
-<div ><b>IN PROGRESS</b></div>
 
-szukajka
+
+<div>
+    <div *ngFor="let line of correspondenceBook" class="input-group input-group-sm mb-1">
+        <div *ngIf="line.transmitDirection===transmitDirections.OUTGOING" class="col-1"></div>
+        <div class="input-group-text text-wrap d-flex flex-column line-header p-0 text-start flex-start ">
+            <div class="w-100 p-1">
+                <!-- <span class="badge bg-small bg-success w-100">{{getTime(line.timestamp)}}</span> -->
+                <span class="badge bg-small bg-primary w-100">{{getTimeDTG(line.timestamp)}}</span>
+                <div class="w-100">
+                    <small><b>OD
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </b></small>
+                    <span class="badge bg-small bg-success ms-1">
+                        {{line.senderCodename}}</span>
+                </div>
+                <div class="w-100">
+                    <small><b>DO
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </b></small>
+                    <span class="badge bg-small bg-success ms-1">
+                        {{line.recipientCodename}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-control text-wrap content" [ngClass]="{
+            'incoming':line.transmitDirection===transmitDirections.INCOMING,
+            'outgoing':line.transmitDirection===transmitDirections.OUTGOING,
+        }">
+            {{line.content}}
+        </div>
+        <div *ngIf="line.transmitDirection===transmitDirections.INCOMING" class="col-1"></div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+szukajka po recipient sender i content i DTG
 <div>
     <div *ngFor="let line of correspondenceBook" class="input-group input-group-sm mb-3">
 
@@ -17,7 +68,7 @@ szukajka
                     | uppercase}}</span>
             </div>
             <div>
-                <span class="badge bg-small bg-secondary">{{line.codename}}</span>
+                <span class="badge bg-small bg-secondary">{{line.recipientCodename}}</span>
             </div>
         </div>
 
@@ -70,4 +121,17 @@ szukajka
         <i class="fa fa-location-arrow" aria-hidden="true"></i>
     </button>
 
+</div>
+
+
+
+
+
+<div>
+    <app-help-tile [content]="'
+    mozan mergowac kilka ksiazek i export do czytelnej posatci
+    
+    
+    
+    '"></app-help-tile>
 </div>
