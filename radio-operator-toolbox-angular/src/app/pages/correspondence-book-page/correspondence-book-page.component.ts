@@ -36,12 +36,7 @@ export class CorrespondenceBookPageComponent {
     this.newEntry = this.getReInitNewEntry();
   }
 
-  // getTime(timestamp: Date) {
-  //   return `${timestamp.getHours()}:${timestamp.getMinutes()}`;
-  // } //km
-
-  getTimeDTG(timestamp: Date = new Date()) {
-    this.newEntryDTG = this.appService.getTimeDTG(timestamp);
+  getTimeDTG(timestamp: Date) {
     return this.appService.getTimeDTG(timestamp);
   }
 
@@ -61,13 +56,12 @@ export class CorrespondenceBookPageComponent {
     } else {
       this.newEntry.transmitDirection = TRANSMIT_DIRECTION.BYPASSING;
       console.log('bypas');
-      
     }
 
     this.correspondenceBook.push(this.newEntry);
     this.newEntry = this.getReInitNewEntry();
 
-    this.appService.getGUID()
+    this.appService.getGUID();
   }
 
   private getReInitNewEntry(): CorrespondenceBookEntry {
