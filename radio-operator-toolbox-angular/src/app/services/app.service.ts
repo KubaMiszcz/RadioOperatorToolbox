@@ -7,7 +7,10 @@ import { CoreService } from './core.service';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
 import { formatDate } from '@angular/common';
-import { DTG_TIMEZONES } from 'src/assets/app-default-settings';
+import {
+  DTG_TIMEZONES,
+  MONTHS_NAMES_PL,
+} from 'src/assets/app-default-settings';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +24,7 @@ export class AppService {
     private coreService: CoreService
   ) {
     appSettingsService.loadAppSettingsOrDefault();
-    
+
     this.currenReportBS.next(
       appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
     );
@@ -83,8 +86,10 @@ export class AppService {
           (c) => c.key === (-1 * date.getTimezoneOffset()) / 60
         )?.value ?? '_';
 
-    let dtg = formatDate(date, 'ddHHmm_MMMyy', 'en')
-      .replace('_', timezoneCode)
+    let monthNo = MONTHS_NAMES_PL[date.getMonth()];
+
+    let dtg = formatDate(date, 'ddHHmmxxxxyy', 'en')
+      .replace('xxxx', timezoneCode + monthNo)
       .toUpperCase();
 
     return dtg;
@@ -95,7 +100,12 @@ export class AppService {
       date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     }
 
-    let dtg = formatDate(date, 'ddMMMyy', 'en').toUpperCase();
+    let monthNo = MONTHS_NAMES_PL[date.getMonth()];
+
+    let dtg = formatDate(date, 'ddHHmmxxxyy', 'en')
+      .replace('xxx', monthNo)
+      .toUpperCase();
+
     return dtg;
   }
 }

@@ -61,7 +61,6 @@ export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   // menuItems: MENU_ITEMS_DEPR,
 };
 
-
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 export const ALPHABET_EN = [
@@ -130,7 +129,6 @@ export const ALPHABET_PL = [
   'Ż',
 ];
 
-
 export const DTG_TIMEZONES: KeyValue<number, string>[] = [
   { key: -12, value: 'Y' },
   { key: -11, value: 'X' },
@@ -157,4 +155,19 @@ export const DTG_TIMEZONES: KeyValue<number, string>[] = [
   { key: +10, value: 'K' },
   { key: +11, value: 'L' },
   { key: +12, value: 'M' },
+];
+
+export const MONTHS_NAMES_PL: string[] = [
+  'STY',
+  'LUT',
+  'MAR',
+  'KWI',
+  'MAJ',
+  'CZE',
+  'LIP',
+  'SIE',
+  'WRZ',
+  'PAZ',
+  'LIS',
+  'GRU',
 ];
