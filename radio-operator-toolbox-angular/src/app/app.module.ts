@@ -26,6 +26,7 @@ import { ModalGenericComponent } from './core-components/modal-generic/modal-gen
 import { QuickDataComponent } from './core-components/nav-bar/quick-data-modal/quick-data.component';
 import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
+import { HelpTileComponent } from './core-components/help-tile/help-tile.component';
 
 
 
@@ -53,6 +54,7 @@ import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-squa
     ModalGenericComponent,
     VICTabComponent,
     PolybiusSquareTabComponent,
+    HelpTileComponent,
   ],
   imports: [
     BrowserModule,
