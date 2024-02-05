@@ -57,6 +57,7 @@ const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
+  showAllHelpTooltips:true,
   reportsTemplates: REPORTS_TEMPLATES,
   // menuItems: MENU_ITEMS_DEPR,
 };
@@ -129,7 +130,7 @@ export const ALPHABET_PL = [
   'Ż',
 ];
 
-export const DTG_TIMEZONES: KeyValue<number, string>[] = [
+export const DTG_TIMEZONES_CODES: KeyValue<number, string>[] = [
   { key: -12, value: 'Y' },
   { key: -11, value: 'X' },
   { key: -10, value: 'W' },
