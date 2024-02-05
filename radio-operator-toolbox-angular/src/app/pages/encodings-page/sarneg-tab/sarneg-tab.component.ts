@@ -18,6 +18,7 @@ export class SarnegTabComponent {
   isCurrentCodeWordLocked = true;
   codeWords: string[] = [];
   isEncoding = true;
+  helpLines = helpLines;
 
   // allowedCharacgets = ',./<>?;\':"[]\\{}!@#$%*()_+-=';
   // allowedCharacters = ` ,./<>?;':"[]\\{}!@#$%*()_+-=`;
@@ -40,10 +41,6 @@ export class SarnegTabComponent {
 
   ngOnInit(): void {
     this.encodeWord();
-  }
-
-  test(value: any) {
-    console.log(value);
   }
 
   encodeWord() {
@@ -91,7 +88,10 @@ export class SarnegTabComponent {
   }
 
   validateNumbersForDecoding(string: string, allowedLetters: string[]) {
-    const allowedCharacters = new RegExp(`[^${this.currentCodeWord} \.\!\#]`, 'g');
+    const allowedCharacters = new RegExp(
+      `[^${this.currentCodeWord} \.\!\#]`,
+      'g'
+    );
 
     this.numbersEncoded = this.numbersEncoded
       .toUpperCase()
@@ -132,3 +132,9 @@ export class SarnegTabComponent {
     return false;
   }
 }
+
+const helpLines = `- SARNEG, proste kodowanie, kodujemy: liczba 0 to 1 litera slowa, liczba 8 to 9 litera slowa,
+  - odkodowujemy na odwrot czyli: 5litera slowa to cyfra 4 itd, slowo kodowe musi miec niepowtarzajacych sie liter,
+  - zeby wpisac slowo odkodowujemy klodka wpisujemy lub klikamy z proponowanych,
+  - klodka jest zeby sobie niechcacy nie skasowac,
+  - docelowo slowa beda brane z zakladaki TDR`;

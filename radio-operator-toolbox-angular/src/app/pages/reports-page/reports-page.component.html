@@ -1,18 +1,22 @@
+<app-help-tile [content]="helpLines"></app-help-tile>
+
+
 <div class="d-flex">
-    <div *ngFor="let item of reports" class="tile">
+    <div *ngFor="let item of reportsTemplates" class="tile">
         <app-menu-tile [name]="item.name" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
             (click)="setCurrentReport(item)"></app-menu-tile>
     </div>
 </div>
 
 
-zapisane raporty lista
 <hr>
+<div>Zapisane raporty:</div>
 <div class="d-flex">
     <div *ngFor="let item of savedReports" class="tile">
         <app-menu-tile [name]="item.name" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
             (click)="setCurrentReport(item)"></app-menu-tile>
     </div>
 </div>
+
 
 

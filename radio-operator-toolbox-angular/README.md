@@ -34,11 +34,16 @@
     - do teams dodaj authcode i correspondentcode
 - rejestr korespondencji
     - Szukajka w książce korespondencji po dacie, nadawcy dbiorcy i tresci
+    - bypassing color? width?
+    - get rid of timestamp use DTG instead
+    - sender recipien jako obikety a nie nicknamy ???
 
+- pangular form validators ogarnij
 
 ## 3rd prio
 - alfabety edytowalne z kropkami itp?
 - ulubione shortcuts menu
+
 
 - kodowania
     - szyfry:

@@ -7,7 +7,7 @@ import { AppService } from 'src/app/services/app.service';
 
 
 export const APP_EXAMPLE_DATA_JSON: IAppData = {
-  reports: [
+  savedReports: [
     {
       name: 'EXAMPLE MEDEVAC Report',
       isFavourite: true,

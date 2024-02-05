@@ -6,7 +6,7 @@ import { ITDRData } from "./tdr-data.model";
 import { ITeam, Team } from "./team.model";
 
 export interface IAppData {
-  reports: IReport[];
+  savedReports: IReport[];
   correspondenceBook: ICorrespondenceBookEntry[];
   notepad: INotepad;
   tdrData?: ITDRData;
@@ -14,7 +14,7 @@ export interface IAppData {
 }
 
 export class AppData implements IAppData {
-  reports = [];
+  savedReports = [];
   correspondenceBook = [];
   notepad = new Notepad();
 }

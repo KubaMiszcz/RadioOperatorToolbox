@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AppSettings } from 'src/app/models/app-settings.model';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
@@ -7,13 +7,20 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   templateUrl: './help-tile.component.html',
   styleUrls: ['./help-tile.component.scss'],
 })
-export class HelpTileComponent {
+export class HelpTileComponent implements OnInit {
   @Input() content = '';
   @Input() contentLines: string[] = [];
   isHidden = false;
   showAllHelpTooltips = this.appSettingsService.appSettings.showAllHelpTooltips;
 
-  constructor(private appSettingsService: AppSettingsService) {}
+  constructor(private appSettingsService: AppSettingsService) {
+  }
+
+  ngOnInit(): void {
+    let lines = this.content.split('\n');
+    lines = [...lines, ...this.contentLines];
+    lines.forEach(l=>this.contentLines.push(l.trim()))
+  }
 
   isUrlLine(line: string) {
     

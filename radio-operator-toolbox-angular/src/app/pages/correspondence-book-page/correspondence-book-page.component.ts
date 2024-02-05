@@ -27,6 +27,8 @@ export class CorrespondenceBookPageComponent {
 
   transmitDirections = TRANSMIT_DIRECTION;
 
+  helpLines = helpLines;
+
   constructor(
     private appService: AppService,
     private appDataService: AppDataService
@@ -55,7 +57,6 @@ export class CorrespondenceBookPageComponent {
       this.newEntry.transmitDirection = TRANSMIT_DIRECTION.OUTGOING;
     } else {
       this.newEntry.transmitDirection = TRANSMIT_DIRECTION.BYPASSING;
-      console.log('bypas');
     }
 
     this.correspondenceBook.push(this.newEntry);
@@ -75,3 +76,12 @@ export class CorrespondenceBookPageComponent {
     };
   }
 }
+
+const helpLines = `
+W TRAKCIE:
+- mergowanie ksiazke z innych urzadzen import/export
+- export do czytelnej postaci i wysylki/zapisu/druku
+- CRUD
+- validations - kiedy nie wybrano odiorcy itp
+`;
+

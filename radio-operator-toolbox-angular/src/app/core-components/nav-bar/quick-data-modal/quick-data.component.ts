@@ -14,14 +14,14 @@ export class QuickDataComponent {
     this.appService.getMyPositionMGRS().then(
       (pos) => {
         this.quickData.push({
-          key: 'your Position MGRS 1m',
+          key: 'twoja pozycja MGRS 1m',
           value: pos,
         });
       },
       (err) => {
         console.error(err);
         this.quickData.push({
-          key: 'your Position MGRS 1m',
+          key: 'twoja pozycja MGRS 1m',
           value: err?.message,
         });
       }
@@ -30,31 +30,31 @@ export class QuickDataComponent {
     this.appService.getMyPositionMGRS(3).then(
       (pos) => {
         this.quickData.push({
-          key: 'your Position MGRS 1km',
+          key: 'twoja pozycja MGRS 1km',
           value: pos,
         });
       },
       (err) => {
         console.error(err);
         this.quickData.push({
-          key: 'your Position MGRS 1m',
+          key: 'twoja pozycja MGRS 1km',
           value: err?.message,
         });
       }
     );
 
     this.quickData.push({
-      key: 'local Time DTG',
+      key: 'czas lokalny DTG',
       value: this.appService.getTimeDTG(new Date()),
     });
 
     this.quickData.push({
-      key: 'ZULU Time DTG',
+      key: 'czas ZULU DTG',
       value: this.appService.getTimeDTG(new Date(), true),
     });
 
     this.quickData.push({
-      key: 'local Date DTG',
+      key: 'lokalna data DTG',
       value: this.appService.getDateDTG(new Date()),
     });
   }

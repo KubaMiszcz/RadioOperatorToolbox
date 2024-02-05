@@ -12,6 +12,7 @@ import { AppService } from 'src/app/services/app.service';
 export class AppSettingsPageComponent {
   appSettingsJSON = '';
   appDataJSON = '';
+  appSettings = this.appSettingsService.appSettings;
 
   constructor(
     private appService: AppService,
@@ -26,8 +27,8 @@ export class AppSettingsPageComponent {
     this.appSettingsService.saveAppSettings(this.appSettingsJSON);
   }
 
-  saveAppData(){
-    this.appDataService.saveAppData(this.appDataJSON)
+  saveAppData() {
+    this.appDataService.saveAppData(this.appDataJSON);
   }
 
   alert(message: string) {

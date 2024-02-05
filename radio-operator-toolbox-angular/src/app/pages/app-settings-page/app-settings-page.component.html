@@ -1,3 +1,13 @@
+<div class="d-flex flex-row justify-content-between">
+    <label class="form-check-label" for="flexCheckDefault">
+        pokaz/ukryj wszystkie wskazowki
+    </label>
+    <div class="form-check">
+        <input [(ngModel)]="appSettings.showAllHelpTooltips" class="form-check-input" type="checkbox" value=""
+            id="flexCheckDefault">
+    </div>    
+</div>
+
 <div class="card my-4">
     <div class="card-body">
         <h5 class="card-title">Application Settings ({{appSettingsJSON.length}})</h5>

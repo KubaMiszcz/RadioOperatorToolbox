@@ -6,9 +6,9 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </h5>
-        <p class="card-subtitle mb-2 text-muted "><small>{{content}}</small></p>
+        <!-- <p class="card-subtitle mb-2 text-muted "><small>{{content}}</small></p> -->
         <p *ngFor="let line of contentLines; index as idx" id="{{idx}}" class="card-subtitle mb-2 text-muted ">
-            <small *ngIf="!isUrlLine(line)"> {{getLine(line)}}</small>
+            <small *ngIf="!isUrlLine(line)" class="line"> {{getLine(line)}}</small>
             <a *ngIf="isUrlLine(line)" href="{{line.split('|')[2]}}"><small>{{line.split('|')[1]}}</small></a>
             <small *ngIfElse>{{line}}</small>
         </p>

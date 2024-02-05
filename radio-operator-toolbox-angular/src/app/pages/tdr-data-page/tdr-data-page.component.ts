@@ -12,6 +12,7 @@ import { AppService } from 'src/app/services/app.service';
 export class TDRDataPageComponent {
   teams = this.appDataService.appData.tdrData?.teams ?? [];
   myTeam = this.appDataService.appData.tdrData?.myTeam ?? new Team();
+  helpLines = helpLines;
 
   constructor(
     private appService: AppService,
@@ -36,3 +37,14 @@ export class TDRDataPageComponent {
     this.teams.splice(idx, 1);
   }
 }
+
+const helpLines = `
+podreczne dane z TDR
+- kryptonimy, czestotliwosci, kody itp
+in progress:
+- sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp
+- alerty - numer/opis
+- SARNEG parzyste/nieparzyste, losownik slow
+- import/export TDR from json/txt
+`
+  

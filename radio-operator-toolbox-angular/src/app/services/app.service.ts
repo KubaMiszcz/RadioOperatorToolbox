@@ -9,7 +9,7 @@ import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
 import { formatDate } from '@angular/common';
 import {
-  DTG_TIMEZONES,
+  DTG_TIMEZONES_CODES,
   MONTHS_NAMES_PL,
 } from 'src/assets/app-default-settings';
 
@@ -83,7 +83,7 @@ export class AppService {
 
     let timezoneCode = isZulu
       ? 'Z'
-      : DTG_TIMEZONES.find(
+      : DTG_TIMEZONES_CODES.find(
           (c) => c.key === (-1 * date.getTimezoneOffset()) / 60
         )?.value ?? '_';
 

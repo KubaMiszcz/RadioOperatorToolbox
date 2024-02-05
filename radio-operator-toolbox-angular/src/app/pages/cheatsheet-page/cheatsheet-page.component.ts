@@ -10,19 +10,20 @@ import { IWaveFreqLengthPair } from 'src/app/models/cheatsheet-data.model';
   styleUrls: ['./cheatsheet-page.component.scss'],
 })
 export class CheatsheetComponent {
-
-  wavesFreqsLengthsPairs = this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
+  wavesFreqsLengthsPairs =
+    this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
   speedOfLight = 299792458; //c — speedOfLight: 299 792 458 m/s
+  helpLines = helpLines;
 
   constructor(
     private appService: AppService,
     private appDataService: AppDataService,
-    private appSettingsService: AppSettingsService,
+    private appSettingsService: AppSettingsService
   ) {
     this.wavesFreqsLengthsPairs =
       this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
 
-      this.wavesFreqsLengthsPairs?.forEach(p=>this.udpateLength(p));
+    this.wavesFreqsLengthsPairs?.forEach((p) => this.udpateLength(p));
   }
 
   updateFreq(wave: IWaveFreqLengthPair) {
@@ -47,4 +48,5 @@ export class CheatsheetComponent {
   }
 }
 
-
+const helpLines = `
+`;
