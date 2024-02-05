@@ -1,7 +1,24 @@
-<div class="card mt-4">
+<div *ngIf="!isHidden && showAllHelpTooltips" class="card mt-4">
     <div class="card-body">
-        <h5 class="card-title"><i class="fas fa-info-circle    "></i> Help:</h5>
-        <p class="card-subtitle mb-2 text-muted ">{{content}}</p>
-        <p *ngFor="let line of contentLines">{{line}}</p>
+        <h5 class="card-title d-flex flex-row justify-content-between">
+            <div><i class="fas fa-info-circle    "></i> Help:</div>
+            <div (click)="isHidden=!isHidden">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </h5>
+        <p class="card-subtitle mb-2 text-muted "><small>{{content}}</small></p>
+        <p *ngFor="let line of contentLines; index as idx" id="{{idx}}" class="card-subtitle mb-2 text-muted ">
+            <small *ngIf="!isUrlLine(line)"> {{getLine(line)}}</small>
+            <a *ngIf="isUrlLine(line)" href="{{line.split('|')[2]}}"><small>{{line.split('|')[1]}}</small></a>
+            <small *ngIfElse>{{line}}</small>
+        </p>
+    </div>
+    <div class="card-footer">
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn- w-100 m-0"
+            (click)="isHidden=!isHidden">Zamknij</button>
     </div>
 </div>
+
+<ng-template #url let-link="link">
+    <a href="line"></a>
+</ng-template>

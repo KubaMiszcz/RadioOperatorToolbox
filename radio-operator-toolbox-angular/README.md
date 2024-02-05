@@ -1,41 +1,64 @@
 # RadiooperatorToolbox
 ## Live Demo: [https://kubamiszcz.github.io/RadiooperatorToolbox/](https://kubamiszcz.github.io/RadiooperatorToolbox/)
 
+
+
 ## 1st priority
+- zeby dzialalo offline czyli ikonki i bootstap lokalnie
 - dzialanie offline - host yurself icons boostrpa etc
-- ikony PWA
+
+- cos usatwneia apply i kopiwanie nie do konca dziala
+
+- home page
+    - wskazowka zby pobrac apke z brancha gh-pages pobrac dist
+    - w pierwszym helpie link do issues [https://github.com/KubaMiszcz/RadioOperatorToolbox/issues]
+- reports
+    - poasnienie jak gegnrowac rapoerty valuetypes itp
+    - dodaj jeszcze ze dwa meldunki satlr i cff np
+    - w helpie 
+- favikony PWA, favikonka dla kazdego rozmiaru
+- wylacz wszytskei helpy
+- w ustawieniach dodaj link do issues i w pierwszym helpie [https://github.com/KubaMiszcz/RadioOperatorToolbox/issues]
+
+
+
+## 2nd prio
 - toltip przy inputach czy dziala na mobile albo jakos to ogarnij albo jakis help?
-
-
 - tlo ciemne
-- PL/EN version
-- tabela vigenere/polibiusz? ostyluj
-- szyfr VIC
-- na ekranie 4k menu sie rozwija
+- na ekranie 4k menu sie rozwija - ???
 - import export TDR
 - generate TDR
-  - codewords
-  - my codename, my leader, my subteams, favourite codenames
-- alfabety edytowalne z kropkami itp?
+    - w lsowniku do sarnego przleacnik PL EN
+    - wsadzic gdzies lsowanie slwo do sarnego pewno w TDR 
+    - codewords - losowanie codewords na dni parzyste i nieparzyste
+    - do teams dodaj authcode i correspondentcode
 - rejestr korespondencji
-  - model
-- szyfry
-  - https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a
-  - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
-- ulibione shortcuts menu
+    - Szukajka w książce korespondencji po dacie, nadawcy dbiorcy i tresci
 
 
-- Szukajka w książce korespondencji
-- [ ] radiooperator toolbox
-- [ ] rozroznia dni parzyste i nieparzyste do sarnega i vigernera??
-- [ ] plikki sa w kat docu ze szkolenia 
-- [ ] wzory na dlug anteny i jka roadzc z duzym swr kiedy skraca a kiedy wydluzac
-- [ ] notataki pytania na petle
+## 3rd prio
+- alfabety edytowalne z kropkami itp?
+- ulubione shortcuts menu
+
+- kodowania
+    - szyfry:
+        - https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a
+        - ttps://pl.wikipedia.org/wiki/Szachownica_Polibiusza
+    - rozroznia dni parzyste i nieparzyste do sarnega i vigernera??
+- authcode i corrNo w team i TDR
+
+
+- pliki sa w kat docu ze szkolenia 
+- notataki pytania na petle
+
 
 
 ## nice to have:
 - szukajka SIDC wg tych standardow nato milsymbols npm, https://www.spatialillusions.com/milsymbol/index.html
-  - MIL-STD-2525B, MIL-STD-2525C, MIL-STD-2525D, APP6-B, APP6-D,
+ - MIL-STD-2525B, MIL-STD-2525C, MIL-STD-2525D, APP6-B, APP6-D,
+- PL/EN version
+- tabela vigenere/polibiusz? ostyluj
+- szyfr VIC
 
 
 

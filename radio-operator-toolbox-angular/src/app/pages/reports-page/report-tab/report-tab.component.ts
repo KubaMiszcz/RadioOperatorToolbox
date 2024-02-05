@@ -47,7 +47,7 @@ export class ReportTabComponent {
     line.value = !line.value;
   }
 
-  getMGRS(line: IReportLineValue, precision:number) {
+  getMGRS(line: IReportLineValue, precision: number) {
     this.appService
       .getMyPositionMGRS(precision)
       .then((pos) => (line.value = pos));
@@ -65,7 +65,7 @@ export class ReportTabComponent {
       line.lineValues.forEach((lineValue) => {
         if (lineValue.value) {
           if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
-            result += `${lineValue.label}:${lineValue.value}, `;
+            result += `${lineValue.label ? lineValue.label+':' : ''}${lineValue.value}, `;
           } else {
             result += `${lineValue.label}, `;
           }

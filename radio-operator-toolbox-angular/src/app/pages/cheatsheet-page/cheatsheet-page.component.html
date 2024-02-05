@@ -1,13 +1,18 @@
-<p>dlugosc fali: lambda=c/f</p>
-<div class="my-2">
+<div>dlugosc fali: lambda=c/f</div>
+<div class="mb-2">
     <div *ngFor="let wave of wavesFreqsLengthsPairs, index as idx" class="input-group mb-1">
-        <span class="input-group-text px-1  text-center">f{{idx}} [MHz]</span>
-        <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]" (change)="udpateLength(wave)"
-            value="{{wave.freq}}">
-        <span class="input-group-text ps-2 px-2  text-center">½ λ{{idx}} [m]</span>
-        <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]" (change)="updateFreq(wave)"
-            value="{{wave.length}}">
+        <span class="input-group-text px-1  text-center">f{{idx+1}} [MHz]</span>
+        <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]"
+            (change)="udpateLength(wave)" value="{{wave.freq}}">
+        <span class="input-group-text ps-2 px-2  text-center">½ λ{{idx+1}} [m]</span>
+        <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]"
+            (change)="updateFreq(wave)" value="{{wave.length}}">
     </div>
+</div>
+<div>
+    <i class="fas fa-info-circle    "></i> 
+    jesli dla F1 masz SWR1 i jesli nie zmieniales dlugosci anteny, zwiekszyles czestotliwosc do F2, i SWR2
+    spadlo to: wydluz antene zeby dopasowac do F1 - SWR spadnie (na pewno?)
 </div>
 
 

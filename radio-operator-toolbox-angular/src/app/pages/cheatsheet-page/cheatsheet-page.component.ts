@@ -21,6 +21,8 @@ export class CheatsheetComponent {
   ) {
     this.wavesFreqsLengthsPairs =
       this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
+
+      this.wavesFreqsLengthsPairs?.forEach(p=>this.udpateLength(p));
   }
 
   updateFreq(wave: IWaveFreqLengthPair) {
