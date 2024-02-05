@@ -23,8 +23,6 @@
   - https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a
   - https://pl.wikipedia.org/wiki/Szachownica_Polibiusza
 - ulibione shortcuts menu
-- szukajka SIDC wg tych standardow nato milsymbols npm, https://www.spatialillusions.com/milsymbol/index.html
-  - MIL-STD-2525B, MIL-STD-2525C, MIL-STD-2525D, APP6-B, APP6-D,
 
 
 - Szukajka w książce korespondencji
@@ -36,6 +34,8 @@
 
 
 ## nice to have:
+- szukajka SIDC wg tych standardow nato milsymbols npm, https://www.spatialillusions.com/milsymbol/index.html
+  - MIL-STD-2525B, MIL-STD-2525C, MIL-STD-2525D, APP6-B, APP6-D,
 
 
 
@@ -55,6 +55,7 @@
 
 
 ---
+## repo: https://github.com/KubaMiszcz/RadioOperatorToolbox
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
