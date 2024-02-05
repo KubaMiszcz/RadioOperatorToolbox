@@ -49,4 +49,6 @@ export class CheatsheetComponent {
 }
 
 const helpLines = `
+- kalkulatory itp wskazowki,
+- sciezki do menu i zmiany ustawien
 `;

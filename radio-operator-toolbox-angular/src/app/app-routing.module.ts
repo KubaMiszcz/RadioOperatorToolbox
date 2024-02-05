@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeTabComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SarnegTabComponent } from './pages/encodings-page/sarneg-tab/sarneg-tab.component';
 import { VigenereTabComponent } from './pages/encodings-page/vigenere-tab/vigenere-tab.component';
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
@@ -23,18 +23,20 @@ const routes: Routes = [
 
   { path: 'reports-page', component: ReportsPageComponent },
   { path: 'report-tab', component: ReportTabComponent },
+
   { path: 'notepad-page', component: NotepadPageComponent },
+  
   { path: 'cheatsheet-page', component: CheatsheetComponent },
+  
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
   { path: 'tdr-data-page', component: TDRDataPageComponent },
+  
   { path: 'settings-page', component: AppSettingsPageComponent },
 
-  { path: 'home-tab', component: HomeTabComponent },
-  { path: '', redirectTo: '/reports-tab', pathMatch: 'full' },
-  { path: '**', component: ReportsPageComponent },
-  // { path: '', redirectTo: '/home-page', pathMatch: 'full' },
-  // { path: '**', component: HomePageComponent },
+  { path: 'home-page', component: HomePageComponent },
+  { path: '', redirectTo: '/home-page', pathMatch: 'full' },
+  { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({

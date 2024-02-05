@@ -8,7 +8,7 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomeTabComponent {
+export class HomePageComponent {
   appData = this.appDataService.appData;
   appSettings = this.appSettingsService.appSettings;
   helpLines = helpLines

@@ -92,11 +92,14 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'settings-page'">Ustawienia </a>
+                    <a class="nav-link" [routerLink]="'settings-page'" (click)="isMenuHidden=!isMenuHidden">Ustawienia </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'vigenere-tab'">Help </a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'help-page'" (click)="isMenuHidden=!isMenuHidden">Help </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'help-page'" (click)="isMenuHidden=!isMenuHidden">About </a>
+                </li> -->
             </ul>
         </div>
     </div>

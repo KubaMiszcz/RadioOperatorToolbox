@@ -14,7 +14,7 @@ import { TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.compon
 import { CorrespondenceBookPageComponent } from './pages/correspondence-book-page/correspondence-book-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { HelpPageComponent } from './pages/help-page/help-page.component';
-import { HomeTabComponent as HomePageComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent as HomePageComponent } from './pages/home-page/home-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
