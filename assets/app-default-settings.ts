@@ -1,11 +1,64 @@
+import { IMenuItem_DEPR } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
+
+const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
+  {
+    title: 'Kodowanie',
+    link: 'encodings-page',
+    isTitleShowed: true,
+    subItems: [
+      {
+        title: 'Sarneg',
+        link: 'sarneg-tab',
+      },
+      {
+        title: 'Vigenere',
+        link: 'vigenere-tab',
+      },
+    ],
+  },
+  { title: '' }, //dummy
+  { title: '' }, //dummy
+  {
+    title: 'Reports',
+    iconName: 'reports',
+    link: 'reports-page',
+    subItems: [],
+  },
+  {
+    title: 'Książka korespondencji',
+    isTitleShowed: true,
+    link: 'correspondence-book-page',
+  },
+  {
+    title: 'TDR',
+    isTitleShowed: true,
+    link: 'tdr-data-page',
+  },
+  {
+    title: 'Ściągawka',
+    isTitleShowed: true,
+    link: 'cheatsheet-page',
+  },
+  {
+    title: 'Notatnik',
+    isTitleShowed: true,
+    link: 'notepad-page',
+  },
+  {
+    title: 'Ustawienia wszelakie',
+    isTitleShowed: true,
+    link: 'settings-page',
+  },
+];
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
   reportsTemplates: REPORTS_TEMPLATES,
+  // menuItems: MENU_ITEMS_DEPR,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -76,7 +129,6 @@ export const ALPHABET_PL = [
   'Ż',
 ];
 
-
 export const DTG_TIMEZONES: KeyValue<number, string>[] = [
   { key: -12, value: 'Y' },
   { key: -11, value: 'X' },
@@ -103,4 +155,19 @@ export const DTG_TIMEZONES: KeyValue<number, string>[] = [
   { key: +10, value: 'K' },
   { key: +11, value: 'L' },
   { key: +12, value: 'M' },
+];
+
+export const MONTHS_NAMES_PL: string[] = [
+  'STY',
+  'LUT',
+  'MAR',
+  'KWI',
+  'MAJ',
+  'CZE',
+  'LIP',
+  'SIE',
+  'WRZ',
+  'PAZ',
+  'LIS',
+  'GRU',
 ];
