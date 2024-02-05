@@ -1,6 +1,10 @@
-import { INotepadPage, NotepadPage } from 'src/app/models/notepad.model';
+import { INotepadPage, NotepadPage } from './../../models/notepad.model';
 import { AppDataService } from './../../services/app-data.service';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { CRUD_METHODS } from 'src/app/models/constants/enums';
+import { Subscription } from 'rxjs';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-notepad-page',
@@ -8,17 +12,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./notepad-page.component.scss'],
 })
 export class NotepadPageComponent {
-  pages = this.appDataService.appData.notepad.pages;
+  pages: INotepadPage[] = [];
   currentPage = new NotepadPage();
-  // pageNo = 1;
+  @ViewChild('mymodal') mymodal: any;
+  private modalRef!: NgbModalRef;
+  CRUD_METHODS = CRUD_METHODS;
 
-  constructor(private appDataService: AppDataService) {
-    this.currentPage = this.pages?.find((p) => p.pageNo === 1) ?? new NotepadPage();
+  subs: Subscription[] = [];
+
+  constructor(
+    private appDataService: AppDataService,
+    private modalService: NgbModal
+  ) {
+    this.pages = this.appDataService.appData.notepad.pages;
+
+    this.currentPage =
+      this.pages?.[0] ?? new NotepadPage();
+  }
+
+  getPageIdx(page: INotepadPage) {
+    return this.pages.indexOf(page);
   }
 
   addPage() {
     let page: INotepadPage = {
-      pageNo: this.pages.length + 1,
       pageContent: '',
     };
 
@@ -27,21 +44,36 @@ export class NotepadPageComponent {
   }
 
   prevPage() {
-    if (this.currentPage.pageNo > 1) {
-      this.currentPage =
-        this.pages.find((p) => p.pageNo === (this.currentPage.pageNo - 1)) ??
-        new NotepadPage();
+    let currPageIdx=this.getPageIdx(this.currentPage);
+    
+    if (currPageIdx > 0) {
+      this.currentPage = this.pages[currPageIdx - 1];
     }
   }
-
+  
   nextPage() {
-    if (this.currentPage.pageNo < this.pages.length) {
-      this.currentPage = this.pages.find((p) => p.pageNo === (this.currentPage.pageNo = 1)) ??
-      new NotepadPage();
+    let currPageIdx=this.getPageIdx(this.currentPage);
+    
+    if (currPageIdx < this.pages.length - 1) {
+      this.currentPage = this.pages[currPageIdx + 1];
     }
   }
 
   removePage() {
-    // this.pages.push('');
+    let idx=this.getPageIdx(this.currentPage);
+    this.nextPage();
+    this.pages.splice(idx,1);
+  }
+
+  showDeletePageModal() {
+    this.modalRef = this.modalService.open(this.mymodal, { size: 'sm' });
+  }
+
+  closeModal(value: any) {
+    if (value === CRUD_METHODS.DELETE) {
+      this.removePage();
+    }
+
+    this.modalRef.close();
   }
 }

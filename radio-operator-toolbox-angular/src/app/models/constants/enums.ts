@@ -1,4 +1,20 @@
 export enum TRANSMIT_DIRECTION {
   INCOMING = 'ODBIÓR',
   OUTGOING = 'NADAWANIE',
+  BYPASSING = 'PRZEKAZANIE',
 }
+
+export enum CRUD_METHODS {
+  CREATE,
+  READ,
+  UPDATE,
+  DELETE,
+}
+
+export enum MODAL_RESULT {
+  YES,
+  NO,
+  CANCEL,
+  CLOSE,
+}
+

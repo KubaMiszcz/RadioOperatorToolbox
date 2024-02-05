@@ -44,7 +44,8 @@
                     <!-- TEXT LINE -->
                     <input *ngIf="!lineValue.valueType 
                         || (lineValue.valueType === lineValueTypes.textLine)  
-                        || (lineValue.valueType === lineValueTypes.MGRS)
+                        || (lineValue.valueType === lineValueTypes.MGRS1m)
+                        || (lineValue.valueType === lineValueTypes.MGRS1km)
                         || (lineValue.valueType === lineValueTypes.DTG)" [(ngModel)]="lineValue.value" type="text"
                         class="form-control d-flsex line-value" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
@@ -89,16 +90,23 @@
                         </button>
                     </div>
 
-                    <!-- MGRS -->
-                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue)">
+                    <!-- MGRS1m -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1m">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,5)">
+                            <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- MGRS1km -->
+                    <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1km">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,3)">
                             <i class="fa fa-crosshairs" aria-hidden="true"></i>
                         </button>
                     </div>
 
                     <!-- DTG -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.DTG">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getDTG(lineValue)">
+                        <button type="button" class="btn btn-primary mx-1" (click)="getTimeDTG(lineValue)">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -146,6 +154,9 @@
     </div>
 </div>
 
-<div>
-    <button type="button" class="btn btn-primary">kopiuj do txt</button>
-</div>
+<div class="m-2">
+    <button type="button" class="btn btn-primary w-100"
+    (click)="convertReportToTXT()"
+    [cdkCopyToClipboard]="reportContentTXT"
+    >kopiuj do txt</button>
+</div>  

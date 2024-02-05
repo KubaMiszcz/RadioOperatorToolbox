@@ -32,6 +32,7 @@ export enum VALUE_TYPES_ENUM {
   textLine,
   textArea,
   bool,
-  MGRS,
+  MGRS1m,
+  MGRS1km,
   DTG,
 }

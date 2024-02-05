@@ -1,0 +1,61 @@
+<div style="font-size: 4em">dont use it <br> it is in progress/refactor</div>
+
+<a href="https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a">https://pl.wikipedia.org/wiki/Szyfr_Vigenere'a</a>
+
+<div>
+    <div class="p-2">
+        <div>
+            <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zakodowania</label>
+            <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label ">Odkodowany tekst</label>
+            <div class="input-group mb-3">
+                <textarea [(ngModel)]="textDecoded" aria-label="asads" class="form-control" name="asd" id="decoded"
+                    rows="3" placeholder="kodowany tekst" (change)="encodeText()"
+                    (keyup)="encodeText()"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowany tekst</label>
+            <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zdekodowania</label>
+            <div class="input-group mb-3">
+                <textarea [(ngModel)]="textEncoded" aria-label="asads" class="form-control" name="asd" id="encoded"
+                    rows="3" placeholder="dekodowany tekst" (change)="decodeText()"
+                    (keyup)="decodeText()"></textarea>
+            </div> 
+        </div>
+    </div>
+
+    <div>
+        <td style="border: solid;">
+            <tr>
+                <td></td>
+                <td style="border: 2px black solid" *ngFor="let i of codeTable; index as k">{{k}}</td>
+            </tr>
+            <tr *ngFor="let row of codeTable; index as idx">
+                <td style="border: 2px black solid">{{idx}}</td>
+                <td style="border: 2px black solid" *ngFor="let letter of row">{{letter}}</td>
+            </tr>
+        </td>
+
+    </div>
+
+
+
+
+    <div class="d-grid gap-1 p-2">
+        <div>Active Coderword:</div>
+        <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary">
+            <b>{{currentCodeWord}}</b>
+        </button>
+    </div>
+
+    <div class="d-grid gap-1 p-2">
+        <div>Codewords:</div>
+        <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
+            class="btn btn-outline-secondary" (click)="changeCodeword(item)">
+            {{item}}
+        </button>
+    </div>
+
+
+</div>

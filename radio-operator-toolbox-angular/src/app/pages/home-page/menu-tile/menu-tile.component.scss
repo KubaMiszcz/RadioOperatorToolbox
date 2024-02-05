@@ -1,0 +1,25 @@
+@import './../../../../styles';
+
+button {
+    width: 5em;
+    height: 5em;
+    background-color: #234e3a;
+    color: #00ff4b;
+    // background-image: url("assets/imgs/sarneg-image.png");
+    
+    img {
+        width: 5em;
+        height: 5em;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .tile-name {
+        font-size: 1em;
+        word-wrap: break-word;
+
+        span{
+            overflow-wrap: anywhere;
+        }
+    }
+}

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AppSettings, IAppSettings } from '../models/app-settings.model';
-import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/application-default-data';
+import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/app-default-settings';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
-import { exampleMEDEVAC_PL, exampleSALUTE_PL } from 'src/assets/application-example-data';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -21,13 +20,13 @@ export class AppSettingsService {
   constructor() {
     this.appSettings = APP_DEFAULT_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
-    this.alphabet = ALPHABET_PL;
-
-    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
-    this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
-
+    
+    // this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
+    // this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
+    
     //DEBUG
     // this.findUniqueWords();
+    // this.alphabet = ALPHABET_PL;
   }
 
   saveAppSettings(json = '') {
