@@ -1,27 +1,14 @@
-<div class="d-flex flex-row justify-content-between">
-    <label class="form-check-label" for="flexCheckDefault">
-        pokaz/ukryj wszystkie wskazowki
-    </label>
-    <div class="form-check">
-        <input [(ngModel)]="appSettings.showAllHelpTooltips" class="form-check-input" type="checkbox" value=""
-            id="flexCheckDefault">
-    </div>    
-</div>
-
-<div class="card my-4">
+<div class="card mb-4">
+    <div class="card-header p-1">Ustawienia</div>
     <div class="card-body">
-        <h5 class="card-title">Application Settings ({{appSettingsJSON.length}})</h5>
-        <textarea [(ngModel)]="appSettingsJSON" class="form-control" rows="5" cols="1000" aria-label="Default"
-            aria-describedby="inputGroup-sizing-default"></textarea>
-        <div class="d-flex justify-content-between my-2">
-            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 me-2"
-                [cdkCopyToClipboard]="appSettingsJSON" [cdkCopyToClipboard]="appSettingsJSON"
-                (cdkCopyToClipboardCopied)="alert('Application Settings skopiowane do schowka')">
-                <i class="fa fa-copy" aria-hidden="true"></i></button>
-            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppSettings()">
-                Paste here and Apply
-                <i class="fa fa-paste" aria-hidden="true"></i>
-            </button>
+        <div class="d-flex flex-row justify-content-between">
+            <label class="form-check-label" for="flexCheckDefault">
+                pokaz/ukryj wszystkie wskazowki
+            </label>
+            <div class="form-check">
+                <input [(ngModel)]="appSettings.showAllHelpTooltips" class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault">
+            </div>
         </div>
     </div>
 </div>
@@ -29,20 +16,44 @@
 
 
 
-<div class="card my-4">
+
+
+<div class="card mb-4">
+    <h5 class="card-header">Application Settings ({{appSettingsJSON.length}})</h5>
     <div class="card-body">
-        <h5 class="card-title">Application Data ({{appDataJSON.length}})</h5>
+        <textarea [(ngModel)]="appSettingsJSON" class="form-control" rows="5" cols="1000" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"></textarea>
+    </div>
+    <div class="card-footer d-flex justify-content-between ">
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 "
+            [cdkCopyToClipboard]="appSettingsJSON" [cdkCopyToClipboard]="appSettingsJSON"
+            (cdkCopyToClipboardCopied)="alert('Application Settings skopiowane do schowka')">
+            <i class="fa fa-copy" aria-hidden="true"></i></button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppSettings()">
+            Paste here and Apply
+            <i class="fa fa-paste" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+
+
+
+<div class="card mb-4">
+    <h5 class="card-header">Application Data ({{appDataJSON.length}})</h5>
+    <div class="card-body">
         <textarea [(ngModel)]="appDataJSON" class="form-control" rows="5" cols="1000" aria-label="Default"
             aria-describedby="inputGroup-sizing-default"></textarea>
-        <div class="d-flex justify-content-between my-2">
-            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 me-2"
-                [cdkCopyToClipboard]="appDataJSON" [cdkCopyToClipboard]="appDataJSON"
-                (cdkCopyToClipboardCopied)="alert('Application Data skopiowane do schowka')">
-                <i class="fa fa-copy" aria-hidden="true"></i></button>
-            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppData()">
-                Paste here and Apply
-                <i class="fa fa-paste" aria-hidden="true"></i>
-            </button>
-        </div>
+    </div>
+
+    <div class="card-footer d-flex justify-content-between">
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 me-2"
+            [cdkCopyToClipboard]="appDataJSON" [cdkCopyToClipboard]="appDataJSON"
+            (cdkCopyToClipboardCopied)="alert('Application Data skopiowane do schowka')">
+            <i class="fa fa-copy" aria-hidden="true"></i></button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppData()">
+            Paste here and Apply
+            <i class="fa fa-paste" aria-hidden="true"></i>
+        </button>
     </div>
 </div>
