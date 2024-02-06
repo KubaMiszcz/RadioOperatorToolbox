@@ -325,7 +325,9 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         {
           lineHeader: 'S',
           descriptionHeader: 'Size',
-          descriptionLines: ['wielkość sił przeciwnika, ilosc ludzi, pojazdów itp'],
+          descriptionLines: [
+            'wielkość sił przeciwnika, ilosc ludzi, pojazdów itp',
+          ],
           lineValues: [
             {
               valueType: VALUE_TYPES_ENUM.textArea,
@@ -458,7 +460,11 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       { name: '', codename: '' },
       { name: '3124plp', codename: 'GWIAZDOREK24' },
     ],
-    alerts: [],
+    alerts: [
+      { key: 1, value: 'zmien kodek' },
+      { key: 2, value: 'podaj polozenie' },
+      { key: 3, value: 'alarm3' },
+    ],
   },
   cheatsheetData: {
     wavesFreqsLengthPairs: [

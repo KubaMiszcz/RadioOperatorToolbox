@@ -1,7 +1,49 @@
+<!-- style="border-radius: 5px 0 0 0;" -->
+
+<!-- <div *ngFor="let team of teams; index  as idx" class="card">
+    <div class="card-body p-0">
+        <div class="d-flex flex-row">
+            <label class="px-1 w-1a d-flex justify-content-center"><b>{{idx+1}}</b></label>
+        
+            <div>
+                <div class="d-flex flex-col">
+                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
+                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
+                    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
+                        <i class="fas fa-trash    "></i>
+                    </button>
+                </div>
+                
+                <div class="d-flex flex-col">
+                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
+                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
+                    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
+                        <i class="fas fa-trash    "></i>
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
 
 <app-help-tile [content]="helpLines"></app-help-tile>
-<div class="input-group mt-2 mb-4 w-100">
-    <span class="input-group-text px-1 w-25">my Team:</span>
+
+
+<div class="mb-4">
+    <div class="input-group p-0">
+        <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
+        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+            required>
+    </div>
+</div>
+
+
+
+<div class="input-group p-0 mb-4 w-100">
+    <span class="input-group-text  w-25">my Team:</span>
     <button class="btn btn-secondary-outline dropdown-toggle m-0 w-75" type="button" id="dropdownMenuButton2"
         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{myTeam.name}} - {{myTeam.codename}}
@@ -14,30 +56,51 @@
 
 
 
-<div *ngFor="let team of teams; index  as idx" class="input-group mb-1">
-    <span class="input-group-text px-1 w-3em"><small>Team {{idx+1}}:</small></span>
-    <input type="text" class="form-control" placeholder="nazwa" value="{{team.name}}">
-    <input type="text" class="form-control" placeholder="kryptonim" value="{{team.codename}}">
-    <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
-        (click)="toggleFavourite(team)">
-        <i class="fas fa-star active"></i></button>
-    <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
-        (click)="toggleFavourite(team)">
-        <i class="fas fa-star inactive"></i></button>
-    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
-        <i class="fas fa-trash    "></i>
-    </button>
+
+<div class="card mb-4">
+    <div class="card-header">Oddziały:</div>
+
+
+    <div *ngFor="let team of teams; index  as idx" class="input-group mb-1">
+        <label class="input-group-text px-1 w-1a d-flex justify-content-center"
+            style="border-radius: 5px 0 0 0;"><b>{{idx+1}}</b></label>
+        <input type="text" class="form-control text-center" placeholder="nazwa" value="{{team.name}}">
+        <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{team.codename}}">
+        <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
+            (click)="toggleFavourite(team)">
+            <i class="fas fa-star active"></i></button>
+        <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
+            (click)="toggleFavourite(team)">
+            <i class="fas fa-star inactive"></i></button>
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
+            <i class="fas fa-trash    "></i>
+        </button>
+    </div>
+
+    <div class=" card-footer p-1 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary w-100 mt-2" (click)="addNewTeam()">dodaj Team
+            <i class="fas fa-plus-circle    "></i>
+        </button>
+    </div>
 </div>
 
-<div>
-    <button type="button" class="btn btn-primary w-100 mt-2" (click)="addNewTeam()">dodaj Team
-        <i class="fas fa-plus-circle    "></i>
-    </button>
+
+<div class="card mb-4">
+    <div class="card-header">Alarmy:</div>
+    <div *ngFor="let alert of tdrData.alerts; index  as idx" class="input-group mb-1">
+        <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
+        <input type="text" class="form-control text-center w-2em" placeholder="nazwa" value="{{alert.key}}">
+        <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{alert.value}}">
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeAlert(alert)">
+            <i class="fas fa-trash    "></i>
+        </button>
+    </div>
+    <div class="card-footer p-1 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary w-100" (click)="addNewAlert()">dodaj Alert
+            <i class="fas fa-plus-circle    "></i>
+        </button>
+    </div>
 </div>
-
-
-
-
 
 <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
