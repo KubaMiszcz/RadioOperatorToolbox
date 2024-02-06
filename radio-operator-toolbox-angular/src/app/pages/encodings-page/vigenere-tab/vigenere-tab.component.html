@@ -1,9 +1,10 @@
-<div style="font-size: 2em; background-color: darkred; color: lawngreen;">dont use it <br> it is in progress/refactor</div>
+<div class="w-100 d-flex justify-content-center mb-4"><b>🟢🛠️🚧 IN PROGRESS 🚧🛠️🟢</b></div>
+
 
 <a href="https://pl.wikipedia.org/wiki/Szyfr_Vigen%C3%A8re%E2%80%99a">https://pl.wikipedia.org/wiki/Szyfr_Vigenere'a</a>
 
 <div>
-    <div class="p-2">
+    <div class="mb-3">
         <div>
             <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zakodowania</label>
             <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label ">Odkodowany tekst</label>
@@ -17,7 +18,7 @@
         <div>
             <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Zakodowany tekst</label>
             <label *ngIf="!isEncoding" for="exampleFormControlInput1" class="form-label">Tekst do zdekodowania</label>
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <textarea [(ngModel)]="textEncoded" aria-label="asads" class="form-control" name="asd" id="encoded"
                     rows="3" placeholder="dekodowany tekst" (change)="decodeText()"
                     (keyup)="decodeText()"></textarea>
@@ -42,14 +43,14 @@
 
 
 
-    <div class="d-grid gap-1 p-2">
+    <div class="d-grid gap-1">
         <div>Active Coderword:</div>
         <button type="button" name="{{currentCodeWord}}" id="{{currentCodeWord}}" class="btn btn-primary">
             <b>{{currentCodeWord}}</b>
         </button>
     </div>
 
-    <div class="d-grid gap-1 p-2">
+    <div class="d-grid gap-1">
         <div>Codewords:</div>
         <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
             class="btn btn-outline-secondary" (click)="changeCodeword(item)">

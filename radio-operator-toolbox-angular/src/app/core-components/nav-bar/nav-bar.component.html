@@ -117,15 +117,15 @@
 
 <!-- MODALS -->
 <ng-template #infoModal let-modal>
-    <div class="modal-header">
+    <div class="modal-header p-2">
         <h4 class="modal-title">Quick Data:</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        <button type="button" class="btn-close me-1" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body p-2">
         <app-quick-data></app-quick-data>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+        <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">Close</button>
     </div>
 </ng-template>
 

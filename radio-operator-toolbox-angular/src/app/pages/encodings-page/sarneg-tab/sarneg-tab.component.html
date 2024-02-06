@@ -1,7 +1,7 @@
 <app-help-tile [content]="helpLines"></app-help-tile>
 
 <div>
-    <div class="p-2">
+    <div class="mb-3">
         <label *ngIf="isEncoding" for="exampleFormControlInput1" class="form-label">Numery do zakodowania (tylko
             cyfry .#! i spacje)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput2" class="form-label">Odkodowane numery</label>
@@ -14,7 +14,7 @@
         <label *ngIf="isEncoding" for="exampleFormControlInput3" class="form-label">Zakodowane numery (tylko
             litery  .#! spacje)</label>
         <label *ngIf="!isEncoding" for="exampleFormControlInput4" class="form-label">Numery do zdekodowania</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
             <input [(ngModel)]="numbersEncoded" type="text" class="form-control font-monospace"
                 placeholder="litery" aria-label="wordEncoded" aria-describedby="basic-addon2"
                 (change)="decodeWord()" (keyup)="decodeWord()">
@@ -23,7 +23,7 @@
 
     <!--  -->
 
-    <div class="p-2 mb-3">
+    <div class=" mb-3">
         <label for="validationCustom01" class="form-label">Active Codeword:</label>
 
         <div class="d-flex">
@@ -55,7 +55,7 @@
 
     <!--  -->
 
-    <div class="d-grid gap-1 p-2">
+    <div class="d-grid gap-1">
         <div>Codewords:<small> (open lock and click)</small></div>
         <button *ngFor="let item of codeWords" type="button" name="{{item}}" id="{{item}}"
             class="btn btn-outline-secondary font-monospace" (click)="setCodeword(item)">

@@ -57,7 +57,7 @@ const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
-  showAllHelpTooltips:true,
+  showAllHelpTooltips: true,
   reportsTemplates: REPORTS_TEMPLATES,
   // menuItems: MENU_ITEMS_DEPR,
 };
@@ -171,4 +171,33 @@ export const MONTHS_NAMES_PL: string[] = [
   'PAZ',
   'LIS',
   'GRU',
+];
+
+export const NATO_ALPHABET_EN: KeyValue<string, string>[] = [
+  { key: 'A', value: 'Alfa' },
+  { key: 'B', value: 'Bravo' },
+  { key: 'C', value: 'Charlie' },
+  { key: 'D', value: 'Delta' },
+  { key: 'E', value: 'Echo' },
+  { key: 'F', value: 'Foxtrot' },
+  { key: 'G', value: 'Golf' },
+  { key: 'H', value: 'Hotel' },
+  { key: 'I', value: 'India' },
+  { key: 'J', value: 'Juliett' },
+  { key: 'K', value: 'Kilo' },
+  { key: 'L', value: 'Lima' },
+  { key: 'M', value: 'Mike' },
+  { key: 'N', value: 'November' },
+  { key: 'O', value: 'Oscar' },
+  { key: 'P', value: 'Papa' },
+  { key: 'Q', value: 'Quebec' },
+  { key: 'R', value: 'Romeo' },
+  { key: 'S', value: 'Sierra' },
+  { key: 'T', value: 'Tango' },
+  { key: 'U', value: 'Uniform' },
+  { key: 'V', value: 'Victor' },
+  { key: 'W', value: 'Whiskey' },
+  { key: 'X', value: 'X-ray' },
+  { key: 'Y', value: 'Yankee' },
+  { key: 'Z', value: 'Zulu' },
 ];

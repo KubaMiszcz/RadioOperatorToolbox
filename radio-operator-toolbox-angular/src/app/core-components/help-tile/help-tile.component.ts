@@ -29,10 +29,10 @@ export class HelpTileComponent implements OnInit {
   
   getLine(line: string) {
     if (line.startsWith('-')) {
-      return line.replace('-','■');
+      return line.replace('-','🟢');
     }
     if (line.startsWith('*')) {
-      return line.replace('*','■');
+      return line.replace('*','🟢');
     }
 
     return line;

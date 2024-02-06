@@ -6,6 +6,7 @@ import {
 } from 'src/app/models/report.model';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
+import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
 
 @Component({
   selector: 'app-report-tab',
@@ -14,12 +15,13 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class ReportTabComponent {
   report: IReport = { name: '' };
-  lineValueTypes = VALUE_TYPES_ENUM;
-  isCreatorCollapsed = false;
   isPeaceTime = this.appSettingsService.appSettings.isPeaceTime;
-  reportContentTXT = '';
 
-  //todo refactor layout of reports
+  useNatoLetters = false;
+  isCreatorCollapsed = false;
+  reportContentTXT = '';
+  lineValueTypes = VALUE_TYPES_ENUM;
+
   constructor(
     private appService: AppService,
     private appSettingsService: AppSettingsService
@@ -65,7 +67,9 @@ export class ReportTabComponent {
       line.lineValues.forEach((lineValue) => {
         if (lineValue.value) {
           if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
-            result += `${lineValue.label ? lineValue.label+':' : ''}${lineValue.value}, `;
+            result += `${lineValue.label ? lineValue.label + ':' : ''}${
+              lineValue.value
+            }, `;
           } else {
             result += `${lineValue.label}, `;
           }
@@ -77,5 +81,13 @@ export class ReportTabComponent {
 
     alert(`Skopiowano raport do schowka:\n\n${result}`);
     this.reportContentTXT = result;
+  }
+
+  toNatoCode(value: string) {
+    if (value.length === 1 && this.useNatoLetters) {
+      return NATO_ALPHABET_EN.find((v) => v.key === value)?.value;
+    }
+
+    return value;
   }
 }
