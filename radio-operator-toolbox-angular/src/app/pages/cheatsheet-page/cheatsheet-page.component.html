@@ -1,28 +1,42 @@
 <app-help-tile [content]="helpLines"></app-help-tile>
 
-<div>dlugosc fali: λ=c/f</div>
-<div>polowa fali=dlugosc ramiena anteny (dipola)</div>
-<div class="mb-2">
-    <div *ngFor="let wave of wavesFreqsLengthsPairs, index as idx" class="input-group mb-1">
-        <span class="input-group-text px-1  text-center">f{{idx+1}} [MHz]</span>
-        <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]"
-            (change)="udpateLength(wave)" value="{{wave.freq}}">
-        <span class="input-group-text ps-2 px-2  text-center">½ λ{{idx+1}} [m]</span>
-        <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]"
-            (change)="updateFreq(wave)" value="{{wave.length}}">
+<div class="card mb-4">
+    <div class="card-header p-1">Długośc Antent KF:</div>
+    <div class="card-body p-1">
+        <div>dlugosc fali: λ=c/f</div>
+        <div>polowa fali=dlugosc ramiena anteny (dipola)</div>
+        <!-- <div class="mb-2"> -->
+            <div *ngFor="let wave of wavesFreqsLengthsPairs, index as idx" class="input-group mb-1">
+                <span class="input-group-text px-1  text-center">f{{idx+1}} [MHz]</span>
+                <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]"
+                    (change)="udpateLength(wave)" value="{{wave.freq}}">
+                <span class="input-group-text ps-2 px-2  text-center">½ λ{{idx+1}} [m]</span>
+                <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]"
+                    (change)="updateFreq(wave)" value="{{wave.length}}">
+            </div>
+        <!-- </div> -->
+    </div>
+    <div class="card-footer p-1">
+        <i class="fas fa-info-circle    "></i>
+        jesli dla F1 masz SWR1 i jesli nie zmieniales dlugosci anteny, zwiekszyles czestotliwosc do F2, i SWR2
+        spadlo to: wydluz antene zeby dopasowac do F1 - SWR spadnie (na pewno?)
     </div>
 </div>
-<div>
-    <i class="fas fa-info-circle    "></i> 
-    jesli dla F1 masz SWR1 i jesli nie zmieniales dlugosci anteny, zwiekszyles czestotliwosc do F2, i SWR2
-    spadlo to: wydluz antene zeby dopasowac do F1 - SWR spadnie (na pewno?)
+
+
+
+<div class="card">
+    <div class="card-header p-1">In progress:</div>
+    <div class="card-body p-1">
+
+        <p>alfabet NATO</p>
+        <p>parametry RRC</p>
+        <div>wzory:</div>
+        <p>horyzont radiowy wzor</p>
+        
+    </div>
+    <div class="card-footer p-1">
+    </div>
 </div>
 
 
-<p></p>
-<p>alfabet NATO</p>
-<p>parametry RRC</p>
-<p></p>
-<div>wzory:</div>
-<p>horyzont radiowy wzor, kalkulator</p>
-<p></p>
