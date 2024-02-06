@@ -1,7 +1,7 @@
 <div class="input-group mb-1">
 
     <div class="d-flex w-100">
-        <button type="button" class="btn btn-success d-flex mx-2 w-100"
+        <button type="button" class="btn btn-success d-flex w-100"
             (click)="isCreatorCollapsed=!isCreatorCollapsed">
             <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i>
             </div>
@@ -14,7 +14,7 @@
 </div>
 
 <div *ngIf="!isCreatorCollapsed">
-    <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines px-2">
+    <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines">
         <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
             {{line.lineHeader | uppercase}}</div>
 
@@ -127,9 +127,26 @@
 
 
 
-<div class="card m-2">
-    <div class="card-body p-1">
-        <h5 class="card-title">{{report.name | uppercase}}</h5>
+
+
+
+
+
+<div class="card">
+    <div class="card-body p-1 ">
+        
+        <div class="d-flex flex-row justify-content-end">
+            <label class="form-check-label me-1 mb-1" for="flexCheckDefault">
+                <small class="text-muted">użyj literowania NATO</small>
+            </label>
+            <div class="form-check">
+                <input [(ngModel)]="useNatoLetters" class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault">
+            </div>    
+        </div>
+
+        
+        <h5 class="card-title text-center">{{report.name | uppercase}}</h5>
         <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 
@@ -142,11 +159,11 @@
                 id="inputGroup-sizing-default2">
                 <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
                     <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
-                        <span *ngIf="lineValue.label">{{lineValue.label}}: </span>
-                        <b>{{lineValue.value}}</b>,
+                        <span *ngIf="lineValue.label">{{toNatoCode(lineValue.label)}}: </span>
+                        <b>{{toNatoCode(lineValue.value)}}</b>,
                     </div>
                     <div *ngIf="lineValue.valueType===lineValueTypes.bool" class="value-cell px-1">
-                        <b>{{lineValue.label}}</b>
+                        <b>{{toNatoCode(lineValue?.label ?? '')}}</b>
                     </div>
                 </div>
             </div>
@@ -154,7 +171,7 @@
     </div>
 </div>
 
-<div class="m-2">
+<div class="mt-2">
     <button type="button" class="btn btn-primary w-100"
     (click)="convertReportToTXT()"
     [cdkCopyToClipboard]="reportContentTXT"
