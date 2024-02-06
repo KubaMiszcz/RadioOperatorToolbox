@@ -453,6 +453,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       {
         name: '3122plp',
         codename: 'BURSZTYNEK23',
+        correspondentNo:53,
+        authCode:1234,
         isFavourite: true,
       },
       { name: '3123plp', codename: 'SUPERGLINA25' },

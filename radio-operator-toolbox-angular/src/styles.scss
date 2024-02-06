@@ -45,11 +45,22 @@ img {
 .form-control {
     border-color: rgb(75, 75, 75);
     padding: 2px;
+
+    input::placeholder {
+        color: rgb(164, 164, 164);
+        // opacity: 1;
+        /* Firefox */
+    }
+    
+    input::-ms-input-placeholder {
+        /* Edge 12 -18 */
+        color: rgb(164, 164, 164);
+    }
 }
 
 .input-group-text {
     background-color: #e9e9e9;
-    box-shadow: 4px 4px 6px 1px rgb(75, 75, 75);
+    box-shadow: 4px 4px 6px 1px rgb(75, 75, 75);    
 }
 
 .form-control {
@@ -122,6 +133,7 @@ select {
     min-width: 4em;
     max-width: 4em;
 }
+
 
 
 @font-face {

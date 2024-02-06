@@ -61,20 +61,33 @@
     <div class="card-header">Oddziały:</div>
 
 
-    <div *ngFor="let team of teams; index  as idx" class="input-group mb-1">
-        <label class="input-group-text px-1 w-1a d-flex justify-content-center"
-            style="border-radius: 5px 0 0 0;"><b>{{idx+1}}</b></label>
-        <input type="text" class="form-control text-center" placeholder="nazwa" value="{{team.name}}">
-        <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{team.codename}}">
-        <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
-            (click)="toggleFavourite(team)">
-            <i class="fas fa-star active"></i></button>
-        <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1"
-            (click)="toggleFavourite(team)">
-            <i class="fas fa-star inactive"></i></button>
-        <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
-            <i class="fas fa-trash    "></i>
-        </button>
+    <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1">
+        <div class="input-group p-0">
+            <label class="input-group-text px-1 w-1a d-flex justify-content-center"
+                style="border-radius: 5px 0 0 0;"><b>{{idx+1}}</b></label>
+            <input type="text" class="form-control text-center" placeholder="nazwa" value="{{team.name}}">
+            <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{team.codename}}">
+            <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
+                style="border-radius: 0 5px 0 0;" (click)="toggleFavourite(team)">
+                <i class="fas fa-star active"></i></button>
+            <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
+                style="border-radius: 0 5px 0 0;" (click)="toggleFavourite(team)">
+                <i class="fas fa-star inactive"></i></button>
+        </div>
+
+        <div class="input-group p-0">
+            <input type="text" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
+                placeholder="correspondentNo" value="{{team.correspondentNo}}">
+            <input type="text" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
+            <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em"
+                style="border-radius: 0 0 5px 0;" (click)="removeTeam(team)">
+                <i class="fas fa-trash    "></i>
+            </button>
+        </div>
+
+
+
+
     </div>
 
     <div class=" card-footer p-1 d-flex justify-content-center">
