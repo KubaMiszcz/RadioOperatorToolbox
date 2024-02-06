@@ -96,8 +96,300 @@ export const REPORTS_TEMPLATES: IReport[] = [
           {
             label: 'O',
             description: 'inne, podać szczegóły',
-            value:
-              'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+      {
+        lineHeader: '5',
+        descriptionHeader: 'NUMBER OF PATIENTS BY TYPE',
+        descriptionLines: ['Liczba pacjentów według mobilności'],
+        lineValues: [
+          {
+            label: 'A',
+            description: 'siedzący (Ambulatory)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'L',
+            description: 'na noszach (Litter)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'W',
+            description: 'chodzący',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'E',
+            description: 'żołnierz będący eskortą dla poszkodowanego',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'O',
+            description: 'inna sytuacja, podać szczegóły',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+      {
+        lineHeader: '6',
+        descriptionHeader: 'SECURITY IN PICKUP SITE (WARTIME)',
+        descriptionLines: ['Bezpieczeństwo w strefie podjęcia'],
+        lineValues: [
+          {
+            label: 'N',
+            description: 'brak przeciwnika',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'P',
+            description: 'możliwa obecność przeciwnika',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'E',
+            description: 'przeciwnik w rejonie podjęcia',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'X',
+            description: 'przeciwnik obecny, wymagana uzbrojona eskorta',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+        ],
+      },
+      // {
+      //   lineHeader: '6',
+      //   isInPeacetime: true,
+      //   descriptionHeader: '6 IN PEACETIME',
+      //   descriptionLines: ['number and type of wound, injury, ilness'],
+      //   lineValues: [
+      //     {
+      //       label: 'Info',
+      //       valueType: VALUE_TYPES_ENUM.textArea,
+      //     },
+      //   ],
+      // },
+      {
+        lineHeader: '7',
+        descriptionHeader: 'MARKING OF PICKUP SITE',
+        descriptionLines: ['Metoda oznakowania strefy podjęcia'],
+        lineValues: [
+          {
+            label: 'A',
+            description: 'panel',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'B',
+            description: 'petardy',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'C',
+            description: 'dym',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'D',
+            description: 'brak',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'E',
+            description: 'inne, np. lightstic',
+            valueType: VALUE_TYPES_ENUM.textLine,
+          },
+        ],
+      },
+      {
+        lineHeader: '8',
+        descriptionHeader: 'PATIENT NATIONALITY AND STATUS',
+        descriptionLines: ['Liczba pacjentów wg narodowości/statusu.'],
+        lineValues: [
+          {
+            label: 'A',
+            description: 'żołnierz NATO (swój) ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'B',
+            description: 'cywil NATO (swój) ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'C',
+            description: 'żołnierz spoza NATO ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'D',
+            description: 'cywile inni niż z NATO ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'E',
+            description: 'zatrzymani, jeńcy wojenni (POW) ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'F',
+            description:
+              'wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'G',
+            description: 'cywile ranni na skutek działań sił własnych ',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'H',
+            description: 'Dziecko',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+        ],
+      },
+      {
+        lineHeader: '9',
+        descriptionHeader: 'NBC CONTAMINATION if exists (WARTIME)',
+        descriptionLines: [
+          'Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: ',
+        ],
+        lineValues: [
+          {
+            label: 'N',
+            description: 'jądrowe',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'B',
+            description: 'biologiczne ',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'C',
+            description: 'chemiczne ',
+            valueType: VALUE_TYPES_ENUM.bool,
+          },
+          {
+            label: 'O',
+            description:
+              'inne informacje (np. czas dotarcia do miejsca podjęcia)',
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+      // {
+      //   lineHeader: '9',
+      //   isInPeacetime: true,
+      //   descriptionHeader: '9 IN PEACETIME',
+      //   descriptionLines: ['detailed terrain feature description'],
+      //   lineValues: [
+      //     {
+      //       label: 'Info',
+      //       valueType: VALUE_TYPES_ENUM.textArea,
+      //
+      //     },
+      //   ],
+      // },
+    ],
+  },
+  {
+    name: 'meldunek MEDEVAC',
+    isFavourite: true,
+    lines: [
+      {
+        lineHeader: '1',
+        descriptionHeader: 'LOCATION AT PICKUP SITE',
+        descriptionLines: ['Miejsce podjęcia rannych (MGRS)'],
+        lineValues: [
+          {
+            label: 'MGRS',
+            valueType: VALUE_TYPES_ENUM.MGRS1km,
+          },
+        ],
+      },
+      {
+        lineHeader: '2',
+        descriptionHeader: 'FREQENCY AND MY CALLSIGN AT PICKUP SITE',
+        descriptionLines: [
+          'częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji',
+        ],
+        lineValues: [
+          {
+            label: 'FREQ',
+            valueType: VALUE_TYPES_ENUM.longNumber,
+          },
+          {
+            label: 'MY CALLSIGN',
+            valueType: VALUE_TYPES_ENUM.textLine,
+          },
+        ],
+      },
+      {
+        lineHeader: '3',
+        descriptionHeader: 'number of patients by precedence',
+        descriptionLines: ['Liczba pacjentów ze względu na priorytet'],
+        lineValues: [
+          {
+            label: 'A',
+            description: 'pilny nieoperacyjny (ewakuacja do 2 godzin)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'B',
+            description: 'pilny operacyjny (ewakuacja do 2 godzin)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'C',
+            description: 'priorytetowy (ewakuacja do 4 godzin)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'D',
+            description: 'rutynowy (ewakuacja do 24 godzin)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'E',
+            description: 'ewakuacja, gdy bedzie to możliwe',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+        ],
+      },
+      {
+        lineHeader: '4',
+        descriptionHeader: 'SPECIAL EQUIPMENT',
+        descriptionLines: ['Wymagany sprzęt specjalistyczny'],
+        lineValues: [
+          {
+            label: 'A',
+            description: 'brak (None)',
+
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'B',
+            description: 'podwieszenie (Hoist)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'C',
+            description: 'wyciągarka (Extraction Equipment)',
+
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'D',
+            description: 'respirator (Ventilator)',
+            valueType: VALUE_TYPES_ENUM.shortNumber,
+          },
+          {
+            label: 'O',
+            description: 'inne, podać szczegóły',
             valueType: VALUE_TYPES_ENUM.textArea,
           },
         ],
