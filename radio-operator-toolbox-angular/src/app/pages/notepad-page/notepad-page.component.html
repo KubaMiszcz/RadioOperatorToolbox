@@ -1,9 +1,9 @@
 <div class="card mb-4">
-    <div class="card-header p-1 text-center">
+    <h5 class="card-header p-1 text-center">
         <app-notepad-navbar (prevPage)="prevPage()" (addPage)="addPage()" (removePage)="showDeletePageModal()"
             (nextPage)="nextPage()"></app-notepad-navbar>
             <small class="text-muted" for="exampleFormControlTextarea1"> Notatnik, strona: {{getPageIdx(currentPage)+1}} / {{pages.length}}</small>
-    </div>
+    </h5>
     <div class="card-body p-0">
         <div class="form-group text-center">
             <textarea [(ngModel)]="currentPage.pageContent" class="form-control" id="exampleFormControlTextarea2" rows="15"

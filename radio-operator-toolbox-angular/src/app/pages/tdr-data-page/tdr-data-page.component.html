@@ -58,7 +58,7 @@
 
 
 <div class="card mb-4">
-    <div class="card-header">Oddziały:</div>
+    <h5 class="card-header">Oddziały:</h5>
 
 
     <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1">
@@ -99,7 +99,7 @@
 
 
 <div class="card mb-4">
-    <div class="card-header">Alarmy:</div>
+    <h5 class="card-header">Alarmy:</h5>
     <div *ngFor="let alert of tdrData.alerts; index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
         <input type="text" class="form-control text-center w-2em" placeholder="nazwa" value="{{alert.key}}">
