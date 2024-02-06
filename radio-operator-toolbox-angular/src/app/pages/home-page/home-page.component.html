@@ -1,6 +1,7 @@
 <app-help-tile [content]="helpLines"></app-help-tile>
 
-<div class="d-flex">
+
+<div class="d-flex justify-content-between">
     <div class="tile">
         <app-menu-tile [name]="'Kodowanie'" [routerLink]="[ '/encodings-page']" [isLabelShowed]="true"></app-menu-tile>
     </div>
@@ -13,9 +14,9 @@
 </div>
 
 
-<div class="d-flex">
+<div class="d-flex justify-content-between">
     <div class="tile">
-        <app-menu-tile [name]="'Raporty'" [iconName]="'reports'"  [routerLink]="[ '/reports-page']"></app-menu-tile>
+        <app-menu-tile [name]="'Raporty'" [iconName]="'reports'" [routerLink]="[ '/reports-page']"></app-menu-tile>
     </div>
     <div class="tile">
         <app-menu-tile [name]="'ksiazka korespondencji'" [routerLink]="[ '/correspondence-book-page']"
@@ -28,7 +29,7 @@
 
 
 
-<div class="d-flex">
+<div class="d-flex justify-content-between">
     <div class="tile">
         <app-menu-tile [name]="'Sciągawka'" [routerLink]="[ '/cheatsheet-page']" [isLabelShowed]="true"></app-menu-tile>
     </div>
