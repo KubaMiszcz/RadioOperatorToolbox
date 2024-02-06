@@ -87,10 +87,10 @@ export class AppService {
           (c) => c.key === (-1 * date.getTimezoneOffset()) / 60
         )?.value ?? '_';
 
-    let monthNo = MONTHS_NAMES_PL[date.getMonth()];
+    let monthNameMMM = MONTHS_NAMES_PL[date.getMonth()];
 
     let dtg = formatDate(date, 'ddHHmmxxxxyy', 'en')
-      .replace('xxxx', timezoneCode + monthNo)
+      .replace('xxxx', timezoneCode + monthNameMMM)
       .toUpperCase();
 
     return dtg;
@@ -101,10 +101,10 @@ export class AppService {
       date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     }
 
-    let monthNo = MONTHS_NAMES_PL[date.getMonth()];
+    let monthNameMMM = MONTHS_NAMES_PL[date.getMonth()];
 
-    let dtg = formatDate(date, 'ddHHmmxxxyy', 'en')
-      .replace('xxx', monthNo)
+    let dtg = formatDate(date, 'ddxxxyy', 'en')
+      .replace('xxx', monthNameMMM)
       .toUpperCase();
 
     return dtg;
