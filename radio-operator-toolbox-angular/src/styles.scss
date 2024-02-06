@@ -94,6 +94,11 @@ select {
 .modal-header,
 .modal-footer {
     background-color: lightcyan;
+    padding: 0.5em;
+
+    .btn-close{
+        margin-right: 0.2em;
+    }
 }
 
 .w-90 {
