@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1707501918209,
+  "timestamp": 1707506836467,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.325cdb7c5348e470.js",
+        "/RadioOperatorToolbox/main.6d17d8422cd25a24.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -152,8 +152,8 @@
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "ef05545f65793e26fb7fecbca206ea373217b718",
-    "/RadioOperatorToolbox/index.html": "7a16aaac4f98d864d4ea93b83b6bf58e6146fc0e",
-    "/RadioOperatorToolbox/main.325cdb7c5348e470.js": "6e75635fa9996c9875a970d3ef01bdbc11631338",
+    "/RadioOperatorToolbox/index.html": "7d4af581d13ddbcf3ce3403e6810dc7566b205bb",
+    "/RadioOperatorToolbox/main.6d17d8422cd25a24.js": "55a040ca40435653a6d6cbe261711d8b7d723941",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
