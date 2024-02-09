@@ -22,7 +22,7 @@ jobs:
 
     - name: Version and build UP
       run: 
-        jq '.build=(now | strflocaltime("%Y%m%d.%H%M"))' package.json > package.json.tmp 
+        jq '.build=(now | strflocaltime("%y%m%d.%H%M"))' package.json > package.json.tmp 
         && mv package.json.tmp package.json
         && echo "build:" && jq -r '.build' package.json
 
