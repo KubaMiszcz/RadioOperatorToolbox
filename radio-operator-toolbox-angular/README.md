@@ -4,6 +4,7 @@
 
 
 ## 1st priority
+- icon info i modal z helpem
 - zeby dzialalo offline czyli ikonki i bootstap lokalnie
 - dzialanie offline - host yurself icons boostrpa etc
 
