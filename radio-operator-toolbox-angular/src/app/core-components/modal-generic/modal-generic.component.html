@@ -1,19 +1,20 @@
-<!-- <ng-template #infoModal let-modal> -->
-    <div class="modal-header">
-        <h4 class="modal-title">{{title}}</h4>
-        <button type="button" class="btn-close" aria-label="Close"
-            (click)="modalResult.emit(MODAL_RESULTS.CLOSE)"></button>
+<!-- <ng-template #quickDataModal let-modal> -->
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalResult.emit(MODAL_RESULTS.CLOSE)"></button>
+</div>
+<div class="modal-body">
+    <div>{{content}}
     </div>
-    <div class="modal-body">
-        <div>{{content}}
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default w-3em m-1" (click)="modalResult.emit(MODAL_RESULTS.NO)">Nie</button>
-        <button type="button" class="btn btn-default w-3em m-1" (click)="modalResult.emit(MODAL_RESULTS.YES)">Tak</button>
-        <button type="button" class="btn btn-default w-4em m-1"
-            (click)="modalResult.emit(MODAL_RESULTS.CLOSE)">Zamknij</button>
-        <button type="button" class="btn btn-default w-4em m-1"
-            (click)="modalResult.emit(MODAL_RESULTS.CANCEL)">Anuluj</button>
-    </div>
+</div>
+<div class="modal-footer">
+    <button *ngIf="isButtonVisible(MODAL_RESULTS.YES)" type="button" class="btn btn-default w-3em m-1"
+        (click)="modalResult.emit(MODAL_RESULTS.YES)">Tak</button>
+    <button *ngIf="isButtonVisible(MODAL_RESULTS.NO)" type="button" class="btn btn-default w-3em m-1"
+        (click)="modalResult.emit(MODAL_RESULTS.NO)">Nie</button>
+    <button *ngIf="isButtonVisible(MODAL_RESULTS.CLOSE)" type="button" class="btn btn-default w-4em m-1"
+        (click)="modalResult.emit(MODAL_RESULTS.CLOSE)">Zamknij</button>
+    <button *ngIf="isButtonVisible(MODAL_RESULTS.CANCEL)" type="button" class="btn btn-default w-4em m-1"
+        (click)="modalResult.emit(MODAL_RESULTS.CANCEL)">Anuluj</button>
+</div>
 <!-- </ng-template> -->
