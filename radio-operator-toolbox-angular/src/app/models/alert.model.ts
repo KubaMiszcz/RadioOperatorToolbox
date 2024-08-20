@@ -1,9 +1,9 @@
 export interface IAlert {
-  code: string;
   name: string;
+  code: string;
 }
 
 export class Team implements IAlert {
-  code = '';
   name = '';
+  code = '';
 }

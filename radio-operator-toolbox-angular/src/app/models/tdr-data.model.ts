@@ -11,6 +11,7 @@ export interface ITDRData {
   sarnegCodewordEvenDays?: string;
   alerts: KeyValue<number, string>[];
   gridOffset?: IPoint3D;
+  currentTimezoneOffset: number;
 }
 
 export class TDRData implements ITDRData {
@@ -19,4 +20,5 @@ export class TDRData implements ITDRData {
   sarnegCodewordOddDays = '';
   sarnegCodewordEvenDays = '';
   alerts = [];
+  currentTimezoneOffset = +2;
 }

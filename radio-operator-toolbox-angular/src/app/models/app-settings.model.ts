@@ -1,4 +1,4 @@
-import { IMenuItem_DEPR } from "./menu-item.model";
+import { IMenuItem_DEPR, IMenuTile_V2 } from "./menu-item.model";
 import { IReport } from "./report.model";
 
 export interface IAppSettings {
@@ -6,7 +6,7 @@ export interface IAppSettings {
   iconsPath?: string;
   showAllHelpTooltips: boolean;
   reportsTemplates: IReport[];
-  // menuItems: IMenuItem_DEPR[]; //km
+  menuTiles: IMenuTile_V2[];
 }
 
 export class AppSettings implements IAppSettings {
@@ -14,7 +14,7 @@ export class AppSettings implements IAppSettings {
   iconsPath?: string | undefined;
   showAllHelpTooltips = true;
   reportsTemplates = [];
-  // menuItems = []; //km
+  menuTiles = [];
 }
 
 
