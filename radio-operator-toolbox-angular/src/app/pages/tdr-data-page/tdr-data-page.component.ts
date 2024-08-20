@@ -1,5 +1,8 @@
 import { KeyValue } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalGenericComponent } from 'src/app/core-components/modal-generic/modal-generic.component';
+import { MODAL_RESULT } from 'src/app/models/constants/enums';
 import { ITDRData, TDRData } from 'src/app/models/tdr-data.model';
 import { ITeam, Team } from 'src/app/models/team.model';
 import { AppDataService } from 'src/app/services/app-data.service';
@@ -16,17 +19,20 @@ export class TDRDataPageComponent implements OnInit {
   myTeam = this.appDataService.appData.tdrData?.myTeam ?? new Team();
   helpLines = helpLines;
   tdrData: ITDRData = this.appDataService.appData.tdrData ?? new TDRData();
+  timezones = this.appSettings.timezones;
+  private modalRef!: NgbModalRef;
+  @ViewChild('teamsPanelHelp') teamsPanelHelp: any;
+
 
   constructor(
     private appService: AppService,
     private appDataService: AppDataService,
-    private appSettings: AppSettingsService
+    private appSettings: AppSettingsService,
+    private modalService: NgbModal,
   ) {}
 
   ngOnInit(): void {
-    this.teams =
-      this.tdrData?.teams.filter((t) => t.name !== '' || t.codename !== '') ??
-      [];
+    this.teams = this.tdrData?.teams.filter((t) => t.name !== '' || t.codename !== '') ?? [];
   }
 
   setMyTeam(team: ITeam) {
@@ -54,10 +60,37 @@ export class TDRDataPageComponent implements OnInit {
     let idx = this.tdrData.alerts.indexOf(alert);
     this.tdrData.alerts.splice(idx, 1);
   }
+
+  getTimezoneLabel(timezoneOffset: number) {
+    let tzCode = this.appSettings.timezones.find((t) => t.key === timezoneOffset)?.value;
+    // return tzkey + '   ' + (timezoneOffset > 0 ? '+' : '-') + timezoneOffset + 'h';
+    return `${tzCode} \xa0\xa0\xa0 ${timezoneOffset < 0 ? '' : '+'}${timezoneOffset}h`;
+  }
+
+  showTooltip() {
+    const modalRef = this.modalService.open(ModalGenericComponent);
+    modalRef.componentInstance.title = 'Help';
+    modalRef.componentInstance.content = helpLines;
+    modalRef.componentInstance.modalResults = [MODAL_RESULT.CLOSE];
+    modalRef.componentInstance.modalResult.subscribe((result: MODAL_RESULT) => {
+      modalRef.close();
+    });
+  }
+
+  showTooltipBS() {
+    this.modalRef = this.modalService.open(this.teamsPanelHelp, {
+      size: 'md',
+      backdrop: true,
+    });
+  }
+
+  closeModal(value: any) {
+    this.modalRef.close();
+  }
 }
 
 const helpLines = `
-podreczne dane z TDR
+podreczne dane z TDR\n
 - kryptonimy, czestotliwosci, kody itp
 - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp
 - alerty - numer/opis
