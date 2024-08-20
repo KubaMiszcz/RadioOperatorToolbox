@@ -15,6 +15,6 @@ export class MenuTileComponent {
   }
   
   ngOnInit(): void {
-    this.iconName = (this.iconName?.length ? this.iconName : this.name) + '-image.png';
+    this.iconName = (this.iconName?.length ? this.iconName : this.name.toLowerCase()) + '-image.png';
   }
 }
