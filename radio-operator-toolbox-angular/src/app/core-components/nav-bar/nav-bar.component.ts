@@ -15,7 +15,7 @@ import { ModalGenericComponent } from '../modal-generic/modal-generic.component'
 export class NavBarComponent {
   reports: IReport[] = [];
   private modalRef!: NgbModalRef;
-  @ViewChild('infoModal') infoModal: any;
+  @ViewChild('quickDataModal') quickDataModal: any;
   @ViewChild('clearAllModal') clearAllModal: any;
   isMenuHidden = true;
 
@@ -40,6 +40,7 @@ export class NavBarComponent {
     const modalRef = this.modalService.open(ModalGenericComponent);
     modalRef.componentInstance.title = '';
     modalRef.componentInstance.content = 'Wyczyścic wszystkie dane?';
+    modalRef.componentInstance.modalResults = [MODAL_RESULT.YES, MODAL_RESULT.NO];
     modalRef.componentInstance.modalResult.subscribe((result:MODAL_RESULT) => {
       if (result === MODAL_RESULT.YES) {
         this.appDataService.clearAllData();
@@ -48,22 +49,8 @@ export class NavBarComponent {
     })
     }
   
-  // showClearAllModal2() {
-  //   this.modalRef = this.modalService.open(this.clearAllModal, {
-  //     size: 'sm',
-  //     backdrop: true,
-  //   });
-  // }
-
-  // closeClearAllModal(value: MODAL_RESULT) {
-  //   if (value === MODAL_RESULT.YES) {
-  //     this.appDataService.clearAllData();
-  //   }
-  //   this.modalRef.close();
-  // }
-
   showQuickSheetModal() {
-    this.modalRef = this.modalService.open(this.infoModal, {
+    this.modalRef = this.modalService.open(this.quickDataModal, {
       size: 'sm',
       backdrop: true,
     });
