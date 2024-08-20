@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppSettings, IAppSettings } from '../models/app-settings.model';
-import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON } from 'src/assets/app-default-settings';
+import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON, DTG_TIMEZONES_CODES } from 'src/assets/app-default-settings';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 import { BehaviorSubject } from 'rxjs';
@@ -16,11 +16,11 @@ export class AppSettingsService {
   build: string = packageJson.build;
   codewords: string[] = [];
   alphabet: string[] = [];
+  timezones = DTG_TIMEZONES_CODES;
 
   constructor() {
     this.appSettings = APP_DEFAULT_SETTINGS_JSON;
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
-    
     // this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
     // this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
     
