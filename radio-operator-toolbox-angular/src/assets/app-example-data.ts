@@ -27,9 +27,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         {
           lineHeader: '2',
           descriptionHeader: 'FREQENCY AND MY CALLSIGN AT PICKUP SITE',
-          descriptionLines: [
-            'częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji',
-          ],
+          descriptionLines: ['częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji'],
           lineValues: [
             {
               label: 'FREQ',
@@ -107,8 +105,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
             {
               label: 'O',
               description: 'inne, podać szczegóły',
-              value:
-                'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
+              value: 'Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.',
               valueType: VALUE_TYPES_ENUM.textArea,
             },
           ],
@@ -256,8 +253,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
             },
             {
               label: 'F',
-              description:
-                'wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ',
+              description: 'wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ',
               valueType: VALUE_TYPES_ENUM.shortNumber,
             },
             {
@@ -275,9 +271,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         {
           lineHeader: '9',
           descriptionHeader: 'NBC CONTAMINATION if exists (WARTIME)',
-          descriptionLines: [
-            'Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: ',
-          ],
+          descriptionLines: ['Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: '],
           lineValues: [
             {
               label: 'N',
@@ -297,8 +291,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
             },
             {
               label: 'O',
-              description:
-                'inne informacje (np. czas dotarcia do miejsca podjęcia)',
+              description: 'inne informacje (np. czas dotarcia do miejsca podjęcia)',
               valueType: VALUE_TYPES_ENUM.textArea,
             },
           ],
@@ -325,9 +318,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         {
           lineHeader: 'S',
           descriptionHeader: 'Size',
-          descriptionLines: [
-            'wielkość sił przeciwnika, ilosc ludzi, pojazdów itp',
-          ],
+          descriptionLines: ['wielkość sił przeciwnika, ilosc ludzi, pojazdów itp'],
           lineValues: [
             {
               valueType: VALUE_TYPES_ENUM.textArea,
@@ -368,9 +359,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         {
           lineHeader: 'U',
           descriptionHeader: 'Uniforms',
-          descriptionLines: [
-            'charakterystyczne cechy wygladu, ubiory, maskowanie, flagi, barwy',
-          ],
+          descriptionLines: ['charakterystyczne cechy wygladu, ubiory, maskowanie, flagi, barwy'],
           lineValues: [
             {
               valueType: VALUE_TYPES_ENUM.textArea,
@@ -453,8 +442,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       {
         name: '3122plp',
         codename: 'BURSZTYNEK23',
-        correspondentNo:53,
-        authCode:1234,
+        correspondentNo: 53,
+        authCode: 1234,
         isFavourite: true,
       },
       { name: '3123plp', codename: 'SUPERGLINA25' },
@@ -467,6 +456,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       { key: 2, value: 'podaj polozenie' },
       { key: 3, value: 'alarm3' },
     ],
+    currentTimezoneOffset: +2,
+    gridOffset: { X: -100, Y: 200, Z: 0 },
   },
   cheatsheetData: {
     wavesFreqsLengthPairs: [

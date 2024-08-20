@@ -1,55 +1,49 @@
-import { IMenuItem_DEPR } from '../app/models/menu-item.model';
+import { IMenuItem_DEPR, IMenuTile_V2 } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
 
-const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
+const MENU_TILES: IMenuTile_V2[] = [
   {
-    title: 'Kodowanie',
-    link: 'encodings-page',
-    isTitleShowed: true,
-    subItems: [
-      {
-        title: 'Sarneg',
-        link: 'sarneg-tab',
-      },
-      {
-        title: 'Vigenere',
-        link: 'vigenere-tab',
-      },
-    ],
+    label: 'TDR',
+    isLabelShowed: true,
+    link: 'tdr-data-page',
+    isFavourite: true,
   },
-  { title: '' }, //dummy
-  { title: '' }, //dummy
   {
-    title: 'Reports',
+    label: 'Reports',
     iconName: 'reports',
     link: 'reports-page',
     subItems: [],
   },
   {
-    title: 'Książka korespondencji',
-    isTitleShowed: true,
+    label: 'Książka korespondencji',
+    isLabelShowed: true,
     link: 'correspondence-book-page',
   },
   {
-    title: 'TDR',
-    isTitleShowed: true,
-    link: 'tdr-data-page',
-  },
-  {
-    title: 'Ściągawka',
-    isTitleShowed: true,
+    label: 'Ściągawka',
+    isLabelShowed: true,
     link: 'cheatsheet-page',
   },
   {
-    title: 'Notatnik',
-    isTitleShowed: true,
+    label: 'Notatnik',
+    isLabelShowed: true,
     link: 'notepad-page',
   },
   {
-    title: 'Ustawienia wszelakie',
-    isTitleShowed: true,
+    label: 'Ustawienia wszelakie',
+    isLabelShowed: true,
+    link: 'settings-page',
+  },
+  {
+    label: 'Kalkulatory',
+    isLabelShowed: true,
+    link: 'settings-page',
+  },
+  {
+    label: 'Eksperymenty',
+    isLabelShowed: true,
     link: 'settings-page',
   },
 ];
@@ -57,9 +51,10 @@ const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   isPeaceTime: false,
-  showAllHelpTooltips: true,
+  showAllHelpTooltips: false, //DEPR   
   reportsTemplates: REPORTS_TEMPLATES,
-  // menuItems: MENU_ITEMS_DEPR,
+  // menuTiles: MENU_ITEMS_DEPR, //km
+  menuTiles: MENU_TILES,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -200,4 +195,76 @@ export const NATO_ALPHABET_EN: KeyValue<string, string>[] = [
   { key: 'X', value: 'X-ray' },
   { key: 'Y', value: 'Yankee' },
   { key: 'Z', value: 'Zulu' },
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
+  {
+    title: 'Kodowanie',
+    link: 'encodings-page',
+    isTitleShowed: true,
+    subItems: [
+      {
+        title: 'Sarneg',
+        link: 'sarneg-tab',
+      },
+      {
+        title: 'Vigenere',
+        link: 'vigenere-tab',
+      },
+    ],
+  },
+  { title: '' }, //dummy
+  { title: '' }, //dummy
+  {
+    title: 'Reports',
+    iconName: 'reports',
+    link: 'reports-page',
+    subItems: [],
+  },
+  {
+    title: 'Książka korespondencji',
+    isTitleShowed: true,
+    link: 'correspondence-book-page',
+  },
+  {
+    title: 'TDR',
+    isTitleShowed: true,
+    link: 'tdr-data-page',
+  },
+  {
+    title: 'Ściągawka',
+    isTitleShowed: true,
+    link: 'cheatsheet-page',
+  },
+  {
+    title: 'Notatnik',
+    isTitleShowed: true,
+    link: 'notepad-page',
+  },
+  {
+    title: 'Ustawienia wszelakie',
+    isTitleShowed: true,
+    link: 'settings-page',
+  },
 ];
