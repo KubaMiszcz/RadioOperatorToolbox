@@ -2,7 +2,7 @@ import { IMenuItem_DEPR, IMenuTile_V2 } from "./menu-item.model";
 import { IReport } from "./report.model";
 
 export interface IAppSettings {
-  isPeaceTime?: boolean;
+  isPeaceTime?: boolean; //km depr
   iconsPath?: string;
   showAllHelpTooltips: boolean;
   reportsTemplates: IReport[];
@@ -10,7 +10,7 @@ export interface IAppSettings {
 }
 
 export class AppSettings implements IAppSettings {
-  isPeaceTime?: boolean | undefined;
+  isPeaceTime?: boolean | undefined; //km depr
   iconsPath?: string | undefined;
   showAllHelpTooltips = true;
   reportsTemplates = [];

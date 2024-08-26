@@ -1,11 +1,12 @@
-import { ICheatsheetData } from "./cheatsheet-data.model";
-import { ICorrespondenceBookEntry } from "./correspondence-book-entry.model";
-import { INotepad, Notepad } from "./notepad.model";
-import { IReport } from "./report.model";
-import { ITDRData } from "./tdr-data.model";
-import { ITeam, Team } from "./team.model";
+import { ICheatsheetData } from './cheatsheet-data.model';
+import { ICorrespondenceBookEntry } from './correspondence-book-entry.model';
+import { INotepad, Notepad } from './notepad.model';
+import { IReport } from './report.model';
+import { ITDRData } from './tdr-data.model';
+import { ITeam, Team } from './team.model';
 
 export interface IAppData {
+  myTeam?: ITeam;
   savedReports: IReport[];
   correspondenceBook: ICorrespondenceBookEntry[];
   notepad: INotepad;
@@ -14,8 +15,8 @@ export interface IAppData {
 }
 
 export class AppData implements IAppData {
+  // myTeam?: ITeam | undefined; //km
   savedReports = [];
   correspondenceBook = [];
   notepad = new Notepad();
 }
-

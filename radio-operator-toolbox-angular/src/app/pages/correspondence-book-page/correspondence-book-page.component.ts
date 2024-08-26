@@ -17,7 +17,7 @@ import { AppService } from 'src/app/services/app.service';
 export class CorrespondenceBookPageComponent {
   correspondenceBook: ICorrespondenceBookEntry[] = [];
   // currentCorrespondenceBookEntry = new CorrespondenceBookEntry();
-  myTeam = this.appDataService.appData.tdrData?.myTeam;
+  myTeam = this.appDataService.appData.myTeam;
   teams = this.appDataService.appData.tdrData?.teams.filter(
     (t) => t.codename !== '' && t.codename
   );
