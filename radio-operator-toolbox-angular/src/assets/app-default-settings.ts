@@ -11,41 +11,68 @@ const MENU_TILES: IMenuTile_V2[] = [
     isFavourite: true,
   },
   {
-    label: 'Reports',
-    iconName: 'reports',
-    link: 'reports-page',
+    label: 'Utwórz meldunek',
+    isLabelShowed: true,
+    link: 'xxxnew-report=page',
+    isFavourite: true,
     subItems: [],
   },
   {
-    label: 'Książka korespondencji',
+    label: 'Historia meldunkow',
     isLabelShowed: true,
-    link: 'correspondence-book-page',
+    link: 'xxxreports-history-page',
+    isFavourite: true,
   },
-  {
-    label: 'Ściągawka',
-    isLabelShowed: true,
-    link: 'cheatsheet-page',
-  },
+  // end favs
+  // common items
   {
     label: 'Notatnik',
     isLabelShowed: true,
     link: 'notepad-page',
   },
   {
-    label: 'Ustawienia wszelakie',
+    label: 'Ściągawki',
     isLabelShowed: true,
-    link: 'settings-page',
+    link: 'xxxcheatsheets-page',
   },
+  {
+    label: 'Szyfro wanie',
+    isLabelShowed: true,
+    link: 'xxxcheatsheets-page',
+    subItems: [],
+  },
+  //
   {
     label: 'Kalkulatory',
     isLabelShowed: true,
-    link: 'settings-page',
+    link: 'xxxcalculators-page',
+  },
+  {
+    label: 'Książka korespon dencji',
+    isLabelShowed: true,
+    link: 'correspondence-book-page',
   },
   {
     label: 'Eksperymenty',
     isLabelShowed: true,
+    link: 'xxxsettings-page',
+  },
+  //
+  {
+    label: '',
+  },
+  {
+    label: 'Help',
+    isLabelShowed: true,
+    link: 'help-page',
+  },
+  {
+    label: 'Ustawienia wszelakie',
+    isLabelShowed: true,
     link: 'settings-page',
   },
+
+  // end common items
 ];
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
