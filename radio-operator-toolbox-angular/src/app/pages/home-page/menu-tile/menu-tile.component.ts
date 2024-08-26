@@ -10,8 +10,7 @@ export class MenuTileComponent {
   @Input() iconName = '';
   @Input() isLabelShowed? = false;
   
-  constructor() {
-    
+  constructor() {    
   }
   
   ngOnInit(): void {

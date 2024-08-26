@@ -16,7 +16,7 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class TDRDataPageComponent implements OnInit {
   teams: ITeam[] = [];
-  myTeam = this.appDataService.appData.tdrData?.myTeam ?? new Team();
+  myTeam = this.appDataService.appData.myTeam ?? new Team();
   helpLines = helpLines;
   tdrData: ITDRData = this.appDataService.appData.tdrData ?? new TDRData();
   timezones = this.appSettings.timezones;

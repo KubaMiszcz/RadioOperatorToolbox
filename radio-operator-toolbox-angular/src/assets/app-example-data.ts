@@ -435,14 +435,14 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     pages: [{ pageContent: 'notatka 1' }, { pageContent: 'notatka 2b' }],
   },
   tdrData: {
-    myTeam: { name: '312klp', codename: 'PASIBRZUCH21' },
+    networkNo: '12345',
     teams: [
       { name: '312klp', codename: 'PASIBRZUCH21' },
       { name: '3121plp', codename: 'ROZPUSTNIK22' },
       {
         name: '3122plp',
         codename: 'BURSZTYNEK23',
-        correspondentNo: 53,
+        correspondentNo: '53',
         authCode: 1234,
         isFavourite: true,
       },
@@ -457,7 +457,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       { key: 3, value: 'alarm3' },
     ],
     currentTimezoneOffset: +2,
-    gridOffset: { X: -100, Y: 200, Z: 0 },
+    gridOffsetOddDays: { X: -100, Y: 200, Z: 0 },
   },
   cheatsheetData: {
     wavesFreqsLengthPairs: [

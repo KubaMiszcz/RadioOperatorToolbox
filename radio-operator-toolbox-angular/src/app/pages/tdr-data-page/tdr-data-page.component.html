@@ -44,7 +44,7 @@
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+            <input type="number" value="{{tdrData.networkNo}}" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
                 required>
         </div>
     </div>
@@ -118,32 +118,51 @@
 
 <div class="card mb-4">
     <h5 class="card-header">Kod Mapy:</h5>
-    <div class="input-group mb-1">
-        <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
-        <input type="text" class="form-control text-center" placeholder="Easting"
-            value="{{tdrData.gridOffset?.X ?? 0}}">
+    <!-- <div class="d-flex"> -->
+    <div class="d-flex align-items-center ">
+        <div class="mx-2 w-50">Dni parzyste: </div>
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
+            <input type="text" class="form-control text-center" placeholder="Easting"
+                value="{{tdrData.gridOffsetOddDays?.X ?? 0}}">
+        </div>
+        <!-- </div> -->
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
+            <input type="text" class="form-control text-center" placeholder="Northing"
+                value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}">
+        </div>
     </div>
-    <div class="input-group mb-1">
-        <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
-        <input type="text" class="form-control text-center" placeholder="Northing"
-            value="{{tdrData.gridOffset?.Y ?? 0}}">
-    </div>
-</div>
-
-<div class="input-group p-0 mb-4 w-100">
-    <span class="input-group-text  w-50">Strefa czasowa:</span>
-    <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <div *ngFor="let timezone of timezones" class="dropdown-item">
-            {{getTimezoneLabel(timezone.key)}}
+    <div class="d-flex align-items-center ">
+        <div class="mx-2 w-50">Dni nieparzyste: </div>
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
+            <input type="text" class="form-control text-center" placeholder="Easting"
+                value="{{tdrData.gridOffsetEvenDays?.X ?? 0}}">
+        </div>
+        <!-- </div> -->
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
+            <input type="text" class="form-control text-center" placeholder="Northing"
+                value="{{tdrData.gridOffsetEvenDays?.Y ?? 0}}">
         </div>
     </div>
 </div>
 
-<!-- <div class="input-group input-group-sm mb-3">
+    <div class="input-group p-0 mb-4 w-100">
+        <span class="input-group-text  w-50">Strefa czasowa:</span>
+        <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <div *ngFor="let timezone of timezones" class="dropdown-item">
+                {{getTimezoneLabel(timezone.key)}}
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
     </div>
@@ -173,23 +192,24 @@
 
 
 
-<!-- Tooltips -->
-<ng-template #teamsPanelHelp let-modal>
-    <div class="modal-header p-2">
-        <h4 class="modal-title">Help:</h4>
-        <button type="button" class="btn-close me-1" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body p-2">
-        <div>podreczne dane z TDR</div>
-        <div>
-            - kryptonimy, czestotliwosci, kody itp<br>
-            - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp<br>
-            - alerty - numer/opis<br>
-            - SARNEG parzyste/nieparzyste, losownik slow<br>
-            - import/export TDR from json/txt
+    <!-- Tooltips -->
+    <ng-template #teamsPanelHelp let-modal>
+        <div class="modal-header p-2">
+            <h4 class="modal-title">Help:</h4>
+            <button type="button" class="btn-close me-1" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">OK</button>
-    </div>
-</ng-template>
+        <div class="modal-body p-2">
+            <div>podreczne dane z TDR</div>
+            <div>
+                - kryptonimy, czestotliwosci, kody itp<br>
+                - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp<br>
+                - alerty - numer/opis<br>
+                - SARNEG parzyste/nieparzyste, losownik slow<br>
+                - import/export TDR from json/txt
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">OK</button>
+        </div>
+    </ng-template>
