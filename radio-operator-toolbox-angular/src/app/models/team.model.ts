@@ -3,7 +3,7 @@ export interface ITeam {
   codename: string;
   isFavourite?: boolean;
   authCode?: number;
-  correspondentNo?: string;
+  correspondentNo?: number;
 }
 
 export class Team implements ITeam {

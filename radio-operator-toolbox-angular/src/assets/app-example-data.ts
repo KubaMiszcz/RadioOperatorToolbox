@@ -435,7 +435,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     pages: [{ pageContent: 'notatka 1' }, { pageContent: 'notatka 2b' }],
   },
   tdrData: {
-    networkNo: 02345,
+    networkNo: 2345,
     teams: [
       { name: '312klp', codename: 'PASIBRZUCH21' },
       { name: '3121plp', codename: 'ROZPUSTNIK22' },
