@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { forward } from 'mgrs';
+import { ITeam } from 'src/app/models/team.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
@@ -13,22 +14,26 @@ export class AppSettingsPageComponent {
   appSettingsJSON = '';
   appDataJSON = '';
   appSettings = this.appSettingsService.appSettings;
+  appData = this.appDataService.appData;
 
-  constructor(
-    private appService: AppService,
-    private appSettingsService: AppSettingsService,
-    private appDataService: AppDataService
-  ) {
-    this.appSettingsJSON = JSON.stringify(appSettingsService.appSettings);
-    this.appDataJSON = JSON.stringify(appDataService.appData);
+  constructor(private appService: AppService, private appSettingsService: AppSettingsService, private appDataService: AppDataService) {
+    this.appSettingsJSON = JSON.stringify(this.appSettings);
+    this.appDataJSON = JSON.stringify(this.appData);
+    this.appSettingsService.saveAppSettingsToLocalStorage();
+    this.appDataService.saveAppDataToLocalStorage();
+    console.log('fire');
   }
 
-  saveAppSettings() {
-    this.appSettingsService.saveAppSettings(this.appSettingsJSON);
+  importAppSettings() {
+    this.appSettingsService.importAppSettings(this.appSettingsJSON);
   }
 
-  saveAppData() {
-    this.appDataService.saveAppData(this.appDataJSON);
+  importAppData() {
+    this.appDataService.importAppData(this.appDataJSON);
+  }
+
+  setMyTeam(team: ITeam) {
+    this.appData.myTeam = team;
   }
 
   alert(message: string) {

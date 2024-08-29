@@ -2,11 +2,34 @@
     <h5 class="card-header p-1">Ustawienia</h5>
     <div class="card-body">
         <div class="d-flex flex-row justify-content-between">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault22">
                 pokaz/ukryj wszystkie wskazowki
             </label>
             <div class="form-check">
                 <input [(ngModel)]="appSettings.showAllHelpTooltips" class="form-check-input" type="checkbox" value=""
+                    id="flexCheckDefault22">
+            </div>
+        </div>
+
+        <div class="input-group p-1 mb-2 w-100">
+            <span class="input-group-text  w-25">my Team:</span>
+            <button class="btn btn-secondary-outline dropdown-toggle m-0 w-75" type="button" id="dropdownMenuButton3"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{appData.myTeam?.name}} - {{appData.myTeam?.codename}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <div *ngFor="let team of appData.tdrData?.teams" class="dropdown-item" (click)="setMyTeam(team)">
+                    {{team.name}} -
+                    {{team.codename}}</div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row justify-content-between">
+            <label class="form-check-label" for="flexCheckDefault">
+                Dark Theme
+            </label>
+            <div class="form-check">
+                <input [(ngModel)]="appSettings.IsDarkModeOn" class="form-check-input" type="checkbox" value=""
                     id="flexCheckDefault">
             </div>
         </div>
@@ -25,13 +48,12 @@
             aria-describedby="inputGroup-sizing-default"></textarea>
     </div>
     <div class="card-footer d-flex justify-content-between ">
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 "
-            [cdkCopyToClipboard]="appSettingsJSON" [cdkCopyToClipboard]="appSettingsJSON"
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-4"
+            [cdkCopyToClipboard]="appSettingsJSON"
             (cdkCopyToClipboardCopied)="alert('Application Settings skopiowane do schowka')">
-            <i class="fa fa-copy" aria-hidden="true"></i></button>
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppSettings()">
-            Paste here and Apply
-            <i class="fa fa-paste" aria-hidden="true"></i>
+            Export<i class="fa fa-copy mx-1" aria-hidden="true"></i></button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-4" (click)="importAppSettings()">
+            Import <i class="fa fa-paste mx-1" aria-hidden="true"></i>
         </button>
     </div>
 </div>
@@ -47,13 +69,13 @@
     </div>
 
     <div class="card-footer d-flex justify-content-between">
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-2 me-2"
-            [cdkCopyToClipboard]="appDataJSON" [cdkCopyToClipboard]="appDataJSON"
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-4"
+            [cdkCopyToClipboard]="appDataJSON"
             (cdkCopyToClipboardCopied)="alert('Application Data skopiowane do schowka')">
-            <i class="fa fa-copy" aria-hidden="true"></i></button>
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="saveAppData()">
-            Paste here and Apply
-            <i class="fa fa-paste" aria-hidden="true"></i>
+            Export<i class="fa fa-copy mx-1" aria-hidden="true"></i></button>
+        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block col-4" (click)="importAppData()">
+            Import
+            <i class="fa fa-paste mx-1" aria-hidden="true"></i>
         </button>
     </div>
 </div>

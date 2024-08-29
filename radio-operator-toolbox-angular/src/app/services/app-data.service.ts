@@ -9,21 +9,52 @@ export class AppDataService {
   appData: IAppData = new AppData();
 
   constructor() {
-    this.appData = APP_EXAMPLE_DATA_JSON;
+    this.initAppData();
+  }
+
+  initAppData() {
+    try {
+      let appDataJson = localStorage.getItem('appData');
+      if (appDataJson) {
+        this.importAppData(appDataJson);
+        return;
+      }
+      this.importAppData(JSON.stringify(APP_EXAMPLE_DATA_JSON));
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   clearAllData() {
     let emptyAppData = new AppData();
     this.appData = emptyAppData;
-    this.saveAppData(JSON.stringify(emptyAppData));
+    this.saveAppDataToLocalStorage();
   }
 
-  saveAppData(json = '') {
-    localStorage.setItem('appData', json);
-    this.appData = JSON.parse(json);
+  importAppData(json: string) {
+    try {
+      this.appData = this.ValidatedAppData(json);
+      console.log('Poprawnie zaimportowano dane aplikacji');
+      this.saveAppDataToLocalStorage();
+      // alert('Poprawnie zaimportowano dane aplikacji'); //km
+    } catch (error) {
+      alert(error);
+    }
   }
 
-  loadAppData() {
+  ValidatedAppData(json: string) {
+    let result: IAppData = JSON.parse(json);
+    result.tdrData.teams = result.tdrData?.teams?.filter((t) => t.name !== '' && t.codename !== '') ?? [];
+
+    return result;
+  }
+
+  saveAppDataToLocalStorage() {
+    localStorage.setItem('appData', JSON.stringify(this.appData));
+    console.log('Poprawnie zapisano dane aplikacji');
+  }
+
+  loadAppDataFromLocalStorage() {
     this.appData = JSON.parse(localStorage.getItem('appData') ?? '');
   }
 }

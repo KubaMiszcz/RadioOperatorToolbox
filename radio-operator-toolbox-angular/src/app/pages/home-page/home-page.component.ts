@@ -39,14 +39,6 @@ export class HomePageComponent {
     return result;
   }
 
-  saveAppData() {
-    this.appDataService.saveAppData();
-  }
-
-  loadAppData() {
-    this.appDataService.loadAppData();
-  }
-
   validateLink(link: string | undefined): string {
     return link?.startsWith('/') ? link : '/' + link;
   }

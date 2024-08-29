@@ -4,21 +4,17 @@ import { ITeam, Team } from './team.model';
 import { IPoint3D } from './point3D.model';
 
 export interface ITDRData {
-  networkNo: string;
+  networkNo?: number;
   teams: ITeam[];
   sarnegCodewordOddDays?: string;
   sarnegCodewordEvenDays?: string;
   alerts: KeyValue<number, string>[];
   gridOffsetOddDays?: IPoint3D;
   gridOffsetEvenDays?: IPoint3D;
-  currentTimezoneOffset: number;
+  currentTimezoneOffset?: number; //eg +2
 }
 
 export class TDRData implements ITDRData {
-  networkNo = '12345';
   teams = [];
-  sarnegCodewordOddDays = '';
-  sarnegCodewordEvenDays = '';
   alerts = [];
-  currentTimezoneOffset = +2;
 }

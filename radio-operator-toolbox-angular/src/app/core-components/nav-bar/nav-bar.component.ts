@@ -25,7 +25,7 @@ export class NavBarComponent {
     private appSettingsService: AppSettingsService,
     private modalService: NgbModal
   ) {
-    this.reports = this.appSettingsService.appSettings.reportsTemplates;
+    this.reports = this.appSettingsService.appSettings.reportsTemplates ?? [];
   }
 
   setCurrentReport(report: IReport) {

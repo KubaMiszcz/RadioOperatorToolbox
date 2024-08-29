@@ -24,10 +24,10 @@ export class AppService {
     private appSettingsService: AppSettingsService,
     private coreService: CoreService
   ) {
-    appSettingsService.loadAppSettingsOrDefault();
+    appSettingsService.loadAppSettingsFromLocalStorageOrDefault();
 
     this.currenReportBS.next(
-      appSettingsService.appSettings.reportsTemplates[0] ?? new Report()
+      appSettingsService.appSettings.reportsTemplates?.[0] ?? new Report()
     );
   }
 
@@ -81,11 +81,7 @@ export class AppService {
       date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     }
 
-    let timezoneCode = isZulu
-      ? 'Z'
-      : DTG_TIMEZONES_CODES.find(
-          (c) => c.key === (-1 * date.getTimezoneOffset()) / 60
-        )?.value ?? '_';
+    let timezoneCode = isZulu ? 'Z' : DTG_TIMEZONES_CODES.find((c) => Number(c.key) === (-1 * date.getTimezoneOffset()) / 60)?.value ?? '_';
 
     let monthNameMMM = MONTHS_NAMES_PL[date.getMonth()];
 

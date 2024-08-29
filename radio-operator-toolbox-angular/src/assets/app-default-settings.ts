@@ -77,7 +77,7 @@ const MENU_TILES: IMenuTile_V2[] = [
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
-  isPeaceTime: false,
+  // isPeaceTime: false, //kmdepr
   showAllHelpTooltips: false, //DEPR   
   reportsTemplates: REPORTS_TEMPLATES,
   // menuTiles: MENU_ITEMS_DEPR, //km

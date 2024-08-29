@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AppSettingsService {
-  appSettings: IAppSettings;
+  appSettings: IAppSettings = new AppSettings();
   // appSettingsBS = new BehaviorSubject<IAppSettings>(null);
 
   version: string = packageJson.version;
@@ -19,47 +19,42 @@ export class AppSettingsService {
   timezones = DTG_TIMEZONES_CODES;
 
   constructor() {
-    this.appSettings = APP_DEFAULT_SETTINGS_JSON;
+    this.importAppSettings(JSON.stringify(APP_DEFAULT_SETTINGS_JSON));
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     // this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
     // this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
-    
+
     //DEBUG
     // this.findUniqueWords();
     // this.alphabet = ALPHABET_PL;
   }
 
-  saveAppSettings(json = '') {
-    localStorage.setItem('appSettings', json);
-    this.appSettings = JSON.parse(json);
+  importAppSettings(json: string) {
+    try {
+      this.appSettings = this.ValidatedAppSettings(json);
+      console.log('Poprawnie zaimportowano ustawienia aplikacji');
+      this.saveAppSettingsToLocalStorage();
+      // alert('Poprawnie zaimportowano ustawienia aplikacji');
+    } catch (error) {
+      alert(error);
+    }
   }
 
-  loadAppSettingsOrDefault() {
-    this.appSettings = JSON.parse(
-      localStorage.getItem('appSettings') ??
-        JSON.stringify(APP_DEFAULT_SETTINGS_JSON)
-    );
+  ValidatedAppSettings(json: string) {
+    let result: IAppSettings = JSON.parse(json);
+
+    return result;
   }
 
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  saveAppSettingsToLocalStorage() {
+    localStorage.setItem('appSettings', JSON.stringify(this.appSettings));
+    console.log('Poprawnie zapisano ustawienia aplikacji');
+  }
+
+  loadAppSettingsFromLocalStorageOrDefault() {
+    this.appSettings = JSON.parse(localStorage.getItem('appSettings') ?? JSON.stringify(APP_DEFAULT_SETTINGS_JSON));
+  }
+
   private findUniqueWords() {
     // let words = //this.codewords;
     // let wordsunique: string[] = [];

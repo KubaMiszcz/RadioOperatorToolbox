@@ -18,7 +18,7 @@ export class CorrespondenceBookPageComponent {
   correspondenceBook: ICorrespondenceBookEntry[] = [];
   // currentCorrespondenceBookEntry = new CorrespondenceBookEntry();
   myTeam = this.appDataService.appData.myTeam;
-  teams = this.appDataService.appData.tdrData?.teams.filter(
+  teams = this.appDataService.appData.tdrData?.teams?.filter(
     (t) => t.codename !== '' && t.codename
   );
 
