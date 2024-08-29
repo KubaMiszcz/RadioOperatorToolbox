@@ -8,7 +8,7 @@
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" class="form-control " id="validationCustomUsername" aria-describedby="inputGroupPrepend"
                 required>
         </div>
     </div>
@@ -40,9 +40,9 @@
         </div>
 
         <div class="input-group p-0">
-            <input type="text" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
-                placeholder="correspondentNo" value="{{team.correspondentNo}}">
-            <input type="text" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
+            <input type="number" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
+                placeholder="nr korespondenta" value="{{team.correspondentNo}}">
+            <input type="number" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
             <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em"
                 style="border-radius: 0 0 5px 0;" (click)="removeTeam(team)">
                 <i class="fas fa-trash    "></i>

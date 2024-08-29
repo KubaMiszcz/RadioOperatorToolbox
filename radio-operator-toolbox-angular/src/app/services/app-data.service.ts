@@ -36,7 +36,7 @@ export class AppDataService {
       this.appData = this.ValidatedAppData(json);
       console.log('Poprawnie zaimportowano dane aplikacji');
       this.saveAppDataToLocalStorage();
-      alert('Poprawnie zaimportowano dane aplikacji');
+      // alert('Poprawnie zaimportowano dane aplikacji');
     } catch (error) {
       alert(error);
     }
