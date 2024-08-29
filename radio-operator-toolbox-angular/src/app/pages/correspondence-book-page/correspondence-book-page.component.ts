@@ -33,7 +33,7 @@ export class CorrespondenceBookPageComponent {
     private appService: AppService,
     private appDataService: AppDataService
   ) {
-    this.correspondenceBook = appDataService.appData.correspondenceBook;
+    this.correspondenceBook = appDataService.appData.correspondenceBook ?? [];
 
     this.newEntry = this.getReInitNewEntry();
   }

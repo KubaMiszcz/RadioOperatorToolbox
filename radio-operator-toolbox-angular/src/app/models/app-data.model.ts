@@ -7,17 +7,14 @@ import { ITeam, Team } from './team.model';
 
 export interface IAppData {
   myTeam?: ITeam;
-  savedReports: IReport[];
-  correspondenceBook: ICorrespondenceBookEntry[];
+  savedReports?: IReport[];
+  correspondenceBook?: ICorrespondenceBookEntry[];
   notepad: INotepad;
   tdrData: ITDRData;
   cheatsheetData?: ICheatsheetData;
 }
 
 export class AppData implements IAppData {
-  // myTeam?: ITeam | undefined; //km
-  savedReports = [];
-  correspondenceBook = [];
   notepad = new Notepad();
   tdrData = new TDRData();
 }

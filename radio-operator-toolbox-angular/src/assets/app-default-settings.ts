@@ -1,4 +1,4 @@
-import { IMenuItem_DEPR, IMenuTile_V2 } from '../app/models/menu-item.model';
+import { IMenuTile_V2 } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
@@ -77,8 +77,7 @@ const MENU_TILES: IMenuTile_V2[] = [
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
-  // isPeaceTime: false, //kmdepr
-  showAllHelpTooltips: false, //DEPR   
+  showAllHelpTooltips: false, //km DEPR   
   reportsTemplates: REPORTS_TEMPLATES,
   // menuTiles: MENU_ITEMS_DEPR, //km
   menuTiles: MENU_TILES,
@@ -225,73 +224,3 @@ export const NATO_ALPHABET_EN: KeyValue<string, string>[] = [
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///////////////////////////////////
-///////////////////////////////////
-///////////////////////////////////
-///////////////////////////////////
-///////////////////////////////////
-///////////////////////////////////
-const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
-  {
-    title: 'Kodowanie',
-    link: 'encodings-page',
-    isTitleShowed: true,
-    subItems: [
-      {
-        title: 'Sarneg',
-        link: 'sarneg-tab',
-      },
-      {
-        title: 'Vigenere',
-        link: 'vigenere-tab',
-      },
-    ],
-  },
-  { title: '' }, //dummy
-  { title: '' }, //dummy
-  {
-    title: 'Reports',
-    iconName: 'reports',
-    link: 'reports-page',
-    subItems: [],
-  },
-  {
-    title: 'Książka korespondencji',
-    isTitleShowed: true,
-    link: 'correspondence-book-page',
-  },
-  {
-    title: 'TDR',
-    isTitleShowed: true,
-    link: 'tdr-data-page',
-  },
-  {
-    title: 'Ściągawka',
-    isTitleShowed: true,
-    link: 'cheatsheet-page',
-  },
-  {
-    title: 'Notatnik',
-    isTitleShowed: true,
-    link: 'notepad-page',
-  },
-  {
-    title: 'Ustawienia wszelakie',
-    isTitleShowed: true,
-    link: 'settings-page',
-  },
-];
