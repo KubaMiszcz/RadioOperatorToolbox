@@ -5,11 +5,12 @@
         <i class="fa fa-circle-question ms-auto me-1" aria-hidden="true" (click)="showTooltip()"></i>
     </h5>
 
+    <!-- //km wont save -->
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" class="form-control " id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required>
+            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" class="form-control "
+                id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
         </div>
     </div>
 
@@ -29,22 +30,25 @@
         <div class="input-group p-0">
             <label class="input-group-text px-1 w-1a d-flex justify-content-center"
                 style="border-radius: 5px 0 0 0;"><b>{{idx+1}}</b></label>
-            <input type="text" class="form-control text-center" placeholder="nazwa" value="{{team.name}}">
-            <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{team.codename}}">
+            <input [(ngModel)]="team.name" type="text" class="form-control text-center" placeholder="nazwa"
+                value="{{team.name}}">
+            <input [(ngModel)]="team.codename" type="text" class="form-control text-center" placeholder="kryptonim"
+                value="{{team.codename}}">
             <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
-                style="border-radius: 0 5px 0 0;" (click)="toggleFavourite(team)">
+                style="border-radius: 0 5px 0 0;" title="{{team.name}}" (click)="toggleFavourite(team)">
                 <i class="fas fa-star active"></i></button>
             <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
-                style="border-radius: 0 5px 0 0;" (click)="toggleFavourite(team)">
+                style="border-radius: 0 5px 0 0;" title="{{team.name}}" (click)="toggleFavourite(team)">
                 <i class="fas fa-star inactive"></i></button>
         </div>
 
         <div class="input-group p-0">
-            <input type="number" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
-                placeholder="nr korespondenta" value="{{team.correspondentNo}}">
-            <input type="number" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
+            <input [(ngModel)]="team.correspondentNo" type="number" class="form-control text-center"
+                style="border-radius: 0 0 0 5px ;" placeholder="nr korespondenta" value="{{team.correspondentNo}}">
+            <input [(ngModel)]="team.authCode" type="number" class="form-control text-center" placeholder="authCode"
+                value="{{team.authCode}}">
             <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em"
-                style="border-radius: 0 0 5px 0;" (click)="removeTeam(team)">
+                style="border-radius: 0 0 5px 0;" title="{{team.name}}" (click)="removeTeam(team)">
                 <i class="fas fa-trash    "></i>
             </button>
         </div>
@@ -64,11 +68,14 @@
 
 <div class="card mb-4">
     <h5 class="card-header">Alarmy:</h5>
-    <div *ngFor="let alert of tdrData.alerts; index  as idx" class="input-group mb-1">
+    <div *ngFor="let alert of tdrData.alerts?.sort(); index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
-        <input type="number" class="form-control text-center w-2em" placeholder="nazwa" value="{{alert.key}}">
-        <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{alert.value}}">
-        <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeAlert(alert)">
+        <input [(ngModel)]="alert.key" type="number" class="form-control text-center w-2em" placeholder="nazwa"
+            value="{{alert.key}}">
+        <input [(ngModel)]="alert.value" type="text" class="form-control text-center" placeholder="kryptonim"
+            value="{{alert.value}}">
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1" title="{{alert.key}}"
+            (click)="removeAlert(alert)">
             <i class="fas fa-trash    "></i>
         </button>
     </div>
@@ -84,9 +91,12 @@
     <h5 class="card-header">Słowa klucze:</h5>
     <div *ngFor="let keyword of tdrData.keywords; index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
-        <input type="text" class="form-control text-center" placeholder="klucz" value="{{keyword.key | uppercase}}">
-        <input type="text" class="form-control text-center keyword-description" placeholder="opis" value="{{keyword.value}}">
-        <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" (click)="removeKeyword(keyword)">
+        <input [(ngModel)]="keyword.key" type="text" class="form-control text-center" placeholder="klucz"
+            value="{{keyword.key | uppercase}}">
+        <input [(ngModel)]="keyword.value" type="text" class="form-control text-center keyword-description"
+            placeholder="opis" value="{{keyword.value}}">
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" title="{{keyword.key}}"
+            (click)="removeKeyword(keyword)">
             <i class="fas fa-trash    "></i>
         </button>
     </div>
@@ -98,7 +108,7 @@
 </div>
 
 
-
+<!-- //km nie zapisuje sie -->
 <div class="card mb-4">
     <h5 class="card-header">Kod Mapy:</h5>
     <!-- <div class="d-flex"> -->
@@ -106,14 +116,14 @@
         <div class="mx-2 col-4">Dni parzyste: </div>
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
-            <input type="text" class="form-control text-center" placeholder="Easting"
-                value="{{tdrData.gridOffsetOddDays?.X ?? 0}}">
+            <input [ngModel]="tdrData.gridOffsetOddDays?.X" (ngModel)="tdrData.gridOffsetOddDays?.X" type="number"
+                class="form-control text-center" placeholder="Easting" value="{{tdrData.gridOffsetOddDays?.X ?? 0}}">
         </div>
         <!-- </div> -->
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
-            <input type="text" class="form-control text-center" placeholder="Northing"
-                value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}">
+            <input [ngModel]="tdrData.gridOffsetOddDays?.Y" (ngModel)="tdrData.gridOffsetOddDays?.Y" type="number"
+                class="form-control text-center" placeholder="Northing" value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}">
         </div>
     </div>
     <div class="d-flex align-items-center ">
@@ -132,20 +142,22 @@
     </div>
 </div>
 
-    <div class="input-group p-0 mb-4 w-100">
-        <span class="input-group-text  w-50">Strefa czasowa:</span>
-        <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
-            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <div *ngFor="let timezone of timezones" class="dropdown-item">
-                {{getTimezoneLabel(timezone.key)}}
-            </div>
+<!-- //km nie zapisuje sie -->
+<div class="input-group p-0 mb-4 w-100">
+    <span class="input-group-text  w-50">Strefa czasowa:</span>
+    <!-- [(ngModel)]="tdrData.currentTimezoneOffset"  -->
+    <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <div *ngFor="let timezone of timezones" class="dropdown-item">
+            {{getTimezoneLabel(timezone.key)}}
         </div>
     </div>
+</div>
 
-    <!-- <div class="input-group input-group-sm mb-3">
+<!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
     </div>
@@ -175,26 +187,26 @@
 
 
 
-    <!-- Tooltips -->
-    <ng-template #teamsPanelHelp let-modal >
-        <div (click)="modal.dismiss('Cross click')">
-            <div class="modal-header p-2" >
-                <h4 class="modal-title">Help:</h4>
-                <button type="button" class="btn-close me-1" aria-label="Close"
-                    (click)="modal.dismiss('Cross click')"></button>
-            </div>
-            <div class="modal-body p-2">
-                <div>podreczne dane z TDR</div>
-                <div>
-                    - kryptonimy, czestotliwosci, kody itp<br>
-                    - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp<br>
-                    - alerty - numer/opis<br>
-                    - SARNEG parzyste/nieparzyste, losownik slow<br>
-                    - import/export TDR from json/txt
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">OK</button>
+<!-- Tooltips -->
+<ng-template #teamsPanelHelp let-modal>
+    <div (click)="modal.dismiss('Cross click')">
+        <div class="modal-header p-2">
+            <h4 class="modal-title">Help:</h4>
+            <button type="button" class="btn-close me-1" aria-label="Close"
+                (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body p-2">
+            <div>podreczne dane z TDR</div>
+            <div>
+                - kryptonimy, czestotliwosci, kody itp<br>
+                - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp<br>
+                - alerty - numer/opis<br>
+                - SARNEG parzyste/nieparzyste, losownik slow<br>
+                - import/export TDR from json/txt
             </div>
         </div>
-    </ng-template>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">OK</button>
+        </div>
+    </div>
+</ng-template>

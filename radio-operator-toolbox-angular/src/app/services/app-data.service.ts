@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AppData, IAppData } from '../models/app-data.model';
 import { APP_EXAMPLE_DATA_JSON } from 'src/assets/app-example-data';
 import packageJson from './../../../package.json';
+import { IReport } from '../models/report.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,9 +19,6 @@ export class AppDataService {
       let appDataJson = localStorage.getItem('appData');
       if (appDataJson) {
         this.importAppData(appDataJson);
-        if (packageJson.build === 'dev-local') {
-          this.importAppData(JSON.stringify(APP_EXAMPLE_DATA_JSON)); //km dev only, comment it in PROD
-        }
         return;
       }
     } catch (error) {
@@ -31,6 +29,7 @@ export class AppDataService {
   clearAllData() {
     let emptyAppData = new AppData();
     this.appData = emptyAppData;
+    this.importAppData(JSON.stringify(APP_EXAMPLE_DATA_JSON)); //km dev only, comment it in PROD
     this.saveAppDataToLocalStorage();
   }
 
@@ -50,8 +49,8 @@ export class AppDataService {
     result.tdrData.teams = result.tdrData?.teams?.filter((t) => t.name !== '' && t.codename !== '') ?? [];
     result.tdrData.alerts = result.tdrData?.alerts?.filter((t) => t.value) ?? [];
     result.tdrData.keywords = result.tdrData?.keywords?.filter((t) => t.value);
-    result.tdrData.keywords?.forEach(k=>k.key=k.key.toUpperCase())
-    
+    result.tdrData.keywords?.forEach((k) => (k.key = k.key.toUpperCase()));
+
     return result;
   }
 
@@ -62,5 +61,13 @@ export class AppDataService {
 
   loadAppDataFromLocalStorage() {
     this.appData = JSON.parse(localStorage.getItem('appData') ?? '');
+  }
+
+  saveReport(report: IReport) {
+    if (!this.appData.savedReports) {
+      this.appData.savedReports = [];
+    }
+
+    this.appData.savedReports.push(report);
   }
 }

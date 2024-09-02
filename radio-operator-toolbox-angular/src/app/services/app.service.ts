@@ -17,7 +17,7 @@ import {
   providedIn: 'root',
 })
 export class AppService {
-  currenReportBS = new BehaviorSubject<IReport>(new Report());
+  currentReportTemplateBS = new BehaviorSubject<IReport>(new Report());
 
   constructor(
     private AppDataService: AppDataService,
@@ -26,7 +26,7 @@ export class AppService {
   ) {
     appSettingsService.loadAppSettingsFromLocalStorageOrDefault();
 
-    this.currenReportBS.next(
+    this.currentReportTemplateBS.next(
       appSettingsService.appSettings.reportsTemplates?.[0] ?? new Report()
     );
   }

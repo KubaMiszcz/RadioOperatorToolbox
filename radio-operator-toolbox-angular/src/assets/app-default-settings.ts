@@ -3,7 +3,7 @@ import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
 
-const MENU_TILES: IMenuTile_V2[] = [
+const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'TDR',
     isLabelShowed: true,
@@ -13,7 +13,7 @@ const MENU_TILES: IMenuTile_V2[] = [
   {
     label: 'Utwórz meldunek',
     isLabelShowed: true,
-    link: 'xxxnew-report=page',
+    link: 'create-report-page',
     isFavourite: true,
     subItems: [],
   },
@@ -80,7 +80,7 @@ export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   showAllHelpTooltips: false, //km DEPR   
   reportsTemplates: REPORTS_TEMPLATES,
   // menuTiles: MENU_ITEMS_DEPR, //km
-  menuTiles: MENU_TILES,
+  menuTiles: MENU_TREE_TILES,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
