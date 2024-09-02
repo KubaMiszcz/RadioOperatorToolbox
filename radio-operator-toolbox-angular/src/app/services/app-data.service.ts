@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppData, IAppData } from '../models/app-data.model';
 import { APP_EXAMPLE_DATA_JSON } from 'src/assets/app-example-data';
+import packageJson from './../../../package.json';
 
 @Injectable({
   providedIn: 'root',
@@ -17,9 +18,11 @@ export class AppDataService {
       let appDataJson = localStorage.getItem('appData');
       if (appDataJson) {
         this.importAppData(appDataJson);
+        if (packageJson.build === 'dev-local') {
+          this.importAppData(JSON.stringify(APP_EXAMPLE_DATA_JSON)); //km dev only, comment it in PROD
+        }
         return;
       }
-      this.importAppData(JSON.stringify(APP_EXAMPLE_DATA_JSON));
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +48,10 @@ export class AppDataService {
   ValidatedAppData(json: string) {
     let result: IAppData = JSON.parse(json);
     result.tdrData.teams = result.tdrData?.teams?.filter((t) => t.name !== '' && t.codename !== '') ?? [];
-
+    result.tdrData.alerts = result.tdrData?.alerts?.filter((t) => t.value) ?? [];
+    result.tdrData.keywords = result.tdrData?.keywords?.filter((t) => t.value);
+    result.tdrData.keywords?.forEach(k=>k.key=k.key.toUpperCase())
+    
     return result;
   }
 

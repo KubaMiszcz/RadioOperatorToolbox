@@ -456,6 +456,12 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       { key: 2, value: 'podaj polozenie' },
       { key: 3, value: 'alarm3' },
     ],
+    keywords: [
+      { key: 'endex', value: 'powrot do MSD' },
+      { key: 'kurnik', value: 'zajecie pozycji 1' },
+      { key: 'grzyb', value: 'zadanie 1' },
+      { key: 'trolololo', value: 'dowodca druzyny przeciwnej' },
+    ],
     currentTimezoneOffset: +2,
     gridOffsetOddDays: { X: -100, Y: 200, Z: 0 },
     gridOffsetEvenDays: { X: -200, Y: 100, Z: 0 },

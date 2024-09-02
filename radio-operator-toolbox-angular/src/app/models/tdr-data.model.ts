@@ -8,7 +8,8 @@ export interface ITDRData {
   teams: ITeam[];
   sarnegCodewordOddDays?: string;
   sarnegCodewordEvenDays?: string;
-  alerts: KeyValue<number, string>[];
+  alerts?: KeyValue<number, string>[];
+  keywords?: KeyValue<string, string>[];
   gridOffsetOddDays?: IPoint3D;
   gridOffsetEvenDays?: IPoint3D;
   currentTimezoneOffset?: number; //eg +2
@@ -16,5 +17,4 @@ export interface ITDRData {
 
 export class TDRData implements ITDRData {
   teams = [];
-  alerts = [];
 }

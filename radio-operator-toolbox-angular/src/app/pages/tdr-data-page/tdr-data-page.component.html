@@ -79,6 +79,25 @@
     </div>
 </div>
 
+<!-- //km mzoe textarea i opis a description pod spodem? albo dynamicznie na 2 linijki itp? -->
+<div class="card mb-4">
+    <h5 class="card-header">Słowa klucze:</h5>
+    <div *ngFor="let keyword of tdrData.keywords; index  as idx" class="input-group mb-1">
+        <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
+        <input type="text" class="form-control text-center" placeholder="klucz" value="{{keyword.key | uppercase}}">
+        <input type="text" class="form-control text-center keyword-description" placeholder="opis" value="{{keyword.value}}">
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" (click)="removeKeyword(keyword)">
+            <i class="fas fa-trash    "></i>
+        </button>
+    </div>
+    <div class="card-footer p-1 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary w-100" (click)="addNewKeyword()">dodaj słowo kodowe
+            <i class="fas fa-plus-circle    "></i>
+        </button>
+    </div>
+</div>
+
+
 
 <div class="card mb-4">
     <h5 class="card-header">Kod Mapy:</h5>

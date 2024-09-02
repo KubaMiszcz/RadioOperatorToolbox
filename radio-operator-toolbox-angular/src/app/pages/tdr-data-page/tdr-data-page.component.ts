@@ -56,6 +56,15 @@ export class TDRDataPageComponent {
     this.tdrData.alerts?.splice(idx, 1);
   }
 
+  addNewKeyword() {
+    this.tdrData.keywords?.push({ key: '', value: '' });
+  }
+
+  removeKeyword(keyword: KeyValue<string, string>) {
+    let idx = this.tdrData.keywords?.indexOf(keyword) ?? 0;
+    this.tdrData.keywords?.splice(idx, 1);
+  }
+
   getTimezoneLabel(timezoneOffset: number = 0) {
     let tzCode = this.appSettingsService.timezones.find((t) => t.key === timezoneOffset)?.value;
     return `${tzCode} \xa0\xa0\xa0 ${timezoneOffset < 0 ? '' : '+'}${timezoneOffset}h`;
