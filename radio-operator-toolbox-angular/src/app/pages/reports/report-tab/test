@@ -1,0 +1,1088 @@
+{
+    "savedReports": [
+        {
+            "type": "EXAMPLE MEDEVAC Report",
+            "isFavourite": true,
+            "lines": [
+                {
+                    "lineHeader": "1",
+                    "descriptionHeader": "LOCATION AT PICKUP SITE",
+                    "descriptionLines": [
+                        "Miejsce podjęcia rannych (MGRS)"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "MGRS",
+                            "valueType": 7,
+                            "value": "34U FA 711 428"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "2",
+                    "descriptionHeader": "FREQENCY AND MY CALLSIGN AT PICKUP SITE",
+                    "descriptionLines": [
+                        "częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "FREQ",
+                            "valueType": 2,
+                            "value": 211.321223
+                        },
+                        {
+                            "label": "MY CALLSIGN",
+                            "valueType": 3,
+                            "value": "BURSZTYNEK-01"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "3",
+                    "descriptionHeader": "number of patients by precedence",
+                    "descriptionLines": [
+                        "Liczba pacjentów ze względu na priorytet"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "pilny nieoperacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1,
+                            "value": 2
+                        },
+                        {
+                            "label": "B",
+                            "description": "pilny operacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1,
+                            "value": 98
+                        },
+                        {
+                            "label": "C",
+                            "description": "priorytetowy (ewakuacja do 4 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "rutynowy (ewakuacja do 24 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "ewakuacja, gdy bedzie to możliwe",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "4",
+                    "descriptionHeader": "SPECIAL EQUIPMENT",
+                    "descriptionLines": [
+                        "Wymagany sprzęt specjalistyczny"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "brak (None)",
+                            "value": 2,
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "podwieszenie (Hoist)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "wyciągarka (Extraction Equipment)",
+                            "value": 2,
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "respirator (Ventilator)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne, podać szczegóły",
+                            "value": "Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "5",
+                    "descriptionHeader": "NUMBER OF PATIENTS BY TYPE",
+                    "descriptionLines": [
+                        "Liczba pacjentów według mobilności"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "siedzący (Ambulatory)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "L",
+                            "description": "na noszach (Litter)",
+                            "valueType": 1,
+                            "value": 2
+                        },
+                        {
+                            "label": "W",
+                            "description": "chodzący",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "żołnierz będący eskortą dla poszkodowanego",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inna sytuacja, podać szczegóły",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "6",
+                    "descriptionHeader": "SECURITY IN PICKUP SITE (WARTIME)",
+                    "descriptionLines": [
+                        "Bezpieczeństwo w strefie podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "brak przeciwnika",
+                            "valueType": 5,
+                            "value": false
+                        },
+                        {
+                            "label": "P",
+                            "description": "możliwa obecność przeciwnika",
+                            "valueType": 5,
+                            "value": true
+                        },
+                        {
+                            "label": "E",
+                            "description": "przeciwnik w rejonie podjęcia",
+                            "valueType": 5,
+                            "value": true
+                        },
+                        {
+                            "label": "X",
+                            "description": "przeciwnik obecny, wymagana uzbrojona eskorta",
+                            "valueType": 5,
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "7",
+                    "descriptionHeader": "MARKING OF PICKUP SITE",
+                    "descriptionLines": [
+                        "Metoda oznakowania strefy podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "panel",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "petardy",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "C",
+                            "description": "dym",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "D",
+                            "description": "brak",
+                            "valueType": 5,
+                            "value": true
+                        },
+                        {
+                            "label": "E",
+                            "description": "inne, np. lightstic",
+                            "valueType": 3
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "8",
+                    "descriptionHeader": "PATIENT NATIONALITY AND STATUS",
+                    "descriptionLines": [
+                        "Liczba pacjentów wg narodowości/statusu."
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "żołnierz NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "cywil NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "żołnierz spoza NATO ",
+                            "valueType": 1,
+                            "value": 2
+                        },
+                        {
+                            "label": "D",
+                            "description": "cywile inni niż z NATO ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "zatrzymani, jeńcy wojenni (POW) ",
+                            "valueType": 1,
+                            "value": 2
+                        },
+                        {
+                            "label": "F",
+                            "description": "wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "G",
+                            "description": "cywile ranni na skutek działań sił własnych ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "H",
+                            "description": "Dziecko",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "9",
+                    "descriptionHeader": "NBC CONTAMINATION if exists (WARTIME)",
+                    "descriptionLines": [
+                        "Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: "
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "jądrowe",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "biologiczne ",
+                            "valueType": 5,
+                            "value": true
+                        },
+                        {
+                            "label": "C",
+                            "description": "chemiczne ",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne informacje (np. czas dotarcia do miejsca podjęcia)",
+                            "valueType": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "EXAMPLE SALUTE Report",
+            "isFavourite": true,
+            "lines": [
+                {
+                    "lineHeader": "S",
+                    "descriptionHeader": "Size",
+                    "descriptionLines": [
+                        "wielkość sił przeciwnika, ilosc ludzi, pojazdów itp"
+                    ],
+                    "lineValues": [
+                        {
+                            "valueType": 4,
+                            "value": "ok 10 osob, 2 ciezarowki"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "A",
+                    "descriptionHeader": "Activity",
+                    "descriptionLines": [
+                        "co robią, co sie dzieje"
+                    ],
+                    "lineValues": [
+                        {
+                            "valueType": 4,
+                            "value": "siedza, na cos czekaja"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "L",
+                    "descriptionHeader": "Location",
+                    "descriptionLines": [
+                        "lokalizacja MGRS, azymut itp"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "E",
+                            "description": "ich",
+                            "valueType": 7,
+                            "value": "azymut ok 35st, ok 1km od nas"
+                        },
+                        {
+                            "label": "F",
+                            "description": "nasza",
+                            "valueType": 7,
+                            "value": "34 UEA 123 456"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "U",
+                    "descriptionHeader": "Uniforms",
+                    "descriptionLines": [
+                        "charakterystyczne cechy wygladu, ubiory, maskowanie, flagi, barwy"
+                    ],
+                    "lineValues": [
+                        {
+                            "valueType": 4,
+                            "value": "mundury w maskowaniu, brak oznaczen"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "T",
+                    "descriptionHeader": "Time",
+                    "descriptionLines": [
+                        "czas obserwacji DTG DDHHMMTmmmYY"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "Czas",
+                            "valueType": 8,
+                            "value": "292312ASTY24"
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "E",
+                    "descriptionHeader": "Equipment",
+                    "descriptionLines": [
+                        "bron, sprzet, wyposazenie"
+                    ],
+                    "lineValues": [
+                        {
+                            "valueType": 4,
+                            "value": "karabinki, kilka RPG, skrzynie na pojazdach"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "MEDEVAC",
+            "isFavourite": true,
+            "lines": [
+                {
+                    "lineHeader": "1",
+                    "descriptionHeader": "LOCATION AT PICKUP SITE",
+                    "descriptionLines": [
+                        "Miejsce podjęcia rannych (MGRS)"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "MGRS",
+                            "valueType": 7
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "2",
+                    "descriptionHeader": "FREQENCY AND MY CALLSIGN AT PICKUP SITE",
+                    "descriptionLines": [
+                        "częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "FREQ",
+                            "valueType": 2
+                        },
+                        {
+                            "label": "MY CALLSIGN",
+                            "valueType": 3
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "3",
+                    "descriptionHeader": "number of patients by precedence",
+                    "descriptionLines": [
+                        "Liczba pacjentów ze względu na priorytet"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "pilny nieoperacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "pilny operacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "priorytetowy (ewakuacja do 4 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "rutynowy (ewakuacja do 24 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "ewakuacja, gdy bedzie to możliwe",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "4",
+                    "descriptionHeader": "SPECIAL EQUIPMENT",
+                    "descriptionLines": [
+                        "Wymagany sprzęt specjalistyczny"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "brak (None)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "podwieszenie (Hoist)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "wyciągarka (Extraction Equipment)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "respirator (Ventilator)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne, podać szczegóły",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "5",
+                    "descriptionHeader": "NUMBER OF PATIENTS BY TYPE",
+                    "descriptionLines": [
+                        "Liczba pacjentów według mobilności"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "siedzący (Ambulatory)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "L",
+                            "description": "na noszach (Litter)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "W",
+                            "description": "chodzący",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "żołnierz będący eskortą dla poszkodowanego",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inna sytuacja, podać szczegóły",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "6",
+                    "descriptionHeader": "SECURITY IN PICKUP SITE (WARTIME)",
+                    "descriptionLines": [
+                        "Bezpieczeństwo w strefie podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "brak przeciwnika",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "P",
+                            "description": "możliwa obecność przeciwnika",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "E",
+                            "description": "przeciwnik w rejonie podjęcia",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "X",
+                            "description": "przeciwnik obecny, wymagana uzbrojona eskorta",
+                            "valueType": 5
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "7",
+                    "descriptionHeader": "MARKING OF PICKUP SITE",
+                    "descriptionLines": [
+                        "Metoda oznakowania strefy podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "panel",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "petardy",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "C",
+                            "description": "dym",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "D",
+                            "description": "brak",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "E",
+                            "description": "inne, np. lightstic",
+                            "valueType": 3
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "8",
+                    "descriptionHeader": "PATIENT NATIONALITY AND STATUS",
+                    "descriptionLines": [
+                        "Liczba pacjentów wg narodowości/statusu."
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "żołnierz NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "cywil NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "żołnierz spoza NATO ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "cywile inni niż z NATO ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "zatrzymani, jeńcy wojenni (POW) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "F",
+                            "description": "wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "G",
+                            "description": "cywile ranni na skutek działań sił własnych ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "H",
+                            "description": "Dziecko",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "9",
+                    "descriptionHeader": "NBC CONTAMINATION if exists (WARTIME)",
+                    "descriptionLines": [
+                        "Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: "
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "jądrowe",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "biologiczne ",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "C",
+                            "description": "chemiczne ",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne informacje (np. czas dotarcia do miejsca podjęcia)",
+                            "valueType": 4
+                        }
+                    ]
+                }
+            ],
+            "name": "MEDEVAC nr: 2"
+        },
+        {
+            "type": "MEDEVAC",
+            "isFavourite": true,
+            "lines": [
+                {
+                    "lineHeader": "1",
+                    "descriptionHeader": "LOCATION AT PICKUP SITE",
+                    "descriptionLines": [
+                        "Miejsce podjęcia rannych (MGRS)"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "MGRS",
+                            "valueType": 7
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "2",
+                    "descriptionHeader": "FREQENCY AND MY CALLSIGN AT PICKUP SITE",
+                    "descriptionLines": [
+                        "częstotliwość radia i nasz kryptonim, na jakim pracuje pododdział oczekujący na MEDEVAC w miejscu ewakuacji"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "FREQ",
+                            "valueType": 2
+                        },
+                        {
+                            "label": "MY CALLSIGN",
+                            "valueType": 3
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "3",
+                    "descriptionHeader": "number of patients by precedence",
+                    "descriptionLines": [
+                        "Liczba pacjentów ze względu na priorytet"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "pilny nieoperacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "pilny operacyjny (ewakuacja do 2 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "priorytetowy (ewakuacja do 4 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "rutynowy (ewakuacja do 24 godzin)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "ewakuacja, gdy bedzie to możliwe",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "4",
+                    "descriptionHeader": "SPECIAL EQUIPMENT",
+                    "descriptionLines": [
+                        "Wymagany sprzęt specjalistyczny"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "brak (None)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "podwieszenie (Hoist)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "wyciągarka (Extraction Equipment)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "respirator (Ventilator)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne, podać szczegóły",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "5",
+                    "descriptionHeader": "NUMBER OF PATIENTS BY TYPE",
+                    "descriptionLines": [
+                        "Liczba pacjentów według mobilności"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "siedzący (Ambulatory)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "L",
+                            "description": "na noszach (Litter)",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "W",
+                            "description": "chodzący",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "żołnierz będący eskortą dla poszkodowanego",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "O",
+                            "description": "inna sytuacja, podać szczegóły",
+                            "valueType": 4
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "6",
+                    "descriptionHeader": "SECURITY IN PICKUP SITE (WARTIME)",
+                    "descriptionLines": [
+                        "Bezpieczeństwo w strefie podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "brak przeciwnika",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "P",
+                            "description": "możliwa obecność przeciwnika",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "E",
+                            "description": "przeciwnik w rejonie podjęcia",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "X",
+                            "description": "przeciwnik obecny, wymagana uzbrojona eskorta",
+                            "valueType": 5
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "7",
+                    "descriptionHeader": "MARKING OF PICKUP SITE",
+                    "descriptionLines": [
+                        "Metoda oznakowania strefy podjęcia"
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "panel",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "petardy",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "C",
+                            "description": "dym",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "D",
+                            "description": "brak",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "E",
+                            "description": "inne, np. lightstic",
+                            "valueType": 3
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "8",
+                    "descriptionHeader": "PATIENT NATIONALITY AND STATUS",
+                    "descriptionLines": [
+                        "Liczba pacjentów wg narodowości/statusu."
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "A",
+                            "description": "żołnierz NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "B",
+                            "description": "cywil NATO (swój) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "C",
+                            "description": "żołnierz spoza NATO ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "D",
+                            "description": "cywile inni niż z NATO ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "E",
+                            "description": "zatrzymani, jeńcy wojenni (POW) ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "F",
+                            "description": "wysoce wartościowy (wymagana eskorta), miejscowy tłumacz ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "G",
+                            "description": "cywile ranni na skutek działań sił własnych ",
+                            "valueType": 1
+                        },
+                        {
+                            "label": "H",
+                            "description": "Dziecko",
+                            "valueType": 1
+                        }
+                    ]
+                },
+                {
+                    "lineHeader": "9",
+                    "descriptionHeader": "NBC CONTAMINATION if exists (WARTIME)",
+                    "descriptionLines": [
+                        "Zagrożenie skażeniem, uwarunkowania taktyczne i inne informacje: "
+                    ],
+                    "lineValues": [
+                        {
+                            "label": "N",
+                            "description": "jądrowe",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "B",
+                            "description": "biologiczne ",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "C",
+                            "description": "chemiczne ",
+                            "valueType": 5
+                        },
+                        {
+                            "label": "O",
+                            "description": "inne informacje (np. czas dotarcia do miejsca podjęcia)",
+                            "valueType": 4
+                        }
+                    ]
+                }
+            ],
+            "name": "MEDEVAC nr: 2"
+        }
+    ],
+    "correspondenceBook": [
+        {
+            "guid": "8b005b7a-d654-0162-1d60-30f6212b4ab4",
+            "timestamp_DEPR": "2024-09-02T19:03:19.552Z",
+            "timeDTG": "031530ASTY24",
+            "transmitDirection": "ODBIÓR",
+            "recipientCodename": "team2",
+            "senderCodename": "team1",
+            "content": "meldune1"
+        },
+        {
+            "guid": "c769b50d-7d2f-cd5d-9dd1-2887df31128a",
+            "timestamp_DEPR": "2024-09-02T19:03:19.552Z",
+            "timeDTG": "031655ZSTY24",
+            "transmitDirection": "NADAWANIE",
+            "recipientCodename": "team1",
+            "senderCodename": "team2",
+            "content": "meldune1"
+        },
+        {
+            "guid": "2dcae878-efb4-0e09-4cd4-0d6aee1947d2",
+            "timestamp_DEPR": "2024-09-02T19:03:19.552Z",
+            "timeDTG": "031530ASTY24",
+            "transmitDirection": "ODBIÓR",
+            "recipientCodename": "team1",
+            "senderCodename": "farewell02",
+            "content": "casMEDAVEC c as c as c as"
+        },
+        {
+            "guid": "82cc192a-74c6-77ed-48e3-f8f510d3d2b6",
+            "timestamp_DEPR": "2024-09-02T19:03:19.552Z",
+            "timeDTG": "031530ASTY24",
+            "transmitDirection": "NADAWANIE",
+            "recipientCodename": "team1",
+            "senderCodename": "bukszpan08",
+            "content": "caDALTUR as c as c as c as"
+        }
+    ],
+    "notepad": {
+        "pages": [
+            {
+                "pageContent": "notatka 1"
+            },
+            {
+                "pageContent": "notatka 2b"
+            }
+        ]
+    },
+    "tdrData": {
+        "networkNo": 2345,
+        "teams": [
+            {
+                "name": "312klp",
+                "codename": "PASIBRZUCH21"
+            },
+            {
+                "name": "3121plp",
+                "codename": "ROZPUSTNIK22"
+            },
+            {
+                "name": "3122plp",
+                "codename": "BURSZTYNEK23",
+                "correspondentNo": 53,
+                "authCode": 1234,
+                "isFavourite": true
+            },
+            {
+                "name": "3123plp",
+                "codename": "SUPERGLINA25"
+            },
+            {
+                "name": "3124plp",
+                "codename": "GWIAZDOREK24"
+            }
+        ],
+        "alerts": [
+            {
+                "key": 1,
+                "value": "zmien kodek"
+            },
+            {
+                "key": 2,
+                "value": "podaj polozenie"
+            },
+            {
+                "key": 3,
+                "value": "alarm3"
+            }
+        ],
+        "keywords": [
+            {
+                "key": "ENDEX",
+                "value": "powrot do MSD"
+            },
+            {
+                "key": "KURNIK",
+                "value": "zajecie pozycji 1"
+            },
+            {
+                "key": "GRZYB",
+                "value": "zadanie 1"
+            },
+            {
+                "key": "TROLOLOLO",
+                "value": "dowodca druzyny przeciwnej"
+            }
+        ],
+        "currentTimezoneOffset": 2,
+        "gridOffsetOddDays": {
+            "X": -100,
+            "Y": 200,
+            "Z": 0
+        },
+        "gridOffsetEvenDays": {
+            "X": -200,
+            "Y": 100,
+            "Z": 0
+        }
+    },
+    "cheatsheetData": {
+        "wavesFreqsLengthPairs": [
+            {
+                "freq": 4,
+                "length": 0
+            },
+            {
+                "freq": 6,
+                "length": 0
+            },
+            {
+                "freq": 8,
+                "length": 0
+            }
+        ]
+    }
+}

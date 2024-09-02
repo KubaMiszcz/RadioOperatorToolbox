@@ -1,3 +1,4 @@
+import { ReportsHistoryComponent } from './pages/reports/reports-history-page/reports-history-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -8,16 +9,17 @@ import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-p
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
-import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
-import { ReportTabComponent } from './pages/create-report-page/report-tab/report-tab.component';
+import { ReportsPageComponent } from './pages/DEPR/reports-page/reports-page.component';
+import { ReportTabComponent } from './pages/reports/report-tab/report-tab.component';
 import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
 import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
-import { CreateReportPageComponent } from './pages/create-report-page/create-report-page.component';
+import { CreateReportPageComponent } from './pages/reports/create-report-page/create-report-page.component';
 
 const routes: Routes = [
   { path: 'tdr-data-page', component: TDRDataPageComponent },
   { path: 'create-report-page', component: CreateReportPageComponent },
+  { path: 'reports-history-page', component: ReportsHistoryComponent },
 
   { path: 'reports-page', component: ReportsPageComponent },
   { path: 'report-tab', component: ReportTabComponent },

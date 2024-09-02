@@ -19,15 +19,16 @@ import { NotepadPageComponent } from './pages/notepad-page/notepad-page.componen
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
-import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
-import { ReportTabComponent } from './pages/create-report-page/report-tab/report-tab.component';
+import { ReportsPageComponent } from './pages/DEPR/reports-page/reports-page.component';
+import { ReportTabComponent } from './pages/reports/report-tab/report-tab.component';
 import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
 import { ModalGenericComponent } from './core-components/modal-generic/modal-generic.component';
 import { QuickDataComponent } from './core-components/nav-bar/quick-data-modal/quick-data.component';
 import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 import { HelpTileComponent } from './core-components/help-tile/help-tile.component';
-import { CreateReportPageComponent } from './pages/create-report-page/create-report-page.component';
+import { CreateReportPageComponent } from './pages/reports/create-report-page/create-report-page.component';
+import { ReportsHistoryComponent } from './pages/reports/reports-history-page/reports-history-page.component';
 
 
 
@@ -57,6 +58,7 @@ import { CreateReportPageComponent } from './pages/create-report-page/create-rep
     PolybiusSquareTabComponent,
     HelpTileComponent,
     CreateReportPageComponent,
+    ReportsHistoryComponent,
   ],
   imports: [
     BrowserModule,

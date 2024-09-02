@@ -20,7 +20,7 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'Historia meldunkow',
     isLabelShowed: true,
-    link: 'xxxreports-history-page',
+    link: 'reports-history-page',
     isFavourite: true,
   },
   // end favs
