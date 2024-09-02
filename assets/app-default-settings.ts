@@ -1,65 +1,86 @@
-import { IMenuItem_DEPR } from '../app/models/menu-item.model';
+import { IMenuTile_V2 } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { REPORTS_TEMPLATES } from './reports-templates.json';
 import { KeyValue } from '@angular/common';
 
-const MENU_ITEMS_DEPR: IMenuItem_DEPR[] = [
+const MENU_TILES: IMenuTile_V2[] = [
   {
-    title: 'Kodowanie',
-    link: 'encodings-page',
-    isTitleShowed: true,
-    subItems: [
-      {
-        title: 'Sarneg',
-        link: 'sarneg-tab',
-      },
-      {
-        title: 'Vigenere',
-        link: 'vigenere-tab',
-      },
-    ],
+    label: 'TDR',
+    isLabelShowed: true,
+    link: 'tdr-data-page',
+    isFavourite: true,
   },
-  { title: '' }, //dummy
-  { title: '' }, //dummy
   {
-    title: 'Reports',
-    iconName: 'reports',
-    link: 'reports-page',
+    label: 'Utwórz meldunek',
+    isLabelShowed: true,
+    link: 'xxxnew-report=page',
+    isFavourite: true,
     subItems: [],
   },
   {
-    title: 'Książka korespondencji',
-    isTitleShowed: true,
-    link: 'correspondence-book-page',
+    label: 'Historia meldunkow',
+    isLabelShowed: true,
+    link: 'xxxreports-history-page',
+    isFavourite: true,
   },
+  // end favs
+  // common items
   {
-    title: 'TDR',
-    isTitleShowed: true,
-    link: 'tdr-data-page',
-  },
-  {
-    title: 'Ściągawka',
-    isTitleShowed: true,
-    link: 'cheatsheet-page',
-  },
-  {
-    title: 'Notatnik',
-    isTitleShowed: true,
+    label: 'Notatnik',
+    isLabelShowed: true,
     link: 'notepad-page',
   },
   {
-    title: 'Ustawienia wszelakie',
-    isTitleShowed: true,
+    label: 'Ściągawki',
+    isLabelShowed: true,
+    link: 'xxxcheatsheets-page',
+  },
+  {
+    label: 'Szyfro wanie',
+    isLabelShowed: true,
+    link: 'xxxcheatsheets-page',
+    subItems: [],
+  },
+  //
+  {
+    label: 'Kalkulatory',
+    isLabelShowed: true,
+    link: 'xxxcalculators-page',
+  },
+  {
+    label: 'Książka korespon dencji',
+    isLabelShowed: true,
+    link: 'correspondence-book-page',
+  },
+  {
+    label: 'Eksperymenty',
+    isLabelShowed: true,
+    link: 'xxxsettings-page',
+  },
+  //
+  {
+    label: '',
+  },
+  {
+    label: 'Help',
+    isLabelShowed: true,
+    link: 'help-page',
+  },
+  {
+    label: 'Ustawienia wszelakie',
+    isLabelShowed: true,
     link: 'settings-page',
   },
+
+  // end common items
 ];
 
 export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
-  isPeaceTime: false,
-  showAllHelpTooltips: true,
+  showAllHelpTooltips: false, //km DEPR   
   reportsTemplates: REPORTS_TEMPLATES,
-  // menuItems: MENU_ITEMS_DEPR,
+  // menuTiles: MENU_ITEMS_DEPR, //km
+  menuTiles: MENU_TILES,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -201,3 +222,5 @@ export const NATO_ALPHABET_EN: KeyValue<string, string>[] = [
   { key: 'Y', value: 'Yankee' },
   { key: 'Z', value: 'Zulu' },
 ];
+
+

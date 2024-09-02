@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1707506836467,
+  "timestamp": 1725295764292,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.6d17d8422cd25a24.js",
+        "/RadioOperatorToolbox/main.d6c5a8a4f04c08d4.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
-        "/RadioOperatorToolbox/styles.9f43e345031739c6.css"
+        "/RadioOperatorToolbox/styles.fc7ed1fc05c1ffd5.css"
       ],
       "patterns": []
     },
@@ -96,8 +96,8 @@
     "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
     "/RadioOperatorToolbox/assets/adasd": "c687ef8c19303fbaf9d0184925965c23e1d744d0",
-    "/RadioOperatorToolbox/assets/app-default-settings.ts": "5d8181a4f4a5fda7db68689c71a987d8c23c2f10",
-    "/RadioOperatorToolbox/assets/app-example-data.ts": "06fdff16cb91635aada52c9fd6fbc7a1602a8a92",
+    "/RadioOperatorToolbox/assets/app-default-settings.ts": "1b66c8afc450e87d8005b6f2dd942b686b5a77d8",
+    "/RadioOperatorToolbox/assets/app-example-data.ts": "fb4d022104fc33bf1e2e94439f0b09623528cfc0",
     "/RadioOperatorToolbox/assets/fontawesome/css/all.css": "85e396239cfc731a7471848b33949b22bcf50449",
     "/RadioOperatorToolbox/assets/fontawesome/css/all.min.css": "b6e555166eb1381392e00adcde9bf8863f16ff01",
     "/RadioOperatorToolbox/assets/fontawesome/css/brands.css": "19c8e8e6f55d14f63f29b5fd1ee0526e6e27943b",
@@ -152,12 +152,12 @@
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "ef05545f65793e26fb7fecbca206ea373217b718",
-    "/RadioOperatorToolbox/index.html": "7d4af581d13ddbcf3ce3403e6810dc7566b205bb",
-    "/RadioOperatorToolbox/main.6d17d8422cd25a24.js": "55a040ca40435653a6d6cbe261711d8b7d723941",
+    "/RadioOperatorToolbox/index.html": "1933b8be141a3970557d1d05f3e77698be884c6f",
+    "/RadioOperatorToolbox/main.d6c5a8a4f04c08d4.js": "9c07275ff88fa6250e1d9b561708999bfc03d4d1",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
-    "/RadioOperatorToolbox/styles.9f43e345031739c6.css": "921f16485bcb613d6d9f0e19a1fe17d3ea73c91e"
+    "/RadioOperatorToolbox/styles.fc7ed1fc05c1ffd5.css": "653a50486936b7501da9b018ddbcda2e7ebc9d17"
   },
   "navigationUrls": [
     {
