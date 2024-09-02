@@ -1,3 +1,4 @@
+import { CoreService } from './core.service';
 import { Injectable } from '@angular/core';
 import { AppData, IAppData } from '../models/app-data.model';
 import { APP_EXAMPLE_DATA_JSON } from 'src/assets/app-example-data';
@@ -10,7 +11,7 @@ import { IReport } from '../models/report.model';
 export class AppDataService {
   appData: IAppData = new AppData();
 
-  constructor() {
+  constructor(private coreService: CoreService) {
     this.initAppData();
   }
 
@@ -46,7 +47,8 @@ export class AppDataService {
 
   ValidatedAppData(json: string) {
     let result: IAppData = JSON.parse(json);
-    result.tdrData.teams = result.tdrData?.teams?.filter((t) => t.name !== '' && t.codename !== '') ?? [];
+    result.tdrData.teams = result.tdrData?.teams?.filter((t) => !!t.name && !!t.codename) ?? [];
+    result.savedReports = result.savedReports?.filter((r) => !!r.name && !!r.name) ?? [];
     result.tdrData.alerts = result.tdrData?.alerts?.filter((t) => t.value) ?? [];
     result.tdrData.keywords = result.tdrData?.keywords?.filter((t) => t.value);
     result.tdrData.keywords?.forEach((k) => (k.key = k.key.toUpperCase()));
@@ -69,5 +71,13 @@ export class AppDataService {
     }
 
     this.appData.savedReports.push(report);
+  }
+
+  updateReport(oldReport: IReport, report: IReport) {
+    this.coreService.replaceItemInArray(this.appData.savedReports, oldReport, report);
+  }
+
+  removeReport(report: IReport) {
+    this.coreService.removeItemInArray(this.appData.savedReports, report);
   }
 }

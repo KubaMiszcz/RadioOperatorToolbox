@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
-
+import { IReport } from '../models/report.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CoreService {
-
-  constructor() { }
+  constructor() {}
 
   getRandomNumber(max: number) {
     // getRandomNumber(10) => <0 to 10>
@@ -16,7 +15,7 @@ export class CoreService {
 
   deepCopy<T>(obj: T): T {
     let cache: any = [];
-    let str = JSON.stringify(obj, function (key, value) { 
+    let str = JSON.stringify(obj, function (key, value) {
       if (typeof value === 'object' && value !== null) {
         if (cache.indexOf(value) !== -1) {
           // Circular reference found, discard key
@@ -68,5 +67,23 @@ export class CoreService {
 
   hasRepeatedLetters(str: string) {
     return /(.).*\1/.test(str);
+  }
+
+  replaceItemInArray<T>(array: T[] | undefined, oldValue: T, newValue: T) {
+    if (!array?.length) {
+      return;
+    }
+
+    let idx = array?.findIndex((e) => e === oldValue) ?? -1;
+    array.splice(idx, 1, newValue);
+  }
+
+  removeItemInArray<T>(array: T[] | undefined, value: T) {
+    if (!array?.length) {
+      return;
+    }
+
+    let idx = array?.findIndex((e) => e === value) ?? -1;
+    array.splice(idx, 1);
   }
 }

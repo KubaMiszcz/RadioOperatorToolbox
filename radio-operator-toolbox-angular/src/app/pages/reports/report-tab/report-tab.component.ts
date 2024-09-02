@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IReport, IReportLineValue, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
+import { CRUD_METHODS } from 'src/app/models/constants/enums';
+import { IReport, IReportLineValue, Report, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
@@ -18,6 +19,8 @@ export class ReportTabComponent {
   isCreatorCollapsed = false;
   reportContentTXT = '';
   lineValueTypes = VALUE_TYPES_ENUM;
+  isInEditMode = false;
+  oldReport: IReport = new Report();
 
   constructor(
     private appService: AppService,
@@ -25,10 +28,21 @@ export class ReportTabComponent {
     private appDataService: AppDataService,
     private coreService: CoreService
   ) {
-    this.appService.currentReportTemplateBS.subscribe((r) => {
+    this.appService.currentReportBS.subscribe((r) => {
       this.report = coreService.deepCopy(r);
+      if (!this.isTemplate(r)) {
+        this.oldReport = r;
+        this.isInEditMode = true;
+        return;
+      }
+
       this.report.name = this.report.type + ' nr: ';
+      this.isInEditMode = false;
     });
+  }
+
+  isTemplate(report: IReport) {
+    return !report.name;
   }
 
   getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
@@ -82,7 +96,20 @@ export class ReportTabComponent {
   }
 
   saveReport() {
+    if (this.isReportExist(this.report)) {
+      alert(`Raport: ${this.report.name} już istnieje, nadaj inną nazwę.`);
+      return;
+    }
+
     this.appDataService.saveReport(this.report);
+  }
+
+  updateReport() {
+    this.appDataService.updateReport(this.oldReport, this.report);
+  }
+
+  isReportExist(report: IReport) {
+    return this.appDataService.appData.savedReports?.some((r) => r.name === this.report.name);
   }
 
   toNatoCode(value: string) {

@@ -29,7 +29,7 @@ export class NavBarComponent {
   }
 
   setCurrentReport(report: IReport) {
-    this.appService.currentReportTemplateBS.next(report);
+    this.appService.currentReportBS.next(report);
   }
 
   getFavouriteReports() {

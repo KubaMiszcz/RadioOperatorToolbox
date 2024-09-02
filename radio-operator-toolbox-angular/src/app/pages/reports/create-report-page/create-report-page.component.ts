@@ -19,7 +19,7 @@ export class CreateReportPageComponent {
   }
 
   setCurrentReportTemplate(report: IReport) {
-    this.appService.currentReportTemplateBS.next(report);
+    this.appService.currentReportBS.next(report);
   }
 }
 
