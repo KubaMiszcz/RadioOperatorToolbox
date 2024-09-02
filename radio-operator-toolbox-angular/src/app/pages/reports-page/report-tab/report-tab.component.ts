@@ -15,7 +15,6 @@ import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
 })
 export class ReportTabComponent {
   report: IReport = { name: '' };
-  isPeaceTime = this.appSettingsService.appSettings.isPeaceTime;
 
   useNatoLetters = false;
   isCreatorCollapsed = false;

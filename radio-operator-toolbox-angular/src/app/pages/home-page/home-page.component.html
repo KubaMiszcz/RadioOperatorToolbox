@@ -1,5 +1,25 @@
 <app-help-tile [content]="helpLines"></app-help-tile>
 
+<div class="">
+    <div *ngFor="let row of favouritesTilesRows" class="d-flex justify-content-between">
+        <div *ngFor="let tile of row" class="tile">
+            <app-menu-tile [name]="tile.label" [routerLink]="['/' + tile.link]"
+                [isLabelShowed]="tile.isLabelShowed"></app-menu-tile>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="">
+    <div *ngFor="let row of tilesRows" class="d-flex justify-content-between">
+        <div *ngFor="let tile of row" class="tile">
+            <app-menu-tile [name]="tile.label" [routerLink]="['/' + tile.link]"
+                [isLabelShowed]="tile.isLabelShowed"></app-menu-tile>
+        </div>
+    </div>
+</div>
+<hr>
+
 
 <div class="d-flex justify-content-between">
     <div class="tile">

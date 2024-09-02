@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@media only screen and (max-width: 1920px) {
-    .content {
-        width: 35%;
-    }
-}
+// @media only screen and (max-width: 1920px) {
+//     .content {
+//         width: 35%;
+//     }
+// }
 
-@media only screen and (max-width: 365px) {
-    .content {
-        width: 100%;
-    }
-}
+// @media only screen and (max-width: 365px) {
+//     .content {
+//         width: 100%;
+//     }
+// }
 
 
 html,
@@ -108,14 +108,6 @@ select {
     padding: 0.25em;
 }
 
-.w-90 {
-    width: 90%;
-}
-
-.w-80 {
-    width: 80%;
-}
-
 .w-10 {
     width: 10%;
 }
@@ -124,8 +116,36 @@ select {
     width: 20%;
 }
 
+.w-30 {
+    width: 30%;
+}
+
 .w-33 {
     width: 33%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-90 {
+    width: 90%;
 }
 
 .w-2em {
@@ -146,7 +166,9 @@ select {
     max-width: 4em;
 }
 
-
+.hidden{
+    visibility: hidden;
+}
 
 @font-face {
     font-family: 'JetBrainsMono-Medium';

@@ -21,8 +21,8 @@ export class ReportsPageComponent {
     private appSettingsService: AppSettingsService
   ) {
     this.reportsTemplates =
-      this.appSettingsService.appSettings.reportsTemplates;
-    this.savedReports = appDataService.appData.savedReports;
+      this.appSettingsService.appSettings.reportsTemplates ?? [];
+    this.savedReports = appDataService.appData.savedReports ?? [];
   }
 
   setCurrentReport(report: IReport) {

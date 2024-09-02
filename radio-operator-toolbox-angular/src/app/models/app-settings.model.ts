@@ -1,20 +1,19 @@
-import { IMenuItem_DEPR } from "./menu-item.model";
+import { IMenuTile_V2 } from "./menu-item.model";
 import { IReport } from "./report.model";
 
 export interface IAppSettings {
-  isPeaceTime?: boolean;
   iconsPath?: string;
-  showAllHelpTooltips: boolean;
+  showAllHelpTooltips: boolean; //km depr
   reportsTemplates: IReport[];
-  // menuItems: IMenuItem_DEPR[]; //km
+  menuTiles: IMenuTile_V2[];
+  IsDarkModeOn?: boolean;
 }
 
 export class AppSettings implements IAppSettings {
-  isPeaceTime?: boolean | undefined;
   iconsPath?: string | undefined;
-  showAllHelpTooltips = true;
+  showAllHelpTooltips = true; //km depr
   reportsTemplates = [];
-  // menuItems = []; //km
+  menuTiles = [];
 }
 
 

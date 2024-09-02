@@ -1,6 +1,7 @@
-<div class="d-flex align-items-center justify-content-center mb-2">
-    <button title="sarneg" type="button" class="btn btn-outline-primary">
-        <img *ngIf="!isLabelShowed" src="assets/imgs/{{iconName}}" alt="">
-        <span *ngIf="isLabelShowed" class="tile-name">{{name}}</span>
-    </button>
-</div>
+<div class="d-flex align-items-center justify-content-center mb-2" [ngClass]="{'hidden': !name.length}">
+    <!-- <div class="d-flex align-items-center justify-content-center mb-2" [ngStyle]="{'visibility: hidden' : true}"> -->
+        <button title="title" type="button" class="btn btn-outline-primary">
+            <img *ngIf="!isLabelShowed" src="assets/imgs/{{iconName}}" alt="">
+            <span *ngIf="isLabelShowed" class="tile-name">{{name}}</span>
+        </button>
+    </div>

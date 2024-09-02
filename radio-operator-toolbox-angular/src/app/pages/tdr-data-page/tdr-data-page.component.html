@@ -1,65 +1,29 @@
-<!-- style="border-radius: 5px 0 0 0;" -->
+<div class="card mb-4">
+    <h5 class="card-header d-flex">
+        <div><i class="fa fa-circle-chevron-right me-1" aria-hidden="true"></i>Korespondenci:
+        </div>
+        <i class="fa fa-circle-question ms-auto me-1" aria-hidden="true" (click)="showTooltip()"></i>
+    </h5>
 
-<!-- <div *ngFor="let team of teams; index  as idx" class="card">
-    <div class="card-body p-0">
-        <div class="d-flex flex-row">
-            <label class="px-1 w-1a d-flex justify-content-center"><b>{{idx+1}}</b></label>
-        
-            <div>
-                <div class="d-flex flex-col">
-                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
-                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
-                    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
-                        <i class="fas fa-trash    "></i>
-                    </button>
-                </div>
-                
-                <div class="d-flex flex-col">
-                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
-                    <input type="text" class="form-constrol text-center" placeholder="nazwa" value="{{'team.name'}}">
-                    <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeTeam(team)">
-                        <i class="fas fa-trash    "></i>
-                    </button>
-                </div>
-    
-            </div>
+    <div class="mb-2">
+        <div class="input-group p-1">
+            <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
+            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" class="form-control " id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+                required>
         </div>
     </div>
-</div> -->
 
-
-
-<app-help-tile [content]="helpLines"></app-help-tile>
-
-
-<div class="mb-4">
-    <div class="input-group p-0">
-        <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-            required>
+    <div class="input-group p-1 mb-2 w-100">
+        <span class="input-group-text  w-25">my Team:</span>
+        <button class="btn btn-secondary-outline dropdown-toggle m-0 w-75" type="button" id="dropdownMenuButton3"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{appData.myTeam?.name}} - {{appData.myTeam?.codename}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <div *ngFor="let team of teams" class="dropdown-item" (click)="setMyTeam(team)">{{team.name}} -
+                {{team.codename}}</div>
+        </div>
     </div>
-</div>
-
-
-
-<div class="input-group p-0 mb-4 w-100">
-    <span class="input-group-text  w-25">my Team:</span>
-    <button class="btn btn-secondary-outline dropdown-toggle m-0 w-75" type="button" id="dropdownMenuButton2"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{myTeam.name}} - {{myTeam.codename}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <div *ngFor="let team of teams" class="dropdown-item" (click)="setMyTeam(team)">{{team.name}} -
-            {{team.codename}}</div>
-    </div>
-</div>
-
-
-
-
-<div class="card mb-4">
-    <h5 class="card-header">Oddziały:</h5>
-
 
     <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1">
         <div class="input-group p-0">
@@ -76,9 +40,9 @@
         </div>
 
         <div class="input-group p-0">
-            <input type="text" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
-                placeholder="correspondentNo" value="{{team.correspondentNo}}">
-            <input type="text" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
+            <input type="number" class="form-control text-center" style="border-radius: 0 0 0 5px ;"
+                placeholder="nr korespondenta" value="{{team.correspondentNo}}">
+            <input type="number" class="form-control text-center" placeholder="authCode" value="{{team.authCode}}">
             <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em"
                 style="border-radius: 0 0 5px 0;" (click)="removeTeam(team)">
                 <i class="fas fa-trash    "></i>
@@ -102,7 +66,7 @@
     <h5 class="card-header">Alarmy:</h5>
     <div *ngFor="let alert of tdrData.alerts; index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
-        <input type="text" class="form-control text-center w-2em" placeholder="nazwa" value="{{alert.key}}">
+        <input type="number" class="form-control text-center w-2em" placeholder="nazwa" value="{{alert.key}}">
         <input type="text" class="form-control text-center" placeholder="kryptonim" value="{{alert.value}}">
         <button type="button" class="btn btn-danger input-group-text m-0 px-1" (click)="removeAlert(alert)">
             <i class="fas fa-trash    "></i>
@@ -115,7 +79,73 @@
     </div>
 </div>
 
-<!-- <div class="input-group input-group-sm mb-3">
+<!-- //km mzoe textarea i opis a description pod spodem? albo dynamicznie na 2 linijki itp? -->
+<div class="card mb-4">
+    <h5 class="card-header">Słowa klucze:</h5>
+    <div *ngFor="let keyword of tdrData.keywords; index  as idx" class="input-group mb-1">
+        <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
+        <input type="text" class="form-control text-center" placeholder="klucz" value="{{keyword.key | uppercase}}">
+        <input type="text" class="form-control text-center keyword-description" placeholder="opis" value="{{keyword.value}}">
+        <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" (click)="removeKeyword(keyword)">
+            <i class="fas fa-trash    "></i>
+        </button>
+    </div>
+    <div class="card-footer p-1 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary w-100" (click)="addNewKeyword()">dodaj słowo kodowe
+            <i class="fas fa-plus-circle    "></i>
+        </button>
+    </div>
+</div>
+
+
+
+<div class="card mb-4">
+    <h5 class="card-header">Kod Mapy:</h5>
+    <!-- <div class="d-flex"> -->
+    <div class="d-flex align-items-center ">
+        <div class="mx-2 col-4">Dni parzyste: </div>
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
+            <input type="text" class="form-control text-center" placeholder="Easting"
+                value="{{tdrData.gridOffsetOddDays?.X ?? 0}}">
+        </div>
+        <!-- </div> -->
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
+            <input type="text" class="form-control text-center" placeholder="Northing"
+                value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}">
+        </div>
+    </div>
+    <div class="d-flex align-items-center ">
+        <div class="mx-2 col-4">Dni nieparzyste: </div>
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
+            <input type="number" class="form-control text-center" placeholder="Easting"
+                value="{{tdrData.gridOffsetEvenDays?.X ?? 0}}">
+        </div>
+        <!-- </div> -->
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
+            <input type="number" class="form-control text-center" placeholder="Northing"
+                value="{{tdrData.gridOffsetEvenDays?.Y ?? 0}}">
+        </div>
+    </div>
+</div>
+
+    <div class="input-group p-0 mb-4 w-100">
+        <span class="input-group-text  w-50">Strefa czasowa:</span>
+        <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <div *ngFor="let timezone of timezones" class="dropdown-item">
+                {{getTimezoneLabel(timezone.key)}}
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
     </div>
@@ -141,3 +171,30 @@
     <input type="text" class="input-group-text form-control" placeholder=""
         aria-label="Example text with two button addons">
 </div> -->
+
+
+
+
+    <!-- Tooltips -->
+    <ng-template #teamsPanelHelp let-modal >
+        <div (click)="modal.dismiss('Cross click')">
+            <div class="modal-header p-2" >
+                <h4 class="modal-title">Help:</h4>
+                <button type="button" class="btn-close me-1" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body p-2">
+                <div>podreczne dane z TDR</div>
+                <div>
+                    - kryptonimy, czestotliwosci, kody itp<br>
+                    - sciezki do opcji w RRC: GPS,KODEK,ALERT,AUTH itp<br>
+                    - alerty - numer/opis<br>
+                    - SARNEG parzyste/nieparzyste, losownik slow<br>
+                    - import/export TDR from json/txt
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary w-100 p-2" (click)="modal.close('Close click')">OK</button>
+            </div>
+        </div>
+    </ng-template>

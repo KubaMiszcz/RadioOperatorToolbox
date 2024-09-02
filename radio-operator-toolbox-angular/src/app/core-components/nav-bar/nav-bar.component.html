@@ -1,8 +1,6 @@
 <nav class="navbar sticky-top anavbar-expand-xxl navbar-dark bg-dark justify-content-center py-0 px-1">
     <div class="content d-flex justify-content-between flex-wrap">
 
-
-
         <!-- LEFT SIDE -->
         <div class="d-flex align-items-center">
             <div class="nsavbar-brand me-1" [routerLink]="'home-tab'">
@@ -14,14 +12,6 @@
                 </button>
             </div>
         </div>
-
-
-
-
-
-
-
-
 
         <!-- RIGHT SIDE -->
         <div class="d-flex align-items-center">
@@ -48,15 +38,16 @@
 
 
 
-
-
-
-
-
         <!-- HAMBURGER MENU -->
         <div class="collsspse navbar-collapse" [ngClass]="{'hidden':isMenuHidden}" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="'home-page'" (click)="isMenuHidden=!isMenuHidden">
+                        Home
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" [routerLink]="'sarneg-tab'" (click)="isMenuHidden=!isMenuHidden">kodowanie
                         SARNEG </a>
                 </li>
@@ -92,7 +83,9 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'settings-page'" (click)="isMenuHidden=!isMenuHidden">Ustawienia </a>
+                    <a class="nav-link" [routerLink]="'settings-page'" (click)="isMenuHidden=!isMenuHidden">Ustawienia
+                        <i class="fa fa-gears" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" [routerLink]="'help-page'" (click)="isMenuHidden=!isMenuHidden">Help </a>
@@ -116,7 +109,7 @@
 
 
 <!-- MODALS -->
-<ng-template #infoModal let-modal>
+<ng-template #quickDataModal let-modal>
     <div class="modal-header p-2">
         <h4 class="modal-title">Quick Data:</h4>
         <button type="button" class="btn-close me-1" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>

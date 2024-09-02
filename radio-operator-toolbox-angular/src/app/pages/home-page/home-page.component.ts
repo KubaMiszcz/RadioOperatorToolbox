@@ -1,3 +1,4 @@
+import { IMenuTile_V2 } from './../../models/menu-item.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { AppService } from '../../services/app.service';
 import { Component } from '@angular/core';
@@ -12,19 +13,30 @@ export class HomePageComponent {
   appData = this.appDataService.appData;
   appSettings = this.appSettingsService.appSettings;
   helpLines = helpLines;
+  menuTiles: IMenuTile_V2[] = [];
+  favouritesTilesRows: IMenuTile_V2[][] = [];
+  tilesRows: IMenuTile_V2[][] = [];
 
-  constructor(
-    private appService: AppService,
-    private appDataService: AppDataService,
-    private appSettingsService: AppSettingsService
-  ) {}
-
-  saveAppData() {
-    this.appDataService.saveAppData();
+  constructor(private appService: AppService, private appDataService: AppDataService, private appSettingsService: AppSettingsService) {
+    this.tilesRows = this.getTilesRows(
+      appSettingsService.appSettings.menuTiles.filter((t) => !t.isFavourite),
+      3
+    );
+    this.favouritesTilesRows = this.getTilesRows(
+      appSettingsService.appSettings.menuTiles.filter((t) => t.isFavourite),
+      3
+    );
   }
 
-  loadAppData() {
-    this.appDataService.loadAppData();
+  private getTilesRows(allTiles: IMenuTile_V2[], rowSize: number): IMenuTile_V2[][] {
+    let result = [];
+
+    while (allTiles.length) {
+      let row = allTiles.splice(0, rowSize);
+      result.push(row);
+    }
+
+    return result;
   }
 
   validateLink(link: string | undefined): string {

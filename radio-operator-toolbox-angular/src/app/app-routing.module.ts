@@ -15,14 +15,19 @@ import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.componen
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 
 const routes: Routes = [
+  { path: 'tdr-data-page', component: TDRDataPageComponent },
+
+  { path: 'reports-page', component: ReportsPageComponent },
+  { path: 'report-tab', component: ReportTabComponent },
+
+
+
   { path: 'encodings-page', component: EncodingsPageComponent },
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
   { path: 'vic-tab', component: VICTabComponent },
   { path: 'polybius-tab', component: PolybiusSquareTabComponent },
 
-  { path: 'reports-page', component: ReportsPageComponent },
-  { path: 'report-tab', component: ReportTabComponent },
 
   { path: 'notepad-page', component: NotepadPageComponent },
   
@@ -30,7 +35,6 @@ const routes: Routes = [
   
   { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
-  { path: 'tdr-data-page', component: TDRDataPageComponent },
   
   { path: 'settings-page', component: AppSettingsPageComponent },
 

@@ -1,9 +1,10 @@
-export interface IMenuItem_DEPR {
-  title: string;
+
+export interface IMenuTile_V2 {
+  label: string;
   iconName?: string;
   link?: string;
-  isTitleShowed?: boolean;
+  isLabelShowed?: boolean;
   orderNo?:number
   isFavourite?: boolean;
-  subItems?: IMenuItem_DEPR[];
+  subItems?: IMenuTile_V2[];
 }

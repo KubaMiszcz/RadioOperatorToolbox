@@ -17,8 +17,8 @@ import { AppService } from 'src/app/services/app.service';
 export class CorrespondenceBookPageComponent {
   correspondenceBook: ICorrespondenceBookEntry[] = [];
   // currentCorrespondenceBookEntry = new CorrespondenceBookEntry();
-  myTeam = this.appDataService.appData.tdrData?.myTeam;
-  teams = this.appDataService.appData.tdrData?.teams.filter(
+  myTeam = this.appDataService.appData.myTeam;
+  teams = this.appDataService.appData.tdrData?.teams?.filter(
     (t) => t.codename !== '' && t.codename
   );
 
@@ -33,7 +33,7 @@ export class CorrespondenceBookPageComponent {
     private appService: AppService,
     private appDataService: AppDataService
   ) {
-    this.correspondenceBook = appDataService.appData.correspondenceBook;
+    this.correspondenceBook = appDataService.appData.correspondenceBook ?? [];
 
     this.newEntry = this.getReInitNewEntry();
   }
