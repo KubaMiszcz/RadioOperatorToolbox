@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "./radio-operator-toolbox-angular/src/app"
+		},
+		{
+			"path": "./radio-operator-toolbox-angular"
+		},
+		{
+			"path": "."
+		},
+	],
+	"settings": {}
+}
