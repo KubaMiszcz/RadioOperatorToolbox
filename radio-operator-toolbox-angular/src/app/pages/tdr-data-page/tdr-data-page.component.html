@@ -27,39 +27,72 @@
         </div>
     </div>
 
-    <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1">
-        <div class="input-group p-0">
-            <label class="input-group-text px-1 w-2em d-flex justify-content-center"
-                style="border-radius: 5px 0 0 0;"><b>{{idx+1}}</b></label>
-            <input [(ngModel)]="team.name" type="text" class="form-control text-center w-5em" placeholder="nazwa"
-                value="{{team.name}}">
-            <input [(ngModel)]="team.codename" type="text" class="form-control text-center flex-fill" placeholder="kryptonim"
-                value="{{team.codename}}">
-            <button *ngIf="team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
-                style="border-radius: 0 5px 0 0;" title="{{team.name}}" (click)="toggleFavourite(team)">
-                <i class="fas fa-star active"></i></button>
-            <button *ngIf="!team.isFavourite" type="button" class="btn btn-default  m-0 input-group-text px-1 w-2em"
-                style="border-radius: 0 5px 0 0;" title="{{team.name}}" (click)="toggleFavourite(team)">
-                <i class="fas fa-star inactive"></i></button>
+
+
+
+
+
+
+
+
+
+    
+
+
+    <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1 team-tile">
+
+        <div class="row d-flex flex-row ">
+
+            <div class="col-1">
+                <label class="input-group-text px-1 w-2em d-flex justify-content-center  order-no">
+                    <b>{{idx+1}}</b></label>
+            </div>
+            <div class="col">
+                <div class="input-group p-0">
+                    <!-- <label class="input-group-text px-1 w-2em d-flex justify-content-center middle-element"
+                        ><b>{{idx+1}}</b></label> -->
+                    <input [(ngModel)]="team.name" type="text" class="form-control text-center w-6em middle-element"
+                        placeholder="nazwa" value="{{team.name}}">
+                    <input [(ngModel)]="team.codename" type="text" class="form-control text-center flex-fill"
+                        placeholder="kryptonim" value="{{team.codename}}">
+                    <button *ngIf="team.isFavourite" type="button"
+                        class="btn btn-default  m-0 input-group-text px-1 w-2em" title="{{team.name}}"
+                        (click)="toggleFavourite(team)">
+                        <i class="fas fa-star active"></i></button>
+                    <button *ngIf="!team.isFavourite" type="button"
+                        class="btn btn-default  m-0 input-group-text px-1 w-2em right-upper-element"
+                        title="{{team.name}}" (click)="toggleFavourite(team)">
+                        <i class="fas fa-star inactive"></i></button>
+                </div>
+
+                <div class="input-group p-0">
+                    <input type="number" class="form-control text-end w-4em middle-element"
+                        placeholder="nr korespondenta" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}"
+                        disabled>
+                    <input [(ngModel)]="team.correspondentNo" type="number" class="form-control text-center px-1 w-4em"
+                        placeholder="nr korespondenta" value="{{team.correspondentNo}}">
+                    <input type="number" class="form-control text-center px-1 flex-fill" disabled>
+                    <input [(ngModel)]="team.authCode" type="number" class="form-control text-center w-4em"
+                        placeholder="authCode" value="{{team.authCode}}">
+                    <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em right-lower-element"
+                        title="{{team.name}}" (click)="removeTeam(team)">
+                        <i class="fas fa-trash    "></i>
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div class="input-group p-0">
-            <input type="number" class="form-control text-end w-7emxxx" style="border-radius: 0 0 0 5px;"
-                placeholder="nr korespondenta" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" disabled>
-            <input [(ngModel)]="team.correspondentNo" type="number" class="form-control text-start w-10xxx"
-                placeholder="nr korespondenta" value="{{team.correspondentNo}}">
-            <input [(ngModel)]="team.authCode" type="number" class="form-control text-center w-4emx"
-                placeholder="authCode" value="{{team.authCode}}">
-            <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em"
-                style="border-radius: 0 0 5px 0;" title="{{team.name}}" (click)="removeTeam(team)">
-                <i class="fas fa-trash    "></i>
-            </button>
-        </div>
-
-
 
 
     </div>
+
+
+
+
+
+
+
+
+
 
     <div class=" card-footer p-1 d-flex justify-content-center">
         <button type="button" class="btn btn-primary w-100 mt-2" (click)="addNewTeam()">dodaj Team

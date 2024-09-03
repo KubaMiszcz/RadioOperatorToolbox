@@ -4,6 +4,25 @@
     }
 }
 
+.team-tile{
+    .order-no{
+        height: 100%;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .middle-element{
+        border-radius: 0 0 0 0;
+    }
+    
+    .right-upper-element{
+        border-radius: 0 5px 0 0;
+    }
+    
+    .right-lower-element{
+        border-radius: 0 0 5px 0;
+    }
+}
+
 .keyword-description{
     width: 40%;
 }
