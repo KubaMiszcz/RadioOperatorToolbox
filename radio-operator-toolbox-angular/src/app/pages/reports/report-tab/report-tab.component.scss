@@ -11,17 +11,27 @@
         justify-content: center;
         font-weight: bolder;
         font-size: 2em;
+
+        .header-content {
+            text-orientation: upright;
+        }
+
     }
 
-    .line-desc {
-        text-align: left;
-        width: 100%;
-        border-bottom: 1px dashed black;
-    }
+    .desc-field {
+        width: min-content;
 
-    .desc-header {
-        text-align: left;
-        font-weight: bolder;
+
+        .line-desc {
+            text-align: left;
+            width: 100%;
+            border-bottom: 1px dashed black;
+        }
+
+        .desc-header {
+            text-align: left;
+            font-weight: bolder;
+        }
     }
 
     .line-values {
@@ -50,7 +60,7 @@
             width: 1.5em;
         }
 
-        .checkbox{
+        .checkbox {
             width: 2em;
         }
     }

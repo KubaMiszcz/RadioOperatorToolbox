@@ -24,11 +24,11 @@
 
 
     <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines">
-        <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
-            {{line.lineHeader | uppercase}}</div>
+        <div class="input-group-text text-wrap line-header" id="inputGroup-sizing-default1">
+            <span>{{line.lineHeader | uppercase}}</span></div>
 
 
-        <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+        <div class="input-group-text text-wrap align-content-start d-flex flex-column flex-fill p-0 desc-field"
             id="inputGroup-sizing-default2">
             <div class="line-desc p-1">
                 <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
@@ -137,7 +137,22 @@
     </div>
 </div>
 
-<!-- todo saved reports -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,15 +171,13 @@
 
 
         <h5 class="card-title text-center">{{report.name}}</h5>
-        <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 
         <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
-            <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
+            <div class="input-group-text cosxxxl-1 text-wrap align-content-start d-flex flex-column p-0 px-1 line-header "
                 id="inputGroup-sizing-default2">
-                {{line.lineHeader}}
+                <span class="header-content">{{line.lineHeader}}</span>
             </div>
-            <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
+            <div class="input-group-text text-wrap coxxxl-11 align-content-center d-flex flex-colsumn flex-fill flex-wrap justify-content-start p-0"
                 id="inputGroup-sizing-default2">
                 <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
                     <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">

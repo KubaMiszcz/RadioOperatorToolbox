@@ -27,7 +27,7 @@ export class AppService {
     appSettingsService.loadAppSettingsFromLocalStorageOrDefault();
 
     this.currentReportBS.next(
-      appSettingsService.appSettings.reportsTemplates?.[0] ?? new Report()
+      appSettingsService.appSettings.reportsTemplates?.[2] ?? new Report()
     );
   }
 
