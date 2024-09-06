@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import {
-  IReport,
-  IReportLineValue,
-  VALUE_TYPES_ENUM,
-} from 'src/app/models/report.model';
+import { CRUD_METHODS } from 'src/app/models/constants/enums';
+import { IReport, IReportLineValue, Report, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
+import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
+import { CoreService } from 'src/app/services/core.service';
 import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
 
 @Component({
@@ -14,18 +13,36 @@ import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
   styleUrls: ['./report-tab.component.scss'],
 })
 export class ReportTabComponent {
-  report: IReport = { name: '' };
+  report: IReport = { type: '' };
 
   useNatoLetters = false;
   isCreatorCollapsed = false;
   reportContentTXT = '';
   lineValueTypes = VALUE_TYPES_ENUM;
+  isInEditMode = false;
+  oldReport: IReport = new Report();
 
   constructor(
     private appService: AppService,
-    private appSettingsService: AppSettingsService
+    private appSettingsService: AppSettingsService,
+    private appDataService: AppDataService,
+    private coreService: CoreService
   ) {
-    this.appService.currenReportBS.subscribe((r) => (this.report = r));
+    this.appService.currentReportBS.subscribe((r) => {
+      this.report = coreService.deepCopy(r);
+      if (!this.isTemplate(r)) {
+        this.oldReport = r;
+        this.isInEditMode = true;
+        return;
+      }
+
+      this.report.name = this.report.type + ' nr: ';
+      this.isInEditMode = false;
+    });
+  }
+
+  isTemplate(report: IReport) {
+    return !report.name;
   }
 
   getNotEmptyLineValues(lineValues: IReportLineValue[]): IReportLineValue[] {
@@ -49,16 +66,14 @@ export class ReportTabComponent {
   }
 
   getMGRS(line: IReportLineValue, precision: number) {
-    this.appService
-      .getMyPositionMGRS(precision)
-      .then((pos) => (line.value = pos));
+    this.appService.getMyPositionMGRS(precision).then((pos) => (line.value = pos));
   }
 
   getTimeDTG(line: IReportLineValue) {
     line.value = this.appService.getTimeDTG(new Date());
   }
 
-  convertReportToTXT() {
+  copyToClipboard() {
     let result = '';
     result += this.report.name + '\n';
     this.report.lines?.forEach((line) => {
@@ -66,9 +81,7 @@ export class ReportTabComponent {
       line.lineValues.forEach((lineValue) => {
         if (lineValue.value) {
           if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
-            result += `${lineValue.label ? lineValue.label + ':' : ''}${
-              lineValue.value
-            }, `;
+            result += `${lineValue.label ? lineValue.label + ':' : ''}${lineValue.value}, `;
           } else {
             result += `${lineValue.label}, `;
           }
@@ -82,6 +95,23 @@ export class ReportTabComponent {
     this.reportContentTXT = result;
   }
 
+  saveReport() {
+    if (this.isReportExist(this.report)) {
+      alert(`Raport: ${this.report.name} już istnieje, nadaj inną nazwę.`);
+      return;
+    }
+
+    this.appDataService.saveReport(this.report);
+  }
+
+  updateReport() {
+    this.appDataService.updateReport(this.oldReport, this.report);
+  }
+
+  isReportExist(report: IReport) {
+    return this.appDataService.appData.savedReports?.some((r) => r.name === this.report.name);
+  }
+
   toNatoCode(value: string) {
     if (value.length === 1 && this.useNatoLetters) {
       return NATO_ALPHABET_EN.find((v) => v.key === value)?.value;
@@ -89,4 +119,9 @@ export class ReportTabComponent {
 
     return value;
   }
+
+  //km
+  // getReportName(): string {
+  //   return !this.reportName ? this.report.type + ' nr: ' : this.report.name ?? '';
+  // }
 }

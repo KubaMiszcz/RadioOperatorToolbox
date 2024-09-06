@@ -1,0 +1,7 @@
+<div *ngFor="let report of savedReports" class="input-group p-1">
+    <label for="validationCustomUsername" class="input-group-text flex-fill px-1" id="inputGroupPrepend">{{report.name}}</label>
+    <button class="btn  btn-primary w-10" title="{{report.name}}" type="button" [routerLink]="[ '/report-tab']"
+        (click)="setCurrentReport(report)"> <i class="fa fa-edit" aria-hidden="true"></i></button>
+    <button class="btn  btn-danger w-10" title="{{report.name}}" type="button" (click)="removeReport(report)"> <i class="fa fa-trash"
+            aria-hidden="true"></i></button>
+</div>

@@ -31,7 +31,6 @@ export class TDRDataPageComponent {
 
   setMyTeam(team: ITeam) {
     this.appData.myTeam = team;
-    // this.appDataService.appData.myTeam = team;
   }
 
   toggleFavourite(team: ITeam) {

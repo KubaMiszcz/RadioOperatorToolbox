@@ -1,25 +1,34 @@
 <div class="input-group mb-1">
 
     <div class="d-flex w-100">
-        <button type="button" class="btn btn-success d-flex w-100"
-            (click)="isCreatorCollapsed=!isCreatorCollapsed">
+        <button type="button" class="btn btn-success d-flex w-100" (click)="isCreatorCollapsed=!isCreatorCollapsed">
             <div *ngIf="isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-right " aria-hidden="true"></i>
             </div>
             <div *ngIf="!isCreatorCollapsed" class="px-2"><i class="fa fa-chevron-down " aria-hidden="true"></i>
             </div>
-            <div class="">{{report.name | uppercase}} Creator</div>
+            <div *ngIf="!isInEditMode" class="">Nowy meldunek: {{report.type | uppercase}}</div>
+            <div *ngIf="isInEditMode" class="">Edytuj meldunek: {{report.type | uppercase}}</div>
         </button>
     </div>
 
 </div>
 
 <div *ngIf="!isCreatorCollapsed">
+    <div class="mb-2">
+        <div class="input-group p-1">
+            <label for="validationCustomUsername" class="input-group-text w-10" id="inputGroupPrepend">ID:</label>
+            <input [(ngModel)]="report.name" type="text" class="form-control " id="validationCustomUsername"
+                aria-describedby="inputGroupPrepend" required>
+        </div>
+    </div>
+
+
     <div *ngFor="let line of report.lines" class="input-group mb-1 report-lines">
-        <div class="input-group-text col-1 text-wrap line-header" id="inputGroup-sizing-default1">
-            {{line.lineHeader | uppercase}}</div>
+        <div class="input-group-text text-wrap line-header" id="inputGroup-sizing-default1">
+            <span>{{line.lineHeader | uppercase}}</span></div>
 
 
-        <div class="input-group-text col-11 text-wrap align-content-start d-flex flex-column p-0"
+        <div class="input-group-text text-wrap align-content-start d-flex flex-column flex-fill p-0 desc-field"
             id="inputGroup-sizing-default2">
             <div class="line-desc p-1">
                 <div class="desc-header">{{line.descriptionHeader | uppercase}}</div>
@@ -52,7 +61,8 @@
 
                     <!-- SHORT NUMBER -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.shortNumber" class="d-flex flex-row">
-                        <button type="button" class="btn btn-primary mx-1" (click)="decreaseValue(lineValue)">
+                        <button type="button" class="btn btn-primary mx-1" title="{{lineValue.label}}"
+                            (click)="decreaseValue(lineValue)">
                             <i class="fas fa-minus    "></i>
                         </button>
 
@@ -60,7 +70,8 @@
                             class="form-control line-value line-value-short" aria-label="Default"
                             aria-describedby="inputGroup-sizing-default">
 
-                        <button type="button" class="btn btn-primary mx-1 " (click)="increaseValue(lineValue)">
+                        <button type="button" class="btn btn-primary mx-1 " title="{{lineValue.label}}"
+                            (click)="increaseValue(lineValue)">
                             <i class="fas fa-plus    "></i>
                         </button>
                     </div>
@@ -80,33 +91,36 @@
 
                     <!-- CHECKBOX -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.bool">
-                        <button *ngIf="!lineValue.value" type="button" class="checkbox btn btn-secondary"
-                            (click)="toggleValue(lineValue)">
+                        <button *ngIf="!lineValue.value" type="button" title="{{lineValue.label}}"
+                            class="checkbox btn btn-secondary" (click)="toggleValue(lineValue)">
                             <i class="fas fa-square    "></i>
                         </button>
-                        <button *ngIf="lineValue.value" type="button" class="checkbox btn btn-success"
-                            (click)="toggleValue(lineValue)">
+                        <button *ngIf="lineValue.value" type="button" title="{{lineValue.label}}"
+                            class="checkbox btn btn-success" (click)="toggleValue(lineValue)">
                             <i class="fas fa-check-square    "></i>
                         </button>
                     </div>
 
                     <!-- MGRS1m -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1m">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,5)">
+                        <button type="button" class="btn btn-primary mx-1" title="{{lineValue.label}}"
+                            (click)="getMGRS(lineValue,5)">
                             <i class="fa fa-crosshairs" aria-hidden="true"></i>
                         </button>
                     </div>
 
                     <!-- MGRS1km -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.MGRS1km">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getMGRS(lineValue,3)">
+                        <button type="button" class="btn btn-primary mx-1" title="{{lineValue.label}}"
+                            (click)="getMGRS(lineValue,3)">
                             <i class="fa fa-crosshairs" aria-hidden="true"></i>
                         </button>
                     </div>
 
                     <!-- DTG -->
                     <div *ngIf="lineValue.valueType === lineValueTypes.DTG">
-                        <button type="button" class="btn btn-primary mx-1" (click)="getTimeDTG(lineValue)">
+                        <button type="button" class="btn btn-primary mx-1" title="{{lineValue.label}}"
+                            (click)="getTimeDTG(lineValue)">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -116,14 +130,23 @@
 
         </div>
     </div>
-    
+
     <div class="my-4">
         <br>
         <!-- <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block my-4 d-flex" >Save report</button> -->
     </div>
 </div>
 
-<!-- todo saved reports -->
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,7 +158,7 @@
 
 <div class="card">
     <div class="card-body p-1 ">
-        
+
         <div class="d-flex flex-row justify-content-end">
             <label class="form-check-label me-1 mb-1" for="flexCheckDefault">
                 <small class="text-muted">użyj literowania NATO</small>
@@ -143,20 +166,18 @@
             <div class="form-check">
                 <input [(ngModel)]="useNatoLetters" class="form-check-input" type="checkbox" value=""
                     id="flexCheckDefault">
-            </div>    
+            </div>
         </div>
 
-        
-        <h5 class="card-title text-center">{{report.name | uppercase}}</h5>
-        <!-- <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6> -->
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+        <h5 class="card-title text-center">{{report.name}}</h5>
 
         <div *ngFor="let line of report.lines" class="input-group mxb-3 report-lines pss-2">
-            <div class="input-group-text col-1 text-wrap align-content-start d-flex flex-column p-0 line-header "
+            <div class="input-group-text cosxxxl-1 text-wrap align-content-start d-flex flex-column p-0 px-1 line-header "
                 id="inputGroup-sizing-default2">
-                {{line.lineHeader}}
+                <span class="header-content">{{line.lineHeader}}</span>
             </div>
-            <div class="input-group-text text-wrap col-11 align-content-center d-flex flex-colsumn flex-wrap justify-content-start p-0"
+            <div class="input-group-text text-wrap coxxxl-11 align-content-center d-flex flex-colsumn flex-fill flex-wrap justify-content-start p-0"
                 id="inputGroup-sizing-default2">
                 <div *ngFor="let lineValue of getNotEmptyLineValues(line.lineValues)">
                     <div *ngIf="lineValue.valueType!==lineValueTypes.bool" class="value-cell px-1">
@@ -173,8 +194,13 @@
 </div>
 
 <div class="mt-2">
-    <button type="button" class="btn btn-primary w-100"
-    (click)="convertReportToTXT()"
-    [cdkCopyToClipboard]="reportContentTXT"
-    >kopiuj do txt</button>
-</div>  
+    <button type="button" class="btn btn-primary w-100" (click)="copyToClipboard()"
+        [cdkCopyToClipboard]="reportContentTXT">kopiuj do schowka</button>
+</div>
+
+<div class="mt-2">
+    <button *ngIf="!isInEditMode" type="button" class="btn btn-primary w-100" (click)="saveReport()">Zapisz
+        meldunek</button>
+    <button *ngIf="isInEditMode" type="button" class="btn btn-primary w-100" (click)="updateReport()"
+        [routerLink]="'/reports-history-page'">Aktualizuj meldunek</button>
+</div>

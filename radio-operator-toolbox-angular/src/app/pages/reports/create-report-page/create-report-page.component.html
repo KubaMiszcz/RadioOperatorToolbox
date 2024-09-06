@@ -1,13 +1,11 @@
-<app-help-tile [content]="helpLines"></app-help-tile>
-
 <div class="d-flex flex-wrap justify-content-between ">
     <div *ngFor="let item of reportsTemplates" class="tile">
-        <app-menu-tile [name]="item.name" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
-        (click)="setCurrentReport(item)"></app-menu-tile>
+        <app-menu-tile [name]="item.type" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
+            (click)="setCurrentReportTemplate(item)"></app-menu-tile>
     </div>
 </div>
 
-
+<!-- 
 <hr>
 <div>Zapisane raporty:</div>
 <div class="d-flex justify-content-start">
@@ -15,7 +13,4 @@
         <app-menu-tile [name]="item.name" [routerLink]="[ '/report-tab']" [isLabelShowed]="true"
             (click)="setCurrentReport(item)"></app-menu-tile>
     </div>
-</div>
-
-
-
+</div> -->

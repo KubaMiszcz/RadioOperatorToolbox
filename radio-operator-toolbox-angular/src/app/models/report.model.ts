@@ -1,13 +1,13 @@
 export interface IReport {
-  name: string;
+  type: string;
+  name?: string;
   isFavourite?: boolean;
-  isInPeaceTime?: boolean;
   lines?: IReportLine[];
-  savedReports?: IReport;
+  // savedReports?: IReport; //km depr
 }
 
 export class Report implements IReport {
-  name = 'no-name';
+  type = 'no-type';
 }
 
 export interface IReportLine {
@@ -15,7 +15,6 @@ export interface IReportLine {
   descriptionHeader: string;
   descriptionLines?: string[];
   lineValues: IReportLineValue[];
-  isInPeacetime?: boolean;
 }
 
 export interface IReportLineValue {

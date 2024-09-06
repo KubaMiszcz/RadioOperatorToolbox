@@ -57,7 +57,7 @@
                 </li>
                 <li *ngFor="let item of getFavouriteReports()" class="nav-item" (click)="setCurrentReport(item)"
                     (click)="isMenuHidden=!isMenuHidden">
-                    <a class="nav-link" [routerLink]="'report-tab'">{{item.name}}
+                    <a class="nav-link" [routerLink]="'report-tab'">{{item.type}}
                         <i class="fas fa-thumbtack"></i>
                     </a>
                 </li>
@@ -76,7 +76,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a *ngFor="let item of reports" class="dropdown-item d-flex justify-content-end"
                                 [routerLink]="'report-tab'" (click)="setCurrentReport(item)"
-                                (click)="isMenuHidden=!isMenuHidden">{{item.name}}</a>
+                                (click)="isMenuHidden=!isMenuHidden">{{item.type}}</a>
                         </div>
                     </div>
                 </li>

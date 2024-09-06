@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // @media only screen and (max-width: 1920px) {
 //     .content {
-//         width: 35%;
+//         width: 100%;
 //     }
 // }
 
@@ -164,6 +164,24 @@ select {
     width: 4em;
     min-width: 4em;
     max-width: 4em;
+}
+
+.w-5em {
+    width: 5em;
+    min-width: 5em;
+    max-width: 5em;
+}
+
+.w-6em {
+    width: 6em;
+    min-width: 6em;
+    max-width: 6em;
+}
+
+.w-7em {
+    width: 7em;
+    min-width: 7em;
+    max-width: 7em;
 }
 
 .hidden{

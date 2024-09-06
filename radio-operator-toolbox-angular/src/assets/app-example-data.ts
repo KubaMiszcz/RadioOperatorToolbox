@@ -9,7 +9,7 @@ import { AppService } from 'src/app/services/app.service';
 export const APP_EXAMPLE_DATA_JSON: IAppData = {
   savedReports: [
     {
-      name: 'EXAMPLE MEDEVAC Report',
+      type: 'EXAMPLE MEDEVAC Report',
       isFavourite: true,
       lines: [
         {
@@ -176,7 +176,6 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         },
         // {
         //   lineHeader: '6',
-        //   isInPeacetime: true,
         //   descriptionHeader: '6 IN PEACETIME',
         //   descriptionLines: ['number and type of wound, injury, ilness'],
         //   lineValues: [
@@ -298,7 +297,6 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
         },
         // {
         //   lineHeader: '9',
-        //   isInPeacetime: true,
         //   descriptionHeader: '9 IN PEACETIME',
         //   descriptionLines: ['detailed terrain feature description'],
         //   lineValues: [
@@ -312,7 +310,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       ],
     },
     {
-      name: 'EXAMPLE SALUTE Report',
+      type: 'EXAMPLE SALUTE Report',
       isFavourite: true,
       lines: [
         {
@@ -751,7 +749,6 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
 //     },
 //     // {
 //     //   lineHeader: '6',
-//     //   isInPeacetime: true,
 //     //   descriptionHeader: '6 IN PEACETIME',
 //     //   descriptionLines: ['number and type of wound, injury, ilness'],
 //     //   lineValues: [
@@ -856,7 +853,6 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
 //     },
 //     // {
 //     //   lineHeader: '9',
-//     //   isInPeacetime: true,
 //     //   descriptionHeader: '9 IN PEACETIME',
 //     //   descriptionLines: ['detailed terrain feature description'],
 //     //   lineValues: [

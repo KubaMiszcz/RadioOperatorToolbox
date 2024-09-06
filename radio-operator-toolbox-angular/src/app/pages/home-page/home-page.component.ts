@@ -19,11 +19,11 @@ export class HomePageComponent {
 
   constructor(private appService: AppService, private appDataService: AppDataService, private appSettingsService: AppSettingsService) {
     this.tilesRows = this.getTilesRows(
-      appSettingsService.appSettings.menuTiles.filter((t) => !t.isFavourite),
+      appSettingsService.appSettings.menuTilesTree.filter((t) => !t.isFavourite),
       3
     );
     this.favouritesTilesRows = this.getTilesRows(
-      appSettingsService.appSettings.menuTiles.filter((t) => t.isFavourite),
+      appSettingsService.appSettings.menuTilesTree.filter((t) => t.isFavourite),
       3
     );
   }

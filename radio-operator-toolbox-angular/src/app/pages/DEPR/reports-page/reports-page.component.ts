@@ -26,7 +26,7 @@ export class ReportsPageComponent {
   }
 
   setCurrentReport(report: IReport) {
-    this.appService.currenReportBS.next(report);
+    this.appService.currentReportBS.next(report);
   }
 }
 
