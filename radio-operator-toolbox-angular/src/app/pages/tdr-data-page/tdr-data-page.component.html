@@ -1,4 +1,5 @@
 <div class="card mb-4">
+
     <h5 class="card-header d-flex">
         <div><i class="fa fa-circle-chevron-right me-1" aria-hidden="true"></i>Korespondenci:
         </div>
@@ -9,10 +10,10 @@
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <!-- <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" -->
-            <input [(ngModel)]="tdrData.networkNo" type="number"
+            <input  type="number" [ngModel]="tdrData.networkNo?.toString()?.padStart(5,'0')"
                 class="form-control text-center" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required>
+                required
+                (blur)="validateNetworkNo($event)">
         </div>
     </div>
 
@@ -37,7 +38,7 @@
 
 
 
-    
+
 
 
     <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1 team-tile">
@@ -193,6 +194,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">

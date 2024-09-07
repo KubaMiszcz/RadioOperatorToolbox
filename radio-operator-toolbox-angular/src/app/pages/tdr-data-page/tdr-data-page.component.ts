@@ -1,5 +1,6 @@
+import { values } from 'lodash-es';
 import { KeyValue } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ITDRData, TDRData } from 'src/app/models/tdr-data.model';
 import { ITeam, Team } from 'src/app/models/team.model';
@@ -12,13 +13,14 @@ import { AppService } from 'src/app/services/app.service';
   templateUrl: './tdr-data-page.component.html',
   styleUrls: ['./tdr-data-page.component.scss'],
 })
-export class TDRDataPageComponent {
+export class TDRDataPageComponent implements OnDestroy {
   teams = this.appDataService.appData.tdrData?.teams ?? [];
   appData = this.appDataService.appData;
   tdrData: ITDRData = this.appDataService.appData.tdrData ?? new TDRData();
   timezones = this.appSettingsService.timezones;
   private modalRef!: NgbModalRef;
   @ViewChild('teamsPanelHelp') teamsPanelHelp: any;
+  console = console;
 
   constructor(
     private appService: AppService,
@@ -78,5 +80,15 @@ export class TDRDataPageComponent {
 
   closeModal(value: any) {
     this.modalRef.close();
+  }
+
+  validateNetworkNo(value: any) {
+    let networkNo = value.target['valueAsNumber'];
+    this.tdrData.networkNo = networkNo;
+  }
+
+  ngOnDestroy(): void {
+    //km validate page
+    this.appDataService.saveAppDataToLocalStorage();
   }
 }
