@@ -9,7 +9,8 @@
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}"
+            <!-- <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}" -->
+            <input [(ngModel)]="tdrData.networkNo" type="number"
                 class="form-control text-center" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
                 required>
         </div>
