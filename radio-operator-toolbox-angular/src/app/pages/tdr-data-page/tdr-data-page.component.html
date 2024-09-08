@@ -6,7 +6,6 @@
         <i class="fa fa-circle-question ms-auto me-1" aria-hidden="true" (click)="showTooltip()"></i>
     </h5>
 
-    <!-- //km wont save -->
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
@@ -36,16 +35,14 @@
 
     <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1 team-tile">
 
-        <div class="row d-flex flex-row ">
+        <div class="d-flex flex-fill">
 
-            <div class="col-1">
+            <div class="">
                 <label class="input-group-text px-1 w-2em d-flex justify-content-center  order-no">
                     <b>{{idx+1}}</b></label>
             </div>
-            <div class="col">
+            <div class="flex-fill">
                 <div class="input-group p-0">
-                    <!-- <label class="input-group-text px-1 w-2em d-flex justify-content-center middle-element"
-                        ><b>{{idx+1}}</b></label> -->
                     <input [(ngModel)]="team.name" type="text" class="form-control text-center w-6em middle-element"
                         placeholder="nazwa">
                     <input [(ngModel)]="team.codename" type="text" class="form-control text-center flex-fill"
