@@ -19,17 +19,16 @@ export class AppSettingsPageComponent {
   constructor(private appService: AppService, private appSettingsService: AppSettingsService, private appDataService: AppDataService) {
     this.appSettingsJSON = JSON.stringify(this.appSettings);
     this.appDataJSON = JSON.stringify(this.appData);
-    this.appSettingsService.saveAppSettingsToLocalStorage();
-    this.appDataService.saveAppDataToLocalStorage();
-    console.log('fire');
+    this.appSettingsService.updateAndSaveAppSettings();
+    this.appDataService.updateAndSaveAppData();
   }
 
   importAppSettings() {
-    this.appSettingsService.importAppSettings(this.appSettingsJSON);
+    this.appSettingsService.updateAndSaveAppSettings(JSON.parse(this.appSettingsJSON));
   }
 
   importAppData() {
-    this.appDataService.importAppData(this.appDataJSON);
+    this.appDataService.updateAndSaveAppData(JSON.parse(this.appDataJSON));
   }
 
   setMyTeam(team: ITeam) {
