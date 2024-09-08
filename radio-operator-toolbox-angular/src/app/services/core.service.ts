@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 import { IReport } from '../models/report.model';
+import packageJson from './../../../package.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoreService {
   constructor() {}
+
+  isDevEnv() {
+    return packageJson.build.startsWith('dev');
+  }
 
   getRandomNumber(max: number) {
     // getRandomNumber(10) => <0 to 10>
@@ -40,7 +45,12 @@ export class CoreService {
   }
 
   getArraySortedByName<T>(array: T[]): T[] {
-    return _.orderBy(array, 'name', 'asc');
+    return this.getArraySortedByPropertyName(array, 'name');
+    // return _.orderBy(array, 'name', 'asc');
+  }
+
+  getArraySortedByPropertyName<T>(array: T[], propName: string): T[] {
+    return _.orderBy(array, propName, 'asc');
   }
 
   getRandomElementsFromArray<T>(array: T[], count: number = 1): T[] {
@@ -85,5 +95,21 @@ export class CoreService {
 
     let idx = array?.findIndex((e) => e === value) ?? -1;
     array.splice(idx, 1);
+  }
+
+  saveToLocalStorage<T>(name: string, value: T) {
+    localStorage.setItem(name, JSON.stringify(value));
+  }
+
+  getFromLocalStorage(name: string) {
+    return JSON.parse(localStorage.getItem(name) ?? '');
+  }
+
+  getValueFromEvent(event: FocusEvent | Event): string {
+    return (event.target as HTMLInputElement).value;
+  }
+
+  getValueAsNumberFromEvent(event: FocusEvent | Event): number {
+    return (event.target as HTMLInputElement).valueAsNumber;
   }
 }

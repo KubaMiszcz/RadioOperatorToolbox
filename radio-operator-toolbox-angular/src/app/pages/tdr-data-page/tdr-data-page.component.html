@@ -1,17 +1,17 @@
 <div class="card mb-4">
+
     <h5 class="card-header d-flex">
         <div><i class="fa fa-circle-chevron-right me-1" aria-hidden="true"></i>Korespondenci:
         </div>
         <i class="fa fa-circle-question ms-auto me-1" aria-hidden="true" (click)="showTooltip()"></i>
     </h5>
 
-    <!-- //km wont save -->
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="number" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}"
+            <input type="number" [ngModel]="tdrData.networkNo?.toString()?.padStart(5,'0')"
                 class="form-control text-center" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required>
+                required (blur)="validateNetworkNo($event)">
         </div>
     </div>
 
@@ -33,28 +33,20 @@
 
 
 
-
-
-
-    
-
-
     <div *ngFor="let team of teams; index  as idx" class=" mb-2 p-1 team-tile">
 
-        <div class="row d-flex flex-row ">
+        <div class="d-flex flex-fill">
 
-            <div class="col-1">
+            <div class="">
                 <label class="input-group-text px-1 w-2em d-flex justify-content-center  order-no">
                     <b>{{idx+1}}</b></label>
             </div>
-            <div class="col">
+            <div class="flex-fill">
                 <div class="input-group p-0">
-                    <!-- <label class="input-group-text px-1 w-2em d-flex justify-content-center middle-element"
-                        ><b>{{idx+1}}</b></label> -->
                     <input [(ngModel)]="team.name" type="text" class="form-control text-center w-6em middle-element"
-                        placeholder="nazwa" value="{{team.name}}">
+                        placeholder="nazwa">
                     <input [(ngModel)]="team.codename" type="text" class="form-control text-center flex-fill"
-                        placeholder="kryptonim" value="{{team.codename}}">
+                        placeholder="kryptonim">
                     <button *ngIf="team.isFavourite" type="button"
                         class="btn btn-default  m-0 input-group-text px-1 w-2em" title="{{team.name}}"
                         (click)="toggleFavourite(team)">
@@ -70,10 +62,10 @@
                         placeholder="nr korespondenta" value="{{tdrData.networkNo?.toString()?.padStart(5,'0')}}"
                         disabled>
                     <input [(ngModel)]="team.correspondentNo" type="number" class="form-control text-center px-1 w-4em"
-                        placeholder="nr korespondenta" value="{{team.correspondentNo}}">
+                        placeholder="nr korespondenta">
                     <input type="number" class="form-control text-center px-1 flex-fill" disabled>
                     <input [(ngModel)]="team.authCode" type="number" class="form-control text-center w-4em"
-                        placeholder="authCode" value="{{team.authCode}}">
+                        placeholder="authCode">
                     <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-2em right-lower-element"
                         title="{{team.name}}" (click)="removeTeam(team)">
                         <i class="fas fa-trash    "></i>
@@ -102,14 +94,19 @@
 </div>
 
 
+
+
+
+
+
+
+
 <div class="card mb-4">
     <h5 class="card-header">Alarmy:</h5>
     <div *ngFor="let alert of tdrData.alerts?.sort(); index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
-        <input [(ngModel)]="alert.key" type="number" class="form-control text-center w-2em" placeholder="nazwa"
-            value="{{alert.key}}">
-        <input [(ngModel)]="alert.value" type="text" class="form-control text-center" placeholder="kryptonim"
-            value="{{alert.value}}">
+        <input [(ngModel)]="alert.key" type="number" class="form-control text-center w-2em" placeholder="nazwa">
+        <input [(ngModel)]="alert.value" type="text" class="form-control text-center" placeholder="kryptonim">
         <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" title="{{alert.key}}"
             (click)="removeAlert(alert)">
             <i class="fas fa-trash    "></i>
@@ -122,6 +119,10 @@
     </div>
 </div>
 
+
+
+
+
 <!-- //km mzoe textarea i opis a description pod spodem? albo dynamicznie na 2 linijki itp? -->
 <div class="card mb-4">
     <h5 class="card-header">Słowa klucze:</h5>
@@ -130,7 +131,7 @@
         <input [(ngModel)]="keyword.key" type="text" class="form-control text-center" placeholder="klucz"
             value="{{keyword.key | uppercase}}">
         <input [(ngModel)]="keyword.value" type="text" class="form-control text-center keyword-description"
-            placeholder="opis" value="{{keyword.value}}">
+            placeholder="opis">
         <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" title="{{keyword.key}}"
             (click)="removeKeyword(keyword)">
             <i class="fas fa-trash    "></i>
@@ -144,22 +145,27 @@
 </div>
 
 
-<!-- //km nie zapisuje sie -->
+
+
+
+
+
+
 <div class="card mb-4">
     <h5 class="card-header">Kod Mapy:</h5>
-    <!-- <div class="d-flex"> -->
     <div class="d-flex align-items-center ">
         <div class="mx-2 col-4">Dni parzyste: </div>
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
-            <input [ngModel]="tdrData.gridOffsetOddDays?.X" (ngModel)="tdrData.gridOffsetOddDays?.X" type="number"
-                class="form-control text-center" placeholder="Easting" value="{{tdrData.gridOffsetOddDays?.X ?? 0}}">
+            <input type="number" class="form-control text-center" placeholder="Easting"
+                value="{{tdrData.gridOffsetEvenDays?.X}}"
+                (blur)="updateGridOffset(tdrData.gridOffsetEvenDays,'X',$event)">
         </div>
-        <!-- </div> -->
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
-            <input [ngModel]="tdrData.gridOffsetOddDays?.Y" (ngModel)="tdrData.gridOffsetOddDays?.Y" type="number"
-                class="form-control text-center" placeholder="Northing" value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}">
+            <input type="number" class="form-control text-center" placeholder="Northing"
+                value="{{tdrData.gridOffsetEvenDays?.Y ?? 0}}"
+                (blur)="updateGridOffset(tdrData.gridOffsetEvenDays,'Y',$event)">
         </div>
     </div>
     <div class="d-flex align-items-center ">
@@ -167,31 +173,66 @@
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>X</b></label>
             <input type="number" class="form-control text-center" placeholder="Easting"
-                value="{{tdrData.gridOffsetEvenDays?.X ?? 0}}">
+                value="{{tdrData.gridOffsetOddDays?.X}}"
+                (blur)="updateGridOffset(tdrData.gridOffsetOddDays,'X',$event)">
         </div>
         <!-- </div> -->
         <div class="input-group mb-1">
             <label class="input-group-text px-1 w-3em d-flex justify-content-center"><b>Y</b></label>
             <input type="number" class="form-control text-center" placeholder="Northing"
-                value="{{tdrData.gridOffsetEvenDays?.Y ?? 0}}">
+                value="{{tdrData.gridOffsetOddDays?.Y ?? 0}}"
+                (blur)="updateGridOffset(tdrData.gridOffsetOddDays,'Y',$event)">
         </div>
     </div>
 </div>
 
-<!-- //km nie zapisuje sie -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="input-group p-0 mb-4 w-100">
     <span class="input-group-text  w-50">Strefa czasowa:</span>
     <!-- [(ngModel)]="tdrData.currentTimezoneOffset"  -->
-    <button class="btn btn-secondary-outline dropdown-toggle m-0 w-50" type="button" id="dropdownMenuButton2"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <div *ngFor="let timezone of timezones" class="dropdown-item">
-            {{getTimezoneLabel(timezone.key)}}
+    <button type="button" class="btn btn-primary m-0 px-1 w-2em " (click)="timezoneDown(tdrData.currentTimezoneOffset)">
+        <i class="fas fa-minus"></i> </button>
+    <div class="btn-group dropup m-0 flex-fill">
+        <button class="btn btn-secondary-outline dropdown-toggle border-radius-0 m-0 " type="button"
+            id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{getTimezoneLabel(tdrData.currentTimezoneOffset)}}
+        </button>
+        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton2">
+            <div *ngFor="let timezone of timezones" class="dropdown-item">
+                {{getTimezoneLabel(timezone.key)}}
+            </div>
         </div>
     </div>
+    <button type="button" class="btn btn-primary m-0 px-1 w-2em " (click)="timezoneUp(tdrData.currentTimezoneOffset)">
+        <i class="fas fa-plus"></i> </button>
 </div>
+
 
 <!-- <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">

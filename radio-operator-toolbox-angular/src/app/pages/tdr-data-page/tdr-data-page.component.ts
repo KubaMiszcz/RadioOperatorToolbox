@@ -1,32 +1,36 @@
+import { values } from 'lodash-es';
 import { KeyValue } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ITDRData, TDRData } from 'src/app/models/tdr-data.model';
 import { ITeam, Team } from 'src/app/models/team.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
+import { CoreService } from 'src/app/services/core.service';
+import { IPoint3D } from 'src/app/models/point3D.model';
 
 @Component({
   selector: 'app-tdr-data-page',
   templateUrl: './tdr-data-page.component.html',
   styleUrls: ['./tdr-data-page.component.scss'],
 })
-export class TDRDataPageComponent {
+export class TDRDataPageComponent implements OnDestroy {
   teams = this.appDataService.appData.tdrData?.teams ?? [];
   appData = this.appDataService.appData;
   tdrData: ITDRData = this.appDataService.appData.tdrData ?? new TDRData();
   timezones = this.appSettingsService.timezones;
   private modalRef!: NgbModalRef;
   @ViewChild('teamsPanelHelp') teamsPanelHelp: any;
+  console = console;
 
   constructor(
     private appService: AppService,
     private appDataService: AppDataService,
     private appSettingsService: AppSettingsService,
+    private coreService: CoreService,
     private modalService: NgbModal
   ) {
-    console.log('fire'); //km
   }
 
   setMyTeam(team: ITeam) {
@@ -78,5 +82,35 @@ export class TDRDataPageComponent {
 
   closeModal(value: any) {
     this.modalRef.close();
+  }
+
+  validateNetworkNo(value: any) {
+    let networkNo = value.target['valueAsNumber'];
+    this.tdrData.networkNo = networkNo;
+  }
+
+  timezoneDown(value: number | undefined) {
+    let curTZ = this.tdrData.currentTimezoneOffset ?? 0;
+    if (curTZ > -12) {
+      this.tdrData.currentTimezoneOffset = curTZ - 1;
+    }
+  }
+
+  timezoneUp(value: number | undefined) {
+    let curTZ = this.tdrData.currentTimezoneOffset ?? 0;
+    if (curTZ < 12) {
+      this.tdrData.currentTimezoneOffset = curTZ + 1;
+    }
+  }
+
+  updateGridOffset(arg0: IPoint3D | undefined, dir: string, event: FocusEvent) {
+    if (arg0) {
+      arg0[dir as keyof typeof arg0] = this.coreService.getValueAsNumberFromEvent(event);
+    }
+  }
+
+  ngOnDestroy(): void {
+    //km validate all form and page
+    this.appDataService.updateAndSaveAppData();
   }
 }

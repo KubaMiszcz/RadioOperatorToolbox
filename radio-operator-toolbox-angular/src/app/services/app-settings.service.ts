@@ -1,3 +1,4 @@
+import { CoreService } from 'src/app/services/core.service';
 import { Injectable } from '@angular/core';
 import { AppSettings, IAppSettings } from '../models/app-settings.model';
 import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON, DTG_TIMEZONES_CODES } from 'src/assets/app-default-settings';
@@ -18,8 +19,8 @@ export class AppSettingsService {
   alphabet: string[] = [];
   timezones = DTG_TIMEZONES_CODES;
 
-  constructor() {
-    this.importAppSettings(JSON.stringify(APP_DEFAULT_SETTINGS_JSON));
+  constructor(private coreService: CoreService) {
+    this.initAppSettings();
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     // this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
     // this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
@@ -29,30 +30,32 @@ export class AppSettingsService {
     // this.alphabet = ALPHABET_PL;
   }
 
-  importAppSettings(json: string) {
+  initAppSettings() {
     try {
-      this.appSettings = this.ValidatedAppSettings(json);
-      console.log('Poprawnie zaimportowano ustawienia aplikacji');
-      this.saveAppSettingsToLocalStorage();
-      // alert('Poprawnie zaimportowano ustawienia aplikacji');
+      let appSettings = this.coreService.getFromLocalStorage('appSettings');
+      if (!appSettings) {
+        this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
+        return;
+      }
+
+      this.updateAndSaveAppSettings(appSettings);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  updateAndSaveAppSettings(appSettings: IAppSettings = this.appSettings) {
+    try {
+      this.appSettings = this.getValidatedAppSettings(appSettings);
+      this.coreService.saveToLocalStorage('appSettings', this.appSettings);
+      console.log('Poprawnie zupdatowano i zapisano USTAWIENIA aplikacji');
     } catch (error) {
       alert(error);
     }
   }
 
-  ValidatedAppSettings(json: string) {
-    let result: IAppSettings = JSON.parse(json);
-
-    return result;
-  }
-
-  saveAppSettingsToLocalStorage() {
-    localStorage.setItem('appSettings', JSON.stringify(this.appSettings));
-    console.log('Poprawnie zapisano ustawienia aplikacji');
-  }
-
-  loadAppSettingsFromLocalStorageOrDefault() {
-    this.appSettings = JSON.parse(localStorage.getItem('appSettings') ?? JSON.stringify(APP_DEFAULT_SETTINGS_JSON));
+  private getValidatedAppSettings(value: IAppSettings) {
+    return value;
   }
 
   private findUniqueWords() {
