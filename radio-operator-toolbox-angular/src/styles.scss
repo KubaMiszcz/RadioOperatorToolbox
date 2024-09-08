@@ -184,8 +184,12 @@ select {
     max-width: 7em;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
+}
+
+.border-radius-0 {
+    border-radius: 0 0 0 0;
 }
 
 @font-face {
