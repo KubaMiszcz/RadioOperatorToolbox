@@ -7,6 +7,8 @@ import { ITeam, Team } from 'src/app/models/team.model';
 import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
+import { CoreService } from 'src/app/services/core.service';
+import { IPoint3D } from 'src/app/models/point3D.model';
 
 @Component({
   selector: 'app-tdr-data-page',
@@ -26,9 +28,9 @@ export class TDRDataPageComponent implements OnDestroy {
     private appService: AppService,
     private appDataService: AppDataService,
     private appSettingsService: AppSettingsService,
+    private coreService: CoreService,
     private modalService: NgbModal
   ) {
-    console.log('fire'); //km
   }
 
   setMyTeam(team: ITeam) {
@@ -87,8 +89,28 @@ export class TDRDataPageComponent implements OnDestroy {
     this.tdrData.networkNo = networkNo;
   }
 
+  timezoneDown(value: number | undefined) {
+    let curTZ = this.tdrData.currentTimezoneOffset ?? 0;
+    if (curTZ > -12) {
+      this.tdrData.currentTimezoneOffset = curTZ - 1;
+    }
+  }
+
+  timezoneUp(value: number | undefined) {
+    let curTZ = this.tdrData.currentTimezoneOffset ?? 0;
+    if (curTZ < 12) {
+      this.tdrData.currentTimezoneOffset = curTZ + 1;
+    }
+  }
+
+  updateGridOffset(arg0: IPoint3D | undefined, dir: string, event: FocusEvent) {
+    if (arg0) {
+      arg0[dir as keyof typeof arg0] = this.coreService.getValueAsNumberFromEvent(event);
+    }
+  }
+
   ngOnDestroy(): void {
-    //km validate page
-    this.appDataService.saveAppDataToLocalStorage();
+    //km validate all form and page
+    this.appDataService.updateAndSaveAppData();
   }
 }
