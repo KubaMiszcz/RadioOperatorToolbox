@@ -1,4 +1,4 @@
-import { ReportsHistoryComponent } from './pages/reports/reports-history-page/reports-history-page.component';
+import { ReportsHistoryPageComponent } from './pages/reports/reports-history-page/reports-history-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -8,18 +8,25 @@ import { CorrespondenceBookPageComponent } from './pages/correspondence-book-pag
 import { TDRDataPageComponent as TDRDataPageComponent } from './pages/tdr-data-page/tdr-data-page.component';
 import { AppSettingsPageComponent } from './pages/app-settings-page/app-settings-page.component';
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
-import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
+import { CheatsheetComponent } from './pages/DEPR/cheatsheet-page-DEPR/cheatsheet-page.component';
 import { ReportsPageComponent } from './pages/DEPR/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports/report-tab/report-tab.component';
 import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
 import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.component';
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 import { CreateReportPageComponent } from './pages/reports/create-report-page/create-report-page.component';
+import { CalculatorsPageComponent } from './pages/calculators-page/calculators-page.component';
+import { CheatsheetsPageComponent } from './pages/cheatsheets-page/cheatsheets-page.component';
 
 const routes: Routes = [
   { path: 'tdr-data-page', component: TDRDataPageComponent },
   { path: 'create-report-page', component: CreateReportPageComponent },
-  { path: 'reports-history-page', component: ReportsHistoryComponent },
+  { path: 'reports-history-page', component: ReportsHistoryPageComponent },
+  
+  { path: 'cheatsheets-page', component: CheatsheetsPageComponent },
+  { path: 'calculators-page', component: CalculatorsPageComponent },
+
+
 
   { path: 'reports-page', component: ReportsPageComponent },
   { path: 'report-tab', component: ReportTabComponent },

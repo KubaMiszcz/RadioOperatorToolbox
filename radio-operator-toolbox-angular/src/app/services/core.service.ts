@@ -7,6 +7,7 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class CoreService {
+  
   constructor() {}
 
   isDevEnv() {
@@ -111,5 +112,9 @@ export class CoreService {
 
   getValueAsNumberFromEvent(event: FocusEvent | Event): number {
     return (event.target as HTMLInputElement).valueAsNumber;
+  }
+
+  round(value: number, accuracy: number): number {
+    return Number(value.toFixed(accuracy));
   }
 }

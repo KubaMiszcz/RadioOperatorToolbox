@@ -33,19 +33,19 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'Ściągawki',
     isLabelShowed: true,
-    link: 'xxxcheatsheets-page',
+    link: 'cheatsheets-page',
   },
   {
     label: 'Szyfro wanie',
     isLabelShowed: true,
-    link: 'xxxcheatsheets-page',
+    link: 'xxxxx-page',
     subItems: [],
   },
   //
   {
     label: 'Kalkulatory',
     isLabelShowed: true,
-    link: 'xxxcalculators-page',
+    link: 'calculators-page',
   },
   {
     label: 'Książka korespon dencji',
@@ -55,7 +55,7 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'Eksperymenty',
     isLabelShowed: true,
-    link: 'xxxsettings-page',
+    link: 'xxxxx-page',
   },
   //
   {

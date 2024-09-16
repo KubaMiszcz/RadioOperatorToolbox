@@ -10,7 +10,7 @@ import { AppService } from 'src/app/services/app.service';
   templateUrl: './reports-history-page.component.html',
   styleUrls: ['./reports-history-page.component.scss'],
 })
-export class ReportsHistoryComponent {
+export class ReportsHistoryPageComponent {
   savedReports: IReport[] = [];
   
   constructor(private appService: AppService, private appDataService: AppDataService, private appSettingsService: AppSettingsService,private router: Router) {

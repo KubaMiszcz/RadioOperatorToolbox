@@ -18,7 +18,7 @@ import { HomePageComponent as HomePageComponent } from './pages/home-page/home-p
 import { NotepadPageComponent } from './pages/notepad-page/notepad-page.component';
 import { NotepadNavbarComponent } from './pages/notepad-page/notepad-navbar/notepad-navbar.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { CheatsheetComponent } from './pages/cheatsheet-page/cheatsheet-page.component';
+import { CheatsheetComponent } from './pages/DEPR/cheatsheet-page-DEPR/cheatsheet-page.component';
 import { ReportsPageComponent } from './pages/DEPR/reports-page/reports-page.component';
 import { ReportTabComponent } from './pages/reports/report-tab/report-tab.component';
 import { EncodingsPageComponent } from './pages/encodings-page/encodings-page.component';
@@ -28,8 +28,10 @@ import { VICTabComponent } from './pages/encodings-page/vic-tab/vic-tab.componen
 import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-square-tab/polybius-square-tab.component';
 import { HelpTileComponent } from './core-components/help-tile/help-tile.component';
 import { CreateReportPageComponent } from './pages/reports/create-report-page/create-report-page.component';
-import { ReportsHistoryComponent } from './pages/reports/reports-history-page/reports-history-page.component';
+import { ReportsHistoryPageComponent } from './pages/reports/reports-history-page/reports-history-page.component';
 import { ValidationInfoComponent } from './core-components/validation-info/validation-info.component';
+import { CheatsheetsPageComponent } from './pages/cheatsheets-page/cheatsheets-page.component';
+import { CalculatorsPageComponent } from './pages/calculators-page/calculators-page.component';
 
 
 
@@ -59,8 +61,10 @@ import { ValidationInfoComponent } from './core-components/validation-info/valid
     PolybiusSquareTabComponent,
     HelpTileComponent,
     CreateReportPageComponent,
-    ReportsHistoryComponent,
+    ReportsHistoryPageComponent,
     ValidationInfoComponent,
+    CheatsheetsPageComponent,
+    CalculatorsPageComponent,
   ],
   imports: [
     BrowserModule,

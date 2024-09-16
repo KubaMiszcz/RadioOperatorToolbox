@@ -32,6 +32,8 @@ export class AppDataService {
     this.appData = this.getValidatedAppData(new AppData());
     if (this.coreService.isDevEnv()) {
       this.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON); //km dev only, comment it in PROD
+      console.log('devmode');
+      return;
     }
 
     this.updateAndSaveAppData(this.appData);

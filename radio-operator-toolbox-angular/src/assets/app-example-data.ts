@@ -469,7 +469,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
   cheatsheetData: {
     wavesFreqsLengthPairs: [
       { freq: 4, length: 0 },
-      { freq: 6, length: 0 },
+      { freq: 7, length: 0 },
       { freq: 8, length: 0 },
     ],
   },

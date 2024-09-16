@@ -44,6 +44,7 @@ export class NavBarComponent {
     modalRef.componentInstance.modalResult.subscribe((result:MODAL_RESULT) => {
       if (result === MODAL_RESULT.YES) {
         this.appDataService.clearAllData();
+        this.appSettingsService.clearAllSettings();
       }
       modalRef.close();
     })
