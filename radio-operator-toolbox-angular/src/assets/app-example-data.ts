@@ -463,6 +463,8 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
     currentTimezoneOffset: +2,
     gridOffsetOddDays: { X: -100, Y: 200, Z: 0 },
     gridOffsetEvenDays: { X: -200, Y: 100, Z: 0 },
+    sarnegCodewordEvenDays:'GRYPSUJCIE',
+    sarnegCodewordOddDays:'TECHNOKLUB'
   },
   cheatsheetData: {
     wavesFreqsLengthPairs: [

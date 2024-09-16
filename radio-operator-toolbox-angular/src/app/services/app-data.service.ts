@@ -50,9 +50,12 @@ export class AppDataService {
   private getValidatedAppData(value: IAppData) {
     value.tdrData.teams = value.tdrData?.teams?.filter((t) => !!t.name && !!t.codename) ?? [];
     value.savedReports = value.savedReports?.filter((r) => !!r.name && !!r.name) ?? [];
+    
     value.tdrData.alerts = value.tdrData?.alerts?.filter((t) => t.value) ?? [];
     value.tdrData.alerts = this.coreService.getArraySortedByPropertyName(value.tdrData.alerts, 'key');
-    value.tdrData.keywords = value.tdrData?.keywords?.filter((t) => t.value);
+    
+    value.tdrData.keywords = value.tdrData?.keywords?.filter((t) => t.value) ?? [];
+    value.tdrData.keywords = this.coreService.getArraySortedByPropertyName(value.tdrData.keywords, 'key');
     value.tdrData.keywords?.forEach((k) => (k.key = k.key.toUpperCase()));
 
     return value;

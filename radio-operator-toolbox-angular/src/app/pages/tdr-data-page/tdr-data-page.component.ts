@@ -9,6 +9,7 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 import { CoreService } from 'src/app/services/core.service';
 import { IPoint3D } from 'src/app/models/point3D.model';
+import { VALIDATIONS_TYPES } from 'src/app/models/constants/validations-types.enum';
 
 @Component({
   selector: 'app-tdr-data-page',
@@ -23,6 +24,7 @@ export class TDRDataPageComponent implements OnDestroy {
   private modalRef!: NgbModalRef;
   @ViewChild('teamsPanelHelp') teamsPanelHelp: any;
   console = console;
+  VALIDATIONS_TYPES=VALIDATIONS_TYPES;
 
   constructor(
     private appService: AppService,
@@ -30,8 +32,7 @@ export class TDRDataPageComponent implements OnDestroy {
     private appSettingsService: AppSettingsService,
     private coreService: CoreService,
     private modalService: NgbModal
-  ) {
-  }
+  ) {}
 
   setMyTeam(team: ITeam) {
     this.appData.myTeam = team;
@@ -106,6 +107,23 @@ export class TDRDataPageComponent implements OnDestroy {
   updateGridOffset(arg0: IPoint3D | undefined, dir: string, event: FocusEvent) {
     if (arg0) {
       arg0[dir as keyof typeof arg0] = this.coreService.getValueAsNumberFromEvent(event);
+    }
+  }
+
+  validateAlert(value: KeyValue<number, string>) {
+    if (this.tdrData.alerts?.some((k) => k.key === value.key)) {
+      alert('alert z tym numerem juz istnieje');
+    }
+    if (this.tdrData.alerts?.some((k) => k.value === value.value)) {
+      alert('alert z taka trescia juz istnieje');
+    }
+  }
+  validateKeyword(value: KeyValue<string, string>) {
+    if (this.tdrData.keywords?.some((k) => k.key.toLowerCase() === value.key.toLowerCase())) {
+      alert('takie slowo kodowe juz istnieje');
+    }
+    if (this.tdrData.alerts?.some((k) => k.value.toLowerCase() === value.value.toLowerCase())) {
+      alert('slowo kodowe z taka trescia juz istnieje');
     }
   }
 
