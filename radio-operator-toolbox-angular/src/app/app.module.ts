@@ -29,6 +29,7 @@ import { PolybiusSquareTabComponent } from './pages/encodings-page/polybius-squa
 import { HelpTileComponent } from './core-components/help-tile/help-tile.component';
 import { CreateReportPageComponent } from './pages/reports/create-report-page/create-report-page.component';
 import { ReportsHistoryComponent } from './pages/reports/reports-history-page/reports-history-page.component';
+import { ValidationInfoComponent } from './core-components/validation-info/validation-info.component';
 
 
 
@@ -59,6 +60,7 @@ import { ReportsHistoryComponent } from './pages/reports/reports-history-page/re
     HelpTileComponent,
     CreateReportPageComponent,
     ReportsHistoryComponent,
+    ValidationInfoComponent,
   ],
   imports: [
     BrowserModule,
