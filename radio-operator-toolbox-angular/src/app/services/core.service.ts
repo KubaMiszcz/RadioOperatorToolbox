@@ -7,11 +7,14 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class CoreService {
-  
+  deg2Rad(angleDeg: number) {
+    return angleDeg * (Math.PI / 180);
+  }
+
   constructor() {}
 
   isDevEnv() {
-    return packageJson.build.startsWith('dev');
+    return packageJson.build.includes('dev');
   }
 
   getRandomNumber(max: number) {
@@ -114,7 +117,7 @@ export class CoreService {
     return (event.target as HTMLInputElement).valueAsNumber;
   }
 
-  round(value: number, accuracy: number): number {
+  round(value: number, accuracy: number = 0): number {
     return Number(value.toFixed(accuracy));
   }
 }

@@ -47,7 +47,7 @@ export class AppSettingsService {
   clearAllSettings() {
     this.appSettings = this.getValidatedAppSettings(new AppSettings());
     if (this.coreService.isDevEnv()) {
-      console.log('devmode');
+      console.warn('devmode');
       this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON); //km dev only, comment it in PROD
       return;
     }

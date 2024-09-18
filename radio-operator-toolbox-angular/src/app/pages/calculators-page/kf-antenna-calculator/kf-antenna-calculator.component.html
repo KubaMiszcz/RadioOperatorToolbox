@@ -1,0 +1,47 @@
+<div class="card mb-4">
+    <h5 class="card-header p-1 d-flex">
+        <div *ngIf="isCollapsed" class="px-2" (click)="isCollapsed=!isCollapsed"><i class="fa fa-chevron-circle-right " aria-hidden="true"></i>
+        </div>
+        <div *ngIf="!isCollapsed" class="px-2" (click)="isCollapsed=!isCollapsed"><i class="fa fa-chevron-circle-down " aria-hidden="true"></i>
+        </div>
+        <span> Długośc Anteny KF: </span>
+    </h5>
+    <div *ngIf="!isCollapsed" class="card-body p-1">
+        <div>dlugosc fali: λ=c/f</div>
+        <div class="input-group mb-1">
+            <span class="input-group-text px-1  text-center">wspolczynnik skrócenia: </span>
+            <input [(ngModel)]="shrinkFactor" type="number" class="form-control text-center" placeholder="f [MHz]"
+                (blur)="applyShrinkFactor()">
+        </div>
+        <div>
+            <div>jedna czwarta fali = dlugosc ramiena anteny (dipol prosty)</div>
+            <!-- <div class="mb-2"> -->
+            <div *ngFor="let wave of wavesFreqsLengthsPairs, index as idx" class="input-group mb-1">
+                <span class="input-group-text px-1  text-center">f{{idx+1}} [MHz]</span>
+                <input [(ngModel)]="wave.freq" type="number" class="form-control text-center" placeholder="f [MHz]"
+                    (blur)="udpateLength(wave)" value="{{wave.freq}}">
+                <span class="input-group-text ps-2 px-2  text-center">1⁄4 λ{{idx+1}} [m]</span>
+                <input [(ngModel)]="wave.length" type="number" class="form-control text-center" placeholder="½ λ [m]"
+                    (blur)="updateFreq(wave)" value="{{wave.length}}">
+            </div>
+        </div>
+        <div>
+            <div>podniesienie dla <b>f1</b> przy odwroconym V</div>
+            <!-- <div class="mb-2"> -->
+            <div *ngFor="let angleHeight of anglesHeights" class="input-group mb-1">
+                <span class="input-group-text px-1  text-center">kąt [st]:</span>
+                <input [(ngModel)]="angleHeight.angle" type="number" class="form-control text-center" placeholder="kąt"
+                    (blur)="updateHeight(angleHeight)">
+                <span class="input-group-text px-1  text-center">podniesienie [m]:</span>
+                <input [(ngModel)]="angleHeight.height" type="number" class="form-control text-center"
+                    placeholder="podniesienie" disabled>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="card-footer p-1">
+            <i class="fas fa-info-circle    "></i>
+            jesli dla F1 masz SWR1 i jesli nie zmieniales dlugosci anteny, zwiekszyles czestotliwosc do F2, i SWR2
+            spadlo to: <b>WYDŁUŻ</b> antene zeby dopasowac do F1 - SWR1 spadnie
+        </div>
+    </div>
+</div>

@@ -32,6 +32,8 @@ import { ReportsHistoryPageComponent } from './pages/reports/reports-history-pag
 import { ValidationInfoComponent } from './core-components/validation-info/validation-info.component';
 import { CheatsheetsPageComponent } from './pages/cheatsheets-page/cheatsheets-page.component';
 import { CalculatorsPageComponent } from './pages/calculators-page/calculators-page.component';
+import { KfAntennaCalculatorComponent } from './pages/calculators-page/kf-antenna-calculator/kf-antenna-calculator.component';
+import { GridDistanceCalculatorComponent } from './pages/calculators-page/grid-distance-calculator/grid-distance-calculator.component';
 
 
 
@@ -65,6 +67,8 @@ import { CalculatorsPageComponent } from './pages/calculators-page/calculators-p
     ValidationInfoComponent,
     CheatsheetsPageComponent,
     CalculatorsPageComponent,
+    KfAntennaCalculatorComponent,
+    GridDistanceCalculatorComponent,
   ],
   imports: [
     BrowserModule,
