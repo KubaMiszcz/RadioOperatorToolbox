@@ -40,6 +40,9 @@ export class AppSettingsService {
         return;
       }
 
+      //kmLUTNIA24
+              this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
+//kmLUTNIA24
       this.updateAndSaveAppSettings(appSettings);
     } catch (error) {
       console.log(error);
