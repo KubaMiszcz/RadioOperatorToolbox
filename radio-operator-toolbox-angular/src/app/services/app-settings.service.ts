@@ -23,8 +23,8 @@ export class AppSettingsService {
     this.initAppSettings();
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
     //LUTNIA
-    this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
-    this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
+    //this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
+    //this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
     // LUTNIA
     
     //DEBUG
