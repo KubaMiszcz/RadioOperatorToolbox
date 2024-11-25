@@ -320,7 +320,7 @@ export const REPORTS_TEMPLATES: IReport[] = [
           {
             label: 'E',
             description: 'ich',
-            valueType: VALUE_TYPES_ENUM.MGRS1km,
+            valueType: VALUE_TYPES_ENUM.MGRS1m,
           },
           {
             label: 'F',
