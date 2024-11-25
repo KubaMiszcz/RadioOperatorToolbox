@@ -22,10 +22,14 @@ export class AppSettingsService {
   constructor(private coreService: CoreService) {
     this.initAppSettings();
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
-    //LUTNIA
     //this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
     //this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
-    // LUTNIA
+    
+
+            //kmLUTNIA24
+      this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
+    //kmLUTNIA24
+
     
     //DEBUG
     // this.findUniqueWords();
@@ -41,11 +45,6 @@ export class AppSettingsService {
       }
 
       this.updateAndSaveAppSettings(appSettings);
-
-            //kmLUTNIA24
-      this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
-    //kmLUTNIA24
-    
     } catch (error) {
       console.log(error);
     }
