@@ -22,26 +22,30 @@ export class AppSettingsService {
   constructor(private coreService: CoreService) {
     this.initAppSettings();
     this.codewords = WORDS_10LETTERSUNIQUE_2XCOOL_PL;
-    // this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
-    // this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
-
+    //this.appSettings.reportsTemplates.push(exampleMEDEVAC_PL);
+    //this.appSettings.reportsTemplates.push(exampleSALUTE_PL);
+       
     //DEBUG
     // this.findUniqueWords();
     // this.alphabet = ALPHABET_PL;
   }
 
   initAppSettings() {
-    try {
-      let appSettings = this.coreService.getFromLocalStorage('appSettings');
-      if (!appSettings) {
+    // try {
+    //   let appSettings = this.coreService.getFromLocalStorage('appSettings');
+    //   if (!appSettings) {
         this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
-        return;
-      }
+      let appSettings = APP_DEFAULT_SETTINGS_JSON;
+        
+    this.appSettings = this.getValidatedAppSettings(appSettings);
+      this.coreService.saveToLocalStorage('appSettings', this.appSettings);
+      //   return;
+      // }
 
-      this.updateAndSaveAppSettings(appSettings);
-    } catch (error) {
-      console.log(error);
-    }
+    //   this.updateAndSaveAppSettings(appSettings);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   updateAndSaveAppSettings(appSettings: IAppSettings = this.appSettings) {
