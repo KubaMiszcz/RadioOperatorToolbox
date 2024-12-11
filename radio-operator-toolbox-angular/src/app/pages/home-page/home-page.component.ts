@@ -1,8 +1,8 @@
 import { IMenuTile_V2 } from './../../models/menu-item.model';
 import { AppDataService } from 'src/app/services/app-data.service';
-import { AppService } from '../../services/app.service';
 import { Component } from '@angular/core';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-home-page',
