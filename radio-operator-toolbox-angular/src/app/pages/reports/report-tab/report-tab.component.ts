@@ -74,23 +74,7 @@ export class ReportTabComponent {
   }
 
   copyToClipboard() {
-    let result = '';
-    result += this.report.name + '\n';
-    this.report.lines?.forEach((line) => {
-      result += `${line.lineHeader}: `;
-      line.lineValues.forEach((lineValue) => {
-        if (lineValue.value) {
-          if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
-            result += `${lineValue.label ? lineValue.label + ':' : ''}${lineValue.value}, `;
-          } else {
-            result += `${lineValue.label}, `;
-          }
-        }
-      });
-
-      result += `\n`;
-    });
-
+    let result = this.appService.convertReportToTXT(this.report);
     alert(`Skopiowano raport do schowka:\n\n${result}`);
     this.reportContentTXT = result;
   }

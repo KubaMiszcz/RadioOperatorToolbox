@@ -1,3 +1,4 @@
+import { Report } from './../../../models/report.model';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IReport } from 'src/app/models/report.model';
@@ -12,16 +13,30 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class ReportsHistoryPageComponent {
   savedReports: IReport[] = [];
-  
-  constructor(private appService: AppService, private appDataService: AppDataService, private appSettingsService: AppSettingsService,private router: Router) {
+  activeReport: IReport = new Report();
+  activeReportContent = '';
+  isShowContent = false;
+
+  constructor(
+    private appService: AppService,
+    private appDataService: AppDataService,
+    private appSettingsService: AppSettingsService,
+    private router: Router
+  ) {
     this.savedReports = this.appDataService.appData.savedReports ?? [];
   }
-  
+
   setCurrentReport(report: IReport) {
     this.appService.currentReportBS.next(report);
   }
 
   removeReport(report: IReport) {
-  this.appDataService.removeReport(report)
+    this.appDataService.removeReport(report);
+  }
+
+  setActiveReport(report: IReport) {
+    this.isShowContent = this.activeReport.name !== report.name ? true : !this.isShowContent;
+    this.activeReport = report;
+    this.activeReportContent = this.appService.convertReportToTXT(report, false);
   }
 }

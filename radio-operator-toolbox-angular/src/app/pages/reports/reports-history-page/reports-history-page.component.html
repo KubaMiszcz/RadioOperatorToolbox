@@ -1,7 +1,16 @@
-<div *ngFor="let report of savedReports" class="input-group p-1">
-    <label for="validationCustomUsername" class="input-group-text flex-fill px-1" id="inputGroupPrepend">{{report.name}}</label>
-    <button class="btn  btn-primary w-10" title="{{report.name}}" type="button" [routerLink]="[ '/report-tab']"
-        (click)="setCurrentReport(report)"> <i class="fa fa-edit" aria-hidden="true"></i></button>
-    <button class="btn  btn-danger w-10" title="{{report.name}}" type="button" (click)="removeReport(report)"> <i class="fa fa-trash"
-            aria-hidden="true"></i></button>
+<div *ngFor="let report of savedReports">
+    <div class="input-group pt-2">
+        <label for="validationCustomUsername" class="input-group-text flex-fill px-1" id="inputGroupPrepend"
+        (click)="setActiveReport(report)">
+        
+        <i class="fa fa-chevron-circle-right me-1" aria-hidden="true"></i>
+            {{report.name}}</label>
+        <button class="btn  btn-primary w-10 m-0" title="{{report.name}}" type="button" [routerLink]="[ '/report-tab']"
+            (click)="setCurrentReport(report)"> <i class="fa fa-edit" aria-hidden="true"></i></button>
+        <button class="btn  btn-danger w-10 m-0" title="{{report.name}}" type="button" (click)="removeReport(report)"> <i
+                class="fa fa-trash" aria-hidden="true"></i></button>
+    </div>
+    <div *ngIf="(report.name === this.activeReport.name) && isShowContent" class=" ps-1 pb-2">
+        <div class="report-content input-group-text text-start">{{activeReportContent}}</div>
+    </div>
 </div>
