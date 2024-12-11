@@ -1,18 +1,20 @@
 <div class="card mb-4">
-
+    
+    
     <h5 class="card-header d-flex">
         <div><i class="fa fa-circle-chevron-right me-1" aria-hidden="true"></i>Korespondenci:
         </div>
         <i class="fa fa-circle-question ms-auto me-1" aria-hidden="true" (click)="showTooltip()"></i>
     </h5>
-
+    
     <div class="mb-2">
         <div class="input-group p-1">
             <label for="validationCustomUsername" class="input-group-text" id="inputGroupPrepend">Nr sieci:</label>
-            <input type="number" [ngModel]="tdrData.networkNo?.toString()?.padStart(5,'0')"
-                class="form-control text-center" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required (blur)="validateNetworkNo($event)">
+            <input type="number" maxlength="5" [ngModel]="tdrData.networkNo?.toString()?.padStart(5,'0')"
+            class="form-control text-center" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+            required (blur)="validateNetworkNo($event)">
         </div>
+        <!-- <app-validation-info [type]="VALIDATIONS_TYPES.REQUIRED"></app-validation-info> -->
     </div>
 
     <div class="input-group p-1 mb-2 w-100">
@@ -105,8 +107,10 @@
     <h5 class="card-header">Alarmy:</h5>
     <div *ngFor="let alert of tdrData.alerts?.sort(); index  as idx" class="input-group mb-1">
         <!-- <label class="input-group-text px-1 w-1a d-flex justify-content-center col-1"><b>{{idx+1}}</b></label> -->
-        <input [(ngModel)]="alert.key" type="number" class="form-control text-center w-2em" placeholder="nazwa">
-        <input [(ngModel)]="alert.value" type="text" class="form-control text-center" placeholder="kryptonim">
+        <input [(ngModel)]="alert.key" type="number" maxlength="2" class="form-control text-center w-2em"
+            placeholder="nazwa" (blur)="validateAlert(alert)">
+        <input [(ngModel)]="alert.value" type="text" maxlength="128" class="form-control text-center"
+            placeholder="kryptonim">
         <button type="button" class="btn btn-danger input-group-text m-0 px-1 w-10" title="{{alert.key}}"
             (click)="removeAlert(alert)">
             <i class="fas fa-trash    "></i>
@@ -186,6 +190,27 @@
     </div>
 </div>
 
+
+
+
+
+<div class="card mb-4">
+    <h5 class="card-header">Kod SARNEG:</h5>
+    <div class="d-flex align-items-center ">
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-40 d-flex justify-content-center"><b>Dni parzyste: </b></label>
+            <input [(ngModel)]="tdrData.sarnegCodewordEvenDays" type="text" class="form-control text-center"
+                placeholder="sarnegCodewordOddDays">
+        </div>
+    </div>
+    <div class="d-flex align-items-center ">
+        <div class="input-group mb-1">
+            <label class="input-group-text px-1 w-40 d-flex justify-content-center"><b>Dni nieparzyste: </b></label>
+            <input [(ngModel)]="tdrData.sarnegCodewordOddDays" type="text" class="form-control text-center"
+                placeholder="sarnegCodewordOddDays">
+        </div>
+    </div>
+</div>
 
 
 

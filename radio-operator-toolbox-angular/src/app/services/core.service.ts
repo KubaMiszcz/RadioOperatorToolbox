@@ -7,10 +7,14 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class CoreService {
+  deg2Rad(angleDeg: number) {
+    return angleDeg * (Math.PI / 180);
+  }
+
   constructor() {}
 
   isDevEnv() {
-    return packageJson.build.startsWith('dev');
+    return packageJson.build.includes('dev');
   }
 
   getRandomNumber(max: number) {
@@ -101,8 +105,13 @@ export class CoreService {
     localStorage.setItem(name, JSON.stringify(value));
   }
 
-  getFromLocalStorage(name: string) {
-    return JSON.parse(localStorage.getItem(name) ?? '');
+  getFromLocalStorage<T>(name: string): T | null {
+    let item = localStorage.getItem(name);
+    if (item) {
+      return JSON.parse(item);
+    }
+
+    return null;
   }
 
   getValueFromEvent(event: FocusEvent | Event): string {
@@ -111,5 +120,13 @@ export class CoreService {
 
   getValueAsNumberFromEvent(event: FocusEvent | Event): number {
     return (event.target as HTMLInputElement).valueAsNumber;
+  }
+
+  round(value: number, accuracy: number = 0): number {
+    return Number(value.toFixed(accuracy));
+  }
+
+  isArrayNullOrEmpty<T>(array: T[]): boolean {
+    return !!(array?.length < 1);
   }
 }

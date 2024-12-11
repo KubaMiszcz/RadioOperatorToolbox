@@ -1,10 +1,11 @@
 import { CoreService } from 'src/app/services/core.service';
 import { Injectable } from '@angular/core';
 import { AppSettings, IAppSettings } from '../models/app-settings.model';
-import { ALPHABET_PL, APP_DEFAULT_SETTINGS_JSON, DTG_TIMEZONES_CODES } from 'src/assets/app-default-settings';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 import { BehaviorSubject } from 'rxjs';
+import { DTG_TIMEZONES_CODES } from 'src/assets/app-constants';
+import { DEFAULT_APP_SETTINGS_JSON } from 'src/assets/app-default-settings';
 
 @Injectable({
   providedIn: 'root',
@@ -32,9 +33,9 @@ export class AppSettingsService {
 
   initAppSettings() {
     try {
-      let appSettings = this.coreService.getFromLocalStorage('appSettings');
+      let appSettings = this.coreService.getFromLocalStorage<IAppSettings>('appSettings');
       if (!appSettings) {
-        this.updateAndSaveAppSettings(APP_DEFAULT_SETTINGS_JSON);
+        this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON);
         return;
       }
 
@@ -42,6 +43,17 @@ export class AppSettingsService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  clearAllSettings() {
+    this.appSettings = this.getValidatedAppSettings(new AppSettings());
+    // if (this.coreService.isDevEnv()) {
+    //   console.warn('devmode');
+    // this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON); //km dev only, comment it in PROD
+    //   return;
+    // }
+
+    this.updateAndSaveAppSettings(this.appSettings);
   }
 
   updateAndSaveAppSettings(appSettings: IAppSettings = this.appSettings) {
@@ -55,6 +67,14 @@ export class AppSettingsService {
   }
 
   private getValidatedAppSettings(value: IAppSettings) {
+    if (this.coreService.isArrayNullOrEmpty(value.menuTilesTree)) {
+      value.menuTilesTree = DEFAULT_APP_SETTINGS_JSON.menuTilesTree;
+    }
+
+    if (this.coreService.isArrayNullOrEmpty(value.reportsTemplates)) {
+      value.reportsTemplates = DEFAULT_APP_SETTINGS_JSON.reportsTemplates;
+    }
+
     return value;
   }
 
@@ -80,4 +100,3 @@ export class AppSettingsService {
     return false;
   }
 }
-

@@ -3,15 +3,12 @@ import { Injectable } from '@angular/core';
 import { AppSettingsService } from './app-settings.service';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
-import { IReport, Report } from '../models/report.model';
+import { IReport, Report, VALUE_TYPES_ENUM } from '../models/report.model';
 import { CoreService } from './core.service';
 import { AppDataService } from './app-data.service';
 import { forward } from 'mgrs';
 import { formatDate } from '@angular/common';
-import {
-  DTG_TIMEZONES_CODES,
-  MONTHS_NAMES_PL,
-} from 'src/assets/app-default-settings';
+import { DTG_TIMEZONES_CODES, MONTHS_NAMES_PL } from 'src/assets/app-constants';
 
 @Injectable({
   providedIn: 'root',
@@ -19,16 +16,10 @@ import {
 export class AppService {
   currentReportBS = new BehaviorSubject<IReport>(new Report());
 
-  constructor(
-    private AppDataService: AppDataService,
-    private appSettingsService: AppSettingsService,
-    private coreService: CoreService
-  ) {
+  constructor(private AppDataService: AppDataService, private appSettingsService: AppSettingsService, private coreService: CoreService) {
     this.appSettingsService.appSettings;
 
-    this.currentReportBS.next(
-      appSettingsService.appSettings.reportsTemplates?.[2] ?? new Report()
-    );
+    this.currentReportBS.next(appSettingsService.appSettings.reportsTemplates?.[2] ?? new Report());
   }
 
   getPositionLatiLong(): Promise<any> {
@@ -61,13 +52,7 @@ export class AppService {
     return new Promise<string>((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         (resp) => {
-          resolve(
-            this.LatiLong2MGRS(
-              resp.coords.latitude,
-              resp.coords.longitude,
-              precision
-            )
-          );
+          resolve(this.LatiLong2MGRS(resp.coords.latitude, resp.coords.longitude, precision));
         },
         (err) => {
           reject(err);
@@ -99,14 +84,33 @@ export class AppService {
 
     let monthNameMMM = MONTHS_NAMES_PL[date.getMonth()];
 
-    let dtg = formatDate(date, 'ddxxxyy', 'en')
-      .replace('xxx', monthNameMMM)
-      .toUpperCase();
+    let dtg = formatDate(date, 'ddxxxyy', 'en').replace('xxx', monthNameMMM).toUpperCase();
 
     return dtg;
   }
 
   getGUID() {
     return Guid.create().toString();
+  }
+
+  convertReportToTXT(report: IReport, withName = true): string {
+    let result = '';    
+    result += withName ? report.name + '\n' : '';
+    report.lines?.forEach((line) => {
+      result += `${line.lineHeader}: `;
+      line.lineValues.forEach((lineValue) => {
+        if (lineValue.value) {
+          if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
+            result += `${lineValue.label ? lineValue.label + ':' : ''}${lineValue.value}, `;
+          } else {
+            result += `${lineValue.label}, `;
+          }
+        }
+      });
+
+      result += `\n`;
+    });
+
+    return result;
   }
 }

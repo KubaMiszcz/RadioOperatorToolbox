@@ -20,7 +20,6 @@ export class ModalGenericComponent {
   isButtonVisible(button: MODAL_RESULT): boolean {
     // return Array(this.MODAL_RESULTS).some((m) => String(m) === arg0.toString()); //km
     let result = this.modalResults.some((r) => r === button);
-    console.log(result);
 
     return result;
     // if (Object.values(this.MODAL_RESULTS).includes(result)) {

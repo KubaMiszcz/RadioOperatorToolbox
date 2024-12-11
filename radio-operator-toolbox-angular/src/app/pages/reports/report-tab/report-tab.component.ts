@@ -5,7 +5,7 @@ import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 import { CoreService } from 'src/app/services/core.service';
-import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
+import { NATO_ALPHABET_EN } from 'src/assets/app-constants';
 
 @Component({
   selector: 'app-report-tab',
@@ -36,7 +36,7 @@ export class ReportTabComponent {
         return;
       }
 
-      this.report.name = this.report.type + ' nr: ';
+      this.report.name = this.report.type + ' nr: ' + appDataService.appData.currentReportCounter;
       this.isInEditMode = false;
     });
   }
@@ -74,23 +74,7 @@ export class ReportTabComponent {
   }
 
   copyToClipboard() {
-    let result = '';
-    result += this.report.name + '\n';
-    this.report.lines?.forEach((line) => {
-      result += `${line.lineHeader}: `;
-      line.lineValues.forEach((lineValue) => {
-        if (lineValue.value) {
-          if (lineValue.valueType !== VALUE_TYPES_ENUM.bool) {
-            result += `${lineValue.label ? lineValue.label + ':' : ''}${lineValue.value}, `;
-          } else {
-            result += `${lineValue.label}, `;
-          }
-        }
-      });
-
-      result += `\n`;
-    });
-
+    let result = this.appService.convertReportToTXT(this.report);
     alert(`Skopiowano raport do schowka:\n\n${result}`);
     this.reportContentTXT = result;
   }

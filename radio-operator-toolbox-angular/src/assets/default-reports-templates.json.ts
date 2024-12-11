@@ -1,7 +1,7 @@
 import { IAppSettings } from 'src/app/models/app-settings.model';
 import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
-export const REPORTS_TEMPLATES: IReport[] = [
+export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
   {
     type: 'MEDEVAC sprawdz',
     isFavourite: true,
@@ -24,7 +24,7 @@ export const REPORTS_TEMPLATES: IReport[] = [
         lineValues: [
           {
             label: 'FREQ',
-            valueType: VALUE_TYPES_ENUM.longNumber,
+            valueType: VALUE_TYPES_ENUM.textLine,
           },
           {
             label: 'MY CALLSIGN',
@@ -364,7 +364,7 @@ export const REPORTS_TEMPLATES: IReport[] = [
   },
   {
     type: 'Meldunek 5W',
-    lines:[
+    lines: [
       {
         lineHeader: 'WHO?',
         descriptionHeader: 'Kto to zrobił?',
@@ -398,7 +398,9 @@ export const REPORTS_TEMPLATES: IReport[] = [
       {
         lineHeader: 'WHERE?',
         descriptionHeader: 'Gdzie to stało się?',
-        descriptionLines: ['Konkretna lokalizacja miejsca zdarzenia. Jeżeli to możliwe używać należy GRIDów, nazw miejscowości z określeniem kierunków geograficznych i odległości od innych większych miejscowości ułatwiających odnalezienie lokalizacji na mapie'],
+        descriptionLines: [
+          'Konkretna lokalizacja miejsca zdarzenia. Jeżeli to możliwe używać należy GRIDów, nazw miejscowości z określeniem kierunków geograficznych i odległości od innych większych miejscowości ułatwiających odnalezienie lokalizacji na mapie',
+        ],
         lineValues: [
           {
             valueType: VALUE_TYPES_ENUM.textArea,
@@ -415,11 +417,8 @@ export const REPORTS_TEMPLATES: IReport[] = [
           },
         ],
       },
-    ]
+    ],
   },
-  
-
-
 
   {
     type: 'SALTR/CONTACT',

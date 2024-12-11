@@ -1,5 +1,5 @@
 import { AppDataService } from 'src/app/services/app-data.service';
-import { AppService } from './../../services/app.service';
+import { AppService } from '../../../services/app.service';
 import { Component } from '@angular/core';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { IWaveFreqLengthPair } from 'src/app/models/cheatsheet-data.model';
@@ -11,7 +11,7 @@ import { IWaveFreqLengthPair } from 'src/app/models/cheatsheet-data.model';
 })
 export class CheatsheetComponent {
   wavesFreqsLengthsPairs =
-    this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
+    this.appDataService.appData.cheatsheetsData?.wavesFreqsLengthPairs;
   speedOfLight = 299792458; //c — speedOfLight: 299 792 458 m/s
   helpLines = helpLines;
 
@@ -21,7 +21,7 @@ export class CheatsheetComponent {
     private appSettingsService: AppSettingsService
   ) {
     this.wavesFreqsLengthsPairs =
-      this.appDataService.appData.cheatsheetData?.wavesFreqsLengthPairs;
+      this.appDataService.appData.cheatsheetsData?.wavesFreqsLengthPairs;
 
     this.wavesFreqsLengthsPairs?.forEach((p) => this.udpateLength(p));
   }

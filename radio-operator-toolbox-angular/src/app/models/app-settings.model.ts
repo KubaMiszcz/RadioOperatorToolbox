@@ -11,7 +11,7 @@ export interface IAppSettings {
 
 export class AppSettings implements IAppSettings {
   iconsPath?: string | undefined;
-  showAllHelpTooltips = true; //km depr
+  showAllHelpTooltips = false; //km depr
   reportsTemplates = [];
   menuTilesTree = [];
 }

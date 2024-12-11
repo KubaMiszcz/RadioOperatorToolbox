@@ -1,4 +1,4 @@
-import { ICheatsheetData } from './cheatsheet-data.model';
+import { ICheatsheetsData as ICheatsheetsData } from './cheatsheet-data.model';
 import { ICorrespondenceBookEntry } from './correspondence-book-entry.model';
 import { INotepad, Notepad } from './notepad.model';
 import { IReport } from './report.model';
@@ -11,10 +11,12 @@ export interface IAppData {
   correspondenceBook?: ICorrespondenceBookEntry[];
   notepad: INotepad;
   tdrData: ITDRData;
-  cheatsheetData?: ICheatsheetData;
+  cheatsheetsData?: ICheatsheetsData;
+  currentReportCounter?: number;
 }
 
 export class AppData implements IAppData {
   notepad = new Notepad();
   tdrData = new TDRData();
+  currentReportCounter = 1;
 }

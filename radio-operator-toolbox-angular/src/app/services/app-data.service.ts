@@ -16,12 +16,12 @@ export class AppDataService {
 
   initAppData() {
     try {
-      let appData = this.coreService.getFromLocalStorage('appData');
+      let appData = this.coreService.getFromLocalStorage<IAppData>('appData');
       if (!appData) {
-        this.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON)
+        this.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON);
         return;
       }
-      
+
       this.updateAndSaveAppData(appData);
     } catch (error) {
       console.log(error);
@@ -32,6 +32,8 @@ export class AppDataService {
     this.appData = this.getValidatedAppData(new AppData());
     if (this.coreService.isDevEnv()) {
       this.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON); //km dev only, comment it in PROD
+      console.warn('devmode');
+      return;
     }
 
     this.updateAndSaveAppData(this.appData);
@@ -48,12 +50,20 @@ export class AppDataService {
   }
 
   private getValidatedAppData(value: IAppData) {
+    //km WTF here?
     value.tdrData.teams = value.tdrData?.teams?.filter((t) => !!t.name && !!t.codename) ?? [];
     value.savedReports = value.savedReports?.filter((r) => !!r.name && !!r.name) ?? [];
+
+    //km WTF here?
     value.tdrData.alerts = value.tdrData?.alerts?.filter((t) => t.value) ?? [];
     value.tdrData.alerts = this.coreService.getArraySortedByPropertyName(value.tdrData.alerts, 'key');
-    value.tdrData.keywords = value.tdrData?.keywords?.filter((t) => t.value);
+
+    //km WTF here?
+    value.tdrData.keywords = value.tdrData?.keywords?.filter((t) => t.value) ?? [];
+    value.tdrData.keywords = this.coreService.getArraySortedByPropertyName(value.tdrData.keywords, 'key');
     value.tdrData.keywords?.forEach((k) => (k.key = k.key.toUpperCase()));
+
+    value.currentReportCounter = (value?.currentReportCounter ?? 0) + 1;
 
     return value;
   }
@@ -64,6 +74,7 @@ export class AppDataService {
     }
 
     this.appData.savedReports.push(report);
+    this.appData.currentReportCounter = (this.appData?.currentReportCounter ?? 0) + 1;
   }
 
   updateReport(oldReport: IReport, report: IReport) {
