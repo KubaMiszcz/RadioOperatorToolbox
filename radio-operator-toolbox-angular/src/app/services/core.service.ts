@@ -7,6 +7,7 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class CoreService {
+  
   deg2Rad(angleDeg: number) {
     return angleDeg * (Math.PI / 180);
   }
@@ -119,5 +120,9 @@ export class CoreService {
 
   round(value: number, accuracy: number = 0): number {
     return Number(value.toFixed(accuracy));
+  }
+
+  isArrayNullOrEmpty<T>(array: T[]):boolean {
+    return !!(array?.length < 1);
   }
 }

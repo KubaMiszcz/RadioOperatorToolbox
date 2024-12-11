@@ -1,9 +1,9 @@
 import { IMenuTile_V2 } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
-import { DEFAULT_REPORTS_TEMPLATES } from './reports-default-templates.json';
+import { DEFAULT_REPORTS_TEMPLATES as DEFAULT_REPORTS_TEMPLATES } from './reports-default-templates.json';
 import { KeyValue } from '@angular/common';
 
-const DEFAULT_MENU_TILES_TREE: IMenuTile_V2[] = [
+const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'TDR',
     isLabelShowed: true,
@@ -80,7 +80,7 @@ export const DEFAULT_APP_SETTINGS_JSON: IAppSettings = {
   showAllHelpTooltips: false, //km DEPR   
   reportsTemplates: DEFAULT_REPORTS_TEMPLATES,
   // menuTiles: MENU_ITEMS_DEPR, //km
-  menuTilesTree: DEFAULT_MENU_TILES_TREE,
+  menuTilesTree: MENU_TREE_TILES,
 };
 
 export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
