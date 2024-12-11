@@ -199,7 +199,8 @@
 </div>
 
 <div class="mt-2">
-    <button *ngIf="!isInEditMode" type="button" class="btn btn-primary w-100" (click)="saveReport()">Zapisz
+    <button *ngIf="!isInEditMode" type="button" class="btn btn-primary w-100" (click)="saveReport()"
+        [routerLink]="'/reports-history-page'">Zapisz
         meldunek</button>
     <button *ngIf="isInEditMode" type="button" class="btn btn-primary w-100" (click)="updateReport()"
         [routerLink]="'/reports-history-page'">Aktualizuj meldunek</button>

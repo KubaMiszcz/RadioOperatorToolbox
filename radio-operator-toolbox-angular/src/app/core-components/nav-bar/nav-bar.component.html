@@ -11,6 +11,11 @@
                     CLEAR ALL
                 </button>
             </div>
+            <div *ngIf="isDevEnv()" class="me-1" [routerLink]="'home-tab'">
+                <button type="button" name="" id="" class="btn btn-success" (click)="loadExamples()">
+                    load examples
+                </button>
+            </div>
         </div>
 
         <!-- RIGHT SIDE -->

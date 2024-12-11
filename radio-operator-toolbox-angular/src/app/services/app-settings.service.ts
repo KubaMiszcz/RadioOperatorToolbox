@@ -33,7 +33,7 @@ export class AppSettingsService {
 
   initAppSettings() {
     try {
-      let appSettings = this.coreService.getFromLocalStorage('appSettings');
+      let appSettings: IAppSettings = this.coreService.getFromLocalStorage('appSettings');
       if (!appSettings) {
         this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON);
         return;
@@ -47,13 +47,14 @@ export class AppSettingsService {
 
   clearAllSettings() {
     this.appSettings = this.getValidatedAppSettings(new AppSettings());
-    if (this.coreService.isDevEnv()) {
-      console.warn('devmode');
-      this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON); //km dev only, comment it in PROD
-      return;
-    }
+    // if (this.coreService.isDevEnv()) {
+    //   console.warn('devmode');
+      // this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON); //km dev only, comment it in PROD
+    //   return;
+    // }
 
     this.updateAndSaveAppSettings(this.appSettings);
+    location.reload();
   }
 
   updateAndSaveAppSettings(appSettings: IAppSettings = this.appSettings) {

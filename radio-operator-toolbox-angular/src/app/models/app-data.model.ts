@@ -12,9 +12,11 @@ export interface IAppData {
   notepad: INotepad;
   tdrData: ITDRData;
   cheatsheetsData?: ICheatsheetsData;
+  currentReportCounter?: number;
 }
 
 export class AppData implements IAppData {
   notepad = new Notepad();
   tdrData = new TDRData();
+  currentReportCounter = 1;
 }

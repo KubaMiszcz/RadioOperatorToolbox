@@ -36,7 +36,7 @@ export class ReportTabComponent {
         return;
       }
 
-      this.report.name = this.report.type + ' nr: ';
+      this.report.name = this.report.type + ' nr: ' + appDataService.appData.currentReportCounter;
       this.isInEditMode = false;
     });
   }

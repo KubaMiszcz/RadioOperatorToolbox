@@ -6,6 +6,8 @@ import { AppDataService } from 'src/app/services/app-data.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { MODAL_RESULT } from 'src/app/models/constants/enums';
 import { ModalGenericComponent } from '../modal-generic/modal-generic.component';
+import { CoreService } from 'src/app/services/core.service';
+import { APP_EXAMPLE_DATA_JSON } from 'src/assets/app-example-data';
 
 @Component({
   selector: 'app-nav-bar',
@@ -22,6 +24,7 @@ export class NavBarComponent {
   constructor(
     private appService: AppService,
     private appDataService: AppDataService,
+    private coreService: CoreService,
     private appSettingsService: AppSettingsService,
     private modalService: NgbModal
   ) {
@@ -41,15 +44,15 @@ export class NavBarComponent {
     modalRef.componentInstance.title = '';
     modalRef.componentInstance.content = 'Wyczyścic wszystkie dane?';
     modalRef.componentInstance.modalResults = [MODAL_RESULT.YES, MODAL_RESULT.NO];
-    modalRef.componentInstance.modalResult.subscribe((result:MODAL_RESULT) => {
+    modalRef.componentInstance.modalResult.subscribe((result: MODAL_RESULT) => {
       if (result === MODAL_RESULT.YES) {
         this.appDataService.clearAllData();
         this.appSettingsService.clearAllSettings();
       }
       modalRef.close();
-    })
-    }
-  
+    });
+  }
+
   showQuickSheetModal() {
     this.modalRef = this.modalService.open(this.quickDataModal, {
       size: 'sm',
@@ -59,5 +62,13 @@ export class NavBarComponent {
 
   closeModal(value: any) {
     this.modalRef.close();
+  }
+
+  isDevEnv(): boolean {
+    return this.coreService.isDevEnv();
+  }
+
+  loadExamples() {
+    this.appDataService.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON);
   }
 }
