@@ -1,9 +1,8 @@
 import { IMenuTile_V2 } from '../app/models/menu-item.model';
 import { IAppSettings } from 'src/app/models/app-settings.model';
-import { REPORTS_TEMPLATES } from './reports-templates.json';
-import { KeyValue } from '@angular/common';
+import { DEFAULT_REPORTS_TEMPLATES } from './default-reports-templates.json';
 
-const MENU_TREE_TILES: IMenuTile_V2[] = [
+const DEFAULT_MENU_TILES_TREE: IMenuTile_V2[] = [
   {
     label: 'TDR',
     isLabelShowed: true,
@@ -33,19 +32,19 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'Ściągawki',
     isLabelShowed: true,
-    link: 'xxxcheatsheets-page',
+    link: 'cheatsheets-page',
   },
   {
     label: 'Szyfro wanie',
     isLabelShowed: true,
-    link: 'xxxcheatsheets-page',
+    link: 'xxxxx-page',
     subItems: [],
   },
   //
   {
     label: 'Kalkulatory',
     isLabelShowed: true,
-    link: 'xxxcalculators-page',
+    link: 'calculators-page',
   },
   {
     label: 'Książka korespon dencji',
@@ -55,16 +54,21 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   {
     label: 'Eksperymenty',
     isLabelShowed: true,
-    link: 'xxxsettings-page',
+    link: 'xxxxx-page',
   },
   //
-  {
-    label: '',
-  },
+  // {
+  //   label: '', //empty tile as spacer
+  // },
   {
     label: 'Help',
     isLabelShowed: true,
     link: 'help-page',
+  },
+  {
+    label: 'Import/Eksport',
+    isLabelShowed: true,
+    link: 'xxxx-page',
   },
   {
     label: 'Ustawienia wszelakie',
@@ -75,152 +79,10 @@ const MENU_TREE_TILES: IMenuTile_V2[] = [
   // end common items
 ];
 
-export const APP_DEFAULT_SETTINGS_JSON: IAppSettings = {
+export const DEFAULT_APP_SETTINGS_JSON: IAppSettings = {
   iconsPath: '',
   showAllHelpTooltips: false, //km DEPR   
-  reportsTemplates: REPORTS_TEMPLATES,
+  reportsTemplates: DEFAULT_REPORTS_TEMPLATES,
   // menuTiles: MENU_ITEMS_DEPR, //km
-  menuTilesTree: MENU_TREE_TILES,
+  menuTilesTree: DEFAULT_MENU_TILES_TREE,
 };
-
-export const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-export const ALPHABET_EN = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'W',
-  'V',
-  'X',
-  'Y',
-  'Z',
-];
-
-export const ALPHABET_PL = [
-  'A',
-  'Ą',
-  'B',
-  'C',
-  'Ć',
-  'D',
-  'E',
-  'Ę',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'Ł',
-  'M',
-  'N',
-  'O',
-  'Ó',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'Ś',
-  'T',
-  'U',
-  'W',
-  'V',
-  'X',
-  'Y',
-  'Z',
-  'Ź',
-  'Ż',
-];
-
-export const DTG_TIMEZONES_CODES: KeyValue<number, string>[] = [
-  { key: -12, value: 'Y' },
-  { key: -11, value: 'X' },
-  { key: -10, value: 'W' },
-  { key: -9, value: 'V' },
-  { key: -8, value: 'U' },
-  { key: -7, value: 'T' },
-  { key: -6, value: 'S' },
-  { key: -5, value: 'R' },
-  { key: -4, value: 'Q' },
-  { key: -3, value: 'P' },
-  { key: -2, value: 'O' },
-  { key: -1, value: 'N' },
-  { key: +-0, value: 'Z' },
-  { key: +1, value: 'A' },
-  { key: +2, value: 'B' },
-  { key: +3, value: 'C' },
-  { key: +4, value: 'D' },
-  { key: +5, value: 'E' },
-  { key: +6, value: 'F' },
-  { key: +7, value: 'G' },
-  { key: +8, value: 'H' },
-  { key: +9, value: 'I' },
-  { key: +10, value: 'K' },
-  { key: +11, value: 'L' },
-  { key: +12, value: 'M' },
-];
-
-export const MONTHS_NAMES_PL: string[] = [
-  'STY',
-  'LUT',
-  'MAR',
-  'KWI',
-  'MAJ',
-  'CZE',
-  'LIP',
-  'SIE',
-  'WRZ',
-  'PAZ',
-  'LIS',
-  'GRU',
-];
-
-export const NATO_ALPHABET_EN: KeyValue<string, string>[] = [
-  { key: 'A', value: 'Alfa' },
-  { key: 'B', value: 'Bravo' },
-  { key: 'C', value: 'Charlie' },
-  { key: 'D', value: 'Delta' },
-  { key: 'E', value: 'Echo' },
-  { key: 'F', value: 'Foxtrot' },
-  { key: 'G', value: 'Golf' },
-  { key: 'H', value: 'Hotel' },
-  { key: 'I', value: 'India' },
-  { key: 'J', value: 'Juliett' },
-  { key: 'K', value: 'Kilo' },
-  { key: 'L', value: 'Lima' },
-  { key: 'M', value: 'Mike' },
-  { key: 'N', value: 'November' },
-  { key: 'O', value: 'Oscar' },
-  { key: 'P', value: 'Papa' },
-  { key: 'Q', value: 'Quebec' },
-  { key: 'R', value: 'Romeo' },
-  { key: 'S', value: 'Sierra' },
-  { key: 'T', value: 'Tango' },
-  { key: 'U', value: 'Uniform' },
-  { key: 'V', value: 'Victor' },
-  { key: 'W', value: 'Whiskey' },
-  { key: 'X', value: 'X-ray' },
-  { key: 'Y', value: 'Yankee' },
-  { key: 'Z', value: 'Zulu' },
-];
-
-

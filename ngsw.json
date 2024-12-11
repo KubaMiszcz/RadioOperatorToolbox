@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1733860365538,
+  "timestamp": 1733913976787,
   "index": "/RadioOperatorToolbox/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/RadioOperatorToolbox/favicon.ico",
         "/RadioOperatorToolbox/index.html",
-        "/RadioOperatorToolbox/main.7a0808787e02ceb1.js",
+        "/RadioOperatorToolbox/main.0659c737f4d85224.js",
         "/RadioOperatorToolbox/manifest.webmanifest",
         "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js",
         "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js",
@@ -31,9 +31,10 @@
       "urls": [
         "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf",
         "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf",
-        "/RadioOperatorToolbox/assets/adasd",
+        "/RadioOperatorToolbox/assets/app-constants.ts",
         "/RadioOperatorToolbox/assets/app-default-settings.ts",
         "/RadioOperatorToolbox/assets/app-example-data.ts",
+        "/RadioOperatorToolbox/assets/default-reports-templates.json.ts",
         "/RadioOperatorToolbox/assets/fontawesome/css/all.css",
         "/RadioOperatorToolbox/assets/fontawesome/css/all.min.css",
         "/RadioOperatorToolbox/assets/fontawesome/css/brands.css",
@@ -84,7 +85,6 @@
         "/RadioOperatorToolbox/assets/imgs/reports-image.png",
         "/RadioOperatorToolbox/assets/imgs/sarneg-image.png",
         "/RadioOperatorToolbox/assets/imgs/vigenere-image.png",
-        "/RadioOperatorToolbox/assets/reports-templates.json.ts",
         "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts",
         "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts"
       ],
@@ -95,9 +95,10 @@
   "hashTable": {
     "/RadioOperatorToolbox/Dosis-Medium.c13c0de5ea6a7dd6.ttf": "578d6da16e913f4a30862576d7558576fe1e9fa3",
     "/RadioOperatorToolbox/JetBrainsMono-Medium.71101a458b5dabad.ttf": "74d5c62d3b28dfe297d5a39237fd7083a1ac7847",
-    "/RadioOperatorToolbox/assets/adasd": "c687ef8c19303fbaf9d0184925965c23e1d744d0",
-    "/RadioOperatorToolbox/assets/app-default-settings.ts": "d9ec3c13e0b3d792595d00f024ccae12040ee084",
-    "/RadioOperatorToolbox/assets/app-example-data.ts": "f07eb4e5c323146ee038e2c5cdbac6461c677f04",
+    "/RadioOperatorToolbox/assets/app-constants.ts": "6b79cf19982676d5c5e7a716a6c0ab462ab49cbd",
+    "/RadioOperatorToolbox/assets/app-default-settings.ts": "036b8737425826a87e247dc5337faeadfe5cf2e2",
+    "/RadioOperatorToolbox/assets/app-example-data.ts": "e4ac407d7410fbe736d931262cffffce6ef556ba",
+    "/RadioOperatorToolbox/assets/default-reports-templates.json.ts": "7c9927e573cdf000e22aa675f2fa4d704e9bc5c4",
     "/RadioOperatorToolbox/assets/fontawesome/css/all.css": "85e396239cfc731a7471848b33949b22bcf50449",
     "/RadioOperatorToolbox/assets/fontawesome/css/all.min.css": "b6e555166eb1381392e00adcde9bf8863f16ff01",
     "/RadioOperatorToolbox/assets/fontawesome/css/brands.css": "19c8e8e6f55d14f63f29b5fd1ee0526e6e27943b",
@@ -148,12 +149,11 @@
     "/RadioOperatorToolbox/assets/imgs/reports-image.png": "0c3b969805bafe9eaea5a7c5bd6bad9e0a26b272",
     "/RadioOperatorToolbox/assets/imgs/sarneg-image.png": "2dc17e7bcb2aa50fcc762fd037183129deb9c3bc",
     "/RadioOperatorToolbox/assets/imgs/vigenere-image.png": "5512e872b6887cfe804d383966d72a2b22fb5356",
-    "/RadioOperatorToolbox/assets/reports-templates.json.ts": "d8078a23e6471b17661d9a6357e5eb3095589bdd",
     "/RadioOperatorToolbox/assets/words10letterUnique_EN.jsonc.ts": "81abd621d2d5077a16b9dc382dd57b3be2ef9b3f",
     "/RadioOperatorToolbox/assets/words10letterUnique_PL.jsonc.ts": "8bda875ab78abfe67f23d3e7e1e293c49e9710e9",
     "/RadioOperatorToolbox/favicon.ico": "ef05545f65793e26fb7fecbca206ea373217b718",
-    "/RadioOperatorToolbox/index.html": "b2f586bb177c25cab8f53dcb2001fbe593945e6a",
-    "/RadioOperatorToolbox/main.7a0808787e02ceb1.js": "2938f9185bc67936579492f551e088bf4a759e20",
+    "/RadioOperatorToolbox/index.html": "e4579c16e4e30d3720b776d16ca6126b318442cd",
+    "/RadioOperatorToolbox/main.0659c737f4d85224.js": "131a93bd06db5964e5eff2de1b1b8adb4a60ca42",
     "/RadioOperatorToolbox/manifest.webmanifest": "3c0e2d597f76b7b1340d2480d13078799cdd2716",
     "/RadioOperatorToolbox/polyfills.125b3ad0b16fbd8a.js": "c77eb09c3906e0ae617ab7cb819c58d3f19c2d22",
     "/RadioOperatorToolbox/runtime.ab76d59e333a4864.js": "483f055e8f9d909387b114ddb9fd44f26cf75ef8",
