@@ -16,7 +16,7 @@ export class AppDataService {
 
   initAppData() {
     try {
-      let appData: IAppData = this.coreService.getFromLocalStorage('appData');
+      let appData = this.coreService.getFromLocalStorage<IAppData>('appData');
       if (!appData) {
         this.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON);
         return;
@@ -53,11 +53,11 @@ export class AppDataService {
     //km WTF here?
     value.tdrData.teams = value.tdrData?.teams?.filter((t) => !!t.name && !!t.codename) ?? [];
     value.savedReports = value.savedReports?.filter((r) => !!r.name && !!r.name) ?? [];
-    
+
     //km WTF here?
     value.tdrData.alerts = value.tdrData?.alerts?.filter((t) => t.value) ?? [];
     value.tdrData.alerts = this.coreService.getArraySortedByPropertyName(value.tdrData.alerts, 'key');
-    
+
     //km WTF here?
     value.tdrData.keywords = value.tdrData?.keywords?.filter((t) => t.value) ?? [];
     value.tdrData.keywords = this.coreService.getArraySortedByPropertyName(value.tdrData.keywords, 'key');

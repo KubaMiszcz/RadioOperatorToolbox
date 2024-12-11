@@ -33,7 +33,7 @@ export class AppSettingsService {
 
   initAppSettings() {
     try {
-      let appSettings: IAppSettings = this.coreService.getFromLocalStorage('appSettings');
+      let appSettings = this.coreService.getFromLocalStorage<IAppSettings>('appSettings');
       if (!appSettings) {
         this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON);
         return;
@@ -49,12 +49,11 @@ export class AppSettingsService {
     this.appSettings = this.getValidatedAppSettings(new AppSettings());
     // if (this.coreService.isDevEnv()) {
     //   console.warn('devmode');
-      // this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON); //km dev only, comment it in PROD
+    // this.updateAndSaveAppSettings(DEFAULT_APP_SETTINGS_JSON); //km dev only, comment it in PROD
     //   return;
     // }
 
     this.updateAndSaveAppSettings(this.appSettings);
-    location.reload();
   }
 
   updateAndSaveAppSettings(appSettings: IAppSettings = this.appSettings) {
@@ -68,14 +67,14 @@ export class AppSettingsService {
   }
 
   private getValidatedAppSettings(value: IAppSettings) {
-    if(this.coreService.isArrayNullOrEmpty(value.menuTilesTree)){
-      value.menuTilesTree=DEFAULT_APP_SETTINGS_JSON.menuTilesTree;
+    if (this.coreService.isArrayNullOrEmpty(value.menuTilesTree)) {
+      value.menuTilesTree = DEFAULT_APP_SETTINGS_JSON.menuTilesTree;
     }
-    
-    if(this.coreService.isArrayNullOrEmpty(value.reportsTemplates)){
-      value.reportsTemplates=DEFAULT_APP_SETTINGS_JSON.reportsTemplates;
+
+    if (this.coreService.isArrayNullOrEmpty(value.reportsTemplates)) {
+      value.reportsTemplates = DEFAULT_APP_SETTINGS_JSON.reportsTemplates;
     }
-    
+
     return value;
   }
 
@@ -101,4 +100,3 @@ export class AppSettingsService {
     return false;
   }
 }
-

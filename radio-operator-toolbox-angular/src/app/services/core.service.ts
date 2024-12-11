@@ -7,7 +7,6 @@ import packageJson from './../../../package.json';
   providedIn: 'root',
 })
 export class CoreService {
-  
   deg2Rad(angleDeg: number) {
     return angleDeg * (Math.PI / 180);
   }
@@ -106,8 +105,13 @@ export class CoreService {
     localStorage.setItem(name, JSON.stringify(value));
   }
 
-  getFromLocalStorage(name: string) {
-    return JSON.parse(localStorage.getItem(name) ?? '');
+  getFromLocalStorage<T>(name: string): T | null {
+    let item = localStorage.getItem(name);
+    if (item) {
+      return JSON.parse(item);
+    }
+
+    return null;
   }
 
   getValueFromEvent(event: FocusEvent | Event): string {
@@ -122,7 +126,7 @@ export class CoreService {
     return Number(value.toFixed(accuracy));
   }
 
-  isArrayNullOrEmpty<T>(array: T[]):boolean {
+  isArrayNullOrEmpty<T>(array: T[]): boolean {
     return !!(array?.length < 1);
   }
 }
