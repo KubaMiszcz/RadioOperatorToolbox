@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'vigenere-tab', component: VigenereTabComponent },
   { path: 'vic-tab', component: VICTabComponent },
   { path: 'polybius-tab', component: PolybiusSquareTabComponent },
-  
+  // END DEPERACTED
   
   { path: 'home-page', component: HomePageComponent },
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },

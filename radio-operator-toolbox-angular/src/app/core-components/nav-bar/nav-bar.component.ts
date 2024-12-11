@@ -68,8 +68,4 @@ export class NavBarComponent {
   isDevEnv(): boolean {
     return this.coreService.isDevEnv();
   }
-
-  loadExamples() {
-    this.appDataService.updateAndSaveAppData(APP_EXAMPLE_DATA_JSON);
-  }
 }
