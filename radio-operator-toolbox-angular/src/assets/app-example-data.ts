@@ -9,6 +9,7 @@ import { AppService } from 'src/app/services/app.service';
 export const APP_EXAMPLE_DATA_JSON: IAppData = {
   savedReports: [
     {
+      name: 'EXAMPLE MEDEVAC Report',
       type: 'EXAMPLE MEDEVAC Report',
       isFavourite: true,
       lines: [
@@ -310,6 +311,7 @@ export const APP_EXAMPLE_DATA_JSON: IAppData = {
       ],
     },
     {
+      name: 'EXAMPLE SALUTE Report',
       type: 'EXAMPLE SALUTE Report',
       isFavourite: true,
       lines: [

@@ -24,7 +24,7 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
         lineValues: [
           {
             label: 'FREQ',
-            valueType: VALUE_TYPES_ENUM.longNumber,
+            valueType: VALUE_TYPES_ENUM.textLine,
           },
           {
             label: 'MY CALLSIGN',
