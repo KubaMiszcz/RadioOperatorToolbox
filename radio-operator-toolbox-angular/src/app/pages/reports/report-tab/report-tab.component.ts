@@ -5,7 +5,7 @@ import { AppDataService } from 'src/app/services/app-data.service';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 import { AppService } from 'src/app/services/app.service';
 import { CoreService } from 'src/app/services/core.service';
-import { NATO_ALPHABET_EN } from 'src/assets/app-default-settings';
+import { NATO_ALPHABET_EN } from 'src/assets/app-constants';
 
 @Component({
   selector: 'app-report-tab',

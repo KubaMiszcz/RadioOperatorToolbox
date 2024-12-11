@@ -1,10 +1,11 @@
 import { CoreService } from 'src/app/services/core.service';
 import { Injectable } from '@angular/core';
 import { AppSettings, IAppSettings } from '../models/app-settings.model';
-import { ALPHABET_PL, DEFAULT_APP_SETTINGS_JSON, DTG_TIMEZONES_CODES } from 'src/assets/app-default-settings';
 import packageJson from './../../../package.json';
 import { WORDS_10LETTERSUNIQUE_2XCOOL_PL } from 'src/assets/words10letterUnique_PL.jsonc';
 import { BehaviorSubject } from 'rxjs';
+import { DTG_TIMEZONES_CODES } from 'src/assets/app-constants';
+import { DEFAULT_APP_SETTINGS_JSON } from 'src/assets/app-default-settings';
 
 @Injectable({
   providedIn: 'root',

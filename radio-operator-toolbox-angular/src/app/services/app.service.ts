@@ -11,7 +11,7 @@ import { formatDate } from '@angular/common';
 import {
   DTG_TIMEZONES_CODES,
   MONTHS_NAMES_PL,
-} from 'src/assets/app-default-settings';
+} from 'src/assets/app-constants';
 
 @Injectable({
   providedIn: 'root',

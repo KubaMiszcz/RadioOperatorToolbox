@@ -21,34 +21,31 @@ import { CheatsheetsPageComponent } from './pages/cheatsheets-page/cheatsheets-p
 const routes: Routes = [
   { path: 'tdr-data-page', component: TDRDataPageComponent },
   { path: 'create-report-page', component: CreateReportPageComponent },
+  { path: 'report-tab', component: ReportTabComponent },
   { path: 'reports-history-page', component: ReportsHistoryPageComponent },
+  
   
   { path: 'cheatsheets-page', component: CheatsheetsPageComponent },
   { path: 'calculators-page', component: CalculatorsPageComponent },
 
-
-
+  
+  { path: 'notepad-page', component: NotepadPageComponent },
+  
+  { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
+  
+  { path: 'settings-page', component: AppSettingsPageComponent },
+  
+  // DEPRECATED //km
   { path: 'reports-page', component: ReportsPageComponent },
-  { path: 'report-tab', component: ReportTabComponent },
 
-
-
+  { path: 'cheatsheet-page', component: CheatsheetComponent },
   { path: 'encodings-page', component: EncodingsPageComponent },
   { path: 'sarneg-tab', component: SarnegTabComponent },
   { path: 'vigenere-tab', component: VigenereTabComponent },
   { path: 'vic-tab', component: VICTabComponent },
   { path: 'polybius-tab', component: PolybiusSquareTabComponent },
-
-
-  { path: 'notepad-page', component: NotepadPageComponent },
-  
-  { path: 'cheatsheet-page', component: CheatsheetComponent },
-  
-  { path: 'correspondence-book-page', component: CorrespondenceBookPageComponent },
   
   
-  { path: 'settings-page', component: AppSettingsPageComponent },
-
   { path: 'home-page', component: HomePageComponent },
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },
   { path: '**', component: HomePageComponent },
