@@ -3,7 +3,7 @@ import { IReport, VALUE_TYPES_ENUM } from 'src/app/models/report.model';
 
 export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
   {
-    type: 'MEDEVAC sprawdz',
+    type: 'MEDEVAC', //NOK sprawdz
     isFavourite: true,
     lines: [
       {
@@ -289,7 +289,7 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
     ],
   },
   {
-    type: 'SALUTE sprawdz',
+    type: 'SALUTE', //NOK Sprawdz
     isFavourite: true,
     lines: [
       {
@@ -419,7 +419,6 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
       },
     ],
   },
-
   {
     type: 'SALTR/CONTACT', //OK
     lines: [
@@ -481,12 +480,9 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
           },
         ],
       },
-
-    // L	Location	E: (Enemy) położenie sił przeciwnika
-    // F: (Friend) położenie sił własnych
     ],
   },
-
+///////////////////////////////////////////////////////////////////
   {
     type: 'Bazowy raport do edycji',
     lines: [
