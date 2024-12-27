@@ -363,7 +363,7 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
     ],
   },
   {
-    type: 'Meldunek 5W',
+    type: 'Meldunek 5W', //OK
     lines: [
       {
         lineHeader: 'WHO?',
@@ -421,7 +421,70 @@ export const DEFAULT_REPORTS_TEMPLATES: IReport[] = [
   },
 
   {
-    type: 'SALTR/CONTACT',
+    type: 'SALTR/CONTACT', //OK
+    lines: [
+      {
+        lineHeader: 'S',
+        descriptionHeader: 'Size',
+        descriptionLines: ['Wielkość (potencjał) sił przeciwnika/stron zaangażowanych'],
+        lineValues: [
+          {
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+      {
+        lineHeader: 'A',
+        descriptionHeader: 'Activity',
+        descriptionLines: ['Działania przeciwnika, precyzyjny, a zarazem zwięzły opis zdarzeń'],
+        lineValues: [
+          {
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+      {
+        lineHeader: 'L',
+        descriptionHeader: 'Location',
+        descriptionLines: ['lokalizacja MGRS, azymut itp'],
+        lineValues: [
+          {
+            label: 'E',
+            description: 'ich',
+            valueType: VALUE_TYPES_ENUM.MGRS1m,
+          },
+          {
+            label: 'F',
+            description: 'nasza',
+            valueType: VALUE_TYPES_ENUM.MGRS1km,
+          },
+        ],
+      },
+      {
+        lineHeader: 'T',
+        descriptionHeader: 'Time',
+        descriptionLines: ['czas zdarzenia DTG: DDHHMMTmmmYY'],
+        lineValues: [
+          {
+            label: 'Czas',
+            valueType: VALUE_TYPES_ENUM.DTG,
+          },
+        ],
+      },
+      {
+        lineHeader: 'R',
+        descriptionHeader: 'Reaction/Remarks',
+        descriptionLines: ['Precyzyjny, zwięzły opis podjętych działań przeciwnika i wojsk własnych po kontakcie. Potrzeby np. ‘potrzebne wsparcie’'],
+        lineValues: [
+          {
+            valueType: VALUE_TYPES_ENUM.textArea,
+          },
+        ],
+      },
+
+    // L	Location	E: (Enemy) położenie sił przeciwnika
+    // F: (Friend) położenie sił własnych
+    ],
   },
 
   {
